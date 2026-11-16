@@ -33,3 +33,4 @@ data/texto/
 
 # Impeccable: sesiones locales del modo live.
 .impeccable/live/
+.vercel
