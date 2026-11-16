@@ -1,0 +1,1166 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import cabecera from '../assets/cabecera.png';
+import frases from '../data/frases.json';
+import parejas from '../data/parejas.json';
+import fuentes from '../../data/programas/fuentes.json';
+
+// Orden alfabético fijo: no favorece a ningún partido por posición.
+// `ar` es la proporción ancho/alto de cada logo; con ella se igualan por área
+// (no por altura), para que ninguno pese visualmente más que otro.
+const PARTIDOS = [
+  { nombre: 'Frente Amplio', logo: '/img/partidos/frente-amplio.svg', ar: 2.951 },
+  { nombre: 'PP', logo: '/img/partidos/pp.svg', ar: 1.483 },
+  { nombre: 'PSOE', logo: '/img/partidos/psoe.svg', ar: 5.128 },
+  { nombre: 'Vox', logo: '/img/partidos/vox.svg', ar: 2.075 },
+].map((p) => ({ ...p, raiz: Math.sqrt(p.ar).toFixed(3) }));
+const RONDA = 10;
+const urls = Object.fromEntries(fuentes.programas.map((p) => [p.partido, p.url]));
+const datos = { frases, parejas, urls, partidos: PARTIDOS.map(({ nombre }) => ({ nombre })) };
+---
+
+<Base
+  title="Promesómetro · ¿De quién es esta promesa?"
+  description="Medidas reales de los programas electorales del 29N, sin siglas. ¿Sabrías decir de qué partido es cada una?"
+>
+  <main class="app">
+    <header class="cabecera">
+      <div class="cabecera-texto">
+        <h1 class="marca">Promesómetro</h1>
+        <p class="lema">
+          ¿De quién es esta promesa? Medidas reales de los programas de las generales del
+          29&nbsp;de&nbsp;noviembre, sin siglas.
+        </p>
+      </div>
+      <div class="cabecera-lamina">
+        <Image
+          class="cabecera-ilustracion"
+          src={cabecera}
+          alt=""
+          widths={[320, 560, 840]}
+          sizes="280px"
+          loading="eager"
+          fetchpriority="high"
+        />
+        <span class="sello-29n" aria-hidden="true">29·N</span>
+      </div>
+    </header>
+
+    <section id="portada" class="papeleta portada">
+      <h2 class="papeleta-titulo">Instrucciones para votar</h2>
+      <ol class="instrucciones">
+        <li>Te enseñamos <strong>{RONDA} medidas</strong> copiadas literalmente de los programas de <strong>Frente Amplio, PP, PSOE y Vox</strong>.</li>
+        <li>Mete cada una en el sobre del partido que creas que la propone.</li>
+        <li>Al votar verás la respuesta y la página exacta del programa.</li>
+      </ol>
+      <p class="aviso">Ojo: no son las medidas estrella. Son las que podrían ser de cualquiera.</p>
+      <div class="sobres-muestra" aria-hidden="true">
+        {
+          PARTIDOS.map((p) => (
+            <span class="chip-logo" style={`--raiz:${p.raiz}`}>
+              <img src={p.logo} alt="" width="80" height="40" />
+            </span>
+          ))
+        }
+      </div>
+      <button id="empezar" class="boton-principal">Coger papeleta</button>
+    </section>
+
+    <section id="juego" class="juego" hidden>
+      <div class="estado">
+        <ol id="progreso" class="progreso" aria-label="Progreso de la ronda">
+          {Array.from({ length: RONDA }, () => <li />)}
+        </ol>
+        <span id="marcador" class="marcador">Aciertos: 0</span>
+      </div>
+
+      <article id="papeleta" class="papeleta">
+        <div class="papeleta-cabecera">
+          <span id="contador" class="papeleta-numero">Papeleta 1/{RONDA}</span>
+          <span id="tema" class="papeleta-tema"></span>
+        </div>
+        <blockquote id="frase" class="frase" tabindex="-1"></blockquote>
+        <div id="sello" class="sello" aria-hidden="true"></div>
+      </article>
+
+      <div class="pregunta-fila">
+        <p class="pregunta" id="pregunta">¿En qué sobre la metes?</p>
+        <p class="atajos" aria-hidden="true">Teclas <kbd>1</kbd>–<kbd>4</kbd></p>
+      </div>
+      <div id="opciones" class="opciones" role="group" aria-labelledby="pregunta">
+        {
+          PARTIDOS.map((p, i) => (
+            <button class="sobre" data-partido={p.nombre} aria-label={p.nombre} aria-keyshortcuts={String(i + 1)}>
+              <span class="sobre-tecla" aria-hidden="true">{i + 1}</span>
+              <span class="chip-logo sobre-logo" style={`--raiz:${p.raiz}`}>
+                <img src={p.logo} alt="" width="160" height="80" />
+              </span>
+              <span class="sobre-nombre">{p.nombre}</span>
+            </button>
+          ))
+        }
+      </div>
+
+      <div id="revelacion" class="revelacion" aria-live="polite" hidden>
+        <p id="veredicto" class="veredicto"></p>
+        <p id="fuente" class="fuente"></p>
+        <p id="pareja" class="pareja" hidden></p>
+        <button id="siguiente" class="boton-principal">Siguiente papeleta</button>
+      </div>
+    </section>
+
+    <section id="final" class="papeleta final" hidden aria-labelledby="titulo-final">
+      <h2 class="papeleta-titulo" id="titulo-final">Escrutinio</h2>
+      <div class="resultado">
+        <p class="puntuacion" id="puntuacion" tabindex="-1">
+          <span id="aciertos">0</span><span class="de">/{RONDA}</span>
+          <span class="sr">aciertos</span>
+        </p>
+        <span id="sello-final" class="sello sello-final" aria-hidden="true"></span>
+      </div>
+      <ol id="progreso-final" class="progreso progreso-final" aria-label="Tus respuestas"></ol>
+      <p id="comentario" class="comentario"></p>
+      <div class="acciones">
+        <button id="compartir" class="boton-principal">Compartir resultado</button>
+        <button id="otra" class="boton-secundario">Otra ronda</button>
+      </div>
+      <p id="aviso-compartir" class="aviso" aria-live="polite" hidden></p>
+      <details class="repaso">
+        <summary>Repasa tus {RONDA} papeletas</summary>
+        <ol id="resumen" class="resumen"></ol>
+      </details>
+    </section>
+
+    <footer class="pie">
+      <p>
+        Todas las frases son citas literales de los programas oficiales de las elecciones generales del
+        29 de noviembre de 2026; los recortes se marcan con «[…]». Cada respuesta enlaza a su página del
+        programa.
+      </p>
+      <p>
+        Proyecto independiente, sin relación con ningún partido. Los logotipos pertenecen a sus
+        respectivos partidos y se usan solo para identificarlos. No recogemos datos ni guardamos tus respuestas.
+      </p>
+    </footer>
+  </main>
+
+  <script type="application/json" id="datos" set:html={JSON.stringify(datos)} />
+
+  <script>
+    type Frase = { id: string; partido: string; paginaPdf: number; texto: string; tema: string };
+    type Datos = {
+      frases: Frase[];
+      parejas: [string, string][];
+      urls: Record<string, string>;
+      partidos: { nombre: string }[];
+    };
+
+    const RONDA = 10;
+    const datos: Datos = JSON.parse(document.getElementById('datos')!.textContent!);
+    const nombres = datos.partidos.map((p) => p.nombre);
+    const porId = new Map(datos.frases.map((f) => [f.id, f]));
+    const parejaDe = new Map<string, string>();
+    for (const [a, b] of datos.parejas) {
+      parejaDe.set(a, b);
+      parejaDe.set(b, a);
+    }
+
+    // Iconos de acierto y fallo dibujados (no glifos), en el color del texto.
+    const ICONO = {
+      ok: '<svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+      ko: '<svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>',
+    };
+
+    const $ = <T extends HTMLElement>(id: string) => document.getElementById(id) as T;
+    const portada = $('portada');
+    const juego = $('juego');
+    const final = $('final');
+    const sobres = [...document.querySelectorAll<HTMLButtonElement>('.sobre')];
+    const puntos = [...$('progreso').children] as HTMLElement[];
+
+    let ronda: Frase[] = [];
+    let indice = 0;
+    let respuestas: { frase: Frase; elegido: string }[] = [];
+    let esperandoVoto = false;
+    // Frases ya vistas en la sesión, para no repetir hasta agotar todas.
+    const vistas = new Set<string>();
+
+    function barajar<T>(lista: T[]): T[] {
+      const a = [...lista];
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a;
+    }
+
+    // Ronda equilibrada: 3+3+2+2 frases por partido, priorizando las no vistas.
+    // Así nadie acierta por descarte ni por frecuencia.
+    function nuevaRonda(): Frase[] {
+      if (datos.frases.every((f) => vistas.has(f.id))) vistas.clear();
+      const cupos = barajar([3, 3, 2, 2]);
+      const elegidas: Frase[] = [];
+      nombres.forEach((partido, i) => {
+        const delPartido = barajar(datos.frases.filter((f) => f.partido === partido));
+        delPartido.sort((a, b) => Number(vistas.has(a.id)) - Number(vistas.has(b.id)));
+        elegidas.push(...delPartido.slice(0, cupos[i]));
+      });
+      return separarParejas(barajar(elegidas));
+    }
+
+    // Dos medidas casi iguales seguidas confunden en vez de sorprender.
+    function separarParejas(lista: Frase[]): Frase[] {
+      for (let i = 1; i < lista.length; i++) {
+        if (parejaDe.get(lista[i].id) === lista[i - 1].id) {
+          const j = (i + 2) % lista.length;
+          [lista[i], lista[j]] = [lista[j], lista[i]];
+        }
+      }
+      return lista;
+    }
+
+    // Presentación: mayúscula inicial y puntos suspensivos si el recorte deja
+    // la frase abierta. El texto guardado sigue siendo literal.
+    function presentar(texto: string): string {
+      let t = texto.charAt(0).toUpperCase() + texto.slice(1);
+      if (!/[.!?…)»"]$/.test(t)) t += '…';
+      return t;
+    }
+
+    // Recorta en el último espacio para no partir palabras.
+    function recortar(texto: string, max: number): string {
+      if (texto.length <= max) return texto;
+      const corte = texto.lastIndexOf(' ', max);
+      return `${texto.slice(0, corte > 0 ? corte : max).replace(/[,;:.]$/, '')}…`;
+    }
+
+    // «del PP», «del PSOE», «del Frente Amplio», pero «de Vox».
+    const del = (p: string) => (p === 'Vox' ? 'de Vox' : `del ${p}`);
+    const el = (p: string) => (p === 'Vox' ? 'Vox' : `el ${p}`);
+    const esAcierto = (r: { frase: Frase; elegido: string }) => r.elegido === r.frase.partido;
+    const aciertos = () => respuestas.filter(esAcierto).length;
+
+    function mostrar(seccion: HTMLElement) {
+      for (const s of [portada, juego, final]) s.hidden = s !== seccion;
+    }
+
+    function marcarPunto(li: HTMLElement, n: number, estado: 'ok' | 'ko' | 'actual' | '') {
+      li.className = estado;
+      const texto = estado === 'ok' ? 'acierto' : estado === 'ko' ? 'fallo' : estado === 'actual' ? 'en curso' : 'pendiente';
+      li.innerHTML = `<span class="sr">Papeleta ${n}: ${texto}</span>`;
+    }
+
+    function empezar() {
+      ronda = nuevaRonda();
+      indice = 0;
+      respuestas = [];
+      puntos.forEach((p, i) => marcarPunto(p, i + 1, ''));
+      mostrar(juego);
+      pintarFrase();
+      juego.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function pintarFrase() {
+      const f = ronda[indice];
+      $('contador').textContent = `Papeleta ${indice + 1}/${RONDA}`;
+      $('marcador').textContent = `Aciertos: ${aciertos()}`;
+      $('tema').textContent = f.tema;
+      $('frase').textContent = presentar(f.texto);
+      marcarPunto(puntos[indice], indice + 1, 'actual');
+      const sello = $('sello');
+      sello.className = 'sello';
+      sello.textContent = '';
+      for (const b of sobres) {
+        b.disabled = false;
+        b.className = 'sobre';
+      }
+      $('revelacion').hidden = true;
+      esperandoVoto = true;
+      // Reinicia la animación de entrada de la papeleta.
+      const papeleta = $('papeleta');
+      papeleta.classList.remove('entra');
+      void papeleta.offsetWidth;
+      papeleta.classList.add('entra');
+      // El foco va a la medida nueva para que teclado y lector de pantalla no se pierdan.
+      $('frase').focus({ preventScroll: true });
+    }
+
+    function responder(elegido: string) {
+      if (!esperandoVoto) return;
+      esperandoVoto = false;
+      const f = ronda[indice];
+      respuestas.push({ frase: f, elegido });
+      vistas.add(f.id);
+      const ok = elegido === f.partido;
+
+      for (const b of sobres) {
+        b.disabled = true;
+        if (b.dataset.partido === f.partido) b.classList.add('correcta');
+        else if (b.dataset.partido === elegido) b.classList.add('incorrecta');
+        else b.classList.add('apagada');
+      }
+      marcarPunto(puntos[indice], indice + 1, ok ? 'ok' : 'ko');
+
+      const sello = $('sello');
+      sello.textContent = ok ? 'Acierto' : 'Fallo';
+      sello.className = `sello visible ${ok ? 'ok' : 'ko'}`;
+
+      const veredicto = $('veredicto');
+      veredicto.className = `veredicto ${ok ? 'ok' : 'ko'}`;
+      veredicto.textContent = ok ? `¡Correcto! Es ${del(f.partido)}.` : `No. Es ${del(f.partido)}.`;
+
+      $('fuente').replaceChildren(
+        'Lo dice su programa electoral, en la ',
+        Object.assign(document.createElement('a'), {
+          href: `${datos.urls[f.partido]}#page=${f.paginaPdf}`,
+          target: '_blank',
+          rel: 'noopener',
+          textContent: `página ${f.paginaPdf} del PDF`,
+        }),
+        '.',
+      );
+
+      const pareja = $('pareja');
+      const otra = porId.get(parejaDe.get(f.id) ?? '');
+      pareja.hidden = !otra;
+      if (otra) {
+        pareja.replaceChildren(
+          Object.assign(document.createElement('strong'), { textContent: 'Ojo: ' }),
+          `${el(otra.partido)} propone algo muy parecido.`,
+        );
+      }
+
+      $('marcador').textContent = `Aciertos: ${aciertos()}`;
+      $('siguiente').textContent = indice === RONDA - 1 ? 'Ver escrutinio' : 'Siguiente papeleta';
+      $('revelacion').hidden = false;
+      $('siguiente').focus({ preventScroll: true });
+      $('revelacion').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    function siguiente() {
+      indice++;
+      if (indice < RONDA) {
+        pintarFrase();
+        $('papeleta').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      } else terminar();
+    }
+
+    // Título del sello final según la nota, en el lenguaje de la jornada electoral.
+    function titulo(n: number) {
+      if (n >= 9) return 'Lector de programas';
+      if (n >= 7) return 'Buen ojo';
+      if (n >= 4) return 'Indeciso';
+      return 'Voto en blanco';
+    }
+
+    function terminar() {
+      const n = aciertos();
+      $('aciertos').textContent = String(n);
+      $('comentario').textContent =
+        n >= 9
+          ? 'Te has leído los cuatro programas. Confiesa.'
+          : n >= 7
+            ? 'Muy bien. Pocos distinguen tan bien la letra pequeña.'
+            : n >= 4
+              ? 'Ni tan mal: los programas se parecen más de lo que crees.'
+              : 'Tranquilidad: a casi todo el mundo le pasa. Se parecen mucho.';
+
+      const sello = $('sello-final');
+      sello.textContent = titulo(n);
+      sello.className = `sello sello-final visible ${n >= 5 ? 'ok' : 'ko'}`;
+
+      $('progreso-final').replaceChildren(
+        ...respuestas.map((r, i) => {
+          const li = document.createElement('li');
+          marcarPunto(li, i + 1, esAcierto(r) ? 'ok' : 'ko');
+          return li;
+        }),
+      );
+
+      $('resumen').replaceChildren(
+        ...respuestas.map((r) => {
+          const ok = esAcierto(r);
+          const li = document.createElement('li');
+          li.className = ok ? 'ok' : 'ko';
+          const partido = document.createElement('span');
+          partido.className = 'resumen-partido';
+          partido.innerHTML = ICONO[ok ? 'ok' : 'ko'];
+          partido.append(ok ? ` ${r.frase.partido}` : ` Era ${del(r.frase.partido)} · dijiste ${r.elegido}`);
+          li.append(
+            Object.assign(document.createElement('span'), {
+              className: 'resumen-frase',
+              textContent: recortar(presentar(r.frase.texto), 140),
+            }),
+            partido,
+          );
+          return li;
+        }),
+      );
+
+      $('aviso-compartir').hidden = true;
+      $('compartir').textContent = 'Compartir resultado';
+      mostrar(final);
+      final.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      $('puntuacion').focus({ preventScroll: true });
+    }
+
+    async function compartir() {
+      const n = aciertos();
+      const casillas = respuestas.map((r) => (esAcierto(r) ? '🟦' : '🟥')).join('');
+      const texto = `🗳️ Promesómetro: ${n}/${RONDA} · ${titulo(n)}\n${casillas}\n¿Sabrías de quién es cada promesa del 29N?`;
+      const url = location.origin + location.pathname;
+      const boton = $('compartir');
+      const aviso = $('aviso-compartir');
+      try {
+        if (navigator.share) {
+          await navigator.share({ text: texto, url });
+          return;
+        }
+      } catch (e) {
+        // Si la persona cancela el menú de compartir, no hay nada que avisar.
+        if ((e as DOMException).name === 'AbortError') return;
+      }
+      try {
+        await navigator.clipboard.writeText(`${texto}\n${url}`);
+        boton.textContent = '¡Copiado!';
+        setTimeout(() => (boton.textContent = 'Compartir resultado'), 2000);
+      } catch {
+        aviso.textContent = `No hemos podido copiarlo. Comparte este enlace: ${url}`;
+        aviso.hidden = false;
+      }
+    }
+
+    // Atajos: 1-4 votan; Intro sigue (el foco ya está en «Siguiente»).
+    document.addEventListener('keydown', (e) => {
+      if (juego.hidden || e.altKey || e.ctrlKey || e.metaKey) return;
+      const n = Number(e.key);
+      if (esperandoVoto && n >= 1 && n <= sobres.length) {
+        e.preventDefault();
+        responder(sobres[n - 1].dataset.partido!);
+      }
+    });
+
+    $('empezar').addEventListener('click', empezar);
+    $('otra').addEventListener('click', empezar);
+    $('siguiente').addEventListener('click', siguiente);
+    $('compartir').addEventListener('click', compartir);
+    for (const b of sobres) b.addEventListener('click', () => responder(b.dataset.partido!));
+  </script>
+</Base>
+
+<style>
+  .app {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 24px 16px 48px;
+  }
+
+  #juego,
+  #final,
+  #papeleta {
+    scroll-margin-top: 16px;
+  }
+
+  /* Cabecera */
+  .cabecera {
+    display: grid;
+    grid-template-columns: 1fr 240px;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+
+  .marca {
+    margin: 0;
+    font-family: var(--fuente-titulo);
+    font-weight: 800;
+    font-size: var(--t-display);
+    letter-spacing: -0.03em;
+    line-height: 0.95;
+  }
+
+  .lema {
+    margin: 12px 0 0;
+    color: var(--tinta-suave);
+    font-size: var(--t-md);
+    max-width: 34ch;
+    text-wrap: pretty;
+  }
+
+  .cabecera-lamina {
+    position: relative;
+  }
+
+  .cabecera-ilustracion {
+    width: 100%;
+    height: auto;
+    mix-blend-mode: multiply;
+    /* Funde los bordes de la ilustración con el papel del fondo. */
+    -webkit-mask-image: radial-gradient(ellipse 50% 50% at center, #000 70%, transparent 100%);
+    mask-image: radial-gradient(ellipse 50% 50% at center, #000 70%, transparent 100%);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .cabecera-ilustracion {
+      mix-blend-mode: normal;
+      -webkit-mask-image: none;
+      mask-image: none;
+      border-radius: 10px;
+      transform: rotate(2deg);
+      box-shadow: 0 10px 30px -10px rgb(0 0 0 / 0.7);
+    }
+  }
+
+  .sello-29n {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    padding: 2px 10px;
+    border: 2px solid var(--lacre);
+    border-radius: 4px;
+    background: var(--papel);
+    color: var(--lacre);
+    font-family: var(--fuente-titulo);
+    font-weight: 800;
+    font-size: var(--t-sm);
+    letter-spacing: 0.06em;
+    transform: rotate(8deg);
+  }
+
+  @media (max-width: 560px) {
+    .cabecera {
+      grid-template-columns: 1fr;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+    .cabecera-lamina {
+      order: -1;
+      width: 260px;
+      margin: 0 auto;
+    }
+  }
+
+  /* Papeleta: hoja con troquel arriba. Elevación declarada una vez (borde). */
+  .papeleta {
+    position: relative;
+    background: var(--papeleta);
+    border: 1px solid var(--linea);
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+    padding: 28px 24px 24px;
+  }
+
+  .papeleta::before {
+    content: '';
+    position: absolute;
+    left: 14px;
+    right: 14px;
+    top: 10px;
+    border-top: 2px dashed var(--linea);
+  }
+
+  .papeleta-titulo {
+    margin: 4px 0 16px;
+    font-family: var(--fuente-titulo);
+    font-weight: 700;
+    font-size: var(--t-xl);
+    line-height: 1.2;
+  }
+
+  .instrucciones {
+    margin: 0 0 16px;
+    padding-left: 24px;
+    display: grid;
+    gap: 8px;
+  }
+
+  .instrucciones li::marker {
+    font-family: var(--fuente-titulo);
+    font-weight: 800;
+    color: var(--lacre);
+  }
+
+  .aviso {
+    margin: 0 0 20px;
+    color: var(--tinta-suave);
+    font-size: var(--t-sm);
+  }
+
+  /* Caja blanca de cada logo; el tamaño del logo sale de su área (--raiz). */
+  .chip-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--chip-logo);
+    border-radius: 4px;
+    box-shadow: inset 0 0 0 1px rgb(31 42 68 / 0.1);
+    --k: 26px;
+  }
+
+  .chip-logo img {
+    width: calc(var(--k) * var(--raiz));
+    height: calc(var(--k) / var(--raiz));
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  .sobres-muestra {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+
+  .sobres-muestra .chip-logo {
+    height: 52px;
+    padding: 6px;
+  }
+
+  /* Botones */
+  .boton-principal,
+  .boton-secundario {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    border-radius: 999px;
+    padding: 12px 26px;
+    font-weight: 700;
+    cursor: pointer;
+    border: 2px solid var(--tinta);
+    transition:
+      transform 0.15s cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 0.15s ease,
+      background-color 0.15s ease;
+  }
+
+  .boton-principal {
+    background: var(--tinta);
+    color: var(--papel);
+    box-shadow: 0 6px 14px -8px rgb(31 42 68 / 0.6);
+  }
+
+  .boton-secundario {
+    background: transparent;
+  }
+
+  .boton-principal:hover,
+  .boton-secundario:hover {
+    transform: translateY(-1px);
+  }
+
+  .boton-principal:hover {
+    box-shadow: 0 10px 20px -10px rgb(31 42 68 / 0.7);
+  }
+
+  .boton-secundario:hover {
+    background: color-mix(in srgb, var(--tinta) 6%, transparent);
+  }
+
+  .boton-principal:active,
+  .boton-secundario:active {
+    transform: translateY(1px);
+  }
+
+  .boton-principal:focus-visible,
+  .boton-secundario:focus-visible,
+  .sobre:focus-visible,
+  .repaso summary:focus-visible,
+  .fuente :global(a:focus-visible) {
+    outline: 3px solid var(--mostaza);
+    outline-offset: 3px;
+  }
+
+  .frase:focus,
+  .puntuacion:focus {
+    outline: none;
+  }
+
+  /* Estado y progreso */
+  .estado {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .progreso {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  /* Cada punto es un sobre en miniatura. */
+  .progreso :global(li) {
+    --borde: color-mix(in srgb, var(--tinta) 55%, transparent);
+    width: 20px;
+    height: 14px;
+    border: 1.5px solid var(--borde);
+    border-radius: 2px;
+    background:
+      linear-gradient(to bottom right, transparent 46%, var(--borde) 47% 53%, transparent 54%) left / 50% 100% no-repeat,
+      linear-gradient(to bottom left, transparent 46%, var(--borde) 47% 53%, transparent 54%) right / 50% 100% no-repeat;
+    transition: background-color 0.2s ease;
+  }
+
+  .progreso :global(li.actual) {
+    --borde: var(--tinta);
+    background-color: var(--mostaza);
+  }
+
+  .progreso :global(li.ok) {
+    --borde: var(--papeleta);
+    background-color: var(--acierto);
+    border-color: var(--acierto);
+  }
+
+  .progreso :global(li.ko) {
+    --borde: var(--papeleta);
+    background-color: var(--fallo);
+    border-color: var(--fallo);
+  }
+
+  .marcador {
+    font-weight: 700;
+    font-size: var(--t-sm);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  /* Papeleta de juego */
+  .papeleta-cabecera {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+    font-size: var(--t-xs);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--tinta-suave);
+  }
+
+  .papeleta-numero {
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .papeleta-tema {
+    color: var(--lacre);
+    text-align: right;
+    text-wrap: balance;
+  }
+
+  .frase {
+    margin: 0;
+    font-family: var(--fuente-titulo);
+    font-weight: 500;
+    font-size: clamp(var(--t-lg), 4.6vw, var(--t-xl));
+    line-height: 1.42;
+    text-wrap: pretty;
+  }
+
+  .frase::before {
+    content: '«';
+    color: var(--lacre);
+  }
+
+  .frase::after {
+    content: '»';
+    color: var(--lacre);
+  }
+
+  .papeleta.entra {
+    animation: entra 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  @keyframes entra {
+    from {
+      opacity: 0.2;
+      transform: translateY(8px) rotate(-0.5deg);
+    }
+  }
+
+  /* Sello de tinta: se estampa sobre el borde inferior de la papeleta,
+     como en una papeleta real, sin tapar el texto. */
+  .sello {
+    position: absolute;
+    right: 20px;
+    bottom: -18px;
+    padding: 2px 14px;
+    border: 3px solid currentColor;
+    border-radius: 6px;
+    background: var(--papeleta);
+    font-family: var(--fuente-titulo);
+    font-weight: 900;
+    font-size: var(--t-lg);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    opacity: 0;
+    transform: rotate(-6deg) scale(1.6);
+    pointer-events: none;
+  }
+
+  .sello.visible {
+    animation: estampa 0.38s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .sello.ok {
+    color: var(--acierto);
+  }
+
+  .sello.ko {
+    color: var(--fallo);
+  }
+
+  @keyframes estampa {
+    to {
+      opacity: 1;
+      transform: rotate(-6deg) scale(1);
+    }
+  }
+
+  /* Sobres de voto */
+  .pregunta-fila {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 32px 0 12px;
+  }
+
+  .pregunta {
+    margin: 0;
+    font-weight: 700;
+  }
+
+  .atajos {
+    display: none;
+    margin: 0;
+    font-size: var(--t-xs);
+    color: var(--tinta-suave);
+  }
+
+  kbd {
+    font-family: var(--fuente);
+    font-weight: 700;
+    padding: 0 5px;
+    border: 1px solid var(--linea);
+    border-bottom-width: 2px;
+    border-radius: 4px;
+    background: var(--papeleta);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .atajos {
+      display: block;
+    }
+  }
+
+  .opciones {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .sobre {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding: 12px 12px 10px;
+    border: 1.5px solid var(--linea);
+    border-radius: var(--radio);
+    background: var(--papel-2);
+    cursor: pointer;
+    overflow: hidden;
+    transition:
+      transform 0.15s cubic-bezier(0.16, 1, 0.3, 1),
+      border-color 0.15s ease;
+  }
+
+  /* Solapa del sobre */
+  .sobre::before {
+    content: '';
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 26px;
+    background:
+      linear-gradient(to bottom right, transparent 49.5%, var(--linea) 50%, transparent 51%) left / 50% 100% no-repeat,
+      linear-gradient(to bottom left, transparent 49.5%, var(--linea) 50%, transparent 51%) right / 50% 100% no-repeat;
+  }
+
+  .sobre-tecla {
+    display: none;
+    position: absolute;
+    top: 6px;
+    left: 8px;
+    font-size: var(--t-xs);
+    font-weight: 700;
+    color: var(--tinta-suave);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .sobre-tecla {
+      display: block;
+    }
+  }
+
+  .sobre-logo {
+    position: relative;
+    height: 76px;
+    margin-top: 10px;
+    padding: 8px 12px;
+    --k: 50px;
+  }
+
+  .sobre-logo img {
+    transition:
+      filter 0.2s ease,
+      opacity 0.2s ease;
+  }
+
+  .sobre-nombre {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-size: var(--t-xs);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--tinta-suave);
+  }
+
+  .sobre:not(:disabled):hover {
+    transform: translateY(-3px);
+    border-color: var(--tinta);
+  }
+
+  .sobre:not(:disabled):active {
+    transform: translateY(1px);
+  }
+
+  .sobre:disabled {
+    cursor: default;
+  }
+
+  /* Opciones descartadas: el logo pierde color, el sobre se mantiene legible. */
+  .sobre.apagada .sobre-logo img {
+    filter: grayscale(1);
+    opacity: 0.35;
+  }
+
+  .sobre.correcta {
+    border-color: var(--acierto);
+    background: var(--acierto-fondo);
+    box-shadow: 0 0 0 1.5px var(--acierto);
+  }
+
+  .sobre.correcta .sobre-nombre {
+    color: var(--acierto);
+  }
+
+  .sobre.incorrecta {
+    border-color: var(--fallo);
+    background: var(--fallo-fondo);
+  }
+
+  .sobre.incorrecta .sobre-nombre {
+    color: var(--fallo);
+  }
+
+  /* Revelación: separada por un troquel, el lenguaje de la casa. */
+  .revelacion {
+    position: relative;
+    margin-top: 20px;
+    padding-top: 20px;
+  }
+
+  .revelacion::before {
+    content: '';
+    position: absolute;
+    inset: 0 0 auto 0;
+    border-top: 2px dashed var(--linea);
+  }
+
+  .veredicto {
+    margin: 0 0 4px;
+    font-family: var(--fuente-titulo);
+    font-size: var(--t-xl);
+    font-weight: 800;
+    line-height: 1.2;
+  }
+
+  .veredicto.ok {
+    color: var(--acierto);
+  }
+
+  .veredicto.ko {
+    color: var(--fallo);
+  }
+
+  .fuente {
+    margin: 0 0 8px;
+    color: var(--tinta-suave);
+  }
+
+  .fuente :global(a) {
+    color: var(--tinta);
+    font-weight: 700;
+  }
+
+  .pareja {
+    margin: 12px 0 0;
+    padding: 10px 14px;
+    background: color-mix(in srgb, var(--mostaza) 22%, var(--papeleta));
+    border-radius: var(--radio);
+  }
+
+  .revelacion .boton-principal {
+    margin-top: 16px;
+    width: 100%;
+  }
+
+  /* Escrutinio */
+  .resultado {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    margin-bottom: 16px;
+  }
+
+  .puntuacion {
+    margin: 0;
+    font-family: var(--fuente-titulo);
+    font-size: var(--t-score);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .de {
+    font-size: var(--t-2xl);
+    color: var(--tinta-suave);
+    font-weight: 700;
+  }
+
+  .sello-final {
+    position: static;
+    font-size: var(--t-md);
+    transform: rotate(-6deg) scale(1.6);
+  }
+
+  .progreso-final {
+    margin-bottom: 16px;
+  }
+
+  .progreso-final :global(li) {
+    width: 26px;
+    height: 18px;
+  }
+
+  .comentario {
+    margin: 0 0 20px;
+    font-size: var(--t-lg);
+    line-height: 1.4;
+    text-wrap: pretty;
+  }
+
+  .acciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .final .aviso {
+    margin: 12px 0 0;
+  }
+
+  .repaso {
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 2px dashed var(--linea);
+  }
+
+  .repaso summary {
+    cursor: pointer;
+    font-weight: 700;
+    border-radius: 4px;
+  }
+
+  .resumen {
+    margin: 16px 0 0;
+    padding-left: 24px;
+    display: grid;
+    gap: 14px;
+  }
+
+  .resumen :global(li::marker) {
+    font-family: var(--fuente-titulo);
+    font-weight: 700;
+    color: var(--tinta-suave);
+  }
+
+  .resumen :global(.resumen-frase) {
+    display: block;
+    font-family: var(--fuente-titulo);
+    line-height: 1.4;
+  }
+
+  .resumen :global(.resumen-partido) {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 2px;
+    font-size: var(--t-sm);
+    font-weight: 700;
+  }
+
+  .resumen :global(li.ok .resumen-partido) {
+    color: var(--acierto);
+  }
+
+  .resumen :global(li.ko .resumen-partido) {
+    color: var(--fallo);
+  }
+
+  .pie {
+    margin-top: 40px;
+    padding-top: 16px;
+    border-top: 1px dashed var(--linea);
+    color: var(--tinta-suave);
+    font-size: var(--t-xs);
+  }
+
+  .pie p {
+    margin: 0 0 8px;
+    max-width: 68ch;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .papeleta.entra,
+    .sello.visible {
+      animation: none;
+    }
+    .sello.visible {
+      opacity: 1;
+      transform: rotate(-6deg);
+    }
+    .sobre,
+    .boton-principal,
+    .boton-secundario {
+      transition: none;
+    }
+  }
+</style>

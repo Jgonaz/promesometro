@@ -1,0 +1,35 @@
+# build output
+dist/
+# generated types
+.astro/
+
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+
+# environment variables
+.env
+.env.production
+
+# macOS-specific files
+.DS_Store
+
+# jetbrains setting folder
+.idea/
+
+# Programas electorales originales: pesan mucho y no se redistribuyen.
+# Sus URL oficiales están en data/programas/fuentes.json.
+data/programas/*.pdf
+data/texto/
+
+# Historial local de conversaciones con agentes.
+.agent/history/
+
+# Impeccable: sesiones locales del modo live.
+.impeccable/live/

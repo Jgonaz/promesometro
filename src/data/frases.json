@@ -1,0 +1,642 @@
+[
+  {
+    "id": "psoe-02",
+    "partido": "PSOE",
+    "paginaPdf": 15,
+    "texto": "impulsaremos un supervisor independiente de las cargas administrativas que evalúe el impacto regulatorio de nuevas normas, identifique duplicidades y contribuya a simplificar la relación de ciudadanos y empresas con las administraciones.",
+    "tema": "economía",
+    "ambiguedad": 5
+  },
+  {
+    "id": "psoe-03",
+    "partido": "PSOE",
+    "paginaPdf": 39,
+    "texto": "Autoridad de Defensa del Cliente Financiero: Los ciudadanos podrán presentar reclamaciones en el ámbito bancario, de seguros y de inversión financiera ante un único organismo, que las atenderá de manera gratuita y en un plazo máximo de 90 días.",
+    "tema": "consumo",
+    "ambiguedad": 4
+  },
+  {
+    "id": "psoe-04",
+    "partido": "PSOE",
+    "paginaPdf": 42,
+    "texto": "Avanzar en la protección social de los becarios. Reconoceremos su derecho a la protección por desempleo, tanto en las prácticas curriculares como en las extracurriculares.",
+    "tema": "trabajo",
+    "ambiguedad": 4
+  },
+  {
+    "id": "psoe-05",
+    "partido": "PSOE",
+    "paginaPdf": 40,
+    "texto": "Crear una situación especial de incapacidad temporal para personas trabajadoras con procesos oncológicos, con una prestación del 75 % de la base reguladora desde el inicio de la baja",
+    "tema": "seguridad social",
+    "ambiguedad": 4
+  },
+  {
+    "id": "psoe-06",
+    "partido": "PSOE",
+    "paginaPdf": 43,
+    "texto": "poner en marcha el Plan Nacional de Relevo Generacional, que pondrá en contacto negocios cuyos titulares estén próximos a jubilarse con posibles sucesores.",
+    "tema": "empleo",
+    "ambiguedad": 5
+  },
+  {
+    "id": "psoe-07",
+    "partido": "PSOE",
+    "paginaPdf": 49,
+    "texto": "Convertiremos el mínimo exento por descendiente en el IRPF en un crédito fiscal reembolsable, lo que permitirá que se beneficien de él 2 millones de hogares de ingresos medios y bajos que no tienen obligación de presentar declaración o que carecen de cuota para beneficiarse del mínimo actual.",
+    "tema": "fiscalidad",
+    "ambiguedad": 4
+  },
+  {
+    "id": "psoe-08",
+    "partido": "PSOE",
+    "paginaPdf": 51,
+    "texto": "Garantizar el apoyo integral a las personas con celiaquía, estableciendo ayudas para compensar el sobrecoste de los productos sin gluten y actualizando los protocolos diagnósticos.",
+    "tema": "sanidad",
+    "ambiguedad": 5
+  },
+  {
+    "id": "psoe-11",
+    "partido": "PSOE",
+    "paginaPdf": 58,
+    "texto": "Proteger el derecho a la salud de los pacientes con electrodependencia, creando un registro estatal, garantizando una respuesta adecuada a sus necesidades y compensando el sobrecoste energético derivado del uso de equipos médicos y soportes vitales.",
+    "tema": "sanidad",
+    "ambiguedad": 5
+  },
+  {
+    "id": "psoe-12",
+    "partido": "PSOE",
+    "paginaPdf": 58,
+    "texto": "Ayudas para instalar ascensores y eliminar barreras, para que ninguna persona mayor o con movilidad reducida se quede atrapada en su casa. A partir de los 80 años, una visita periódica a domicilio de enfermería o trabajo social para detectar a tiempo la fragilidad y la soledad.",
+    "tema": "mayores",
+    "ambiguedad": 5
+  },
+  {
+    "id": "psoe-14",
+    "partido": "PSOE",
+    "paginaPdf": 69,
+    "texto": "Promover una política nacional de bancos de tierras, facilitando el acceso de jóvenes y nuevos agricultores a explotaciones viables y sostenibles",
+    "tema": "rural",
+    "ambiguedad": 4
+  },
+  {
+    "id": "psoe-15",
+    "partido": "PSOE",
+    "paginaPdf": 70,
+    "texto": "Defender la calidad de los productos y la gastronomía española, dentro y fuera de nuestras fronteras. Fomentaremos los canales cortos de comercialización, la venta de proximidad y la proyección de nuestra gastronomía como motor de desarrollo económico y turístico.",
+    "tema": "agroalimentación",
+    "ambiguedad": 5
+  },
+  {
+    "id": "psoe-17",
+    "partido": "PSOE",
+    "paginaPdf": 67,
+    "texto": "Crear un Cuerpo Facultativo de Técnicos de Protección Civil y profesionalizar los servicios de gestión de emergencias mediante equipos permanentes, formación continua, empleo estable y condiciones laborales dignas.",
+    "tema": "emergencias",
+    "ambiguedad": 4
+  },
+  {
+    "id": "psoe-18",
+    "partido": "PSOE",
+    "paginaPdf": 99,
+    "texto": "Aprobar un Estatuto Básico de los bomberos (SPEIS) con un marco común de derechos, medios, formación y salud laboral, incluida la segunda actividad.",
+    "tema": "seguridad",
+    "ambiguedad": 5
+  },
+  {
+    "id": "psoe-20",
+    "partido": "PSOE",
+    "paginaPdf": 101,
+    "texto": "Acompañar todas las notificaciones electrónicas de un aviso por SMS o correo electrónico, para que nadie pierda una prestación o un plazo por no haberla visto.",
+    "tema": "administración",
+    "ambiguedad": 5
+  },
+  {
+    "id": "psoe-22",
+    "partido": "PSOE",
+    "paginaPdf": 103,
+    "texto": "Abrir la Biblioteca Nacional a toda la ciudadanía, permitir el alta en línea en bibliotecas, archivos y centros de investigación del Estado y digitalizar los archivos históricos.",
+    "tema": "cultura",
+    "ambiguedad": 5
+  },
+  {
+    "id": "psoe-24",
+    "partido": "PSOE",
+    "paginaPdf": 112,
+    "texto": "Reformar la legislación electoral para simplificar y facilitar el voto exterior, reduciendo plazos, eliminando obstáculos burocráticos y garantizando una mayor participación de la ciudadanía española en el exterior.",
+    "tema": "democracia",
+    "ambiguedad": 5
+  },
+  {
+    "id": "psoe-25",
+    "partido": "PSOE",
+    "paginaPdf": 113,
+    "texto": "Reforzar las capacidades de vigilancia marítima y protección de los espacios de soberanía, mejorando los medios y recursos destinados a la defensa de nuestros intereses estratégicos.",
+    "tema": "defensa",
+    "ambiguedad": 5
+  },
+  {
+    "id": "psoe-26",
+    "partido": "PSOE",
+    "paginaPdf": 16,
+    "texto": "Asimismo, impulsaremos el sector espacial español mediante una estrategia de capacidades tecnológicas e industriales y la aprobación de la primera Ley de Actividades Espaciales.",
+    "tema": "tecnología",
+    "ambiguedad": 5
+  },
+  {
+    "id": "psoe-27",
+    "partido": "PSOE",
+    "paginaPdf": 31,
+    "texto": "Crear la garantía pública de acceso al alquiler para jóvenes, en forma de seguros de impago.",
+    "tema": "vivienda",
+    "ambiguedad": 5
+  },
+  {
+    "id": "psoe-28",
+    "partido": "PSOE",
+    "paginaPdf": 38,
+    "texto": "Integrar el bono social eléctrico, el térmico, las bonificaciones de transporte y las tarifas sociales de telecomunicaciones y agua (estas últimas por convenio) en un único derecho que se reconozca de oficio a partir de los datos fiscales y de Seguridad Social, sin necesidad de solicitarlo.",
+    "tema": "coste de vida",
+    "ambiguedad": 4
+  },
+  {
+    "id": "pp-01",
+    "partido": "PP",
+    "paginaPdf": 14,
+    "texto": "Garantizaremos atención presencial, telefónica y digital. La cita previa servirá para organizar la atención, no para impedirla.",
+    "tema": "administración",
+    "ambiguedad": 4
+  },
+  {
+    "id": "pp-02",
+    "partido": "PP",
+    "paginaPdf": 14,
+    "texto": "Cuando la Administración ya tenga los datos, las ayudas y prestaciones a las que un ciudadano tenga derecho se le reconocerán sin que tenga que pedirlas.",
+    "tema": "servicios sociales",
+    "ambiguedad": 5
+  },
+  {
+    "id": "pp-03",
+    "partido": "PP",
+    "paginaPdf": 17,
+    "texto": "Aprobaremos una ley integral contra la trata de seres humanos para proteger a las víctimas y perseguir a las redes que se lucran con ellas.",
+    "tema": "igualdad",
+    "ambiguedad": 4
+  },
+  {
+    "id": "pp-07",
+    "partido": "PP",
+    "paginaPdf": 29,
+    "texto": "Sustituiremos la Ley de Secretos Oficiales de 1968 por una nueva regulación con criterios claros para clasificar información, plazos máximos de desclasificación y control judicial efectivo.",
+    "tema": "transparencia",
+    "ambiguedad": 5
+  },
+  {
+    "id": "pp-08",
+    "partido": "PP",
+    "paginaPdf": 29,
+    "texto": "Regularemos la actividad de los lobbies ante el Gobierno y las Cortes. Crearemos un Registro Nacional público y obligatorio, dependiente de la Autoridad Independiente de Transparencia, en el que conste a quién representa cada grupo de interés.",
+    "tema": "transparencia",
+    "ambiguedad": 4
+  },
+  {
+    "id": "pp-10",
+    "partido": "PP",
+    "paginaPdf": 31,
+    "texto": "En coordinación con las Comunidades Autónomas, garantizaremos que la historia clínica y la historia social puedan consultarse desde cualquier servicio asistencial, con todas las garantías de privacidad y seguridad.",
+    "tema": "sanidad",
+    "ambiguedad": 4
+  },
+  {
+    "id": "pp-11",
+    "partido": "PP",
+    "paginaPdf": 34,
+    "texto": "Destinaremos ayudas directas para los municipios de menos de 250 habitantes, para sostener sus servicios básicos, mantener sus infraestructuras y acceder a proyectos europeos y subvenciones.",
+    "tema": "rural",
+    "ambiguedad": 4
+  },
+  {
+    "id": "pp-14",
+    "partido": "PP",
+    "paginaPdf": 36,
+    "texto": "Habilitaremos carriles de adelantamiento seguro donde sean necesarios y ampliaremos las áreas de descanso y los aparcamientos seguros para transportistas.",
+    "tema": "transporte",
+    "ambiguedad": 4
+  },
+  {
+    "id": "pp-18",
+    "partido": "PP",
+    "paginaPdf": 43,
+    "texto": "Refundiremos las deducciones familiares del IRPF en una sola, reembolsable, con un único trámite y abono mensual. Ampliaremos su acceso para que llegue a todas las familias, también a las que no tengan cuota suficiente en el IRPF.",
+    "tema": "familia",
+    "ambiguedad": 5
+  },
+  {
+    "id": "pp-19",
+    "partido": "PP",
+    "paginaPdf": 43,
+    "texto": "Permitiremos la declaración conjunta de las parejas de hecho y adaptaremos la aplicación de los mínimos familiares a su realidad.",
+    "tema": "fiscalidad",
+    "ambiguedad": 5
+  },
+  {
+    "id": "pp-22",
+    "partido": "PP",
+    "paginaPdf": 45,
+    "texto": "Reforzaremos la prevención y garantizaremos el descanso digital en periodo nocturno, los límites al scroll infinito y la posibilidad de fijar tiempos máximos de uso, así como el etiquetado obligatorio de contenidos.",
+    "tema": "tecnología",
+    "ambiguedad": 5
+  },
+  {
+    "id": "pp-23",
+    "partido": "PP",
+    "paginaPdf": 46,
+    "texto": "Las empresas que mantengan sus plantillas más estables que la media de su sector cotizarán menos por desempleo.",
+    "tema": "empleo",
+    "ambiguedad": 4
+  },
+  {
+    "id": "pp-24",
+    "partido": "PP",
+    "paginaPdf": 47,
+    "texto": "Quien cobre el salario mínimo no pagará IRPF: por ley, el umbral subirá automáticamente cada vez que suba el SMI, para que ningún Gobierno pueda volver a cobrar impuestos a quien menos gana por el simple hecho de no tocar una cifra.",
+    "tema": "fiscalidad",
+    "ambiguedad": 4
+  },
+  {
+    "id": "pp-25",
+    "partido": "PP",
+    "paginaPdf": 47,
+    "texto": "Mientras persista la actual crisis de inflación y de poder adquisitivo, aplicaremos un IVA del 0% a los alimentos básicos, incluidos la carne, el pescado y las conservas.",
+    "tema": "economía",
+    "ambiguedad": 4
+  },
+  {
+    "id": "pp-26",
+    "partido": "PP",
+    "paginaPdf": 49,
+    "texto": "Permitiremos repartir entre varios años, a efectos fiscales, los ingresos de una buena cosecha, una venta de madera o una campaña pesquera, y crear una reserva en los años buenos para los malos.",
+    "tema": "rural",
+    "ambiguedad": 4
+  },
+  {
+    "id": "pp-27",
+    "partido": "PP",
+    "paginaPdf": 50,
+    "texto": "Agricultores, ganaderos, pescadores y titulares forestales tendrán ingresos extra por beneficios ambientales (carbono, agua, biodiversidad) con un sistema sencillo, verificable y compatible con el mercado europeo de emisiones.",
+    "tema": "medio ambiente",
+    "ambiguedad": 5
+  },
+  {
+    "id": "pp-28",
+    "partido": "PP",
+    "paginaPdf": 52,
+    "texto": "Quien acose tendrá una sanción con contenido educativo y reparador, y la víctima no tendrá que cambiar de centro por haber sido acosada.",
+    "tema": "educación",
+    "ambiguedad": 5
+  },
+  {
+    "id": "pp-29",
+    "partido": "PP",
+    "paginaPdf": 52,
+    "texto": "La beca será un derecho por ley para quien la necesite y apruebe, con los mismos umbrales en la universidad que en la FP. Quien elija un ciclo de FP de alta demanda de empleo no pagará matrícula.",
+    "tema": "educación",
+    "ambiguedad": 4
+  },
+  {
+    "id": "pp-30",
+    "partido": "PP",
+    "paginaPdf": 53,
+    "texto": "Aumentaremos la protección laboral de las personas con enfermedades graves, especialmente de los pacientes oncológicos, durante y después del tratamiento.",
+    "tema": "sanidad",
+    "ambiguedad": 5
+  },
+  {
+    "id": "pp-31",
+    "partido": "PP",
+    "paginaPdf": 54,
+    "texto": "También implantaremos modelos de contrato para electricidad, agua y gas, con condiciones comprensibles y un formato común que permita comparar ofertas. Quien se quede sin luz por un fallo del sistema recibirá una compensación automática, sin tener que reclamarla.",
+    "tema": "consumo",
+    "ambiguedad": 5
+  },
+  {
+    "id": "vox-01",
+    "partido": "Vox",
+    "paginaPdf": 9,
+    "texto": "Apoyo a los trabajadores autónomos. Cuota de cero euros si los ingresos no llegan al Salario Mínimo Interprofesional y, superado dicho umbral, una cuota progresiva desde los 50 euros en función de sus ingresos.",
+    "tema": "economía",
+    "ambiguedad": 4
+  },
+  {
+    "id": "vox-02",
+    "partido": "Vox",
+    "paginaPdf": 10,
+    "texto": "Actualizar el complemento de insularidad para el personal en activo del sector público estatal en los territorios insulares con el fin de adaptarlo al coste de vida real.",
+    "tema": "empleo público",
+    "ambiguedad": 5
+  },
+  {
+    "id": "vox-05",
+    "partido": "Vox",
+    "paginaPdf": 11,
+    "texto": "Eliminar el tope a la inversión en redes para que España tenga la red eléctrica que necesita para crecer, contratar y construir vivienda. Además, las autorizaciones para construir líneas, subestaciones y puntos de conexión a la red se resolverán en plazos máximos cerrados y con silencio administrativo positivo.",
+    "tema": "energía",
+    "ambiguedad": 4
+  },
+  {
+    "id": "vox-09",
+    "partido": "Vox",
+    "paginaPdf": 25,
+    "texto": "Fiscalidad agravada y disuasoria para compradores no comunitarios y operaciones especulativas de fondos o sociedades. La recaudación resultante se destinará a bonificaciones para la compra de vivienda y a la construcción de vivienda protegida.",
+    "tema": "vivienda",
+    "ambiguedad": 5
+  },
+  {
+    "id": "vox-10",
+    "partido": "Vox",
+    "paginaPdf": 27,
+    "texto": "Instauración de la ventanilla y dato único en la Administración. Creación de un expediente digital único y centralizado que unifique la gestión de trámites para ciudadanos y empresas, obligando a las diferentes administraciones a compartir los datos entre sí.",
+    "tema": "administración",
+    "ambiguedad": 4
+  },
+  {
+    "id": "vox-11",
+    "partido": "Vox",
+    "paginaPdf": 27,
+    "texto": "Fin de la cita previa. Derecho a ser atendido presencialmente en cualquier oficina pública de forma inmediata sin necesidad de solicitar turno por internet.",
+    "tema": "administración",
+    "ambiguedad": 4
+  },
+  {
+    "id": "vox-13",
+    "partido": "Vox",
+    "paginaPdf": 28,
+    "texto": "Cualquier empresa, profesional o producto que ya opere legalmente en una Comunidad Autónoma podrá hacerlo en el resto del territorio nacional sin trámites, licencias ni registros adicionales.",
+    "tema": "unidad de mercado",
+    "ambiguedad": 4
+  },
+  {
+    "id": "vox-16",
+    "partido": "Vox",
+    "paginaPdf": 34,
+    "texto": "Promover la revisión de la Política Pesquera Común y de las cuotas y restricciones que perjudican injustificadamente a nuestros pescadores, reforzando la competitividad, la modernización de la flota, el relevo generacional y la continuidad de las explotaciones pesqueras familiares y la rentabilidad de la pesca española.",
+    "tema": "pesca",
+    "ambiguedad": 4
+  },
+  {
+    "id": "vox-19",
+    "partido": "Vox",
+    "paginaPdf": 35,
+    "texto": "Favorecer el relevo generacional y la continuidad de las explotaciones familiares en el mundo rural apoyando la incorporación de los jóvenes al sector primario y a las cooperativas agroalimentarias. Impulso de la Formación Profesional en el sector primario a través de programas públicos y concertados.",
+    "tema": "mundo rural",
+    "ambiguedad": 5
+  },
+  {
+    "id": "vox-20",
+    "partido": "Vox",
+    "paginaPdf": 37,
+    "texto": "tarjeta sanitaria única con historia clínica compartida en todo el territorio nacional.",
+    "tema": "sanidad",
+    "ambiguedad": 4
+  },
+  {
+    "id": "vox-22",
+    "partido": "Vox",
+    "paginaPdf": 37,
+    "texto": "Fomento de la colaboración público-privada cuando ayude efectivamente a reducir demoras, con transparencia, evaluación de calidad y control del gasto. Publicación de indicadores comparables y periódicos de listas de espera, actividad y resultados.",
+    "tema": "sanidad",
+    "ambiguedad": 4
+  },
+  {
+    "id": "vox-23",
+    "partido": "Vox",
+    "paginaPdf": 37,
+    "texto": "Incentivos económicos y profesionales para plazas rurales o de difícil cobertura; impulso […] de contratos estables y contratos puente tras la residencia",
+    "tema": "sanidad",
+    "ambiguedad": 5
+  },
+  {
+    "id": "vox-24",
+    "partido": "Vox",
+    "paginaPdf": 38,
+    "texto": "Reforzar la prevención y el diagnóstico precoz del cáncer de mama y de los cánceres ginecológicos, mejorar el diagnóstico y tratamiento de las enfermedades que afectan especialmente a las mujeres y garantizar una atención adecuada durante el embarazo, parto y posparto",
+    "tema": "sanidad",
+    "ambiguedad": 5
+  },
+  {
+    "id": "vox-25",
+    "partido": "Vox",
+    "paginaPdf": 38,
+    "texto": "Promover la investigación médica con independencia de la rentabilidad comercial (enfermedades raras, enfermedades crónicas, y neurodegenerativas). Refuerzo de la Estrategia Nacional del Cáncer y creación de una Red de Centros Nacionales de Oncología.",
+    "tema": "sanidad",
+    "ambiguedad": 5
+  },
+  {
+    "id": "vox-27",
+    "partido": "Vox",
+    "paginaPdf": 43,
+    "texto": "Reducción de impuestos para el arte y los espectáculos en vivo. Nueva Ley de Mecenazgo para elevar las deducciones del IRPF.",
+    "tema": "cultura",
+    "ambiguedad": 4
+  },
+  {
+    "id": "vox-28",
+    "partido": "Vox",
+    "paginaPdf": 46,
+    "texto": "Protección integral para los funcionarios de prisiones. Plantillas adecuadamente dimensionadas, equiparación salarial y sueldos dignos, medios materiales y formación frente a los módulos conflictivos y reconocimiento como profesión de riesgo.",
+    "tema": "seguridad",
+    "ambiguedad": 4
+  },
+  {
+    "id": "vox-29",
+    "partido": "Vox",
+    "paginaPdf": 52,
+    "texto": "Reforzar el presupuesto en dependencia, las ayudas para el cuidado en el hogar, el apoyo a familiares a cargo. Aumento de los programas de atención a la soledad no deseada y de las plazas en residencias.",
+    "tema": "dependencia",
+    "ambiguedad": 5
+  },
+  {
+    "id": "vox-30",
+    "partido": "Vox",
+    "paginaPdf": 52,
+    "texto": "Combatir la brecha maternal facilitando la formación, permanencia, promoción y reincorporación al trabajo de las madres que han interrumpido sus carreras por la maternidad o cuidado de familiares y desean retomarla.",
+    "tema": "conciliación",
+    "ambiguedad": 5
+  },
+  {
+    "id": "vox-32",
+    "partido": "Vox",
+    "paginaPdf": 57,
+    "texto": "Reforzaremos la responsabilidad patrimonial personal de los cargos públicos condenados por delitos de corrupción, garantizando que respondan con todos sus bienes presentes y futuros por la totalidad del perjuicio económico causado a las arcas públicas",
+    "tema": "corrupción",
+    "ambiguedad": 5
+  },
+  {
+    "id": "vox-33",
+    "partido": "Vox",
+    "paginaPdf": 61,
+    "texto": "Prioridad a la seguridad ferroviaria, al mantenimiento de una red abandonada e infradotada y a los servicios de Cercanías y Media Distancia. Auditoría del estado de la red. Modernización y electrificación de las líneas convencionales para conectar también las ciudades pequeñas y la España rural.",
+    "tema": "transporte",
+    "ambiguedad": 5
+  },
+  {
+    "id": "fa-01",
+    "partido": "Frente Amplio",
+    "paginaPdf": 18,
+    "texto": "En el marco del Impuesto sobre Transmisiones Patrimoniales (ITP), se fijará la exención total del tributo para la adquisición de la primera vivienda habitual de familias e individuos",
+    "tema": "vivienda",
+    "ambiguedad": 5
+  },
+  {
+    "id": "fa-02",
+    "partido": "Frente Amplio",
+    "paginaPdf": 17,
+    "texto": "Ordenaremos una auditoría estatal de accesibilidad en el 100 % de los edificios residenciales colectivos para financiar la instalación de ascensores y rampas en fincas con personas mayores o con movilidad reducida.",
+    "tema": "vivienda",
+    "ambiguedad": 4
+  },
+  {
+    "id": "fa-03",
+    "partido": "Frente Amplio",
+    "paginaPdf": 27,
+    "texto": "Salud auditiva: Financiación pública e inclusión de los audífonos en la cartera común de servicios para toda la población que los necesite, con programas prioritarios de ayudas para mayores de 65 años y personas con discapacidad.",
+    "tema": "sanidad",
+    "ambiguedad": 4
+  },
+  {
+    "id": "fa-05",
+    "partido": "Frente Amplio",
+    "paginaPdf": 33,
+    "texto": "Plan Estatal de Desburocratización Docente: Simplificaremos informes, programaciones y evaluaciones, unificaremos plataformas digitales escolares y eliminaremos trámites duplicados.",
+    "tema": "educación",
+    "ambiguedad": 5
+  },
+  {
+    "id": "fa-06",
+    "partido": "Frente Amplio",
+    "paginaPdf": 69,
+    "texto": "Aprobaremos una regulación estatal con estándares mínimos de climatización, sombra, ventilación y acceso al agua en centros educativos […] con el objetivo de mantener las aulas en un rango de 17 °C a 27 °C y evitando la suspensión de clases para no perjudicar la conciliación.",
+    "tema": "educación",
+    "ambiguedad": 4
+  },
+  {
+    "id": "fa-07",
+    "partido": "Frente Amplio",
+    "paginaPdf": 36,
+    "texto": "Obligatoriedad del establecimiento de bibliotecas públicas en municipios de más de 2.000 personas. Modificaremos la Ley Reguladora de Bases del Régimen Local para reducirlo de 5.000 a 2.000.",
+    "tema": "cultura",
+    "ambiguedad": 4
+  },
+  {
+    "id": "fa-08",
+    "partido": "Frente Amplio",
+    "paginaPdf": 36,
+    "texto": "Estableceremos un coste mínimo de envío obligatorio en la venta de libros a distancia para evitar que las grandes plataformas utilicen el envío gratuito como ventaja desleal frente a las librerías independientes.",
+    "tema": "cultura",
+    "ambiguedad": 4
+  },
+  {
+    "id": "fa-09",
+    "partido": "Frente Amplio",
+    "paginaPdf": 47,
+    "texto": "Bajaremos el IVA de bienes y servicios básicos de consumo general. Las peluquerías y los servicios veterinarios pasarán del tipo general al reducido, los pañales del reducido al superreducido y los productos sin gluten tendrán IVA cero para compensar su mayor precio.",
+    "tema": "fiscalidad",
+    "ambiguedad": 5
+  },
+  {
+    "id": "fa-10",
+    "partido": "Frente Amplio",
+    "paginaPdf": 54,
+    "texto": "Estableceremos el día 25 de cada mes como fecha de abono de las prestaciones y los subsidios por desempleo, equiparándola a la fecha habitual de pago de las pensiones.",
+    "tema": "empleo",
+    "ambiguedad": 5
+  },
+  {
+    "id": "fa-11",
+    "partido": "Frente Amplio",
+    "paginaPdf": 25,
+    "texto": "Ampliaremos el permiso retribuido por fallecimiento del cónyuge, pareja de hecho o familiares hasta segundo grado de consanguinidad de los dos días actuales a diez días hábiles, que podrán disfrutarse de forma continua o repartidos en las cuatro semanas siguientes al fallecimiento.",
+    "tema": "conciliación",
+    "ambiguedad": 4
+  },
+  {
+    "id": "fa-13",
+    "partido": "Frente Amplio",
+    "paginaPdf": 92,
+    "texto": "Transpondremos de inmediato la directiva europea del IVA franquiciado para autónomos y pequeñas empresas. Aquellos que facturen menos de 85.000 euros anuales quedarán exentos de liquidaciones periódicas y solo tendrán que presentar una declaración informativa anual.",
+    "tema": "autónomos",
+    "ambiguedad": 5
+  },
+  {
+    "id": "fa-14",
+    "partido": "Frente Amplio",
+    "paginaPdf": 92,
+    "texto": "Aplicaremos un régimen sancionador efectivo para hacer cumplir la ley de morosidad, erradicando los retrasos en los pagos por parte de grandes corporaciones y administraciones públicas que merman la liquidez de pymes y autónomos.",
+    "tema": "pymes",
+    "ambiguedad": 5
+  },
+  {
+    "id": "fa-17",
+    "partido": "Frente Amplio",
+    "paginaPdf": 89,
+    "texto": "Priorizaremos los productos agroalimentarios locales y estatales. Apoyaremos la venta de proximidad y evitaremos importar productos que ya se cultivan en España solo porque sean más baratos, teniendo en cuenta sus efectos ambientales y sociales.",
+    "tema": "agricultura",
+    "ambiguedad": 5
+  },
+  {
+    "id": "fa-18",
+    "partido": "Frente Amplio",
+    "paginaPdf": 98,
+    "texto": "Haremos atractivos los puestos de los servicios estatales en las islas, reforzando medidas como el plus de residencia, para compensar el sobrecoste de la vida y de la vivienda y evitar que queden vacantes.",
+    "tema": "insularidad",
+    "ambiguedad": 5
+  },
+  {
+    "id": "fa-22",
+    "partido": "Frente Amplio",
+    "paginaPdf": 120,
+    "texto": "Reconoceremos el derecho a utilizar seudónimos legítimos en el entorno digital y a acreditar la mayoría de edad o la condición de persona real sin necesidad de revelar la identidad civil. La identificación real solo podrá realizarse mediante orden judicial explícita dentro de investigaciones penales.",
+    "tema": "tecnología",
+    "ambiguedad": 5
+  },
+  {
+    "id": "fa-23",
+    "partido": "Frente Amplio",
+    "paginaPdf": 121,
+    "texto": "Prohibiremos las cajas de recompensa y mecánicas de juego de azar encubiertas en videojuegos dirigidos o al alcance de menores, fijando sanciones graves para empresas infractoras.",
+    "tema": "consumo",
+    "ambiguedad": 4
+  },
+  {
+    "id": "fa-24",
+    "partido": "Frente Amplio",
+    "paginaPdf": 142,
+    "texto": "Eliminaremos la atenuante de dilaciones indebidas en los casos de corrupción para evitar el alargamiento interesado del procedimiento judicial con el objetivo de reducir las condenas.",
+    "tema": "justicia",
+    "ambiguedad": 5
+  },
+  {
+    "id": "fa-25",
+    "partido": "Frente Amplio",
+    "paginaPdf": 149,
+    "texto": "Acabaremos con el papel en los juzgados y con los sistemas informáticos incomunicados mediante una ley estatal de justicia digital con plazos obligatorios y financiación finalista para las comunidades autónomas. El Estado fijará estándares comunes y obligatorios de interoperabilidad, de forma que un expediente pase de un juzgado a otro en un clic.",
+    "tema": "justicia",
+    "ambiguedad": 5
+  },
+  {
+    "id": "fa-26",
+    "partido": "Frente Amplio",
+    "paginaPdf": 145,
+    "texto": "Reconocimiento legal para la Guardia Civil y la Policía Nacional del carácter de profesión de riesgo, con el mismo modelo que las policías autonómicas y la aplicación de coeficientes reductores relacionados con los años de servicio para acceder a la jubilación anticipada.",
+    "tema": "seguridad",
+    "ambiguedad": 5
+  },
+  {
+    "id": "fa-27",
+    "partido": "Frente Amplio",
+    "paginaPdf": 141,
+    "texto": "Rebajaremos a la mitad las firmas necesarias para la iniciativa legislativa popular. Supondrá pasar de las 500.000 en la actualidad a 250.000",
+    "tema": "democracia",
+    "ambiguedad": 4
+  }
+]

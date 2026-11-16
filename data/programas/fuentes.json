@@ -1,0 +1,30 @@
+{
+  "eleccion": "Elecciones generales del 29 de noviembre de 2026",
+  "programas": [
+    {
+      "partido": "PSOE",
+      "archivo": "psoe-2026.pdf",
+      "url": "https://www.psoe.es/media-content/2026/11/PROGRAMAPSOE29N26.pdf",
+      "nota": "Descargado a mano: la web bloquea descargas automáticas."
+    },
+    {
+      "partido": "PP",
+      "archivo": "pp-2026.pdf",
+      "titulo": "Reconstrucción nacional",
+      "url": "https://www.pp.es/wp-content/uploads/2026/11/PROGRAMA-ELECTORAL-PP-2026-RECONSTRUCCION-NACIONAL.pdf"
+    },
+    {
+      "partido": "Vox",
+      "archivo": "vox-2026.pdf",
+      "titulo": "Es sentido común",
+      "url": "https://www.voxespana.es/wp-content/uploads/2026/11/Programa-completo-A5-1.pdf",
+      "nota": "También publicado en votasentidocomun.es con un tamaño ligeramente distinto; pendiente de comparar."
+    },
+    {
+      "partido": "Frente Amplio",
+      "archivo": "frente-amplio-2026.pdf",
+      "titulo": "Un programa como una casa",
+      "url": "https://frenteamplio.info/pdf/ProgramaFrenteAmplio.pdf"
+    }
+  ]
+}

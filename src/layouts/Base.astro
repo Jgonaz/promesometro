@@ -1,0 +1,143 @@
+---
+interface Props {
+  title: string;
+  description: string;
+}
+const { title, description } = Astro.props;
+const og = new URL('/img/og.jpg', Astro.site ?? Astro.url).href;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content={og} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#f4efe3" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#141a2b" media="(prefers-color-scheme: dark)" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500..900&family=Public+Sans:wght@400;700&display=swap"
+    />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --papel: #f4efe3;
+    --papel-2: #ebe3d1;
+    --papeleta: #fffdf8;
+    --tinta: #1f2a44;
+    --tinta-suave: #5b6275;
+    --linea: #d8cdb4;
+    --lacre: #c8452c;
+    --mostaza: #e0a526;
+    /* Acierto en tinta y fallo en lacre: sin verdes, que evocarían a un partido. */
+    --acierto: #1f2a44;
+    --acierto-fondo: #e6e8ee;
+    --fallo: #a8361f;
+    --fallo-fondo: #fbe5df;
+    --chip-logo: #ffffff;
+    --sombra: 0 2px 4px -2px rgb(31 42 68 / 0.18);
+    --radio: 6px;
+    /* Escala tipográfica: 8 pasos, el menor de 13 px. */
+    --t-xs: 0.8125rem;
+    --t-sm: 0.875rem;
+    --t-md: 1rem;
+    --t-lg: 1.25rem;
+    --t-xl: 1.5rem;
+    --t-2xl: 2rem;
+    --t-display: clamp(2.5rem, 9vw, 3.5rem);
+    --t-score: 5rem;
+    --fuente: 'Public Sans', ui-sans-serif, system-ui, sans-serif;
+    --fuente-titulo: 'Fraunces', ui-serif, Georgia, serif;
+    /* Grano de papel: ruido SVG muy tenue sobre el color de fondo. */
+    --grano: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.12 0 0 0 0 0.16 0 0 0 0 0.27 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    color-scheme: light dark;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --papel: #141a2b;
+      --papel-2: #1b2338;
+      --papeleta: #1f2840;
+      --tinta: #efe9da;
+      --tinta-suave: #a9afc0;
+      --linea: #34405e;
+      --lacre: #ff7a5c;
+      --mostaza: #f2bf4a;
+      --acierto: #efe9da;
+      --acierto-fondo: #2b3552;
+      --fallo: #ff8a6e;
+      --fallo-fondo: #43231e;
+      --chip-logo: #fbf8f0;
+      --sombra: 0 2px 4px -2px rgb(0 0 0 / 0.5);
+    }
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    accent-color: var(--lacre);
+  }
+
+  html,
+  body {
+    margin: 0;
+    background-color: var(--papel);
+    background-image: var(--grano);
+    color: var(--tinta);
+    font-family: var(--fuente);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a {
+    color: inherit;
+    text-decoration-color: var(--lacre);
+    text-underline-offset: 3px;
+  }
+
+  button {
+    font: inherit;
+    color: inherit;
+  }
+
+  ::selection {
+    background: var(--mostaza);
+    color: #1f2a44;
+  }
+
+  /* Solo para lectores de pantalla. */
+  .sr {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+  }
+</style>
