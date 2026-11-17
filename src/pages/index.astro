@@ -3,7 +3,6 @@ import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import cabecera from '../assets/cabecera.png';
 import frases from '../data/frases.json';
-import parejas from '../data/parejas.json';
 import fuentes from '../../data/programas/fuentes.json';
 
 // Orden alfabético fijo: no favorece a ningún partido por posición.
@@ -17,7 +16,7 @@ const PARTIDOS = [
 ].map((p) => ({ ...p, raiz: Math.sqrt(p.ar).toFixed(3) }));
 const RONDA = 10;
 const urls = Object.fromEntries(fuentes.programas.map((p) => [p.partido, p.url]));
-const datos = { frases, parejas, urls, partidos: PARTIDOS.map(({ nombre }) => ({ nombre })) };
+const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) => ({ nombre, logo, raiz })) };
 ---
 
 <Base
@@ -52,9 +51,9 @@ const datos = { frases, parejas, urls, partidos: PARTIDOS.map(({ nombre }) => ({
       <ol class="instrucciones">
         <li>Te enseñamos <strong>{RONDA} medidas</strong> copiadas literalmente de los programas de <strong>Frente Amplio, PP, PSOE y Vox</strong>.</li>
         <li>Mete cada una en el sobre del partido que creas que la propone.</li>
-        <li>Al votar verás la respuesta y la página exacta del programa.</li>
+        <li>Al votar verás la respuesta, la página exacta del programa y qué proponen los demás sobre lo mismo.</li>
       </ol>
-      <p class="aviso">Ojo: no son las medidas estrella. Son las que podrían ser de cualquiera.</p>
+      <p class="aviso">Unas se deducen pensando un poco. Otras te van a sorprender.</p>
       <div class="sobres-muestra" aria-hidden="true">
         {
           PARTIDOS.map((p) => (
@@ -81,6 +80,10 @@ const datos = { frases, parejas, urls, partidos: PARTIDOS.map(({ nombre }) => ({
           <span id="tema" class="papeleta-tema"></span>
         </div>
         <blockquote id="frase" class="frase" tabindex="-1"></blockquote>
+        <details id="explicacion" class="explicacion">
+          <summary>En otras palabras</summary>
+          <p id="explicacion-texto"></p>
+        </details>
         <div id="sello" class="sello" aria-hidden="true"></div>
       </article>
 
@@ -105,7 +108,10 @@ const datos = { frases, parejas, urls, partidos: PARTIDOS.map(({ nombre }) => ({
       <div id="revelacion" class="revelacion" aria-live="polite" hidden>
         <p id="veredicto" class="veredicto"></p>
         <p id="fuente" class="fuente"></p>
-        <p id="pareja" class="pareja" hidden></p>
+        <section class="comparativa" aria-labelledby="titulo-comparativa">
+          <h3 id="titulo-comparativa" class="comparativa-titulo">¿Y qué proponen los demás?</h3>
+          <ul id="comparativa" class="comparativa-lista"></ul>
+        </section>
         <button id="siguiente" class="boton-principal">Siguiente papeleta</button>
       </div>
     </section>
@@ -136,7 +142,8 @@ const datos = { frases, parejas, urls, partidos: PARTIDOS.map(({ nombre }) => ({
       <p>
         Todas las frases son citas literales de los programas oficiales de las elecciones generales del
         29 de noviembre de 2026; los recortes se marcan con «[…]». Cada respuesta enlaza a su página del
-        programa.
+        programa. Las explicaciones «En otras palabras» y los resúmenes de la comparativa son nuestros:
+        ante la duda, manda la cita.
       </p>
       <p>
         Proyecto independiente, sin relación con ningún partido. Los logotipos pertenecen a sus
@@ -148,23 +155,27 @@ const datos = { frases, parejas, urls, partidos: PARTIDOS.map(({ nombre }) => ({
   <script type="application/json" id="datos" set:html={JSON.stringify(datos)} />
 
   <script>
-    type Frase = { id: string; partido: string; paginaPdf: number; texto: string; tema: string };
+    // Sin medida sobre el asunto, resumen, texto y paginaPdf llegan a null.
+    type Comparacion = { partido: string; resumen: string | null; texto: string | null; paginaPdf: number | null };
+    type Frase = {
+      id: string;
+      partido: string;
+      paginaPdf: number;
+      texto: string;
+      tema: string;
+      enOtrasPalabras: string;
+      comparativa: Comparacion[];
+    };
     type Datos = {
       frases: Frase[];
-      parejas: [string, string][];
       urls: Record<string, string>;
-      partidos: { nombre: string }[];
+      partidos: { nombre: string; logo: string; raiz: string }[];
     };
 
     const RONDA = 10;
     const datos: Datos = JSON.parse(document.getElementById('datos')!.textContent!);
     const nombres = datos.partidos.map((p) => p.nombre);
-    const porId = new Map(datos.frases.map((f) => [f.id, f]));
-    const parejaDe = new Map<string, string>();
-    for (const [a, b] of datos.parejas) {
-      parejaDe.set(a, b);
-      parejaDe.set(b, a);
-    }
+    const partidoDe = new Map(datos.partidos.map((p) => [p.nombre, p]));
 
     // Iconos de acierto y fallo dibujados (no glifos), en el color del texto.
     const ICONO = {
@@ -206,15 +217,22 @@ const datos = { frases, parejas, urls, partidos: PARTIDOS.map(({ nombre }) => ({
         delPartido.sort((a, b) => Number(vistas.has(a.id)) - Number(vistas.has(b.id)));
         elegidas.push(...delPartido.slice(0, cupos[i]));
       });
-      return separarParejas(barajar(elegidas));
+      return separarTemas(barajar(elegidas));
     }
 
-    // Dos medidas casi iguales seguidas confunden en vez de sorprender.
-    function separarParejas(lista: Frase[]): Frase[] {
+    // Dos papeletas seguidas del mismo tema repiten casi la misma comparativa:
+    // se intercambia la segunda con otra de cualquier posición que no cree un
+    // choque nuevo. Si ninguna sirve (muy improbable), se queda como está.
+    function separarTemas(lista: Frase[]): Frase[] {
+      const choca = (i: number, f: Frase) => lista[i - 1]?.tema === f.tema || lista[i + 1]?.tema === f.tema;
       for (let i = 1; i < lista.length; i++) {
-        if (parejaDe.get(lista[i].id) === lista[i - 1].id) {
-          const j = (i + 2) % lista.length;
-          [lista[i], lista[j]] = [lista[j], lista[i]];
+        if (lista[i].tema !== lista[i - 1].tema) continue;
+        for (let j = 0; j < lista.length; j++) {
+          if (j === i || j === i - 1) continue;
+          const [a, b] = [lista[i], lista[j]];
+          [lista[i], lista[j]] = [b, a];
+          if (!choca(i, lista[i]) && !choca(j, lista[j])) break;
+          [lista[i], lista[j]] = [a, b];
         }
       }
       return lista;
@@ -237,7 +255,6 @@ const datos = { frases, parejas, urls, partidos: PARTIDOS.map(({ nombre }) => ({
 
     // «del PP», «del PSOE», «del Frente Amplio», pero «de Vox».
     const del = (p: string) => (p === 'Vox' ? 'de Vox' : `del ${p}`);
-    const el = (p: string) => (p === 'Vox' ? 'Vox' : `el ${p}`);
     const esAcierto = (r: { frase: Frase; elegido: string }) => r.elegido === r.frase.partido;
     const aciertos = () => respuestas.filter(esAcierto).length;
 
@@ -267,6 +284,8 @@ const datos = { frases, parejas, urls, partidos: PARTIDOS.map(({ nombre }) => ({
       $('marcador').textContent = `Aciertos: ${aciertos()}`;
       $('tema').textContent = f.tema;
       $('frase').textContent = presentar(f.texto);
+      $('explicacion-texto').textContent = f.enOtrasPalabras;
+      ($('explicacion') as HTMLDetailsElement).open = false;
       marcarPunto(puntos[indice], indice + 1, 'actual');
       const sello = $('sello');
       sello.className = 'sello';
@@ -321,21 +340,60 @@ const datos = { frases, parejas, urls, partidos: PARTIDOS.map(({ nombre }) => ({
         '.',
       );
 
-      const pareja = $('pareja');
-      const otra = porId.get(parejaDe.get(f.id) ?? '');
-      pareja.hidden = !otra;
-      if (otra) {
-        pareja.replaceChildren(
-          Object.assign(document.createElement('strong'), { textContent: 'Ojo: ' }),
-          `${el(otra.partido)} propone algo muy parecido.`,
-        );
-      }
+      pintarComparativa(f);
 
       $('marcador').textContent = `Aciertos: ${aciertos()}`;
       $('siguiente').textContent = indice === RONDA - 1 ? 'Ver escrutinio' : 'Siguiente papeleta';
       $('revelacion').hidden = false;
       $('siguiente').focus({ preventScroll: true });
-      $('revelacion').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      $('veredicto').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    // Los otros tres partidos, en el orden alfabético fijo de los sobres.
+    function pintarComparativa(f: Frase) {
+      const items = nombres
+        .filter((n) => n !== f.partido)
+        .map((nombre) => {
+          const c = f.comparativa.find((x) => x.partido === nombre);
+          const p = partidoDe.get(nombre)!;
+          const li = document.createElement('li');
+          li.className = 'comp';
+
+          const cabecera = document.createElement('div');
+          cabecera.className = 'comp-cabecera';
+          const chip = document.createElement('span');
+          chip.className = 'chip-logo comp-logo';
+          chip.style.setProperty('--raiz', p.raiz);
+          chip.append(Object.assign(document.createElement('img'), { src: p.logo, alt: '', width: 80, height: 40 }));
+          cabecera.append(chip, Object.assign(document.createElement('strong'), { textContent: nombre }));
+          li.append(cabecera);
+
+          if (!c?.texto || !c.resumen || !c.paginaPdf) {
+            li.append(
+              Object.assign(document.createElement('p'), {
+                className: 'comp-resumen comp-nada',
+                textContent: 'No hemos encontrado medidas sobre esto en su programa.',
+              }),
+            );
+            return li;
+          }
+
+          const cita = document.createElement('details');
+          cita.className = 'comp-cita';
+          cita.append(
+            Object.assign(document.createElement('summary'), { textContent: 'Leer la cita' }),
+            Object.assign(document.createElement('blockquote'), { textContent: presentar(c.texto) }),
+            Object.assign(document.createElement('a'), {
+              href: `${datos.urls[nombre]}#page=${c.paginaPdf}`,
+              target: '_blank',
+              rel: 'noopener',
+              textContent: `Página ${c.paginaPdf} de su programa`,
+            }),
+          );
+          li.append(Object.assign(document.createElement('p'), { className: 'comp-resumen', textContent: c.resumen }), cita);
+          return li;
+        });
+      $('comparativa').replaceChildren(...items);
     }
 
     function siguiente() {
@@ -667,6 +725,9 @@ const datos = { frases, parejas, urls, partidos: PARTIDOS.map(({ nombre }) => ({
   .boton-secundario:focus-visible,
   .sobre:focus-visible,
   .repaso summary:focus-visible,
+  .explicacion summary:focus-visible,
+  .comparativa :global(summary:focus-visible),
+  .comparativa :global(a:focus-visible),
   .fuente :global(a:focus-visible) {
     outline: 3px solid var(--mostaza);
     outline-offset: 3px;
@@ -1017,11 +1078,114 @@ const datos = { frases, parejas, urls, partidos: PARTIDOS.map(({ nombre }) => ({
     font-weight: 700;
   }
 
-  .pareja {
-    margin: 12px 0 0;
+  /* «En otras palabras»: nota al margen de la papeleta, cerrada por defecto. */
+  .explicacion {
+    margin-top: 16px;
+    font-size: var(--t-sm);
+  }
+
+  .explicacion summary,
+  .comparativa-lista :global(.comp-cita summary) {
+    width: fit-content;
+    cursor: pointer;
+    font-weight: 700;
+    color: var(--tinta);
+    border-radius: 4px;
+  }
+
+  .explicacion p {
+    margin: 8px 0 0;
     padding: 10px 14px;
     background: color-mix(in srgb, var(--mostaza) 22%, var(--papeleta));
     border-radius: var(--radio);
+    line-height: 1.5;
+    text-wrap: pretty;
+  }
+
+  /* Comparativa: qué proponen los otros tres partidos sobre lo mismo. */
+  .comparativa {
+    margin-top: 20px;
+  }
+
+  .comparativa-titulo {
+    margin: 0 0 12px;
+    font-family: var(--fuente-titulo);
+    font-size: var(--t-lg);
+    font-weight: 700;
+  }
+
+  .comparativa-lista {
+    display: grid;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .comparativa-lista :global(.comp) {
+    padding: 12px 14px;
+    border: 1px solid var(--linea);
+    border-radius: var(--radio);
+    background: var(--papeleta);
+  }
+
+  .comparativa-lista :global(.comp-cabecera) {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: var(--t-sm);
+  }
+
+  /* Estos chips se crean desde JS y no reciben los estilos con ámbito de
+     .chip-logo: se repiten aquí (caja blanca e igualación por área). */
+  .comparativa-lista :global(.comp-logo) {
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 68px;
+    height: 38px;
+    padding: 4px;
+    background: var(--chip-logo);
+    border-radius: 4px;
+    box-shadow: inset 0 0 0 1px rgb(31 42 68 / 0.1);
+    --k: 22px;
+  }
+
+  .comparativa-lista :global(.comp-logo img) {
+    width: calc(var(--k) * var(--raiz));
+    height: calc(var(--k) / var(--raiz));
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  .comparativa-lista :global(.comp-resumen) {
+    margin: 8px 0 0;
+    line-height: 1.45;
+    text-wrap: pretty;
+  }
+
+  .comparativa-lista :global(.comp-nada) {
+    color: var(--tinta-suave);
+    font-style: italic;
+  }
+
+  .comparativa-lista :global(.comp-cita) {
+    margin-top: 6px;
+    font-size: var(--t-sm);
+  }
+
+  .comparativa-lista :global(.comp-cita blockquote) {
+    margin: 8px 0 6px;
+    padding-left: 12px;
+    border-left: 3px solid var(--linea);
+    font-family: var(--fuente-titulo);
+    line-height: 1.45;
+  }
+
+  .comparativa-lista :global(.comp-cita a) {
+    color: var(--tinta);
+    font-weight: 700;
   }
 
   .revelacion .boton-principal {

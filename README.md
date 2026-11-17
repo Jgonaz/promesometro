@@ -15,7 +15,8 @@ pnpm build    # compilación estática en dist/
 
 Los programas oficiales se listan en `data/programas/fuentes.json`. Para
 regenerar las frases, descarga los PDF en `data/programas/` con los nombres
-indicados en ese archivo.
+indicados en ese archivo, extrae su texto a `data/texto/` y comprueba la
+selección con `node scripts/verificar-frases.mjs --final src/data/frases.json`.
 
 ## Créditos de imágenes
 

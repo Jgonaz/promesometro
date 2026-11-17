@@ -4,15 +4,25 @@
 
 Juego web: se muestra de forma anónima una medida extraída de los programas
 electorales de PSOE, PP, Vox y Frente Amplio para las generales del 29N de 2026,
-y el usuario adivina a qué partido pertenece. Tras responder se revela el
-partido con la cita y el enlace a la página del programa oficial.
+y el usuario adivina a qué partido pertenece. Antes de votar puede abrir «En
+otras palabras», una explicación en lenguaje llano. Tras responder se revela el
+partido con el enlace a la página del programa oficial y qué proponen los otros
+tres partidos sobre lo mismo.
 
 ## Criterios editoriales (no negociables)
 
 - Cada frase sale literal del programa oficial; se puede recortar, nunca reescribir.
-- Mismo número de frases por partido y dificultad equilibrada.
-- Se priorizan medidas ambiguas o poco conocidas; se evitan las emblemáticas,
-  las polémicas y las que delatan al partido por su vocabulario.
+- 20 preguntas por partido: 10 «deducibles» (un votante informado puede
+  razonar de quién son) y 10 «sorpresa» (inesperadas para ese partido, pero
+  claramente suyas). Nada que podría haber escrito cualquiera.
+- Se evitan las frases que delatan al partido por su vocabulario: siglas,
+  líderes, eslóganes, nombres propios de sus planes o autorreferencias.
+- «En otras palabras» y los resúmenes de la comparativa son textos propios:
+  fieles a la cita, neutrales y, antes de votar, sin pistas del partido. Cada
+  resumen va con su cita literal y su página. Si un partido no dice nada sobre
+  el asunto, se indica así, sin deducir su postura.
+- `node scripts/verificar-frases.mjs --final src/data/frases.json` comprueba
+  las citas, las páginas y el reparto.
 - Logos oficiales de los cuatro partidos, todos con el mismo tamaño y en orden
   alfabético; ningún partido destaca visualmente. Nunca se generan ni se
   modifican con IA.
