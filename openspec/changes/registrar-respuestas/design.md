@@ -38,8 +38,9 @@ autor real (acierto calculado en servidor) y rechaza ids inventados sin
 consultar la base de datos.
 
 **Esquema:** una tabla `respuestas` (`id bigserial`, `creada timestamptz
-default now()`, `partida uuid`, `frase text`, `elegido text`, `acierto
-boolean`, `posicion smallint`, `explicacion boolean`). Índices por `frase` y
+default now()`, `partida uuid`, `frase text`, `partido text` (autor real,
+para no depender de que los ids de `frases.json` no cambien), `elegido text`,
+`acierto boolean`, `posicion smallint`, `explicacion boolean`). Índices por `frase` y
 `creada`. Se crea con `db/esquema.sql`, ejecutado una vez. Consultas útiles en
 `db/consultas.sql`.
 
