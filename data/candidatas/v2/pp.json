@@ -1,0 +1,602 @@
+[
+  {
+    "id": "pp-01",
+    "partido": "PP",
+    "paginaPdf": 42,
+    "texto": "Recuperaremos la seguridad jurídica que necesitan propietarios e inquilinos. Eliminaremos las zonas tensionadas y el índice de precios, que han introducido más intervención, más incertidumbre y menos oferta en el mercado del alquiler.",
+    "tema": "vivienda",
+    "subtema": "zonas tensionadas y control del alquiler",
+    "tipo": "deducible",
+    "enOtrasPalabras": "Hoy, en las zonas declaradas «tensionadas», el precio del alquiler puede limitarse con un índice oficial. La medida quitaría esas zonas y ese índice, así que los precios volverían a pactarse libremente.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Propone que el Estado publique el mapa de zonas tensionadas que las comunidades no están elaborando.",
+        "texto": "Identificar y publicar desde el Ministerio de Vivienda un mapa de zonas tensionadas de vivienda que actualmente deben elaborar las comunidades autónomas en aplicación de la Ley de Vivienda y que no están realizando.",
+        "paginaPdf": 31
+      },
+      {
+        "partido": "Vox",
+        "resumen": "Defiende derogar la Ley de Vivienda para recuperar una oferta de alquiler estable y asequible.",
+        "texto": "Recuperar la seguridad jurídica y una oferta de alquileres estable, abundante y asequible. Derogación de la Ley de Vivienda.",
+        "paginaPdf": 23
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone topar por ley el precio del alquiler en todas las zonas tensionadas.",
+        "texto": "Limitaremos por ley el precio del alquiler residencial en todas las zonas tensionadas aplicando la fórmula objetiva que garantice la renta más baja para el inquilino",
+        "paginaPdf": 13
+      }
+    ]
+  },
+  {
+    "id": "pp-02",
+    "partido": "PP",
+    "paginaPdf": 54,
+    "texto": "aprobaremos una ley nacional de cuidados paliativos con el fin de que nadie se vea empujado a la aceleración de la muerte por falta de alternativas ni tenga que afrontarla en soledad. Porque hablar de una muerte digna exige garantizar primero los cuidados y los apoyos necesarios para vivir con dignidad hasta el final.",
+    "tema": "sanidad",
+    "subtema": "cuidados paliativos frente a eutanasia",
+    "tipo": "deducible",
+    "enOtrasPalabras": "Una ley garantizaría en toda España la atención a enfermos al final de su vida (alivio del dolor, acompañamiento), para que nadie pida adelantar su muerte por no tener otra opción.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Propone garantizar el ejercicio efectivo del derecho a la eutanasia según la ley vigente.",
+        "texto": "Garantizar la muerte digna y el ejercicio efectivo del derecho a la eutanasia, de acuerdo con la legislación vigente.",
+        "paginaPdf": 50
+      },
+      {
+        "partido": "Vox",
+        "resumen": "Defiende la vida hasta la muerte natural y potenciar los cuidados paliativos.",
+        "texto": "Defensa del derecho a la vida desde su concepción hasta la muerte natural y fin de la cultura de la muerte. Garantizar la objeción de conciencia de los profesionales sanitarios y farmacéuticos y potenciar los cuidados paliativos.",
+        "paginaPdf": 52
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone permisos para acompañar a un familiar en paliativos o a quien reciba la ayuda para morir.",
+        "texto": "Crearemos además un nuevo permiso retribuido de hasta quince días para acompañar a un familiar en cuidados paliativos y un permiso de un día para acompañar a quien reciba la prestación de ayuda para morir",
+        "paginaPdf": 25
+      }
+    ]
+  },
+  {
+    "id": "pp-03",
+    "partido": "PP",
+    "paginaPdf": 51,
+    "texto": "La demanda de las familias volverá a contar para programar las plazas, y se podrá elegir centro en todo el municipio de residencia, con criterios públicos. Los conciertos durarán al menos seis años en todas las etapas, con módulos que cubran el coste real, para que la plaza concertada sea gratuita de verdad.",
+    "tema": "educación",
+    "subtema": "colegios concertados y elección de centro",
+    "tipo": "deducible",
+    "enOtrasPalabras": "Los colegios privados que reciben dinero público (concertados) tendrían contratos de al menos seis años y una financiación que cubra lo que cuesta cada plaza. Además, podrías elegir colegio en todo tu municipio.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Defiende una educación pública y gratuita de los 0 a los 18 años.",
+        "texto": "una educación pública y gratuita de los 0 a los 18 años",
+        "paginaPdf": 46
+      },
+      {
+        "partido": "Vox",
+        "resumen": "Defiende la libre elección de centro en todos los niveles, sin que el dinero sea un obstáculo.",
+        "texto": "Garantizar la libre elección de centro educativo en todos los niveles para que las familias elijan libremente el modelo educativo que desean, sin que su situación económica o social sea un impedimento para ello.",
+        "paginaPdf": 41
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone prohibir las cuotas en la concertada y destinar todo el dinero público a la escuela pública.",
+        "texto": "En el periodo de coexistencia con centros concertados se prohibirán de forma inmediata las cuotas obligatorias en centros sostenidos con fondos públicos, sancionando incumplimientos. El objetivo es que el 100 % de los fondos públicos vayan destinados a la educación pública.",
+        "paginaPdf": 31
+      }
+    ]
+  },
+  {
+    "id": "pp-04",
+    "partido": "PP",
+    "paginaPdf": 37,
+    "texto": "Propondremos la reforma del Reglamento de la Cámara para que los debates parlamentarios se desarrollen en la lengua común de todos los españoles. […] Mantendremos la posibilidad de uso de las lenguas cooficiales en el Senado.",
+    "tema": "democracia y transparencia",
+    "subtema": "lenguas en los debates del Congreso",
+    "tipo": "deducible",
+    "enOtrasPalabras": "En el Congreso los diputados pueden hoy hablar en catalán, euskera o gallego. Con esta medida los debates volverían a ser solo en castellano, aunque en el Senado se seguirían permitiendo esas lenguas.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Propone consolidar las lenguas cooficiales en las Cortes y extenderlas a la Administración del Estado.",
+        "texto": "Reconocer la pluralidad lingüística en las instituciones comunes. Consolidaremos el uso de las lenguas cooficiales en las Cortes Generales y lo extenderemos a la atención de la Administración General del Estado en los territorios donde son oficiales.",
+        "paginaPdf": 91
+      },
+      {
+        "partido": "Vox",
+        "resumen": "No habla del Congreso; propone garantizar la educación en español en todo el territorio.",
+        "texto": "Se garantizará la educación en español en todo el territorio nacional.",
+        "paginaPdf": 41
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone una ley del plurilingüismo para usar las lenguas cooficiales ante las instituciones del Estado.",
+        "texto": "Aprobaremos una ley del plurilingüismo, para garantizar plenamente los derechos lingüísticos, para que la ciudadanía pueda relacionarse en las lenguas cooficiales y estatutarias con las instituciones del Estado.",
+        "paginaPdf": 141
+      }
+    ]
+  },
+  {
+    "id": "pp-05",
+    "partido": "PP",
+    "paginaPdf": 47,
+    "texto": "Las Comunidades Autónomas seguirán decidiendo con libertad sobre sus impuestos propios y cedidos, dentro de sus competencias, y podrán bajarlos cuanto quieran.",
+    "tema": "fiscalidad",
+    "subtema": "bajadas de impuestos autonómicas",
+    "tipo": "deducible",
+    "enOtrasPalabras": "Cada comunidad autónoma podría seguir rebajando los impuestos que gestiona (como sucesiones o patrimonio) tanto como quiera, sin que el Estado se lo impida ni fije un mínimo común.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Destaca haber tomado medidas para evitar las bonificaciones autonómicas del impuesto sobre el patrimonio.",
+        "texto": "Hemos elevado al 30% la tributación de las rentas del ahorro superiores a 300.000 euros y adoptado medidas para evitar las bonificaciones autonómicas del impuesto sobre el patrimonio.",
+        "paginaPdf": 36
+      },
+      {
+        "partido": "Vox",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone condonar deuda autonómica solo si la comunidad no baja impuestos a las rentas altas.",
+        "texto": "Condonación de deuda autonómica condicionada a la prohibición de efectuar dumping fiscal o bajadas de impuestos a rentas altas.",
+        "paginaPdf": 104
+      }
+    ]
+  },
+  {
+    "id": "pp-06",
+    "partido": "PP",
+    "paginaPdf": 27,
+    "texto": "Los jueces y magistrados de todas las categorías elegirán a los doce vocales judiciales del Consejo General del Poder Judicial. Mantendremos la evaluación pública de méritos de los ocho juristas que designan las Cortes.",
+    "tema": "justicia",
+    "subtema": "elección del CGPJ",
+    "tipo": "deducible",
+    "enOtrasPalabras": "El órgano que gobierna a los jueces tiene 20 miembros. Doce de ellos, que son jueces, los votarían los propios jueces en lugar del Congreso y el Senado; los otros ocho seguirían eligiéndolos las Cortes.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Destaca haber renovado el CGPJ tras años de bloqueo.",
+        "texto": "hemos renovado el Consejo General del Poder Judicial tras años de bloqueo del PP.",
+        "paginaPdf": 100
+      },
+      {
+        "partido": "Vox",
+        "resumen": "Propone que los doce vocales judiciales los elijan los propios jueces por voto directo y secreto.",
+        "texto": "Modificar la Ley Orgánica del Poder Judicial para que los doce vocales de procedencia judicial del Consejo General del Poder Judicial sean elegidos mediante voto personal, directo y secreto por y entre los propios jueces y magistrados, terminando con el sistema de cuotas partidistas.",
+        "paginaPdf": 55
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone que, sin acuerdo en dos meses, las Cortes elijan a los vocales judiciales por mayoría absoluta.",
+        "texto": "Reformaremos la Ley Orgánica del Poder Judicial para que ningún partido pueda volver a bloquear la renovación del Consejo General del Poder Judicial. Los vocales del turno judicial se seguirán eligiendo por mayoría de tres quintos, pero si en dos meses no hay acuerdo, las Cámaras podrán elegirlos en segunda votación por mayoría absoluta.",
+        "paginaPdf": 148
+      }
+    ]
+  },
+  {
+    "id": "pp-07",
+    "partido": "PP",
+    "paginaPdf": 44,
+    "texto": "Pondremos en marcha medidas que favorezcan que las personas puedan tener el número de hijos que desean y en el momento que quieran, y que faciliten el progreso personal y profesional. El concebido no nacido computará para determinar las ayudas y beneficios que correspondan a la familia.",
+    "tema": "familia y conciliación",
+    "subtema": "el bebé en camino cuenta para las ayudas",
+    "tipo": "deducible",
+    "enOtrasPalabras": "Durante el embarazo, el bebé que va a nacer ya contaría como un hijo más a la hora de calcular las ayudas y ventajas que recibe la familia.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Propone blindar en la Constitución el derecho al aborto.",
+        "texto": "Blindar constitucionalmente el derecho a la interrupción voluntaria del embarazo.",
+        "paginaPdf": 81
+      },
+      {
+        "partido": "Vox",
+        "resumen": "Defiende el derecho a la vida desde la concepción hasta la muerte natural.",
+        "texto": "Defensa del derecho a la vida desde su concepción hasta la muerte natural y fin de la cultura de la muerte.",
+        "paginaPdf": 52
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone incluir el derecho al aborto en la Constitución.",
+        "texto": "Reformaremos el artículo 43 de la Constitución para incluir el derecho al aborto",
+        "paginaPdf": 28
+      }
+    ]
+  },
+  {
+    "id": "pp-08",
+    "partido": "PP",
+    "paginaPdf": 16,
+    "texto": "Manifestarse es un derecho; sembrar el caos, participar en disturbios violentos y atacar a las Fuerzas y Cuerpos de Seguridad es un delito. […] Actuar con el rostro cubierto para evitar la identificación durante la comisión de actos violentos, vandálicos o delictivos tendrá consecuencias más graves.",
+    "tema": "seguridad",
+    "subtema": "agravante por ocultar el rostro en disturbios",
+    "tipo": "deducible",
+    "enOtrasPalabras": "Quien cometa actos violentos o vandálicos tapándose la cara para que no lo reconozcan recibiría un castigo mayor que si actuara a cara descubierta.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Propone sustituir la actual ley de seguridad ciudadana garantizando reunión y manifestación.",
+        "texto": "Aprobar una nueva Ley de Seguridad Ciudadana que sustituya a la Ley Orgánica 4/2015, garantizando los derechos de reunión y manifestación, un régimen sancionador preciso, identificaciones sin discriminación y cámaras corporales en toda la Policía Nacional y Guardia Civil",
+        "paginaPdf": 99
+      },
+      {
+        "partido": "Vox",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone derogar por completo la llamada Ley Mordaza y rebajar las multas excesivas.",
+        "texto": "Derogaremos por completo la Ley Mordaza. ● Reduciremos las multas excesivas",
+        "paginaPdf": 142
+      }
+    ]
+  },
+  {
+    "id": "pp-09",
+    "partido": "PP",
+    "paginaPdf": 51,
+    "texto": "Reduciremos las trabas a la caza sostenible y respaldaremos su contribución a la economía de los pueblos y al mantenimiento de la biodiversidad.",
+    "tema": "mundo rural",
+    "subtema": "caza",
+    "tipo": "deducible",
+    "enOtrasPalabras": "Habría menos requisitos y obstáculos para cazar, y se apoyaría la caza como actividad económica de los pueblos y como forma de cuidar la naturaleza.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Vox",
+        "resumen": "Defiende la caza como actividad esencial para controlar poblaciones y proteger el campo.",
+        "texto": "Defensa de la caza como actividad esencial para el control de las poblaciones y para la protección de las explotaciones agrícolas y ganaderas, así como por su valor medioambiental y económico.",
+        "paginaPdf": 35
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone incluir plenamente a los perros de caza en la ley de bienestar animal.",
+        "texto": "Reformaremos la Ley 7/2023 de protección de los derechos y el bienestar de los animales, para incluir de forma plena a los perros de caza, de trabajo y a los animales empleados en actividades ganaderas o deportivas",
+        "paginaPdf": 75
+      }
+    ]
+  },
+  {
+    "id": "pp-10",
+    "partido": "PP",
+    "paginaPdf": 35,
+    "texto": "eliminaremos la libre autodeterminación registral del sexo, para reforzar la seguridad jurídica y proteger a los menores. Garantizaremos que el sexo biológico sea el criterio para las categorías deportivas femeninas.",
+    "tema": "igualdad",
+    "subtema": "cambio de sexo registral y deporte femenino",
+    "tipo": "deducible",
+    "enOtrasPalabras": "Ya no bastaría con pedirlo para cambiar el sexo que figura en el registro civil. En las competiciones femeninas solo podrían participar quienes hayan nacido mujeres.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Propone impulsar la inclusión de las personas trans y garantizar sus tratamientos hormonales.",
+        "texto": "Impulsar la inclusión social y laboral de las personas trans, garantizando el acceso y la continuidad de los tratamientos hormonales.",
+        "paginaPdf": 97
+      },
+      {
+        "partido": "Vox",
+        "resumen": "Defiende que el deporte femenino se rija por criterios biológicos.",
+        "texto": "Compromiso con la defensa del deporte femenino, que debe regirse por criterios biológicos y deportivos objetivos para garantizar la igualdad real en la competición.",
+        "paginaPdf": 43
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone aplicar plenamente la protección de las personas trans, también en el deporte.",
+        "texto": "Garantizaremos la plena aplicación de la legislación estatal de protección de las personas trans y de las personas LGTBIQA+, con medidas contra la discriminación en el empleo, la educación, la salud, la vivienda, el deporte, la cultura y los servicios públicos.",
+        "paginaPdf": 123
+      }
+    ]
+  },
+  {
+    "id": "pp-11",
+    "partido": "PP",
+    "paginaPdf": 43,
+    "texto": "Refundiremos las deducciones familiares del IRPF en una sola, reembolsable, con un único trámite y abono mensual. Ampliaremos su acceso para que llegue a todas las familias, también a las que no tengan cuota suficiente en el IRPF.",
+    "tema": "familia y conciliación",
+    "subtema": "deducción por hijos reembolsable y mensual",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "Las rebajas fiscales por tener hijos se juntarían en una sola ayuda que se cobraría cada mes, incluso si ganas tan poco que no pagas IRPF: en ese caso, Hacienda te ingresaría el dinero.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Propone convertir el mínimo por hijo en un crédito fiscal que cobren también quienes no pagan IRPF.",
+        "texto": "Convertiremos el mínimo exento por descendiente en el IRPF en un crédito fiscal reembolsable, lo que permitirá que se beneficien de él 2 millones de hogares de ingresos medios y bajos que no tienen obligación de presentar declaración o que carecen de cuota para beneficiarse del mínimo actual.",
+        "paginaPdf": 49
+      },
+      {
+        "partido": "Vox",
+        "resumen": "Propone extender las ventajas de las familias numerosas a todas las familias desde el primer hijo.",
+        "texto": "Todos los beneficios que ahora existen para las familias numerosas se aumentarán y se extenderán a todas las familias de manera progresiva desde el primer hijo, intensificando las ayudas y bonificaciones en función del número de hijos.",
+        "paginaPdf": 51
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone 200 € al mes por hijo, pagados automáticamente como deducción reembolsable del IRPF.",
+        "texto": "Aprobaremos la Ley de Prestación Universal por Crianza que concederá 200 € al mes por cada menor de 18 años a cargo. […] La tramitaremos y abonaremos mensualmente de forma automática como deducción reembolsable del IRPF abonada por la Agencia Tributaria desde el momento del nacimiento.",
+        "paginaPdf": 21
+      }
+    ]
+  },
+  {
+    "id": "pp-12",
+    "partido": "PP",
+    "paginaPdf": 14,
+    "texto": "Cuando la Administración ya tenga los datos, las ayudas y prestaciones a las que un ciudadano tenga derecho se le reconocerán sin que tenga que pedirlas.",
+    "tema": "servicios sociales",
+    "subtema": "ayudas reconocidas sin solicitarlas",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "Si la Administración ya sabe por tus datos que te corresponde una ayuda, te la daría directamente, sin que tengas que enterarte de que existe ni hacer la solicitud.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Propone resolver las prestaciones en 30 días o reconocerlas de oficio.",
+        "texto": "Las prestaciones sociales se resolverán en un máximo de 30 días o se reconocerán de oficio. Ninguna Administración volverá a pedir un documento que ya tiene",
+        "paginaPdf": 101
+      },
+      {
+        "partido": "Vox",
+        "resumen": "Propone un expediente digital único que obligue a las administraciones a compartir datos.",
+        "texto": "Creación de un expediente digital único y centralizado que unifique la gestión de trámites para ciudadanos y empresas, obligando a las diferentes administraciones a compartir los datos entre sí.",
+        "paginaPdf": 27
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone conceder el Ingreso Mínimo Vital de oficio cruzando datos fiscales y de Seguridad Social.",
+        "texto": "Transformaremos de forma radical el Ingreso Mínimo Vital (IMV) para ser concedido de oficio a través de la interconexión automatizada de datos fiscales y de la Seguridad Social, suprimiendo el laberinto burocrático actual.",
+        "paginaPdf": 22
+      }
+    ]
+  },
+  {
+    "id": "pp-13",
+    "partido": "PP",
+    "paginaPdf": 56,
+    "texto": "Apoyaremos los esfuerzos de Naciones Unidas en el Sáhara Occidental para alcanzar una solución política justa, duradera y mutuamente aceptable para las partes. Lo haremos desde el respeto al derecho internacional y con transparencia ante las Cortes.",
+    "tema": "Europa y exterior",
+    "subtema": "Sáhara Occidental",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "Sobre el conflicto del Sáhara Occidental, España apoyaría la mediación de la ONU para buscar un acuerdo que acepten las partes, respetando el derecho internacional e informando al Parlamento.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Vox",
+        "resumen": "No habla del Sáhara; propone sanciones a Marruecos hasta que respete las fronteras españolas.",
+        "texto": "Impulsar sanciones, suspender acuerdos internacionales y revisar las relaciones diplomáticas hasta que Marruecos respete las fronteras y la soberanía de España.",
+        "paginaPdf": 7
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone retirar el apoyo al plan de autonomía marroquí y un referéndum con opción de independencia.",
+        "texto": "Retiraremos formalmente el apoyo gubernamental al plan de autonomía marroquí para retomar la posición fijada por el derecho internacional. Defenderemos el derecho incondicional a la autodeterminación del pueblo saharaui mediante un referéndum libre supervisado por Naciones Unidas",
+        "paginaPdf": 132
+      }
+    ]
+  },
+  {
+    "id": "pp-14",
+    "partido": "PP",
+    "paginaPdf": 50,
+    "texto": "Agricultores, ganaderos, pescadores y titulares forestales tendrán ingresos extra por beneficios ambientales (carbono, agua, biodiversidad) con un sistema sencillo, verificable y compatible con el mercado europeo de emisiones.",
+    "tema": "medio ambiente",
+    "subtema": "pago por servicios ambientales al campo",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "A quien trabaja en el campo, el mar o el monte se le pagaría un dinero extra por lo que aporta a la naturaleza, como capturar CO₂, cuidar el agua o proteger especies.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Propone recompensar la ganadería extensiva y la agricultura regenerativa por su servicio al territorio.",
+        "texto": "Recompensar las prácticas de agroganadería sostenible y en particular en la ganadería extensiva y la agricultura regenerativa. Nuestros agricultores y ganaderos prestan un servicio a la conservación y la gestión sostenible del territorio.",
+        "paginaPdf": 70
+      },
+      {
+        "partido": "Vox",
+        "resumen": "Pide acabar con las exigencias medioambientales de la PAC, que atribuye al «fanatismo climático».",
+        "texto": "Garantizar su autonomía presupuestaria y el fin de las exigencias burocráticas y medioambientales derivadas del fanatismo climático.",
+        "paginaPdf": 34
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone pagar a los agricultores, a través de la PAC, por las prácticas que cuidan la naturaleza.",
+        "texto": "Implantación de un sistema de pagos por servicios ambientales en zonas rurales: Quien cuida la naturaleza merece cobrar por ello. A través de la PAC, es posible pagar a agricultores por desarrollar prácticas que protegen a todos",
+        "paginaPdf": 70
+      }
+    ]
+  },
+  {
+    "id": "pp-15",
+    "partido": "PP",
+    "paginaPdf": 57,
+    "texto": "Es una región clave en la que se originan desafíos como la seguridad energética, las migraciones, el terrorismo o la intolerancia religiosa. La masacre es insostenible y la población civil debe ser protegida, especialmente en Gaza.",
+    "tema": "Europa y exterior",
+    "subtema": "Gaza",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "Sobre Oriente Medio, se califica de masacre lo que ocurre y se pide proteger a la población civil, sobre todo en Gaza.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Destaca haber condenado las violaciones del derecho humanitario en Gaza y aprobado un embargo de armas a Israel.",
+        "texto": "Además, hemos condenado reiteradamente las violaciones del derecho internacional humanitario en Gaza, aprobado un embargo de armas a Israel y defendido la labor de la UNRWA",
+        "paginaPdf": 105
+      },
+      {
+        "partido": "Vox",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone una ley de embargo integral de armas a Israel.",
+        "texto": "Aprobaremos una ley específica de embargo integral de armas a Israel para mejorar el Real Decreto-ley 10/2025.",
+        "paginaPdf": 131
+      }
+    ]
+  },
+  {
+    "id": "pp-16",
+    "partido": "PP",
+    "paginaPdf": 39,
+    "texto": "Defenderemos que España albergue la final del Mundial de fútbol de 2030 y condicionaremos a ello nuestra participación en la competición.",
+    "tema": "cultura",
+    "subtema": "final del Mundial 2030",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "El Mundial de fútbol de 2030 se organiza entre varios países. La propuesta es exigir que la final se juegue en España y condicionar a ello la participación española.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Propone que el Mundial 2030 deje instalaciones abiertas y más deporte base.",
+        "texto": "Garantizar que el Mundial 2030 y los grandes eventos deportivos dejen un legado social: instalaciones abiertas a la ciudadanía, impulso al deporte base",
+        "paginaPdf": 56
+      },
+      {
+        "partido": "Vox",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      }
+    ]
+  },
+  {
+    "id": "pp-17",
+    "partido": "PP",
+    "paginaPdf": 35,
+    "texto": "Las familias se deducirán el 40% de lo que paguen por la atención profesional de un mayor dependiente, y el Estado cotizará por quien deje de trabajar o reduzca su jornada para cuidar a un familiar dependiente, cobre o no la prestación por cuidados en el entorno familiar.",
+    "tema": "servicios sociales",
+    "subtema": "cotización de cuidadores familiares",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "Si dejas tu trabajo o reduces tu jornada para cuidar a un familiar dependiente, el Estado pagaría tus cotizaciones para tu futura pensión. Y quien pague a un cuidador profesional se desgravaría el 40%.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Propone mejorar la protección social de los cuidadores principales y compensar el impacto en su carrera.",
+        "texto": "Mejorar la protección social de las personas que son cuidadoras principales, especialmente quienes asumen esta responsabilidad de manera continuada durante […] largos periodos de tiempo, y estudiar medidas que compensen el impacto que esta tarea tiene sobre su trayectoria laboral.",
+        "paginaPdf": 57
+      },
+      {
+        "partido": "Vox",
+        "resumen": "Propone más presupuesto para la dependencia y más apoyo a quien cuida a familiares.",
+        "texto": "Reforzar el presupuesto en dependencia, las ayudas para el cuidado en el hogar, el apoyo a familiares a cargo.",
+        "paginaPdf": 52
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone dar más protección social y apoyo al descanso a las cuidadoras no profesionales.",
+        "texto": "Reforzaremos las plantillas, subiremos los salarios y mejoraremos la formación, la estabilidad y los tiempos asistenciales, además de dar mayor protección social y apoyo al descanso de cuidadoras no profesionales.",
+        "paginaPdf": 23
+      }
+    ]
+  },
+  {
+    "id": "pp-18",
+    "partido": "PP",
+    "paginaPdf": 47,
+    "texto": "Quien cobre el salario mínimo no pagará IRPF: por ley, el umbral subirá automáticamente cada vez que suba el SMI, para que ningún Gobierno pueda volver a cobrar impuestos a quien menos gana por el simple hecho de no tocar una cifra.",
+    "tema": "fiscalidad",
+    "subtema": "salario mínimo exento de IRPF",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "Si cobras el salario mínimo, no pagarías IRPF. Y cada vez que suba el salario mínimo, el límite para no pagar subiría solo, sin depender de que el Gobierno lo actualice.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Propone seguir eximiendo a las rentas más bajas para que subir el SMI no suba impuestos.",
+        "texto": "Y seguiremos exonerando de tributación a las rentas más bajas, asegurando que las subidas del SMI no impliquen incrementos de impuestos.",
+        "paginaPdf": 49
+      },
+      {
+        "partido": "Vox",
+        "resumen": "Propone simplificar y bajar el IRPF, con tipos menores según el número de hijos.",
+        "texto": "Reforma del sistema de tributación sobre la renta (IRPF). Simplificación y bajada del IRPF. Reducción del tipo aplicable del IRPF para cada contribuyente o familia en función del número de hijos.",
+        "paginaPdf": 9
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone que quien cobre el salario mínimo no pague IRPF, con rebaja decreciente hasta 27.000 €.",
+        "texto": "Aumentaremos la reducción por rendimientos del trabajo para que quien cobre el salario mínimo no pague IRPF y extenderemos esa rebaja, de forma decreciente, hasta los 27.000 euros.",
+        "paginaPdf": 46
+      }
+    ]
+  },
+  {
+    "id": "pp-19",
+    "partido": "PP",
+    "paginaPdf": 44,
+    "texto": "favoreceremos la prevención y el diagnóstico precoz de los problemas de fertilidad entre los jóvenes y facilitaremos la congelación de óvulos para mujeres jóvenes, mejorando las oportunidades de acceso a la reproducción asistida en el Sistema Nacional de Salud",
+    "tema": "sanidad",
+    "subtema": "congelación de óvulos y reproducción asistida",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "La sanidad pública ayudaría a detectar antes los problemas de fertilidad, facilitaría que las mujeres jóvenes congelen óvulos para ser madres más adelante y ampliaría el acceso a tratamientos de reproducción asistida.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Propone regular la congelación de óvulos para que la mujer decida sobre su conservación y uso.",
+        "texto": "Garantizar la libertad y los derechos reproductivos, adaptando el marco regulatorio de la crioconservación de ovocitos para blindar la capacidad de decisión de las mujeres sobre la conservación, uso o destino de sus óvulos",
+        "paginaPdf": 50
+      },
+      {
+        "partido": "Vox",
+        "resumen": "Propone atender especialmente a las madres que afrontan la maternidad a edades más avanzadas.",
+        "texto": "garantizar una atención adecuada durante el embarazo, parto y posparto, con especial atención a las necesidades de las madres que afrontan la maternidad a edades más avanzadas.",
+        "paginaPdf": 38
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone estudiar la fertilidad en la sanidad pública y más recursos para reproducción asistida en edades tempranas.",
+        "texto": "Incluiremos la valoración de la fertilidad previa a los intentos de concepción en el SNS y aumentaremos los recursos finalistas para servicios de reproducción asistida en edades tempranas.",
+        "paginaPdf": 29
+      }
+    ]
+  },
+  {
+    "id": "pp-20",
+    "partido": "PP",
+    "paginaPdf": 35,
+    "texto": "Combatiremos cualquier discriminación por razón de origen, sexo, edad, discapacidad, orientación sexual, religión o cualquier otra circunstancia personal. […] En particular, continuaremos luchando contra la LGTBIfobia.",
+    "tema": "igualdad",
+    "subtema": "lucha contra la LGTBIfobia",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "Se combatiría la discriminación por cualquier motivo personal, como el origen, la religión o la orientación sexual, y en particular el rechazo y el odio hacia las personas LGTBI.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Defiende reforzar la protección frente a la LGTBIfobia en todo el territorio.",
+        "texto": "Nuestro compromiso es reforzar la protección frente a la LGTBIfobia y garantizar que estos derechos se cumplan en todo el territorio, gobierne quien gobierne en cada comunidad, sin un paso atrás.",
+        "paginaPdf": 97
+      },
+      {
+        "partido": "Vox",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone erradicar la violencia machista y LGTBIfóbica con redes de prevención y acogida.",
+        "texto": "Erradicaremos todas las formas de violencia machista y LGTBIfóbica con redes sólidas de prevención y acogida.",
+        "paginaPdf": 37
+      }
+    ]
+  }
+]

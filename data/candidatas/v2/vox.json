@@ -1,0 +1,602 @@
+[
+  {
+    "id": "vox-01",
+    "partido": "Vox",
+    "paginaPdf": 12,
+    "texto": "Se garantizará la supervivencia de las centrales nucleares actuales, derogando el calendario de cierre. Se promoverán estudios urgentes para instalar centrales nucleares en los emplazamientos disponibles adyacentes a las actuales.",
+    "tema": "energía",
+    "subtema": "calendario de cierre nuclear y nuevas centrales",
+    "tipo": "deducible",
+    "enOtrasPalabras": "Las centrales nucleares que funcionan hoy no cerrarían en las fechas previstas y se estudiaría construir otras nuevas en terrenos junto a ellas.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Propone mantener el cierre de las nucleares hasta 2035 y ayudar a las comarcas afectadas.",
+        "texto": "Mantener el calendario de cierre de las centrales nucleares hasta 2035 y desarrollar proyectos de transición justa en las comarcas afectadas",
+        "paginaPdf": 66
+      },
+      {
+        "partido": "PP",
+        "resumen": "Propone anular el calendario de cierre y alargar la vida útil de las centrales actuales.",
+        "texto": "ELIMINAREMOS EL CALENDARIO DE CIERRE DE ALMARAZ, ASCÓ, VANDELLÓS, COFRENTES Y TRILLO. En los primeros cien días de Gobierno tramitaremos la extensión de su vida útil con el visto bueno del Consejo de Seguridad Nuclear",
+        "paginaPdf": 54
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Defiende cumplir el calendario de cierre, con Almaraz cerrando en 2027-2028.",
+        "texto": "Cumpliremos el calendario de cierre de las centrales nucleares. Almaraz I y II cerrarán en los plazos previstos (2027-2028), sin beneficios fiscales",
+        "paginaPdf": 64
+      }
+    ]
+  },
+  {
+    "id": "vox-02",
+    "partido": "Vox",
+    "paginaPdf": 28,
+    "texto": "Silencio administrativo positivo y declaración responsable como regla general. […] Quedan fuera, como excepción tasada, algunas materias que afectan a la soberanía nacional y al control de quién entra y se queda en España: nacionalidad, residencia, permisos de trabajo a extranjeros y, en general, inmigración.",
+    "tema": "administración",
+    "subtema": "silencio administrativo positivo",
+    "tipo": "deducible",
+    "enOtrasPalabras": "Si la Administración no responde a tiempo a una solicitud, se daría por aprobada, salvo en trámites de nacionalidad, residencia o permisos de trabajo de extranjeros.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Propone un supervisor independiente que vigile la carga burocrática de las nuevas normas.",
+        "texto": "impulsaremos un supervisor independiente de las cargas administrativas que evalúe el impacto regulatorio de nuevas normas, identifique duplicidades y contribuya a simplificar la relación de ciudadanos y empresas con las administraciones.",
+        "paginaPdf": 15
+      },
+      {
+        "partido": "PP",
+        "resumen": "Propone ampliar los casos de silencio positivo y de declaración responsable.",
+        "texto": "Reformaremos la normativa estatal para que más actividades de bajo riesgo puedan iniciarse mediante declaración responsable. Ampliaremos los supuestos de silencio administrativo positivo en colaboración con las Comunidades Autónomas y las entidades locales",
+        "paginaPdf": 14
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone aplicar el silencio positivo a las solicitudes de reagrupación familiar de extranjeros.",
+        "texto": "Aseguramiento del derecho a la reagrupación familiar mediante la obligación de resolver las solicitudes en un plazo máximo de tres meses, aplicando el silencio administrativo positivo en caso de falta de resolución.",
+        "paginaPdf": 128
+      }
+    ]
+  },
+  {
+    "id": "vox-03",
+    "partido": "Vox",
+    "paginaPdf": 19,
+    "texto": "El Ingreso Mínimo Vital atenderá únicamente las necesidades de los españoles con menos recursos. Se promoverá el retorno de aquellos inmigrantes que estén cobrando el IMV o sus complementos autonómicos.",
+    "tema": "servicios sociales",
+    "subtema": "acceso al ingreso mínimo vital",
+    "tipo": "deducible",
+    "enOtrasPalabras": "La ayuda estatal para hogares sin ingresos suficientes solo la podrían cobrar personas con nacionalidad española, y se fomentaría que los extranjeros que la cobran vuelvan a su país.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Propone reforzar el IMV y automatizar su concesión con datos de renta recientes.",
+        "texto": "Potenciar el IMV. Crear pasarelas que automaticen y simplifiquen la concesión del IMV, utilizando datos de renta y patrimonio más recientes.",
+        "paginaPdf": 38
+      },
+      {
+        "partido": "PP",
+        "resumen": "Propone priorizar ayudas para quien tenga arraigo en España, sin basarse solo en la nacionalidad.",
+        "texto": "Estableceremos criterios de prioridad en el acceso a determinadas ayudas, prestaciones y recursos públicos para procurar la asignación prioritaria a quienes mantengan un arraigo real, duradero y verificable con España. […] Estos criterios se aplicarán dentro de los límites constitucionales y europeos, por lo que no podrán basarse exclusivamente en la nacionalidad.",
+        "paginaPdf": 32
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone conceder el IMV de oficio cruzando datos fiscales y de la Seguridad Social.",
+        "texto": "Transformaremos de forma radical el Ingreso Mínimo Vital (IMV) para ser concedido de oficio a través de la interconexión automatizada de datos fiscales y de la Seguridad Social, suprimiendo el laberinto burocrático actual.",
+        "paginaPdf": 22
+      }
+    ]
+  },
+  {
+    "id": "vox-04",
+    "partido": "Vox",
+    "paginaPdf": 37,
+    "texto": "Garantizar que el desconocimiento de las lenguas regionales no sea en ningún caso impedimento para el acceso por oposición a plazas de personal sanitario ni un perjuicio para los pacientes.",
+    "tema": "administración",
+    "subtema": "requisito de lengua cooficial en oposiciones sanitarias",
+    "tipo": "deducible",
+    "enOtrasPalabras": "No saber la lengua cooficial de una comunidad autónoma no impediría a médicos o enfermeros conseguir por oposición una plaza pública en esa comunidad.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Propone extender el uso de las lenguas cooficiales a la atención del Estado en esos territorios.",
+        "texto": "Consolidaremos el uso de las lenguas cooficiales en las Cortes Generales y lo extenderemos a la atención de la Administración General del Estado en los territorios donde son oficiales.",
+        "paginaPdf": 91
+      },
+      {
+        "partido": "PP",
+        "resumen": "Plantea que los requisitos de idioma respeten los derechos y que el ciudadano elija la lengua.",
+        "texto": "Los requisitos lingüísticos respetarán las libertades y los derechos fundamentales de todos. Aseguraremos que las Administraciones de los territorios con cooficialidad se dirijan a los ciudadanos en la lengua oficial o en la cooficial, a elección del ciudadano.",
+        "paginaPdf": 32
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone una ley para poder relacionarse con el Estado en cualquier lengua cooficial.",
+        "texto": "Aprobaremos una ley del plurilingüismo, para garantizar plenamente los derechos lingüísticos, para que la ciudadanía pueda relacionarse en las lenguas cooficiales y estatutarias con las instituciones del Estado.",
+        "paginaPdf": 141
+      }
+    ]
+  },
+  {
+    "id": "vox-05",
+    "partido": "Vox",
+    "paginaPdf": 52,
+    "texto": "Garantizar la objeción de conciencia de los profesionales sanitarios y farmacéuticos y potenciar los cuidados paliativos.",
+    "tema": "sanidad",
+    "subtema": "objeción de conciencia sanitaria",
+    "tipo": "deducible",
+    "enOtrasPalabras": "Médicos, enfermeros y farmacéuticos podrían negarse a realizar actuaciones contrarias a sus convicciones, y se reforzaría la atención a enfermos al final de la vida.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Defiende garantizar el derecho a la eutanasia según la ley vigente.",
+        "texto": "Garantizar la muerte digna y el ejercicio efectivo del derecho a la eutanasia, de acuerdo con la legislación vigente.",
+        "paginaPdf": 50
+      },
+      {
+        "partido": "PP",
+        "resumen": "Propone asegurar a todos el acceso a cuidados paliativos.",
+        "texto": "GARANTIZAREMOS LOS CUIDADOS PALIATIVOS Y UNA VIDA DIGNA HASTA EL FINAL. Aseguraremos el acceso a los cuidados paliativos para que ninguna persona se quede sin la atención y el acompañamiento que necesita hasta el último momento.",
+        "paginaPdf": 53
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone regular la objeción de conciencia sin que impida a nadie ejercer sus derechos.",
+        "texto": "Aprobaremos una ley que regule por primera vez el derecho a la objeción de conciencia. Fijará sus ámbitos y un procedimiento sencillo y con garantías, para que quien la ejerza no sufra represalias en el ámbito laboral. En ningún caso la objeción podrá impedir que la ciudadanía acceda al ejercicio de sus derechos.",
+        "paginaPdf": 145
+      }
+    ]
+  },
+  {
+    "id": "vox-06",
+    "partido": "Vox",
+    "paginaPdf": 29,
+    "texto": "Acabar con todas las imposiciones climáticas como el Pacto Verde que castigan nuestra industria, nuestro campo o que coartan la libertad de circulación de los españoles, como la imposición de ZBE.",
+    "tema": "medio ambiente",
+    "subtema": "Pacto Verde Europeo y zonas de bajas emisiones",
+    "tipo": "deducible",
+    "enOtrasPalabras": "Se eliminarían normas climáticas, como el plan verde europeo, que ve dañinas para la industria y el campo, y las zonas urbanas que restringen la entrada de coches contaminantes (ZBE).",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Propone impulsar las zonas de bajas emisiones para mejorar la calidad del aire.",
+        "texto": "Impulsar las Zonas de Bajas Emisiones y la movilidad sostenible en las ciudades, promoviendo medidas eficaces para reducir las emisiones y mejorar la calidad del aire.",
+        "paginaPdf": 71
+      },
+      {
+        "partido": "PP",
+        "resumen": "Plantea revisar «con realismo» el plan nacional de energía y clima.",
+        "texto": "Reformularemos con realismo el Plan Nacional Integrado de Energía y Clima.",
+        "paginaPdf": 54
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Defiende cumplir los compromisos del Acuerdo de París y del Pacto Verde Europeo.",
+        "texto": "Promoveremos la justicia global en sus dimensiones climática y de derechos laborales a través del impulso de la descarbonización de la economía, la provisión de energías renovables, la justicia climática global y el cumplimiento de los compromisos del Acuerdo de París y del Pacto Verde Europeo.",
+        "paginaPdf": 132
+      }
+    ]
+  },
+  {
+    "id": "vox-07",
+    "partido": "Vox",
+    "paginaPdf": 56,
+    "texto": "Dotar de la máxima protección jurídica a los símbolos de la Nación, especialmente la Bandera, el Escudo y el Himno o la Corona. Las penas por las ofensas y ultrajes a España y sus símbolos o emblemas deben agravarse para que ninguna afrenta a ellos quede impune.",
+    "tema": "justicia",
+    "subtema": "delitos de ultrajes a España y sus símbolos",
+    "tipo": "deducible",
+    "enOtrasPalabras": "Ofender o insultar en público a España, la bandera, el escudo, el himno o la Corona tendría castigos penales más duros que los actuales.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "PP",
+        "resumen": "Propone una reforma legal que proteja los símbolos del Estado y de las comunidades.",
+        "texto": "LOS SÍMBOLOS DE ESPAÑA SERÁN RESPETADOS EN TODO EL TERRITORIO. Llevaremos a cabo una reforma legal que rehabilite y proteja los símbolos del Estado, incluidos los de las Comunidades Autónomas.",
+        "paginaPdf": 37
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone eliminar del Código Penal los delitos de ultrajes a España y contra la Corona.",
+        "texto": "Derogaremos los artículos del Código Penal que castigan los delitos contra los sentimientos religiosos o de escarnio público, los delitos contra la Corona, las ofensas o ultrajes de palabra, por escrito o de hecho a España, a sus comunidades autónomas",
+        "paginaPdf": 142
+      }
+    ]
+  },
+  {
+    "id": "vox-08",
+    "partido": "Vox",
+    "paginaPdf": 48,
+    "texto": "Aplicación de toda la presión internacional necesaria para la recuperación de la soberanía española sobre el Peñón de Gibraltar. […] Recuperación del control de las aguas españolas. Plan de inversiones para recuperar la prosperidad del Campo de Gibraltar.",
+    "tema": "Europa y exterior",
+    "subtema": "soberanía sobre Gibraltar",
+    "tipo": "deducible",
+    "enOtrasPalabras": "España usaría toda la presión internacional posible para recuperar Gibraltar y el control de sus aguas, e invertiría en los municipios de alrededor.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Propone aplicar el acuerdo que elimina la Verja, manteniendo la postura española sobre la soberanía.",
+        "texto": "Desplegar plenamente el Acuerdo sobre Gibraltar para que la eliminación de la Verja se traduzca en empleo, movilidad y prosperidad compartida en el Campo de Gibraltar, preservando la posición de España sobre la soberanía.",
+        "paginaPdf": 110
+      },
+      {
+        "partido": "PP",
+        "resumen": "Propone dialogar con el Reino Unido para revisar el acuerdo europeo sobre Gibraltar.",
+        "texto": "GIBRALTAR ES UNA CUESTIÓN DE ESTADO. Retomaremos un diálogo responsable con el Reino Unido para revisar las consecuencias del acuerdo entre la Unión Europea y el Reino Unido, que no ha sido refrendado por el Parlamento español.",
+        "paginaPdf": 56
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      }
+    ]
+  },
+  {
+    "id": "vox-09",
+    "partido": "Vox",
+    "paginaPdf": 15,
+    "texto": "Supresión de la institución del arraigo como forma de atajar la inmigración ilegal y revocación de las pasarelas rápidas para adquirir la nacionalidad española.",
+    "tema": "inmigración",
+    "subtema": "arraigo y regularización",
+    "tipo": "deducible",
+    "enOtrasPalabras": "Desaparecería la vía que permite a un extranjero sin papeles obtener la residencia tras vivir un tiempo en España, y se quitarían los atajos para lograr la nacionalidad.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Defiende una migración legal y ordenada y destaca haber ampliado las vías para residir y trabajar.",
+        "texto": "España necesita una migración ordenada, legal y segura, que responda a sus necesidades demográficas y económicas. Desde 2018 hemos ampliado las vías legales para residir y trabajar en España",
+        "paginaPdf": 92
+      },
+      {
+        "partido": "PP",
+        "resumen": "Propone que el arraigo sea excepcional y prohibir las regularizaciones masivas.",
+        "texto": "Reformaremos la Ley de Extranjería para prohibir las regularizaciones masivas e indiscriminadas y para que el arraigo sea un reconocimiento individual excepcional, no una vía generalizada de regularización.",
+        "paginaPdf": 19
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone una vía estable y permanente para regularizar a inmigrantes.",
+        "texto": "Reformaremos de forma integral la Ley de Extranjería para instaurar un procedimiento estable, permanente y reglado de regularización administrativa.",
+        "paginaPdf": 126
+      }
+    ]
+  },
+  {
+    "id": "vox-10",
+    "partido": "Vox",
+    "paginaPdf": 12,
+    "texto": "Fin a las restricciones para poder explorar, investigar y explotar nuestros recursos naturales y yacimientos minerales. Protección de España frente a la dependencia excesiva de materias primas, componentes y tecnologías críticas.",
+    "tema": "economía",
+    "subtema": "minería y materias primas críticas",
+    "tipo": "deducible",
+    "enOtrasPalabras": "Se quitarían límites para buscar y explotar minas y otros recursos naturales, con el fin de depender menos del exterior en materias primas y tecnologías clave.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Propone reducir las dependencias europeas y garantizar el acceso a materias primas críticas.",
+        "texto": "Reforzar la autonomía económica, industrial y tecnológica europea, reduciendo dependencias estratégicas y garantizando el acceso a materias primas críticas.",
+        "paginaPdf": 110
+      },
+      {
+        "partido": "PP",
+        "resumen": "Propone diversificar suministros y reforzar la capacidad industrial.",
+        "texto": "Diversificaremos suministros, potenciaremos nuestra capacidad industrial y defenderemos en Europa una política comercial que abra nuevos mercados",
+        "paginaPdf": 57
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone un impuesto a la minería por su impacto ambiental.",
+        "texto": "Aprobaremos un impuesto a las actividades mineras extractivas para gravar las externalidades ambientales en unas 2.800 explotaciones, recaudando más de 470 M€ anuales.",
+        "paginaPdf": 47
+      }
+    ]
+  },
+  {
+    "id": "vox-11",
+    "partido": "Vox",
+    "paginaPdf": 9,
+    "texto": "Apoyo a los trabajadores autónomos. Cuota de cero euros si los ingresos no llegan al Salario Mínimo Interprofesional y, superado dicho umbral, una cuota progresiva desde los 50 euros en función de sus ingresos.",
+    "tema": "autónomos y pymes",
+    "subtema": "cuota de autónomos según ingresos",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "Los autónomos que ganen menos del salario mínimo no pagarían cuota a la Seguridad Social; por encima, pagarían desde 50 euros, más cuanto más ingresen.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Propone seguir avanzando en que los autónomos coticen según sus ingresos reales.",
+        "texto": "seguir mejorando la protección social de las personas autónomas, atendiendo también a la conciliación de los cuidados, avanzando en la cotización por ingresos reales",
+        "paginaPdf": 42
+      },
+      {
+        "partido": "PP",
+        "resumen": "Propone cuota cero el primer año para nuevos autónomos, y el segundo si no llegan al salario mínimo.",
+        "texto": "Los nuevos autónomos no pagarán cuota a la Seguridad Social durante su primer año, ni durante el segundo si sus ingresos no llegan al salario mínimo.",
+        "paginaPdf": 46
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone una cuota fija bonificada para autónomos que ganen menos del salario mínimo.",
+        "texto": "Apoyaremos a las personas trabajadoras autónomas en situación de bajos ingresos con un régimen específico de cotización. Cuando los ingresos reales percibidos por la persona trabajadora autónoma sean inferiores al SMI anual por causas objetivas, tales como las condiciones del mercado o el inicio de actividad, se podrá acoger a una cotización fija bonificada sin pérdida de derechos de protección.",
+        "paginaPdf": 92
+      }
+    ]
+  },
+  {
+    "id": "vox-12",
+    "partido": "Vox",
+    "paginaPdf": 24,
+    "texto": "Regulación de la proliferación masiva de VUT y refuerzo del servicio de inspección de pisos turísticos ilegales.",
+    "tema": "vivienda",
+    "subtema": "pisos turísticos",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "Se pondrían límites al crecimiento de los pisos que se alquilan a turistas (VUT) y habría más inspección para detectar los que funcionan sin permiso.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Propone que los ayuntamientos puedan cobrar un impuesto por noche en los pisos turísticos.",
+        "texto": "Permitir que los municipios que lo deseen pongan en un impuesto sobre las pernoctaciones en las viviendas de uso turístico que genere recursos para los municipios.",
+        "paginaPdf": 32
+      },
+      {
+        "partido": "PP",
+        "resumen": "Defiende un turismo de más valor, mejor repartido en el territorio y a lo largo del año.",
+        "texto": "España puede recibir turistas y vivir bien a la vez, con un turismo de más valor, mejor distribuido en el territorio y menos dependiente de la temporada alta.",
+        "paginaPdf": 49
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone eliminar en tres años las licencias de pisos turísticos en edificios residenciales de zonas tensionadas.",
+        "texto": "Tramitaremos la extinción progresiva y definitiva de todas las licencias de Viviendas de Uso Turístico (VUT) y alquileres de temporada fraudulentos en edificios residenciales en un plazo máximo de 3 años dentro de las zonas tensionadas",
+        "paginaPdf": 12
+      }
+    ]
+  },
+  {
+    "id": "vox-13",
+    "partido": "Vox",
+    "paginaPdf": 13,
+    "texto": "Fomentar la industria turística mediante empleos de calidad y garantizando la convivencia y la preservación de la identidad de nuestros barrios.",
+    "tema": "economía",
+    "subtema": "modelo turístico y convivencia vecinal",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "Se impulsaría el turismo con empleos de calidad, pero cuidando que los vecinos puedan seguir conviviendo con él y que los barrios no pierdan su carácter.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Propone un turismo sostenible, que ahorre agua y energía y se adapte al cambio climático.",
+        "texto": "Impulsar un modelo de turismo sostenible y resiliente, promoviendo la eficiencia hídrica y energética y la adaptación de los destinos a los efectos del cambio climático.",
+        "paginaPdf": 73
+      },
+      {
+        "partido": "PP",
+        "resumen": "Defiende un turismo de más valor, mejor repartido y compatible con vivir bien.",
+        "texto": "España puede recibir turistas y vivir bien a la vez, con un turismo de más valor, mejor distribuido en el territorio y menos dependiente de la temporada alta.",
+        "paginaPdf": 49
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone limitar las plazas turísticas según la capacidad ecológica y social de cada zona.",
+        "texto": "Ordenaremos el turismo según la capacidad ecológica y social de los territorios. Limitaremos plazas en zonas tensionadas, controlaremos viviendas turísticas y exigiremos registros y retirada de anuncios sin licencia.",
+        "paginaPdf": 72
+      }
+    ]
+  },
+  {
+    "id": "vox-14",
+    "partido": "Vox",
+    "paginaPdf": 52,
+    "texto": "Combatir la brecha maternal facilitando la formación, permanencia, promoción y reincorporación al trabajo de las madres […] Reforzar los derechos de conciliación de la vida personal, familiar y profesional de todos los trabajadores y la asunción equilibrada de las responsabilidades familiares.",
+    "tema": "igualdad",
+    "subtema": "brecha laboral por maternidad",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "Se ayudaría a las madres a formarse, conservar el empleo, ascender o volver a trabajar, y se reforzaría el derecho a conciliar y a repartir de forma equilibrada las tareas familiares.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Propone formación y acompañamiento para volver al empleo tras dedicarse a cuidar.",
+        "texto": "Facilitar la reincorporación al empleo tras periodos dedicados a los cuidados, mediante itinerarios de recualificación, reconocimiento de cualificaciones, formación digital, acreditación de competencias y acompañamiento hacia empleos de calidad.",
+        "paginaPdf": 79
+      },
+      {
+        "partido": "PP",
+        "resumen": "Propone ayudas para sustituir a madres y padres de permiso y cuota bonificada al volver.",
+        "texto": "Mejoraremos las ayudas a la contratación de las personas que sustituyan a madres o padres durante sus permisos. Los autónomos que vuelvan a su actividad tras el permiso tendrán bonificada al 100% su cuota durante dos años.",
+        "paginaPdf": 44
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Sitúa el reparto de los cuidados como pilar central del Estado del bienestar.",
+        "texto": "situamos la corresponsabilidad y el reconocimiento de los cuidados como un pilar central del Estado del bienestar",
+        "paginaPdf": 37
+      }
+    ]
+  },
+  {
+    "id": "vox-15",
+    "partido": "Vox",
+    "paginaPdf": 38,
+    "texto": "Promover la investigación médica con independencia de la rentabilidad comercial (enfermedades raras, enfermedades crónicas, y neurodegenerativas). Refuerzo de la Estrategia Nacional del Cáncer y creación de una Red de Centros Nacionales de Oncología.",
+    "tema": "sanidad",
+    "subtema": "investigación médica no rentable",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "Se impulsaría investigar enfermedades raras, crónicas o neurodegenerativas aunque no sea rentable para las empresas, y se crearía una red de centros especializados en cáncer.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Propone diagnóstico temprano y acceso igualitario a tratamientos de enfermedades raras.",
+        "texto": "Impulsar el diagnóstico temprano y el acceso equitativo al tratamiento de las enfermedades raras, promoviendo la cooperación europea y el intercambio de datos sanitarios.",
+        "paginaPdf": 51
+      },
+      {
+        "partido": "PP",
+        "resumen": "Propone un fondo estatal de innovación en enfermedades raras y terapias avanzadas.",
+        "texto": "Crearemos un Fondo Estatal de Innovación en Enfermedades Raras y Terapias Avanzadas.",
+        "paginaPdf": 53
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone crear una industria farmacéutica 100% pública para impulsar la investigación.",
+        "texto": "Crearemos una empresa/industria farmacéutica con participación 100 % pública y expansión de iniciativas existentes (Certera, Terafront) para asegurar liderazgo investigador",
+        "paginaPdf": 29
+      }
+    ]
+  },
+  {
+    "id": "vox-16",
+    "partido": "Vox",
+    "paginaPdf": 51,
+    "texto": "Cotización a la Seguridad Social financiada por el Estado para los españoles dedicados al cuidado de sus hijos. Formar una familia y criar a los hijos es una contribución esencial al futuro de España y no puede ser motivo de penalización en la jubilación.",
+    "tema": "pensiones y mayores",
+    "subtema": "cotización por crianza",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "El Estado pagaría las cotizaciones de quien se dedique a cuidar a sus hijos, para que ese tiempo no le reste en la pensión de jubilación.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Propone reforzar el complemento de pensión por hijos y sumar un año cotizado por cada hijo.",
+        "texto": "Reducir la brecha de género en las pensiones. Reforzar el complemento por hijos para compensar los perjuicios sufridos en la carrera profesional tras su nacimiento o adopción, reconociendo además un año adicional de cotización por cada hijo o hija",
+        "paginaPdf": 40
+      },
+      {
+        "partido": "PP",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone reconocer en la pensión los periodos dedicados a cuidados.",
+        "texto": "Reconoceremos de forma suficiente los periodos dedicados a cuidados y corregiremos la penalización de las carreras laborales interrumpidas o marcadas por la parcialidad involuntaria.",
+        "paginaPdf": 58
+      }
+    ]
+  },
+  {
+    "id": "vox-17",
+    "partido": "Vox",
+    "paginaPdf": 33,
+    "texto": "Rechazo explícito al acuerdo UE-Mercosur y de todo acuerdo comercial que obligue a nuestros productores a competir en desigualdad de condiciones. Inclusión de cláusulas espejo. Recuperación del principio de preferencia comunitaria.",
+    "tema": "mundo rural",
+    "subtema": "acuerdo comercial UE-Mercosur",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "Se rechazaría el tratado de libre comercio entre la UE y varios países sudamericanos, y se exigiría que lo importado cumpla las mismas reglas que lo producido en la UE, con preferencia por esto último.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Propone más controles a las importaciones y exigirles los mismos estándares.",
+        "texto": "defenderemos en la UE una competencia justa, reforzando controles a las importaciones y exigiendo reciprocidad en los estándares ambientales, sanitarios y laborales.",
+        "paginaPdf": 69
+      },
+      {
+        "partido": "PP",
+        "resumen": "Propone exigir a los alimentos importados las mismas normas que a los nacionales.",
+        "texto": "EXIGIREMOS A LAS IMPORTACIONES LO MISMO QUE A NUESTROS PRODUCTORES. Los alimentos importados cumplirán exigencias de seguridad alimentaria y producción equivalentes a las nuestras.",
+        "paginaPdf": 50
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone vigilar el acuerdo con Mercosur y activar salvaguardas ante la competencia desleal.",
+        "texto": "Bajo la aplicación del Acuerdo UE-Mercosur, se fiscalizarán los compromisos laborales, ambientales y de derechos humanos, activando cláusulas de salvaguarda cuando las importaciones agrarias generen competencia desleal.",
+        "paginaPdf": 133
+      }
+    ]
+  },
+  {
+    "id": "vox-18",
+    "partido": "Vox",
+    "paginaPdf": 29,
+    "texto": "Limitar el importe de las multas de tráfico y estacionamiento por infracciones que no comprometan gravemente la seguridad vial. Revisar y reducir las sanciones económicas desproporcionadas",
+    "tema": "transporte",
+    "subtema": "cuantía de las multas de tráfico",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "Las multas de tráfico y aparcamiento por faltas que no ponen en grave riesgo la seguridad tendrían un tope, y se rebajarían las que resulten desproporcionadas.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "PP",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone reducir las multas excesivas y ajustarlas a los ingresos de quien las recibe.",
+        "texto": "Reduciremos las multas excesivas y aplicaremos «criterios de proporcionalidad» para ajustarlas a la «capacidad de ingresos de las personas sancionadas»",
+        "paginaPdf": 142
+      }
+    ]
+  },
+  {
+    "id": "vox-19",
+    "partido": "Vox",
+    "paginaPdf": 38,
+    "texto": "Reforzar la prevención y el diagnóstico precoz del cáncer de mama y de los cánceres ginecológicos, mejorar el diagnóstico y tratamiento de las enfermedades que afectan especialmente a las mujeres […] con especial atención a las necesidades de las madres que afrontan la maternidad a edades más avanzadas.",
+    "tema": "sanidad",
+    "subtema": "salud de las mujeres",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "Más prevención y detección temprana del cáncer de mama y ginecológico, mejor atención a las enfermedades que sufren sobre todo las mujeres y apoyo a quienes son madres a edad avanzada.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Propone una estrategia de salud de las mujeres con perspectiva de género.",
+        "texto": "Desarrollar una Estrategia de Salud de las Mujeres, incorporando la perspectiva de género en la investigación, el diagnóstico y los tratamientos, con especial atención a la menopausia, la endometriosis, las enfermedades cardiovasculares, el dolor crónico y la salud mental.",
+        "paginaPdf": 81
+      },
+      {
+        "partido": "PP",
+        "resumen": "Propone facilitar la congelación de óvulos y el acceso a la reproducción asistida pública.",
+        "texto": "favoreceremos la prevención y el diagnóstico precoz de los problemas de fertilidad entre los jóvenes y facilitaremos la congelación de óvulos para mujeres jóvenes, mejorando las oportunidades de acceso a la reproducción asistida en el Sistema Nacional de Salud",
+        "paginaPdf": 44
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone reconocer como derecho la atención a la menopausia.",
+        "texto": "Incluiremos la atención a la menopausia como derecho con consultas extendidas, valoración individualizada multidisciplinar",
+        "paginaPdf": 29
+      }
+    ]
+  },
+  {
+    "id": "vox-20",
+    "partido": "Vox",
+    "paginaPdf": 10,
+    "texto": "Alivio del esfuerzo fiscal extra soportado en las Islas Baleares y las Islas Canarias. Actualizar el complemento de insularidad para el personal en activo del sector público estatal en los territorios insulares con el fin de adaptarlo al coste de vida real.",
+    "tema": "administración",
+    "subtema": "complemento de insularidad de los empleados públicos",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "Los empleados del Estado que trabajan en Baleares y Canarias cobrarían un plus mayor por lo cara que es allí la vida, y se aliviarían los impuestos en las islas.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Propone reforzar los fondos territoriales teniendo en cuenta, entre otros retos, la insularidad.",
+        "texto": "Actualizaremos y potenciaremos los mecanismos de cohesión y convergencia territorial como el Fondo de Compensación Interterritorial y los incentivos […] los riesgos derivados de la masa forestal y la insularidad y extrapeninsularidad.",
+        "paginaPdf": 60
+      },
+      {
+        "partido": "PP",
+        "resumen": "Propone compensar los sobrecostes de la insularidad en leyes, planes e inversiones.",
+        "texto": "Compensaremos las desventajas de la insularidad y la ultraperiferia y tendremos en cuenta sus costes en las leyes, los planes y las inversiones del Estado.",
+        "paginaPdf": 34
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone reforzar el plus de residencia de los empleados del Estado en las islas.",
+        "texto": "Haremos atractivos los puestos de los servicios estatales en las islas, reforzando medidas como el plus de residencia, para compensar el sobrecoste de la vida y de la vivienda y evitar que queden vacantes.",
+        "paginaPdf": 98
+      }
+    ]
+  }
+]

@@ -1,0 +1,602 @@
+[
+  {
+    "id": "fa-01",
+    "partido": "Frente Amplio",
+    "paginaPdf": 46,
+    "texto": "Limitaremos las herencias […] a un máximo de 10 millones de euros por heredero. Esta limitación se implementará estableciendo un tipo impositivo marginal del 100 % sobre el tramo de la base imponible que supere esa cifra en el Impuesto sobre Sucesiones y Donaciones.",
+    "tema": "fiscalidad",
+    "subtema": "tope a las grandes herencias",
+    "tipo": "deducible",
+    "enOtrasPalabras": "Nadie podría heredar más de 10 millones de euros: todo lo que pasara de esa cifra se lo quedaría Hacienda a través del impuesto de sucesiones.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Plantea gravar más los grandes patrimonios y las rentas del capital para financiar ayudas a la infancia.",
+        "texto": "La recaudación de la tributación complementaria de los grandes patrimonios y de la mayor progresividad de las rentas del capital contribuirá a financiar la prestación por crianza y la lucha contra la pobreza infantil.",
+        "paginaPdf": 47
+      },
+      {
+        "partido": "PP",
+        "resumen": "Defiende que las comunidades autónomas puedan bajar sus impuestos propios y cedidos cuanto quieran.",
+        "texto": "Las Comunidades Autónomas seguirán decidiendo con libertad sobre sus impuestos propios y cedidos, dentro de sus competencias, y podrán bajarlos cuanto quieran.",
+        "paginaPdf": 47
+      },
+      {
+        "partido": "Vox",
+        "resumen": "Propone revisar y rebajar de forma sistemática todos los impuestos y tasas.",
+        "texto": "Revisión y reducción sistemática de todos los impuestos y tasas que lastran la prosperidad de los trabajadores, familias y empresas españolas.",
+        "paginaPdf": 9
+      }
+    ]
+  },
+  {
+    "id": "fa-02",
+    "partido": "Frente Amplio",
+    "paginaPdf": 11,
+    "texto": "Prohibiremos por ley la compra de viviendas residenciales para cualquier fin que no sea la residencia habitual y permanente de la persona compradora o su arrendamiento bajo el régimen de alquiler asequible regulado.",
+    "tema": "vivienda",
+    "subtema": "compra de vivienda solo para residir",
+    "tipo": "deducible",
+    "enOtrasPalabras": "Solo se podría comprar una vivienda para vivir en ella o para alquilarla a un precio asequible regulado; comprarla como inversión o para otros usos quedaría prohibido.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Propone un impuesto progresivo a fondos y grandes propietarios por las viviendas que no destinen a alquiler residencial.",
+        "texto": "Priorizar el uso residencial y asequible de las viviendas existentes a través de Impuesto contra la especulación de los fondos buitre y grandes propietarios. Se gravará con un impuesto progresivo la posesión de todas aquellas viviendas de grandes propietarios y fondos buitre que no se destinen a alquiler residencial",
+        "paginaPdf": 31
+      },
+      {
+        "partido": "PP",
+        "resumen": "Propone derogar la ley de vivienda y eliminar las zonas tensionadas y el índice de precios del alquiler.",
+        "texto": "DEROGAREMOS LA LEY DE VIVIENDA. Recuperaremos la seguridad jurídica que necesitan propietarios e inquilinos. Eliminaremos las zonas tensionadas y el índice de precios, que han introducido más intervención, más incertidumbre y menos oferta en el mercado del alquiler.",
+        "paginaPdf": 42
+      },
+      {
+        "partido": "Vox",
+        "resumen": "Propone más impuestos a los compradores de fuera de la UE y a las operaciones especulativas de fondos o sociedades.",
+        "texto": "Fiscalidad agravada y disuasoria para compradores no comunitarios y operaciones especulativas de fondos o sociedades.",
+        "paginaPdf": 25
+      }
+    ]
+  },
+  {
+    "id": "fa-03",
+    "partido": "Frente Amplio",
+    "paginaPdf": 55,
+    "texto": "Reduciremos la jornada laboral limitando el tiempo de trabajo efectivo de forma progresiva hasta las 32 horas semanales. Esta propuesta pretende una reducción y reparto equitativo del tiempo de trabajo",
+    "tema": "empleo",
+    "subtema": "semana laboral de 32 horas",
+    "tipo": "deducible",
+    "enOtrasPalabras": "La semana laboral máxima bajaría poco a poco hasta las 32 horas, para trabajar menos y repartir mejor el tiempo de trabajo entre todos.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Propone completar la jornada de 37,5 horas y avanzar hacia las 35 mediante la negociación colectiva.",
+        "texto": "Completar la reducción de la jornada a 37,5 horas e incentivar los avances en la negociación colectiva hacia las 35 horas.",
+        "paginaPdf": 41
+      },
+      {
+        "partido": "PP",
+        "resumen": "Plantea bancos de horas para que quien cuida de hijos o dependientes adapte parte de su jornada.",
+        "texto": "Extenderemos el uso de los bancos de horas para que los trabajadores con hijos o con personas dependientes a su cargo puedan adaptar parte de su jornada a sus necesidades familiares",
+        "paginaPdf": 44
+      },
+      {
+        "partido": "Vox",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      }
+    ]
+  },
+  {
+    "id": "fa-04",
+    "partido": "Frente Amplio",
+    "paginaPdf": 57,
+    "texto": "Devolveremos la edad de jubilación a los 65 años […] Reduciremos la edad de jubilación en determinados oficios y profesiones por su especial penosidad.",
+    "tema": "pensiones y mayores",
+    "subtema": "edad de jubilación",
+    "tipo": "deducible",
+    "enOtrasPalabras": "La edad general para jubilarse volvería a ser 65 años, y sería aún menor en oficios y profesiones especialmente duros.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Propone estudiar adelantar la jubilación en trabajos penosos y penalizar menos la jubilación anticipada involuntaria.",
+        "texto": "Evaluar la mejora de los coeficientes reductores de edad por penosidad y la reducción de las penalizaciones de las pensiones por jubilación anticipada involuntaria, especialmente para trabajadores con largas carreras de cotización.",
+        "paginaPdf": 40
+      },
+      {
+        "partido": "PP",
+        "resumen": "Propone deducciones en el IRPF para incentivar que se siga trabajando tras la jubilación.",
+        "texto": "Incentivaremos la jubilación activa mediante deducciones en el IRPF.",
+        "paginaPdf": 34
+      },
+      {
+        "partido": "Vox",
+        "resumen": "Defiende sostener las pensiones con más crecimiento económico, empleo y salarios.",
+        "texto": "Garantizar la sostenibilidad del sistema de pensiones. Revitalizar la economía, impulsar el empleo, mejorar los salarios y aumentar la riqueza.",
+        "paginaPdf": 10
+      }
+    ]
+  },
+  {
+    "id": "fa-05",
+    "partido": "Frente Amplio",
+    "paginaPdf": 130,
+    "texto": "Rechazaremos de forma explícita el compromiso de destinar el 5 % del PIB a gasto militar en el marco de la OTAN, impulsando una reducción efectiva de las partidas militares, reorientando los recursos presupuestarios hacia la seguridad humana, la protección civil, emergencias climáticas, sanidad y educación.",
+    "tema": "defensa",
+    "subtema": "gasto militar y objetivo de la OTAN",
+    "tipo": "deducible",
+    "enOtrasPalabras": "España rechazaría gastar el 5 % del PIB en defensa como pide la OTAN; bajaría el gasto militar y llevaría ese dinero a emergencias, protección civil, sanidad y educación.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Rechaza subir el gasto militar al 5 % del PIB porque pondría en riesgo el Estado del bienestar.",
+        "texto": "rechazando el aumento del gasto militar al 5% del PIB, pues ello pondría en riesgo nuestro Estado del bienestar.",
+        "paginaPdf": 105
+      },
+      {
+        "partido": "PP",
+        "resumen": "Propone una inversión plurianual en defensa para conocer y cumplir los compromisos internacionales.",
+        "texto": "La Defensa será una verdadera política de Estado y contará con una inversión plurianual que permita conocer fehacientemente y cumplir nuestros compromisos internacionales.",
+        "paginaPdf": 21
+      },
+      {
+        "partido": "Vox",
+        "resumen": "Propone aumentar la inversión en defensa y mejorar sueldos y ayudas de los militares.",
+        "texto": "Aumento de la inversión en Defensa, sueldos dignos y ayudas a la movilidad geográfica y a la vivienda y alojamiento.",
+        "paginaPdf": 47
+      }
+    ]
+  },
+  {
+    "id": "fa-06",
+    "partido": "Frente Amplio",
+    "paginaPdf": 64,
+    "texto": "Cumpliremos el calendario de cierre de las centrales nucleares. Almaraz I y II cerrarán en los plazos previstos (2027-2028), sin beneficios fiscales, con la gestión de los residuos a cargo de las empresas",
+    "tema": "energía",
+    "subtema": "cierre de centrales nucleares",
+    "tipo": "deducible",
+    "enOtrasPalabras": "Las centrales nucleares cerrarían según el calendario ya previsto, empezando por Almaraz en 2027-2028, y las empresas pagarían la gestión de sus residuos.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Propone mantener el calendario de cierre nuclear hasta 2035 con planes para las comarcas afectadas.",
+        "texto": "Mantener el calendario de cierre de las centrales nucleares hasta 2035 y desarrollar proyectos de transición justa en las comarcas afectadas",
+        "paginaPdf": 66
+      },
+      {
+        "partido": "PP",
+        "resumen": "Propone anular el calendario de cierre de las nucleares y alargar su vida útil.",
+        "texto": "ELIMINAREMOS EL CALENDARIO DE CIERRE DE ALMARAZ, ASCÓ, VANDELLÓS, COFRENTES Y TRILLO. En los primeros cien días de Gobierno tramitaremos la extensión de su vida útil con el visto bueno del Consejo de Seguridad Nuclear",
+        "paginaPdf": 54
+      },
+      {
+        "partido": "Vox",
+        "resumen": "Propone derogar el calendario de cierre y estudiar nuevas centrales junto a las actuales.",
+        "texto": "Se garantizará la supervivencia de las centrales nucleares actuales, derogando el calendario de cierre. Se promoverán estudios urgentes para instalar centrales nucleares en los emplazamientos disponibles adyacentes a las actuales.",
+        "paginaPdf": 12
+      }
+    ]
+  },
+  {
+    "id": "fa-07",
+    "partido": "Frente Amplio",
+    "paginaPdf": 127,
+    "texto": "Cerraremos los Centros de Internamiento de Extranjeros (CIE). En los procedimientos de asilo en frontera, la detención se aplicará únicamente como último recurso excepcional, priorizando medidas alternativas y garantizando la no prolongación de plazos.",
+    "tema": "inmigración",
+    "subtema": "centros de internamiento de extranjeros",
+    "tipo": "deducible",
+    "enOtrasPalabras": "Se cerrarían los centros donde se retiene a extranjeros pendientes de expulsión, y a quien pide asilo en la frontera solo se le detendría como último recurso.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Propone ampliar las vías legales de asilo y reforzar el sistema público de acogida.",
+        "texto": "Ampliar las vías legales y seguras de protección internacional y reforzar el sistema público de acogida y asilo, con mecanismos para el reasentamiento y visados humanitarios",
+        "paginaPdf": 92
+      },
+      {
+        "partido": "PP",
+        "resumen": "Propone alargar el tiempo máximo en los centros de internamiento para que se ejecuten las expulsiones.",
+        "texto": "Ampliaremos el tiempo máximo de permanencia en los centros de internamiento, dentro de los límites europeos, para que las expulsiones se ejecuten.",
+        "paginaPdf": 19
+      },
+      {
+        "partido": "Vox",
+        "resumen": "Propone repatriar a quienes permanezcan en España en situación irregular.",
+        "texto": "Repatriación de quienes permanezcan en situación ilegal en nuestra nación.",
+        "paginaPdf": 15
+      }
+    ]
+  },
+  {
+    "id": "fa-08",
+    "partido": "Frente Amplio",
+    "paginaPdf": 76,
+    "texto": "Suprimiremos las subvenciones estatales a la tauromaquia, tanto directas como indirectas, eliminando los fondos públicos por retransmisiones televisivas, cesiones de locales, subvenciones directas procedentes de la PAC e incentivos fiscales destinados a la tauromaquia, festejos taurinos y cría de ganado de lidia.",
+    "tema": "cultura",
+    "subtema": "dinero público para los toros",
+    "tipo": "deducible",
+    "enOtrasPalabras": "El Estado dejaría de financiar los toros de cualquier forma: sin ayudas directas, sin dinero público para retransmisiones, sin ventajas fiscales y sin ayudas agrarias a la cría de toros de lidia.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "PP",
+        "resumen": "Propone promover las tradiciones, empezando por recuperar el Premio Nacional de Tauromaquia.",
+        "texto": "Recuperaremos el respeto y la promoción de las expresiones que mejor combinan tradición y futuro, empezando por la restitución del Premio Nacional de Tauromaquia",
+        "paginaPdf": 38
+      },
+      {
+        "partido": "Vox",
+        "resumen": "Defiende la tauromaquia y propone promover y potenciar las actividades taurinas.",
+        "texto": "Defensa de la Tauromaquia y promoción de la difusión del arte taurino y potenciación del conjunto de actividades alrededor de esta tradición.",
+        "paginaPdf": 43
+      }
+    ]
+  },
+  {
+    "id": "fa-09",
+    "partido": "Frente Amplio",
+    "paginaPdf": 68,
+    "texto": "Reducción de vuelos domésticos de corto radio: Prohibiremos vuelos domésticos que dispongan de una alternativa competitiva en tren de 2,5 horas (salvo los dedicados a conexión con vuelos internacionales).",
+    "tema": "transporte",
+    "subtema": "vuelos cortos con alternativa en tren",
+    "tipo": "deducible",
+    "enOtrasPalabras": "No se permitirían vuelos dentro de España en rutas que se puedan hacer en tren en unas 2 horas y media, salvo los que enlazan con vuelos internacionales.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Propone gravar jets privados, megayates y otros viajes de lujo, dejando fuera el transporte comercial común.",
+        "texto": "Gravar viajes de alto impacto en el medioambiente consumidos por el 0,1% más rico, como el transporte con megayates o jets privados, dejando fuera al transporte comercial del resto de la población.",
+        "paginaPdf": 48
+      },
+      {
+        "partido": "PP",
+        "resumen": "Propone ampliar los aeropuertos saturados según la demanda y la conectividad territorial.",
+        "texto": "MAYOR CAPACIDAD Y MEJORES ACCESOS PARA LOS AEROPUERTOS. Resolveremos los puntos de saturación y ejecutaremos las ampliaciones que justifiquen la demanda prevista y las necesidades de conectividad territorial.",
+        "paginaPdf": 37
+      },
+      {
+        "partido": "Vox",
+        "resumen": "Propone eliminar las normas climáticas que considera que limitan la libertad de circulación.",
+        "texto": "Acabar con todas las imposiciones climáticas como el Pacto Verde que castigan nuestra industria, nuestro campo o que coartan la libertad de circulación de los españoles, como la imposición de ZBE.",
+        "paginaPdf": 29
+      }
+    ]
+  },
+  {
+    "id": "fa-10",
+    "partido": "Frente Amplio",
+    "paginaPdf": 61,
+    "texto": "Prohibiremos la publicidad fósil, como en su día se hizo con el tabaco. Eliminaremos los logotipos de las corporaciones fósiles de eventos deportivos, de las instituciones educativas y patrocinios culturales.",
+    "tema": "medio ambiente",
+    "subtema": "publicidad de empresas de combustibles fósiles",
+    "tipo": "deducible",
+    "enOtrasPalabras": "Las empresas de petróleo, gas o carbón no podrían hacer publicidad, igual que pasó con el tabaco, ni poner su logo en eventos deportivos, centros educativos o patrocinios culturales.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Propone una hoja de ruta para abandonar de forma progresiva los combustibles fósiles.",
+        "texto": "Aprobar una hoja de ruta para el abandono progresivo de los combustibles fósiles",
+        "paginaPdf": 65
+      },
+      {
+        "partido": "PP",
+        "resumen": "Defiende una transición ecológica sin calendarios impuestos y compatible con el crecimiento económico.",
+        "texto": "Pondremos freno a la imposición de calendarios imposibles. Defendemos una transición ordenada, realista y justa, que haga compatible la protección del medioambiente con el crecimiento económico y el bienestar.",
+        "paginaPdf": 55
+      },
+      {
+        "partido": "Vox",
+        "resumen": "Propone acabar con las imposiciones climáticas que, según dice, castigan a la industria y al campo.",
+        "texto": "Acabar con todas las imposiciones climáticas como el Pacto Verde que castigan nuestra industria, nuestro campo",
+        "paginaPdf": 29
+      }
+    ]
+  },
+  {
+    "id": "fa-11",
+    "partido": "Frente Amplio",
+    "paginaPdf": 18,
+    "texto": "En el marco del Impuesto sobre Transmisiones Patrimoniales (ITP), se fijará la exención total del tributo para la adquisición de la primera vivienda habitual de familias e individuos",
+    "tema": "vivienda",
+    "subtema": "impuestos al comprar la primera vivienda",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "Comprar tu primera vivienda para vivir en ella quedaría totalmente libre del impuesto de transmisiones patrimoniales, uno de los que se pagan al comprar casa.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Propone préstamos sin intereses de hasta 50.000 euros para comprar la primera vivienda.",
+        "texto": "Desplegar el Programa TUCASA y ampliar su dotación en caso de que se agoten los 10.000 millones de euros de la línea de préstamos de hasta 50 mil euros sin intereses para adquisición de una primera vivienda.",
+        "paginaPdf": 31
+      },
+      {
+        "partido": "PP",
+        "resumen": "Propone bajar el IVA y el ITP de la primera vivienda para los menores de 40 años.",
+        "texto": "Reduciremos el IVA de la compra de primera vivienda del 10% al 4% para menores de 40 años y permitiremos que se pague de forma fraccionada al ritmo de la hipoteca. Acordaremos con las Comunidades Autónomas un Impuesto de Transmisiones Patrimoniales reducido para la primera vivienda de los jóvenes cuando esta sea usada",
+        "paginaPdf": 43
+      },
+      {
+        "partido": "Vox",
+        "resumen": "Propone que la primera vivienda habitual no pague ni IVA ni ITP.",
+        "texto": "La primera vivienda habitual de una familia española no paga impuestos. Tipo 0% de IVA para la compra de tu primera vivienda habitual -de nueva construcción- y bonificación 100% del ITP para la compra de tu primera vivienda habitual -de segunda mano-.",
+        "paginaPdf": 24
+      }
+    ]
+  },
+  {
+    "id": "fa-12",
+    "partido": "Frente Amplio",
+    "paginaPdf": 148,
+    "texto": "Recuperaremos el derecho de las personas perjudicadas a reclamar directamente al juez o magistrado que les haya causado daños por dolo o culpa grave, un derecho que suprimió la reforma de la LOPJ de 2015 […] al igual que esa posibilidad existe para cualquier otra profesión en nuestro país.",
+    "tema": "justicia",
+    "subtema": "reclamar daños directamente a un juez",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "Si un juez te causa un daño actuando con mala fe o con una negligencia grave, podrías reclamarle a él directamente que te indemnice, como ocurre con otras profesiones.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "PP",
+        "resumen": "Propone reforzar por ley el amparo de los jueces frente a las presiones políticas.",
+        "texto": "PROTEGEREMOS LA INDEPENDENCIA DE LOS JUECES. Reforzaremos en la Ley Orgánica del Poder Judicial su amparo frente a las presiones políticas y mejoraremos los medios materiales y tecnológicos de juzgados y tribunales.",
+        "paginaPdf": 27
+      },
+      {
+        "partido": "Vox",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      }
+    ]
+  },
+  {
+    "id": "fa-13",
+    "partido": "Frente Amplio",
+    "paginaPdf": 47,
+    "texto": "Bajaremos el IVA de bienes y servicios básicos de consumo general. Las peluquerías y los servicios veterinarios pasarán del tipo general al reducido, los pañales del reducido al superreducido y los productos sin gluten tendrán IVA cero para compensar su mayor precio.",
+    "tema": "fiscalidad",
+    "subtema": "IVA de peluquerías y veterinarios",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "Ir a la peluquería o al veterinario pagaría menos IVA, los pañales aún menos y los productos sin gluten nada, para que salgan más baratos.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Propone vigilar que las rebajas del IVA de bienes básicos lleguen de verdad a los precios.",
+        "texto": "Garantizar que cualquier rebaja del IVA a bienes básicos se traslade a precios, reforzando la CNMC.",
+        "paginaPdf": 38
+      },
+      {
+        "partido": "PP",
+        "resumen": "Propone IVA cero para los alimentos básicos, incluidos carne, pescado y conservas, mientras dure la inflación.",
+        "texto": "Mientras persista la actual crisis de inflación y de poder adquisitivo, aplicaremos un IVA del 0% a los alimentos básicos, incluidos la carne, el pescado y las conservas.",
+        "paginaPdf": 47
+      },
+      {
+        "partido": "Vox",
+        "resumen": "Propone bajar los tipos reducido y general del IVA, empezando por los productos de primera necesidad.",
+        "texto": "Rebaja del tipo reducido y del tipo general del IVA atendiendo prioritariamente a productos esenciales y de primera necesidad.",
+        "paginaPdf": 9
+      }
+    ]
+  },
+  {
+    "id": "fa-14",
+    "partido": "Frente Amplio",
+    "paginaPdf": 83,
+    "texto": "Revisaremos la dependencia de proveedores tecnológicos no europeos en áreas críticas como defensa, sanidad, justicia, Hacienda y Seguridad Social en coordinación con comunidades autónomas y ayuntamientos. Obligatoriedad legal de que los datos más sensibles del Estado se alojen exclusivamente en proveedores ubicados en España",
+    "tema": "tecnología",
+    "subtema": "datos del Estado en proveedores no europeos",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "El Estado dejaría de depender de empresas tecnológicas de fuera de Europa en servicios clave, y sus datos más sensibles tendrían que guardarse por ley en empresas situadas en España.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Defiende reducir las dependencias estratégicas invirtiendo y produciendo más en España.",
+        "texto": "En un contexto internacional más incierto y competitivo, reducir dependencias estratégicas exige aumentar la capacidad de invertir, producir y generar valor añadido en nuestro país.",
+        "paginaPdf": 14
+      },
+      {
+        "partido": "PP",
+        "resumen": "Propone identificar de qué países y proveedores depende España en tecnología y otros sectores clave, y diversificarlos.",
+        "texto": "Identificaremos de qué países y proveedores dependemos en tecnologías, materias primas, medicamentos, energía y componentes esenciales. Diversificaremos suministros, potenciaremos nuestra capacidad industrial",
+        "paginaPdf": 57
+      },
+      {
+        "partido": "Vox",
+        "resumen": "Propone proteger a España de depender en exceso de materias primas, componentes y tecnologías críticas.",
+        "texto": "Protección de España frente a la dependencia excesiva de materias primas, componentes y tecnologías críticas. Mayor peso a consideraciones sobre seguridad económica, soberanía industrial y seguridad nacional.",
+        "paginaPdf": 12
+      }
+    ]
+  },
+  {
+    "id": "fa-15",
+    "partido": "Frente Amplio",
+    "paginaPdf": 92,
+    "texto": "Régimen sancionador contra la morosidad comercial: Aplicaremos un régimen sancionador efectivo para hacer cumplir la ley de morosidad, erradicando los retrasos en los pagos por parte de grandes corporaciones y administraciones públicas que merman la liquidez de pymes y autónomos.",
+    "tema": "autónomos y pymes",
+    "subtema": "retrasos en los pagos a pymes y autónomos",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "Las grandes empresas y las administraciones que paguen tarde a pymes y autónomos serían sancionadas, para que cumplan los plazos de pago que marca la ley.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "PP",
+        "resumen": "Propone que la Administración devuelva impuestos y pague las ayudas reconocidas con más rapidez.",
+        "texto": "Acortaremos los plazos legales de devolución de impuestos, optimizaremos la diferencia entre retención y recaudación y agilizaremos el pago de las ayudas reconocidas.",
+        "paginaPdf": 14
+      },
+      {
+        "partido": "Vox",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      }
+    ]
+  },
+  {
+    "id": "fa-16",
+    "partido": "Frente Amplio",
+    "paginaPdf": 120,
+    "texto": "Reconoceremos el derecho a utilizar seudónimos legítimos en el entorno digital y a acreditar la mayoría de edad o la condición de persona real sin necesidad de revelar la identidad civil. La identificación real solo podrá realizarse mediante orden judicial explícita dentro de investigaciones penales.",
+    "tema": "tecnología",
+    "subtema": "anonimato y seudónimos en internet",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "Podrías usar un seudónimo en internet y demostrar que eres mayor de edad sin dar tu nombre real; solo un juez podría pedir tu identidad, y dentro de una investigación penal.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Propone una herramienta pública y anónima para comprobar la edad sin que las plataformas conozcan la identidad.",
+        "texto": "Generalizar una herramienta pública y anónima de verificación de la edad, integrada en la cartera digital, para que las plataformas comprueben que el usuario tiene la edad mínima sin conocer su identidad.",
+        "paginaPdf": 95
+      },
+      {
+        "partido": "PP",
+        "resumen": "Propone prohibir las redes sociales a menores de 14 años y hacer obligatoria la verificación de edad.",
+        "texto": "NINGÚN MENOR DE 14 AÑOS PODRÁ TENER UNA CUENTA EN REDES SOCIALES, Y HASTA LOS 16 NECESITARÁ AUTORIZACIÓN DE SUS PADRES. Los controles parentales y la verificación de edad serán obligatorios.",
+        "paginaPdf": 45
+      },
+      {
+        "partido": "Vox",
+        "resumen": "Propone proteger a los menores de riesgos digitales como el juego, la pornografía o ciertos delitos.",
+        "texto": "Preservar la inocencia de los menores y protegerlos frente a los riesgos presentes en los entornos digitales, tales como la adicción al juego o la pornografía o la mayor vulnerabilidad ante ciertos delitos.",
+        "paginaPdf": 52
+      }
+    ]
+  },
+  {
+    "id": "fa-17",
+    "partido": "Frente Amplio",
+    "paginaPdf": 92,
+    "texto": "Transpondremos de inmediato la directiva europea del IVA franquiciado para autónomos y pequeñas empresas. Aquellos que facturen menos de 85.000 euros anuales quedarán exentos de liquidaciones periódicas y solo tendrán que presentar una declaración informativa anual.",
+    "tema": "autónomos y pymes",
+    "subtema": "IVA de los pequeños autónomos",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "Los autónomos y pequeñas empresas que facturen menos de 85.000 euros al año dejarían de hacer las declaraciones periódicas del IVA y solo presentarían una informativa al año.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Propone actualizar el estatuto del autónomo, mejorar su protección social y avanzar en que cotice por ingresos reales.",
+        "texto": "Actualizar el Estatuto del Trabajo Autónomo para adaptarlo a los cambios tecnológicos y las nuevas profesiones; seguir mejorando la protección social de las personas autónomas, atendiendo también a la conciliación de los cuidados, avanzando en la cotización por ingresos reales",
+        "paginaPdf": 42
+      },
+      {
+        "partido": "PP",
+        "resumen": "Propone que el autónomo que facture menos de 85.000 euros no tenga que cobrar ni declarar el IVA.",
+        "texto": "SI ERES AUTÓNOMO Y FACTURAS MENOS DE 85.000 EUROS, NO TENDRÁS QUE COBRAR NI DECLARAR EL IVA. Habrá reglas claras para deducir gastos, también los de vivienda y vehículo.",
+        "paginaPdf": 46
+      },
+      {
+        "partido": "Vox",
+        "resumen": "Propone cuota cero para autónomos que ganen menos del salario mínimo y una cuota progresiva a partir de ahí.",
+        "texto": "Apoyo a los trabajadores autónomos. Cuota de cero euros si los ingresos no llegan al Salario Mínimo Interprofesional y, superado dicho umbral, una cuota progresiva desde los 50 euros en función de sus ingresos.",
+        "paginaPdf": 9
+      }
+    ]
+  },
+  {
+    "id": "fa-18",
+    "partido": "Frente Amplio",
+    "paginaPdf": 87,
+    "texto": "Incrementaremos las indemnizaciones por daños a la ganadería extensiva por fauna silvestre y subvencionaremos las medidas implementadas para la protección del ganado.",
+    "tema": "mundo rural",
+    "subtema": "daños de la fauna salvaje al ganado",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "Los ganaderos que crían al aire libre cobrarían más cuando animales salvajes ataquen a su ganado, y recibirían ayudas para pagar las medidas que lo protejan.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Propone recompensar la ganadería extensiva y la agricultura sostenible.",
+        "texto": "Recompensar las prácticas de agroganadería sostenible y en particular en la ganadería extensiva y la agricultura regenerativa.",
+        "paginaPdf": 70
+      },
+      {
+        "partido": "PP",
+        "resumen": "Propone proteger a los ganaderos frente al lobo sin dejar de conservar la especie.",
+        "texto": "Garantizaremos la protección de los ganaderos frente al lobo asegurando, al mismo tiempo, su conservación y equilibrio",
+        "paginaPdf": 49
+      },
+      {
+        "partido": "Vox",
+        "resumen": "Defiende la caza para controlar las poblaciones de animales y proteger las explotaciones agrícolas y ganaderas.",
+        "texto": "Defensa de la caza como actividad esencial para el control de las poblaciones y para la protección de las explotaciones agrícolas y ganaderas",
+        "paginaPdf": 35
+      }
+    ]
+  },
+  {
+    "id": "fa-19",
+    "partido": "Frente Amplio",
+    "paginaPdf": 57,
+    "texto": "Moratoria a etiquetas electrónicas en supermercados: Estableceremos una moratoria de un año para la implantación de nuevas etiquetas electrónicas en establecimientos comerciales mientras se evalúa si su uso facilita incrementos abusivos de precios.",
+    "tema": "consumo",
+    "subtema": "etiquetas electrónicas de precios en tiendas",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "Durante un año no se podrían instalar nuevas etiquetas de precio electrónicas en supermercados y tiendas, mientras se estudia si sirven para subir precios de forma abusiva.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Propone vigilar y sancionar las prácticas digitales y los costes ocultos que encarecen los precios.",
+        "texto": "Combatir la manipulación digital y los costes ocultos, que incrementan precios. Reforzar la detección, control y sanción de prácticas que oculten costes,",
+        "paginaPdf": 38
+      },
+      {
+        "partido": "PP",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Vox",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      }
+    ]
+  },
+  {
+    "id": "fa-20",
+    "partido": "Frente Amplio",
+    "paginaPdf": 48,
+    "texto": "Eliminaremos el Impuesto sobre la producción eléctrica para la energía renovable, reduciendo su tipo al 0 %, estableciendo de forma paralela una compensación económica para las denominadas «zonas de sacrificio ambiental» (por los efectos negativos de los grandes parques eólicos y fotovoltaicos en territorios así denominados).",
+    "tema": "energía",
+    "subtema": "impuesto a la producción de electricidad",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "La electricidad de origen renovable dejaría de pagar el impuesto a la producción eléctrica, y se compensaría con dinero a las zonas más perjudicadas por grandes parques eólicos y solares.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Propone reorientar los impuestos para abaratar las tecnologías limpias.",
+        "texto": "Reorientar la fiscalidad para la transición ecológica, eliminando barreras y reduciendo costes para las tecnologías limpias.",
+        "paginaPdf": 66
+      },
+      {
+        "partido": "PP",
+        "resumen": "Propone eliminar de inmediato el impuesto del 7 % a la producción eléctrica y bajar los impuestos del recibo.",
+        "texto": "Eliminaremos de inmediato el impuesto del 7% a la producción eléctrica y reduciremos la carga fiscal del recibo.",
+        "paginaPdf": 54
+      },
+      {
+        "partido": "Vox",
+        "resumen": "Propone una bajada masiva de los impuestos de la electricidad para familias, empresas e industrias.",
+        "texto": "Bajada masiva de los impuestos de la energía eléctrica a familias, empresas e industrias españolas. Fin de la doble imposición.",
+        "paginaPdf": 11
+      }
+    ]
+  }
+]

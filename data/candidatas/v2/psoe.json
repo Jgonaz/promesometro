@@ -1,0 +1,602 @@
+[
+  {
+    "id": "psoe-01",
+    "partido": "PSOE",
+    "paginaPdf": 48,
+    "texto": "Gravar viajes de alto impacto en el medioambiente consumidos por el 0,1% más rico, como el transporte con megayates o jets privados […] El gravamen alcanzará a las grandes embarcaciones de recreo a través de los amarres en puertos deportivos y a los vuelos privados y billetes en clase business con salida desde España",
+    "tema": "fiscalidad",
+    "subtema": "impuesto a jets privados, yates y clase business",
+    "tipo": "deducible",
+    "enOtrasPalabras": "Habría un impuesto nuevo para los viajes en yate grande o avión privado, y también para los billetes de avión en clase business que salgan de España.",
+    "comparativa": [
+      {
+        "partido": "PP",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Vox",
+        "resumen": "Propone revertir los impuestos a las emisiones de CO2 y otras normas inspiradas en el Pacto Verde Europeo.",
+        "texto": "Revertir las normativas que atacan frontalmente a la industria nacional (prohibición de motores de […] combustión, impuestos a las emisiones de CO2) inspiradas en el Pacto Verde Europeo, la Agenda 2030 y otros acuerdos no sometidos a votación por los españoles.",
+        "paginaPdf": 11
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone un gravamen ambiental sobre aviones privados, yates, coches de lujo y otros bienes de lujo.",
+        "texto": "Crearemos un gravamen de solidaridad ambiental sobre el uso de aviones privados, yates, coches de lujo y otros bienes suntuarios.",
+        "paginaPdf": 47
+      }
+    ]
+  },
+  {
+    "id": "psoe-02",
+    "partido": "PSOE",
+    "paginaPdf": 48,
+    "texto": "Aumentar la tributación de las empresas cotizadas cuya ratio entre la retribución total de su ejecutivo principal y la mediana de su plantilla supere 100 a 1, con un tramo superior a partir de 200 a 1.",
+    "tema": "fiscalidad",
+    "subtema": "impuesto de sociedades ligado a la brecha salarial interna",
+    "tipo": "deducible",
+    "enOtrasPalabras": "Las empresas que cotizan en bolsa pagarían más impuestos si su máximo directivo cobra más de 100 veces lo que gana un empleado típico, y todavía más si supera las 200 veces.",
+    "comparativa": [
+      {
+        "partido": "PP",
+        "resumen": "Propone que las empresas que invierten paguen menos impuesto de sociedades, descontando la inversión el mismo año.",
+        "texto": "LA EMPRESA QUE INVIERTA PARA CRECER PAGARÁ MENOS IMPUESTO SOBRE SOCIEDADES. Ampliaremos la libertad de amortización: lo que una empresa invierta en maquinaria, equipos, digitalización, inteligencia artificial, ciberseguridad, software o patentes podrá descontarse entero el mismo año.",
+        "paginaPdf": 47
+      },
+      {
+        "partido": "Vox",
+        "resumen": "Propone bajar el tipo del impuesto de sociedades para que las empresas crezcan y creen empleo.",
+        "texto": "Reducir el tipo del Impuesto de Sociedades con el fin de promover la dinamización de nuestra economía, el crecimiento de nuestras empresas y la creación efectiva de empleo.",
+        "paginaPdf": 9
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone publicar la brecha entre el sueldo de los directivos y el de la plantilla y topar sueldos en empresas públicas o rescatadas.",
+        "texto": "Obligatoriedad de publicar la brecha entre la remuneración directiva y el salario medio de la plantilla, fijando topes retributivos en empresas públicas y entidades receptoras de ayudas públicas extraordinarias.",
+        "paginaPdf": 116
+      }
+    ]
+  },
+  {
+    "id": "psoe-03",
+    "partido": "PSOE",
+    "paginaPdf": 37,
+    "texto": "Crearemos un mecanismo para activar una deducción en el IRPF en contextos de subidas de precios. […] lo que permitirá concentrar el esfuerzo fiscal en quienes más lo necesitan y asegurar su compatibilidad con los objetivos de estabilidad presupuestaria.",
+    "tema": "fiscalidad",
+    "subtema": "rebaja del IRPF cuando sube la inflación",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "Cuando los precios suban mucho, se activaría una rebaja en la declaración de la renta, centrada en quienes más lo necesitan y sin descuadrar las cuentas públicas.",
+    "comparativa": [
+      {
+        "partido": "PP",
+        "resumen": "Propone deflactar la tarifa del IRPF para que la inflación no suponga una subida encubierta de impuestos.",
+        "texto": "Deflactaremos la tarifa y actualizaremos los principales parámetros del impuesto para impedir que la inflación vuelva a utilizarse como una subida encubierta de impuestos.",
+        "paginaPdf": 47
+      },
+      {
+        "partido": "Vox",
+        "resumen": "Propone simplificar y bajar el IRPF, con un tipo menor según el número de hijos.",
+        "texto": "Reforma del sistema de tributación sobre la renta (IRPF). Simplificación y bajada del IRPF. Reducción del tipo aplicable del IRPF para cada contribuyente o familia en función del número de hijos.",
+        "paginaPdf": 9
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone actualizar cada año el IPREM con el IPC para que las ayudas no pierdan poder de compra con la inflación.",
+        "texto": "Fijaremos la obligación legal de actualizar anualmente el IPREM conforme al IPC acumulado, evitando que las ayudas y subsidios asistenciales pierdan poder de compra frente a la inflación.",
+        "paginaPdf": 21
+      }
+    ]
+  },
+  {
+    "id": "psoe-04",
+    "partido": "PSOE",
+    "paginaPdf": 31,
+    "texto": "Se gravará con un impuesto progresivo la posesión de todas aquellas viviendas de grandes propietarios […] Las viviendas que se dediquen a fines turísticos, que estén vacías, o que se pongan en alquiler a un precio abusivo serán objeto de este nuevo impuesto.",
+    "tema": "vivienda",
+    "subtema": "impuesto a viviendas vacías o turísticas de grandes propietarios",
+    "tipo": "deducible",
+    "enOtrasPalabras": "Los grandes propietarios pagarían un impuesto, más alto cuantas más tengan, por las viviendas que estén vacías, se alquilen a turistas o se alquilen a un precio abusivo.",
+    "comparativa": [
+      {
+        "partido": "PP",
+        "resumen": "Propone derogar la ley de vivienda y eliminar las zonas tensionadas y el índice de precios del alquiler.",
+        "texto": "DEROGAREMOS LA LEY DE VIVIENDA. Recuperaremos la seguridad jurídica que necesitan propietarios e inquilinos. Eliminaremos las zonas tensionadas y el índice de precios, que han introducido más intervención, más incertidumbre y menos oferta en el mercado del alquiler.",
+        "paginaPdf": 42
+      },
+      {
+        "partido": "Vox",
+        "resumen": "Propone una fiscalidad agravada para compradores no comunitarios y operaciones especulativas de fondos o sociedades.",
+        "texto": "Fiscalidad agravada y disuasoria para compradores no comunitarios y operaciones especulativas de fondos o sociedades.",
+        "paginaPdf": 25
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone un IBI muy progresivo que penalice a grandes tenedores, inmuebles caros y viviendas vacías sin justificación.",
+        "texto": "Reestructuraremos el Impuesto sobre Bienes Inmuebles (IBI) para convertirlo en un tributo altamente progresivo que penalice las fincas de elevado valor catastral, las propiedades pertenecientes a grandes tenedores corporativos y a entidades jurídicas, y las viviendas mantenidas vacías de forma injustificada.",
+        "paginaPdf": 18
+      }
+    ]
+  },
+  {
+    "id": "psoe-05",
+    "partido": "PSOE",
+    "paginaPdf": 100,
+    "texto": "Ahora queremos una Justicia que llegue a tiempo: juicios por despido y desahucio en un máximo de tres meses, desalojo de viviendas ocupadas en 48 horas y más jueces y fiscales.",
+    "tema": "vivienda",
+    "subtema": "desalojo de viviendas ocupadas",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "Los juicios por despido o por desahucio durarían como mucho tres meses, y si te ocupan la casa el desalojo se haría en 48 horas.",
+    "comparativa": [
+      {
+        "partido": "PP",
+        "resumen": "Propone una ley para que el propietario recupere su vivienda ocupada en 48 horas desde el primer día.",
+        "texto": "Aprobaremos una ley para que el propietario pueda recuperar su vivienda en 48 horas desde el primer día.",
+        "paginaPdf": 43
+      },
+      {
+        "partido": "Vox",
+        "resumen": "Propone desalojar la vivienda ocupada en menos de 24 horas y devolverla de inmediato al propietario.",
+        "texto": "Mano dura contra la okupación y la inquiocupación. Desalojo de la vivienda okupada en menos de 24 horas y recuperación inmediata de la posesión por su legítimo titular, el propietario.",
+        "paginaPdf": 24
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone prohibir por ley los desahucios de personas vulnerables sin una alternativa habitacional previa.",
+        "texto": "Prohibiremos de forma permanente y con rango de ley la ejecución de lanzamientos o desahucios de personas y familias en situación de vulnerabilidad económica o social sin que las administraciones públicas hayan proporcionado con carácter previo una alternativa habitacional digna, adecuada y estable.",
+        "paginaPdf": 15
+      }
+    ]
+  },
+  {
+    "id": "psoe-06",
+    "partido": "PSOE",
+    "paginaPdf": 49,
+    "texto": "Incorporaremos progresivamente a la sanidad pública los tratamientos básicos para toda la población adulta, empezando por empastes, endodoncias, reconstrucciones y tratamientos periodontales. […] crearemos una ayuda directa de hasta 200 euros anuales por persona, que empezará por los hogares de rentas medias y bajas",
+    "tema": "sanidad",
+    "subtema": "dentista en la sanidad pública para adultos",
+    "tipo": "deducible",
+    "enOtrasPalabras": "La sanidad pública cubriría poco a poco a los adultos empastes, endodoncias y otros tratamientos dentales básicos y, mientras tanto, habría una ayuda de hasta 200 euros al año.",
+    "comparativa": [
+      {
+        "partido": "PP",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Vox",
+        "resumen": "Propone un mapa de infraestructuras sanitarias urgentes y reforzar la cartera de servicios sanitarios.",
+        "texto": "Mapa de infraestructuras sanitarias urgentes y refuerzo de la cartera de servicios sanitarios.",
+        "paginaPdf": 38
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone ampliar la cobertura dental pública hasta llegar al menos al 50 % de la población.",
+        "texto": "Salud bucodental: Continuaremos la ampliación de la cobertura bucodental realizada en esta legislatura (menores hasta 14 años, embarazadas, mayores de 65 años, pacientes oncológicos específicos) hasta alcanzar al menos el 50 % de la población residente al final de la legislatura.",
+        "paginaPdf": 27
+      }
+    ]
+  },
+  {
+    "id": "psoe-07",
+    "partido": "PSOE",
+    "paginaPdf": 73,
+    "texto": "Avanzar en la transformación de nuestros zoológicos y parques marinos al siglo XXI, impulsando el bienestar de los animales y reorientando sus funciones hacia recuperación, conservación, investigación y educación ambiental.",
+    "tema": "medio ambiente",
+    "subtema": "zoos y parques marinos",
+    "tipo": "deducible",
+    "enOtrasPalabras": "Los zoológicos y parques marinos se transformarían para centrarse en el bienestar de los animales, la recuperación y conservación de especies, la investigación y la educación ambiental.",
+    "comparativa": [
+      {
+        "partido": "PP",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Vox",
+        "resumen": "Defiende la tauromaquia y propone promover la difusión del arte taurino.",
+        "texto": "Defensa de la Tauromaquia y promoción de la difusión del arte taurino y potenciación del conjunto de actividades alrededor de esta tradición.",
+        "paginaPdf": 43
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone convertir zoos y acuarios en centros de recuperación y protección, eliminando poco a poco la exhibición.",
+        "texto": "Actualizaremos la Ley 31/2003 de conservación de la fauna silvestre en los parques zoológicos, para iniciar la transformación de los zoos y acuarios en espacios de recuperación y protección, eliminando paulatinamente la exhibición.",
+        "paginaPdf": 77
+      }
+    ]
+  },
+  {
+    "id": "psoe-08",
+    "partido": "PSOE",
+    "paginaPdf": 83,
+    "texto": "Aprobar una Ley Orgánica contra la Trata de Seres Humanos, […] prohibiendo el proxenetismo en todas sus formas y reconociendo a las personas prostituidas como víctimas con plenos derechos",
+    "tema": "igualdad",
+    "subtema": "prostitución y proxenetismo",
+    "tipo": "deducible",
+    "enOtrasPalabras": "Se prohibiría cualquier forma de lucrarse con la prostitución de otra persona, y quienes la ejercen serían consideradas víctimas con plenos derechos. También habría una ley contra la trata.",
+    "comparativa": [
+      {
+        "partido": "PP",
+        "resumen": "Propone una ley integral contra la trata de seres humanos que proteja a las víctimas y persiga a las redes.",
+        "texto": "Aprobaremos una ley integral contra la trata de seres humanos para proteger a las víctimas y perseguir a las redes que se lucran con ellas.",
+        "paginaPdf": 17
+      },
+      {
+        "partido": "Vox",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone eliminar las normas que castigan a quienes ejercen la prostitución y darles derechos laborales y de organización.",
+        "texto": "Eliminaremos toda normativa que penalice o punitivice a las personas que ejercen la prostitución garantizando el acceso a derechos fundamentales como seguridad social, salud, condiciones de trabajo dignas y la posibilidad de organizarse, rechazando siempre el estigma asociado a la misma.",
+        "paginaPdf": 39
+      }
+    ]
+  },
+  {
+    "id": "psoe-09",
+    "partido": "PSOE",
+    "paginaPdf": 83,
+    "texto": "Incorporar la agravante de género en los delitos económicos, cuando la víctima sea la esposa, exesposa o mujer con la que exista o haya existido una relación de pareja.",
+    "tema": "justicia",
+    "subtema": "agravante de género en delitos económicos",
+    "tipo": "deducible",
+    "enOtrasPalabras": "Si alguien comete un delito económico contra su mujer, su exmujer o una pareja o expareja, la pena sería mayor al aplicarse un agravante por razón de género.",
+    "comparativa": [
+      {
+        "partido": "PP",
+        "resumen": "Propone integrar los servicios asistenciales autonómicos y municipales en el sistema VioGén.",
+        "texto": "Integraremos los servicios asistenciales autonómicos y municipales en VioGen para que Policía, Justicia y asistencia actúen sin dejar espacios de desprotección.",
+        "paginaPdf": 17
+      },
+      {
+        "partido": "Vox",
+        "resumen": "Propone derogar las leyes de género, que según su programa han criminalizado a los hombres.",
+        "texto": "Derogar las leyes que han criminalizado a los hombres y desprotegido a las mujeres.",
+        "paginaPdf": 30
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone ampliar la definición legal de violencia vicaria y reforzar VioGén con una evaluación del riesgo para los hijos.",
+        "texto": "Ampliaremos por ley la definición de violencia vicaria y reforzaremos el sistema VioGén incorporando una evaluación del riesgo específica para hijas e hijos de las víctimas.",
+        "paginaPdf": 38
+      }
+    ]
+  },
+  {
+    "id": "psoe-10",
+    "partido": "PSOE",
+    "paginaPdf": 90,
+    "texto": "Impulsar la participación juvenil y la profundización democrática, rebajando la edad de voto a los 16 años, fortaleciendo los consejos de juventud y ampliando los mecanismos de participación ciudadana en las decisiones públicas.",
+    "tema": "democracia y transparencia",
+    "subtema": "voto a los 16 años",
+    "tipo": "deducible",
+    "enOtrasPalabras": "Se podría votar desde los 16 años en lugar de los 18, y se reforzarían los consejos de juventud y otras vías para que la ciudadanía participe en las decisiones.",
+    "comparativa": [
+      {
+        "partido": "PP",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Vox",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone reconocer por ley el derecho a votar desde los 16 años.",
+        "texto": "Derecho al voto a los 16 años: Reconoceremos por ley el derecho al voto a partir de los 16 años.",
+        "paginaPdf": 42
+      }
+    ]
+  },
+  {
+    "id": "psoe-11",
+    "partido": "PSOE",
+    "paginaPdf": 99,
+    "texto": "Aprobar una nueva Ley de Seguridad Ciudadana que sustituya a la Ley Orgánica 4/2015, garantizando los derechos de reunión y manifestación, un régimen sancionador preciso, identificaciones sin discriminación y cámaras corporales en toda la Policía Nacional y Guardia Civil con garantías de protección de datos.",
+    "tema": "seguridad",
+    "subtema": "ley de seguridad ciudadana y protesta",
+    "tipo": "deducible",
+    "enOtrasPalabras": "Se cambiaría la ley actual de seguridad ciudadana por otra que proteja más el derecho a manifestarse, precise las multas, evite identificaciones discriminatorias y ponga cámaras a los agentes.",
+    "comparativa": [
+      {
+        "partido": "PP",
+        "resumen": "Propone ampliar el delito de desórdenes públicos y endurecer las penas por disturbios violentos.",
+        "texto": "Manifestarse es un derecho; sembrar el caos, participar en disturbios violentos y atacar a las Fuerzas y Cuerpos de Seguridad es un delito. Reformaremos el delito de desórdenes públicos para ampliar las conductas castigadas y endurecer las penas por participar en disturbios violentos",
+        "paginaPdf": 16
+      },
+      {
+        "partido": "Vox",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone derogar por completo la ley de seguridad ciudadana vigente y reducir las multas excesivas.",
+        "texto": "Derogaremos por completo la Ley Mordaza. […] Reduciremos las multas excesivas",
+        "paginaPdf": 142
+      }
+    ]
+  },
+  {
+    "id": "psoe-12",
+    "partido": "PSOE",
+    "paginaPdf": 43,
+    "texto": "Reformar la regulación del contrato a tiempo parcial para exigir que se justifique de forma precisa la causa por la que no se formaliza un contrato a jornada completa y establecer que, cuando la jornada pactada, incluidas las horas complementarias, supere el 80 % de la jornada ordinaria, el contrato se considere celebrado a jornada completa.",
+    "tema": "empleo",
+    "subtema": "contratos a tiempo parcial",
+    "tipo": "deducible",
+    "enOtrasPalabras": "Las empresas tendrían que justificar por qué contratan a tiempo parcial, y si un contrato parcial supera el 80 % de las horas de una jornada normal contaría como jornada completa.",
+    "comparativa": [
+      {
+        "partido": "PP",
+        "resumen": "Propone que las empresas con plantillas más estables que la media de su sector coticen menos por desempleo.",
+        "texto": "LAS EMPRESAS QUE DEN ESTABILIDAD A SUS TRABAJADORES PAGARÁN MENOS. Las empresas que mantengan sus plantillas más estables que la media de su sector cotizarán menos por desempleo.",
+        "paginaPdf": 46
+      },
+      {
+        "partido": "Vox",
+        "resumen": "Propone derogar la legislación laboral vigente, que considera que ha agravado la precariedad.",
+        "texto": "Derogar la legislación laboral de Sánchez que ha agravado la precariedad, desincentivado la contratación y empeorado una situación ya de por sí insostenible",
+        "paginaPdf": 13
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone las 37,5 horas ya y que en los contratos a tiempo parcial suba en proporción el salario por hora.",
+        "texto": "Implantación inmediata a 37,5 horas en 2026 y 35 horas en el sector público, prohibiendo la compensación mediante horas extraordinarias y exigiendo la subida proporcional del salario hora en contratos a tiempo parcial.",
+        "paginaPdf": 55
+      }
+    ]
+  },
+  {
+    "id": "psoe-13",
+    "partido": "PSOE",
+    "paginaPdf": 15,
+    "texto": "Poner en marcha la Cuenta de Ahorro e Inversión […] con incentivos para canalizar el ahorro desde el ladrillo hasta inversión productiva más beneficiosa y que contribuya a la reindustrialización de la economía española y europea.",
+    "tema": "economía",
+    "subtema": "incentivos para invertir el ahorro fuera de la vivienda",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "Se crearía una cuenta con incentivos para que la gente invierta sus ahorros en empresas e industria en lugar de en pisos.",
+    "comparativa": [
+      {
+        "partido": "PP",
+        "resumen": "Propone dar el mismo trato fiscal a todas las formas de ahorro mientras el dinero siga invertido.",
+        "texto": "Hacienda dará un trato fiscal equivalente a las distintas formas de ahorro mientras el dinero siga invertido, para que los españoles puedan elegir cómo ahorrar y en qué ahorrar.",
+        "paginaPdf": 47
+      },
+      {
+        "partido": "Vox",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      }
+    ]
+  },
+  {
+    "id": "psoe-14",
+    "partido": "PSOE",
+    "paginaPdf": 47,
+    "texto": "Unas cuentas públicas saneadas son la primera garantía del Estado de bienestar. Sin ellas no hay sanidad, educación ni pensiones que resistan una crisis. […] Mantendremos una senda decreciente de las ratios de deuda y déficit sobre PIB.",
+    "tema": "economía",
+    "subtema": "reducción del déficit y la deuda",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "El Estado iría reduciendo su deuda y su déficit en relación con lo que produce el país, con la idea de que unas cuentas sanas protegen la sanidad, la educación y las pensiones.",
+    "comparativa": [
+      {
+        "partido": "PP",
+        "resumen": "Propone reducir el déficit estructural y la deuda pensando en las siguientes generaciones.",
+        "texto": "NO HIPOTECAREMOS A QUIENES VIENEN DETRÁS. Reduciremos el déficit estructural y la deuda.",
+        "paginaPdf": 34
+      },
+      {
+        "partido": "Vox",
+        "resumen": "Propone reducir la deuda y controlar el déficit recortando gasto superfluo, compatible con bajar impuestos.",
+        "texto": "Reducción de la deuda pública. Compatibilizar la rebaja de impuestos con la financiación de los servicios […] mediante el control del déficit, la eliminación del gasto superfluo e ideológico y el impulso del crecimiento económico.",
+        "paginaPdf": 9
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone que el BCE financie directamente a los Estados de la UE para que no dependan de los mercados para su deuda.",
+        "texto": "Habilitaremos al BCE para la financiación directa a los Estados miembros de la UE, evitando que los países tengan que acudir a colocar su deuda pública en los mercados financieros.",
+        "paginaPdf": 137
+      }
+    ]
+  },
+  {
+    "id": "psoe-15",
+    "partido": "PSOE",
+    "paginaPdf": 15,
+    "texto": "para homogeneizar requisitos básicos de funcionamiento, reducir la carga burocrática y facilitar que las empresas puedan operar, crecer y escalar en todo el territorio nacional.",
+    "tema": "autónomos y pymes",
+    "subtema": "requisitos comunes para empresas en toda España",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "Se igualarían los requisitos básicos que se piden a las empresas en todas las comunidades, con menos burocracia, para que puedan funcionar y crecer en cualquier parte de España.",
+    "comparativa": [
+      {
+        "partido": "PP",
+        "resumen": "Propone requisitos comunes por ley para que una licencia obtenida en una comunidad sirva en las demás.",
+        "texto": "UNA EMPRESA PODRÁ CRECER EN TODA ESPAÑA SIN PEDIR UN PERMISO NUEVO EN CADA COMUNIDAD. Fijaremos por ley, sector a sector y de acuerdo con las Comunidades Autónomas, los requisitos comunes para ejercer una actividad en España",
+        "paginaPdf": 32
+      },
+      {
+        "partido": "Vox",
+        "resumen": "Propone una ley de unidad de mercado: lo que es legal en una región lo sea en toda España.",
+        "texto": "Ley de Unidad de Mercado. Lo que es legal en una región de España, lo es en toda España. Una misma actividad económica no debe quedar sometida a requisitos administrativos diferentes e injustificados por razón del territorio en el que se ejerza.",
+        "paginaPdf": 28
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone reforzar la ventanilla única y la digitalización para reducir trámites a las pymes.",
+        "texto": "Reforzaremos la ventanilla única administrativa y aceleraremos la digitalización para reducir trabas y trámites burocráticos, ofreciendo servicios públicos de acompañamiento para la modernización de pequeñas y medianas empresas.",
+        "paginaPdf": 92
+      }
+    ]
+  },
+  {
+    "id": "psoe-16",
+    "partido": "PSOE",
+    "paginaPdf": 95,
+    "texto": "Restringir el uso libre de los asistentes conversacionales de IA a menores de 16 años sin consentimiento parental, y obligar a las empresas a detectar conductas de riesgo (autolesiones, dependencia emocional o contenidos sexuales) y a activar alertas.",
+    "tema": "tecnología",
+    "subtema": "chatbots de IA y menores",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "Los menores de 16 años no podrían usar libremente chatbots de inteligencia artificial sin permiso de sus padres, y las empresas tendrían que detectar señales de riesgo y dar la alerta.",
+    "comparativa": [
+      {
+        "partido": "PP",
+        "resumen": "Propone prohibir las redes sociales a menores de 14 años y exigir autorización paterna hasta los 16.",
+        "texto": "NINGÚN MENOR DE 14 AÑOS PODRÁ TENER UNA CUENTA EN REDES SOCIALES, Y HASTA LOS 16 NECESITARÁ AUTORIZACIÓN DE SUS PADRES. Los controles parentales y la verificación de edad serán obligatorios.",
+        "paginaPdf": 45
+      },
+      {
+        "partido": "Vox",
+        "resumen": "Propone proteger a los menores de riesgos digitales como la adicción al juego o la pornografía.",
+        "texto": "Preservar la inocencia de los menores y protegerlos frente a los riesgos presentes en los entornos digitales, tales como la adicción al juego o la pornografía o la mayor vulnerabilidad ante ciertos delitos.",
+        "paginaPdf": 52
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone prohibir que los chatbots de compañía simulen vínculos sentimentales o manipulen para retener al usuario.",
+        "texto": "Prohibición a los asistentes y chatbots de compañía de simular vínculos sentimentales o emplear dinámicas manipuladoras basadas en perfiles psicológicos para retener al usuario.",
+        "paginaPdf": 121
+      }
+    ]
+  },
+  {
+    "id": "psoe-17",
+    "partido": "PSOE",
+    "paginaPdf": 69,
+    "texto": "Defender una PAC fuerte, suficiente y orientada a quienes viven del campo […] Asimismo, defenderemos en la UE una competencia justa, reforzando controles a las importaciones y exigiendo reciprocidad en los estándares ambientales, sanitarios y laborales.",
+    "tema": "mundo rural",
+    "subtema": "reciprocidad en las importaciones agrarias",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "Se pediría en Europa controlar más los alimentos importados y exigirles las mismas normas ambientales, sanitarias y laborales que deben cumplir los agricultores de aquí.",
+    "comparativa": [
+      {
+        "partido": "PP",
+        "resumen": "Propone exigir a los alimentos importados las mismas normas que a los productores españoles y más controles en frontera.",
+        "texto": "Los alimentos importados cumplirán exigencias de seguridad alimentaria y producción equivalentes a las nuestras. Intensificaremos los controles en frontera y promoveremos cláusulas de salvaguardia inmediatas en todos los acuerdos comerciales cuando proceda.",
+        "paginaPdf": 50
+      },
+      {
+        "partido": "Vox",
+        "resumen": "Rechaza el acuerdo UE-Mercosur y propone cláusulas espejo y más controles en frontera.",
+        "texto": "Rechazo explícito al acuerdo UE-Mercosur y de todo acuerdo comercial que obligue a nuestros productores a competir en desigualdad de condiciones. Inclusión de cláusulas espejo. Recuperación del principio de preferencia comunitaria. Aumento de los controles en frontera y lucha contra el fraude en el etiquetado.",
+        "paginaPdf": 33
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone vigilar el acuerdo UE-Mercosur y activar salvaguardas si las importaciones agrarias son competencia desleal.",
+        "texto": "Bajo la aplicación del Acuerdo UE-Mercosur, se fiscalizarán los compromisos laborales, ambientales y de derechos humanos, activando cláusulas de salvaguarda cuando las importaciones agrarias generen competencia desleal.",
+        "paginaPdf": 133
+      }
+    ]
+  },
+  {
+    "id": "psoe-18",
+    "partido": "PSOE",
+    "paginaPdf": 92,
+    "texto": "España necesita una migración ordenada, legal y segura, que responda a sus necesidades demográficas y económicas. […] La integración es un compromiso de doble sentido, con derechos y obligaciones para todos.",
+    "tema": "inmigración",
+    "subtema": "migración ordenada e integración con obligaciones",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "La inmigración debería ser ordenada y legal, ajustada a lo que el país necesita en población y economía, e integrarse supondría tener derechos y también obligaciones.",
+    "comparativa": [
+      {
+        "partido": "PP",
+        "resumen": "Propone que renovar la residencia exija firmar un compromiso de integración: aprender español y conocer la Constitución.",
+        "texto": "Quien quiera renovar su residencia temporal en el régimen general deberá firmar un compromiso de integración. Será obligatorio aprender español, conocer la Constitución y los valores de la Unión Europea",
+        "paginaPdf": 19
+      },
+      {
+        "partido": "Vox",
+        "resumen": "Defiende que España no puede acoger a más inmigrantes y propone prohibir las regularizaciones masivas.",
+        "texto": "Ni uno más. Después de recibir a 5 millones de personas en 5 años España no puede acoger a más inmigrantes. Prohibición de las regularizaciones masivas.",
+        "paginaPdf": 15
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone reformar la Ley de Extranjería para crear un procedimiento estable y permanente de regularización.",
+        "texto": "Reformaremos de forma integral la Ley de Extranjería para instaurar un procedimiento estable, permanente y reglado de regularización administrativa.",
+        "paginaPdf": 126
+      }
+    ]
+  },
+  {
+    "id": "psoe-19",
+    "partido": "PSOE",
+    "paginaPdf": 100,
+    "texto": "Reforzar la autonomía del Ministerio Fiscal, con un mandato de cinco años para la Fiscalía General del Estado desvinculado de la legislatura y la prohibición de instrucciones del Gobierno sobre casos concretos",
+    "tema": "justicia",
+    "subtema": "independencia del Fiscal General",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "El Fiscal General del Estado tendría un mandato de cinco años que no coincidiría con el del Gobierno, y el Gobierno no podría darle órdenes sobre casos concretos.",
+    "comparativa": [
+      {
+        "partido": "PP",
+        "resumen": "Propone un mandato único de cinco años para el fiscal general, que no cese con el Gobierno que lo propuso.",
+        "texto": "EL FISCAL GENERAL DEL ESTADO NO DEPENDERÁ DEL GOBIERNO. La Fiscalía debe defender la legalidad, no los intereses políticos de quien ocupa el poder. Aprobaremos un nuevo Estatuto del Ministerio Fiscal. El fiscal general tendrá un mandato único de cinco años y, como recomienda la Comisión Europea, no cesará con el Gobierno que lo propuso.",
+        "paginaPdf": 26
+      },
+      {
+        "partido": "Vox",
+        "resumen": "Propone garantizar la idoneidad, imparcialidad e independencia del Fiscal General del Estado.",
+        "texto": "Garantizar la idoneidad, imparcialidad, competencia profesional e independencia del Fiscal General del Estado.",
+        "paginaPdf": 55
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone que, sin acuerdo en dos meses, las Cámaras puedan elegir por mayoría absoluta a los vocales del CGPJ.",
+        "texto": "Reformaremos la Ley Orgánica del Poder Judicial para que ningún partido pueda volver a bloquear la renovación del Consejo General del Poder Judicial. Los vocales del turno judicial se seguirán eligiendo por mayoría de tres quintos, pero si en dos meses no hay acuerdo, las Cámaras podrán elegirlos en segunda votación por mayoría absoluta.",
+        "paginaPdf": 148
+      }
+    ]
+  },
+  {
+    "id": "psoe-20",
+    "partido": "PSOE",
+    "paginaPdf": 52,
+    "texto": "dotando a los centros de los recursos necesarios para atender al alumnado con necesidades específicas, especialmente con trastorno del espectro autista (TEA), y necesidades educativas especiales (NEE), y reforzando el papel de los centros de educación especial como referencia y apoyo.",
+    "tema": "educación",
+    "subtema": "centros de educación especial",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "Los colegios tendrían más recursos para atender a alumnos con autismo u otras necesidades especiales, y se reforzaría el papel de los centros de educación especial.",
+    "comparativa": [
+      {
+        "partido": "PP",
+        "resumen": "Propone no cerrar los centros de educación especial y que las familias participen en la decisión.",
+        "texto": "LOS CENTROS DE EDUCACIÓN ESPECIAL NO SE CERRARÁN. Seguirán escolarizando a quienes los necesiten y las familias participarán de verdad en la decisión.",
+        "paginaPdf": 51
+      },
+      {
+        "partido": "Vox",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone reforzar la educación inclusiva con más fondos para profesionales de apoyo.",
+        "texto": "Reforzaremos la educación inclusiva mediante la puesta a disposición de las comunidades autónomas de más fondos para profesionales de apoyo.",
+        "paginaPdf": 26
+      }
+    ]
+  }
+]
