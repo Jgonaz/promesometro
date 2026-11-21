@@ -1341,6 +1341,32 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
     text-wrap: pretty;
   }
 
+  /* Despliegue y pliegue animados. Mejora progresiva: donde se puede
+     interpolar hasta `auto` (Chromium) se anima la altura; en el resto de
+     navegadores con ::details-content, solo el fundido; en los demás, se
+     abre de golpe como antes. `content-visibility` discreto mantiene el
+     contenido visible mientras se pliega. */
+  @media (prefers-reduced-motion: no-preference) {
+    .explicacion {
+      interpolate-size: allow-keywords;
+    }
+
+    .explicacion::details-content {
+      block-size: 0;
+      overflow: clip;
+      opacity: 0;
+      transition:
+        block-size 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+        opacity 0.25s ease,
+        content-visibility 0.3s allow-discrete;
+    }
+
+    .explicacion[open]::details-content {
+      block-size: auto;
+      opacity: 1;
+    }
+  }
+
   /* Comparativa: qué proponen los otros tres partidos sobre lo mismo. */
   .comparativa {
     margin-top: 20px;
