@@ -2,7 +2,7 @@
 // en la página indicada, igual que cada cita de la comparativa, y que cada
 // pregunta tiene la estructura que espera el juego. Uso:
 //   node scripts/verificar-frases.mjs src/data/frases.json [...]
-// Con --final, además, exige 20 preguntas por partido, 10 de cada tipo, y
+// Con --final, además, exige 30 preguntas por partido, 15 de cada tipo, y
 // comprueba los asuntos de src/data/coincidencias.json.
 // Requiere los textos extraídos en data/texto/<partido>.paginas.txt
 // (pdftotext -layout + marcas «=== PÁGINA PDF N ===»).
@@ -16,6 +16,9 @@ const ARCHIVO_TEXTO = {
 };
 const PARTIDOS = Object.keys(ARCHIVO_TEXTO);
 const TIPOS = ['deducible', 'sorpresa'];
+const POR_TIPO = 15;
+// Valoración editorial interna (el juego no la usa): nota 1–3 y etiquetas.
+const ETIQUETAS = ['ambigua', 'polemica', 'titular'];
 
 // Normaliza para comparar sin depender de la maquetación del PDF: une palabras
 // partidas con guion a final de línea, quita viñetas y unifica comillas,
@@ -79,6 +82,14 @@ for (const ruta of rutas) {
     if (!f.tema) mal('falta tema');
     if (!TIPOS.includes(f.tipo)) mal(`tipo debe ser ${TIPOS.join(' o ')}`);
     if (typeof f.enOtrasPalabras !== 'string' || f.enOtrasPalabras.length < 20) mal('falta enOtrasPalabras');
+    if (![1, 2, 3].includes(f.calidad)) mal('calidad debe ser 1, 2 o 3');
+    const etiquetas = Array.isArray(f.etiquetas) ? f.etiquetas : null;
+    if (!etiquetas) mal('etiquetas debe ser una lista (puede estar vacía)');
+    else {
+      const raras = etiquetas.filter((e) => !ETIQUETAS.includes(e));
+      if (raras.length) mal(`etiquetas desconocidas: ${raras.join(', ')} (válidas: ${ETIQUETAS.join(', ')})`);
+      if (new Set(etiquetas).size !== etiquetas.length) mal('etiquetas repetidas');
+    }
 
     // La comparativa recoge a los otros tres partidos, una vez cada uno.
     const esperados = PARTIDOS.filter((p) => p !== f.partido).sort();
@@ -107,7 +118,7 @@ if (final) {
   for (const p of PARTIDOS) {
     for (const t of TIPOS) {
       const n = todas.filter((f) => f.partido === p && f.tipo === t).length;
-      if (n !== 10) errores.push(`✗ ${p}: ${n} preguntas de tipo ${t} (deben ser 10)`);
+      if (n !== POR_TIPO) errores.push(`✗ ${p}: ${n} preguntas de tipo ${t} (deben ser ${POR_TIPO})`);
     }
   }
 

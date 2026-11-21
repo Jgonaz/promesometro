@@ -10,7 +10,9 @@ import fuentes from '../../data/programas/fuentes.json';
 
 const RONDA = 10;
 const urls = Object.fromEntries(fuentes.programas.map((p) => [p.partido, p.url]));
-const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) => ({ nombre, logo, raiz })) };
+// La valoración editorial (calidad y etiquetas) es interna: no viaja a la página.
+const frasesJuego = frases.map(({ calidad, etiquetas, ...f }) => f);
+const datos = { frases: frasesJuego, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) => ({ nombre, logo, raiz })) };
 ---
 
 <Base

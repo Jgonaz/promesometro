@@ -27,6 +27,11 @@
         "texto": "Revisión y reducción sistemática de todos los impuestos y tasas que lastran la prosperidad de los trabajadores, familias y empresas españolas.",
         "paginaPdf": 9
       }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "polemica",
+      "titular"
     ]
   },
   {
@@ -57,6 +62,11 @@
         "texto": "Fiscalidad agravada y disuasoria para compradores no comunitarios y operaciones especulativas de fondos o sociedades.",
         "paginaPdf": 25
       }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "polemica",
+      "titular"
     ]
   },
   {
@@ -87,6 +97,10 @@
         "texto": null,
         "paginaPdf": null
       }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "titular"
     ]
   },
   {
@@ -117,7 +131,9 @@
         "texto": "Garantizar la sostenibilidad del sistema de pensiones. Revitalizar la economía, impulsar el empleo, mejorar los salarios y aumentar la riqueza.",
         "paginaPdf": 10
       }
-    ]
+    ],
+    "calidad": 2,
+    "etiquetas": []
   },
   {
     "id": "fa-05",
@@ -147,6 +163,10 @@
         "texto": "Aumento de la inversión en Defensa, sueldos dignos y ayudas a la movilidad geográfica y a la vivienda y alojamiento.",
         "paginaPdf": 47
       }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "polemica"
     ]
   },
   {
@@ -177,7 +197,9 @@
         "texto": "Se garantizará la supervivencia de las centrales nucleares actuales, derogando el calendario de cierre. Se promoverán estudios urgentes para instalar centrales nucleares en los emplazamientos disponibles adyacentes a las actuales.",
         "paginaPdf": 12
       }
-    ]
+    ],
+    "calidad": 1,
+    "etiquetas": []
   },
   {
     "id": "fa-07",
@@ -207,6 +229,10 @@
         "texto": "Repatriación de quienes permanezcan en situación ilegal en nuestra nación.",
         "paginaPdf": 15
       }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "polemica"
     ]
   },
   {
@@ -237,6 +263,10 @@
         "texto": "Defensa de la Tauromaquia y promoción de la difusión del arte taurino y potenciación del conjunto de actividades alrededor de esta tradición.",
         "paginaPdf": 43
       }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "polemica"
     ]
   },
   {
@@ -267,6 +297,11 @@
         "texto": "Acabar con todas las imposiciones climáticas como el Pacto Verde que castigan nuestra industria, nuestro campo o que coartan la libertad de circulación de los españoles, como la imposición de ZBE.",
         "paginaPdf": 29
       }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "polemica",
+      "titular"
     ]
   },
   {
@@ -297,6 +332,10 @@
         "texto": "Acabar con todas las imposiciones climáticas como el Pacto Verde que castigan nuestra industria, nuestro campo",
         "paginaPdf": 29
       }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "titular"
     ]
   },
   {
@@ -327,6 +366,10 @@
         "texto": "La primera vivienda habitual de una familia española no paga impuestos. Tipo 0% de IVA para la compra de tu primera vivienda habitual -de nueva construcción- y bonificación 100% del ITP para la compra de tu primera vivienda habitual -de segunda mano-.",
         "paginaPdf": 24
       }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "ambigua"
     ]
   },
   {
@@ -357,6 +400,11 @@
         "texto": null,
         "paginaPdf": null
       }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "ambigua",
+      "polemica"
     ]
   },
   {
@@ -387,6 +435,11 @@
         "texto": "Rebaja del tipo reducido y del tipo general del IVA atendiendo prioritariamente a productos esenciales y de primera necesidad.",
         "paginaPdf": 9
       }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "ambigua",
+      "titular"
     ]
   },
   {
@@ -417,6 +470,10 @@
         "texto": "Protección de España frente a la dependencia excesiva de materias primas, componentes y tecnologías críticas. Mayor peso a consideraciones sobre seguridad económica, soberanía industrial y seguridad nacional.",
         "paginaPdf": 12
       }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "ambigua"
     ]
   },
   {
@@ -447,6 +504,10 @@
         "texto": null,
         "paginaPdf": null
       }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "ambigua"
     ]
   },
   {
@@ -477,6 +538,11 @@
         "texto": "Preservar la inocencia de los menores y protegerlos frente a los riesgos presentes en los entornos digitales, tales como la adicción al juego o la pornografía o la mayor vulnerabilidad ante ciertos delitos.",
         "paginaPdf": 52
       }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "ambigua",
+      "polemica"
     ]
   },
   {
@@ -507,6 +573,10 @@
         "texto": "Apoyo a los trabajadores autónomos. Cuota de cero euros si los ingresos no llegan al Salario Mínimo Interprofesional y, superado dicho umbral, una cuota progresiva desde los 50 euros en función de sus ingresos.",
         "paginaPdf": 9
       }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "ambigua"
     ]
   },
   {
@@ -537,6 +607,10 @@
         "texto": "Defensa de la caza como actividad esencial para el control de las poblaciones y para la protección de las explotaciones agrícolas y ganaderas",
         "paginaPdf": 35
       }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "ambigua"
     ]
   },
   {
@@ -567,6 +641,11 @@
         "texto": null,
         "paginaPdf": null
       }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "ambigua",
+      "titular"
     ]
   },
   {
@@ -597,6 +676,351 @@
         "texto": "Bajada masiva de los impuestos de la energía eléctrica a familias, empresas e industrias españolas. Fin de la doble imposición.",
         "paginaPdf": 11
       }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "ambigua"
+    ]
+  },
+  {
+    "id": "fa-21",
+    "partido": "Frente Amplio",
+    "paginaPdf": 145,
+    "texto": "Prohibiremos las pelotas de goma y otros materiales antidisturbios muy lesivos, regularemos el uso de la fuerza y de las cámaras corporales, garantizaremos la identificación visible de los agentes y prohibiremos los controles de identidad por perfil racial.",
+    "tema": "seguridad",
+    "subtema": "pelotas de goma y controles por perfil racial",
+    "tipo": "deducible",
+    "enOtrasPalabras": "Se prohibirían las pelotas de goma y otros materiales antidisturbios muy dañinos, se regularía el uso de la fuerza y de las cámaras que llevan los agentes, los policías tendrían que llevar identificación visible y se prohibirían los controles de identidad que se hacen según el perfil racial de la persona.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Propone identificaciones sin discriminación y cámaras corporales en la Policía Nacional y la Guardia Civil.",
+        "texto": "identificaciones sin discriminación y cámaras corporales en toda la Policía Nacional y Guardia Civil con garantías de protección de datos.",
+        "paginaPdf": 99
+      },
+      {
+        "partido": "PP",
+        "resumen": "Propone valorar la actuación de los agentes según las circunstancias y la amenaza que conocían al intervenir.",
+        "texto": "Estableceremos que la actuación de los agentes se valore conforme a las circunstancias, información y nivel de amenaza que el agente conocía en el momento de intervenir.",
+        "paginaPdf": 17
+      },
+      {
+        "partido": "Vox",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "polemica",
+      "titular"
+    ]
+  },
+  {
+    "id": "fa-22",
+    "partido": "Frente Amplio",
+    "paginaPdf": 131,
+    "texto": "Aprobaremos una ley específica de embargo integral de armas a Israel […] fijará el embargo con carácter permanente mientras persista la ocupación ilegal o el riesgo de genocidio",
+    "tema": "defensa",
+    "subtema": "embargo de armas a Israel",
+    "tipo": "deducible",
+    "enOtrasPalabras": "Se aprobaría una ley para prohibir del todo la venta de armas a Israel, sin excepciones que pueda autorizar el Gobierno, y que duraría mientras siga la ocupación ilegal o exista riesgo de genocidio.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Dice que ha aprobado un embargo de armas a Israel y ha condenado las violaciones del derecho humanitario en Gaza.",
+        "texto": "hemos condenado reiteradamente las violaciones del derecho internacional humanitario en Gaza, aprobado un embargo de armas a Israel",
+        "paginaPdf": 105
+      },
+      {
+        "partido": "PP",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Vox",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "polemica"
+    ]
+  },
+  {
+    "id": "fa-23",
+    "partido": "Frente Amplio",
+    "paginaPdf": 31,
+    "texto": "En el periodo de coexistencia con centros concertados se prohibirán de forma inmediata las cuotas obligatorias en centros sostenidos con fondos públicos, sancionando incumplimientos. El objetivo es que el 100 % de los fondos públicos vayan destinados a la educación pública.",
+    "tema": "educación",
+    "subtema": "cuotas obligatorias en centros concertados",
+    "tipo": "deducible",
+    "enOtrasPalabras": "Mientras convivan con la escuela pública los colegios concertados, ya no podrían cobrar cuotas obligatorias a las familias, y el dinero público iría solo a la escuela pública.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "PP",
+        "resumen": "Quiere que la plaza concertada sea gratuita de verdad, con módulos que cubran el coste real.",
+        "texto": "con módulos que cubran el coste real, para que la plaza concertada sea gratuita de verdad.",
+        "paginaPdf": 51
+      },
+      {
+        "partido": "Vox",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "polemica"
+    ]
+  },
+  {
+    "id": "fa-24",
+    "partido": "Frente Amplio",
+    "paginaPdf": 105,
+    "texto": "Restableceremos la alta velocidad como un servicio público de titularidad y operación exclusiva por parte de Renfe. Paralizaremos de inmediato la segunda fase de liberalización",
+    "tema": "transporte",
+    "subtema": "alta velocidad 100 % pública",
+    "tipo": "deducible",
+    "enOtrasPalabras": "Los trenes de alta velocidad serían solo de Renfe, sin empresas privadas que los operen, y se pararía ya la siguiente fase para abrirlos a la competencia.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "PP",
+        "resumen": "Promete recuperar la gestión y la fiabilidad del AVE, con renovación de vías y trenes.",
+        "texto": "Vamos a recuperar la gestión y fiabilidad que durante décadas han hecho del AVE un referente internacional de puntualidad y excelencia.",
+        "paginaPdf": 36
+      },
+      {
+        "partido": "Vox",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "polemica"
+    ]
+  },
+  {
+    "id": "fa-25",
+    "partido": "Frente Amplio",
+    "paginaPdf": 45,
+    "texto": "Incrementaremos el tipo impositivo del Impuesto sobre Servicios Digitales del tipo actual hasta el 15 %, gravando a las grandes multinacionales tecnológicas.",
+    "tema": "fiscalidad",
+    "subtema": "impuesto a las grandes tecnológicas",
+    "tipo": "deducible",
+    "enOtrasPalabras": "El impuesto sobre los servicios digitales que pagan las grandes multinacionales tecnológicas subiría hasta el 15 %.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Propone aumentar los impuestos a las grandes tecnológicas, complementando la actual tasa Google.",
+        "texto": "Aumentar los impuestos a los tecnooligarcas, complementando la actual tasa Google.",
+        "paginaPdf": 48
+      },
+      {
+        "partido": "PP",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Vox",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "ambigua"
+    ]
+  },
+  {
+    "id": "fa-26",
+    "partido": "Frente Amplio",
+    "paginaPdf": 64,
+    "texto": "En las horas de mayor producción de energía eléctrica solar […] la luz será gratis para todos los hogares, tengan o no placas solares. La comercializadora pública ofrecerá de partida tres horas diarias gratuitas en la franja solar",
+    "tema": "energía",
+    "subtema": "tres horas de luz gratis al día",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "Cuando sobra electricidad solar, durante unas horas al día la luz sería gratis para todos, tengan o no placas solares, y la compañía pública ofrecería de entrada tres horas diarias gratis.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "PP",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Vox",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "titular"
+    ]
+  },
+  {
+    "id": "fa-27",
+    "partido": "Frente Amplio",
+    "paginaPdf": 57,
+    "texto": "Prohibiremos de forma absoluta fijar precios dinámicos o personalizados basados en el perfilado de datos personales del cliente (historial, localización, modelo de móvil o nivel de renta estimado), permitiéndose únicamente descuentos universales y tarifas sociales.",
+    "tema": "consumo",
+    "subtema": "precios personalizados según los datos del cliente",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "Ninguna tienda podría cobrar a cada cliente un precio distinto según sus datos, como su historial, dónde está o qué móvil tiene; solo se permitirían descuentos para todos y tarifas sociales.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "PP",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Vox",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "titular"
+    ]
+  },
+  {
+    "id": "fa-28",
+    "partido": "Frente Amplio",
+    "paginaPdf": 121,
+    "texto": "Prohibiremos las cajas de recompensa y mecánicas de juego de azar encubiertas en videojuegos dirigidos o al alcance de menores, fijando sanciones graves para empresas infractoras.",
+    "tema": "tecnología",
+    "subtema": "cajas de recompensa en videojuegos",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "En los videojuegos al alcance de menores no se podrían vender premios al azar que funcionen como apuestas escondidas, y las empresas que lo hagan tendrían multas graves.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "PP",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Vox",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "titular"
+    ]
+  },
+  {
+    "id": "fa-29",
+    "partido": "Frente Amplio",
+    "paginaPdf": 54,
+    "texto": "Incluiremos el presentismo como riesgo psicosocial y prohibiremos los pluses de asistencia que penalicen bajas médicas o algoritmos que castiguen ausencias justificadas.",
+    "tema": "empleo",
+    "subtema": "pluses por asistencia y presentismo",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "Las empresas no podrían pagar extras a quien no falta al trabajo si eso castiga a quien se pone de baja, ni usar algoritmos que castiguen las ausencias justificadas.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "PP",
+        "resumen": "Quiere atajar el absentismo injustificado y mejorar la gestión de la incapacidad temporal.",
+        "texto": "ATAJAREMOS EL ABSENTISMO INJUSTIFICADO.",
+        "paginaPdf": 46
+      },
+      {
+        "partido": "Vox",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "polemica"
+    ]
+  },
+  {
+    "id": "fa-30",
+    "partido": "Frente Amplio",
+    "paginaPdf": 121,
+    "texto": "Fijaremos límites a la propiedad y al control cruzado de medios de comunicación en función de audiencias, ingresos publicitarios e influencia.",
+    "tema": "democracia y transparencia",
+    "subtema": "concentración de medios de comunicación",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "Habría límites a cuántos medios puede tener o controlar un mismo grupo, según su audiencia, lo que ingresa por publicidad y su influencia.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "PP",
+        "resumen": "Garantiza el pluralismo informativo y la independencia de los medios frente al poder político, sin hablar de límites a la propiedad.",
+        "texto": "GARANTIZAREMOS LA LIBERTAD DE PRENSA, EL PLURALISMO INFORMATIVO Y LA INDEPENDENCIA DE LOS MEDIOS DE COMUNICACIÓN FRENTE A CUALQUIER INJERENCIA DEL PODER POLÍTICO.",
+        "paginaPdf": 27
+      },
+      {
+        "partido": "Vox",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "polemica"
     ]
   },
   {
@@ -627,6 +1051,10 @@
         "texto": "Limitaremos por ley el precio del alquiler residencial en todas las zonas tensionadas aplicando la fórmula objetiva que garantice la renta más baja para el inquilino",
         "paginaPdf": 13
       }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "polemica"
     ]
   },
   {
@@ -657,6 +1085,10 @@
         "texto": "Crearemos además un nuevo permiso retribuido de hasta quince días para acompañar a un familiar en cuidados paliativos y un permiso de un día para acompañar a quien reciba la prestación de ayuda para morir",
         "paginaPdf": 25
       }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "polemica"
     ]
   },
   {
@@ -687,7 +1119,9 @@
         "texto": "En el periodo de coexistencia con centros concertados se prohibirán de forma inmediata las cuotas obligatorias en centros sostenidos con fondos públicos, sancionando incumplimientos. El objetivo es que el 100 % de los fondos públicos vayan destinados a la educación pública.",
         "paginaPdf": 31
       }
-    ]
+    ],
+    "calidad": 2,
+    "etiquetas": []
   },
   {
     "id": "pp-04",
@@ -717,6 +1151,10 @@
         "texto": "Aprobaremos una ley del plurilingüismo, para garantizar plenamente los derechos lingüísticos, para que la ciudadanía pueda relacionarse en las lenguas cooficiales y estatutarias con las instituciones del Estado.",
         "paginaPdf": 141
       }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "polemica"
     ]
   },
   {
@@ -747,7 +1185,9 @@
         "texto": "Condonación de deuda autonómica condicionada a la prohibición de efectuar dumping fiscal o bajadas de impuestos a rentas altas.",
         "paginaPdf": 104
       }
-    ]
+    ],
+    "calidad": 1,
+    "etiquetas": []
   },
   {
     "id": "pp-06",
@@ -777,7 +1217,9 @@
         "texto": "Reformaremos la Ley Orgánica del Poder Judicial para que ningún partido pueda volver a bloquear la renovación del Consejo General del Poder Judicial. Los vocales del turno judicial se seguirán eligiendo por mayoría de tres quintos, pero si en dos meses no hay acuerdo, las Cámaras podrán elegirlos en segunda votación por mayoría absoluta.",
         "paginaPdf": 148
       }
-    ]
+    ],
+    "calidad": 2,
+    "etiquetas": []
   },
   {
     "id": "pp-07",
@@ -807,6 +1249,10 @@
         "texto": "Reformaremos el artículo 43 de la Constitución para incluir el derecho al aborto",
         "paginaPdf": 28
       }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "polemica"
     ]
   },
   {
@@ -837,6 +1283,10 @@
         "texto": "Derogaremos por completo la Ley Mordaza. ● Reduciremos las multas excesivas",
         "paginaPdf": 142
       }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "ambigua"
     ]
   },
   {
@@ -867,6 +1317,10 @@
         "texto": "Reformaremos la Ley 7/2023 de protección de los derechos y el bienestar de los animales, para incluir de forma plena a los perros de caza, de trabajo y a los animales empleados en actividades ganaderas o deportivas",
         "paginaPdf": 75
       }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "ambigua"
     ]
   },
   {
@@ -897,6 +1351,11 @@
         "texto": "Garantizaremos la plena aplicación de la legislación estatal de protección de las personas trans y de las personas LGTBIQA+, con medidas contra la discriminación en el empleo, la educación, la salud, la vivienda, el deporte, la cultura y los servicios públicos.",
         "paginaPdf": 123
       }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "ambigua",
+      "polemica"
     ]
   },
   {
@@ -927,6 +1386,10 @@
         "texto": "Aprobaremos la Ley de Prestación Universal por Crianza que concederá 200 € al mes por cada menor de 18 años a cargo. […] La tramitaremos y abonaremos mensualmente de forma automática como deducción reembolsable del IRPF abonada por la Agencia Tributaria desde el momento del nacimiento.",
         "paginaPdf": 21
       }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "ambigua"
     ]
   },
   {
@@ -957,6 +1420,10 @@
         "texto": "Transformaremos de forma radical el Ingreso Mínimo Vital (IMV) para ser concedido de oficio a través de la interconexión automatizada de datos fiscales y de la Seguridad Social, suprimiendo el laberinto burocrático actual.",
         "paginaPdf": 22
       }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "ambigua"
     ]
   },
   {
@@ -987,6 +1454,11 @@
         "texto": "Retiraremos formalmente el apoyo gubernamental al plan de autonomía marroquí para retomar la posición fijada por el derecho internacional. Defenderemos el derecho incondicional a la autodeterminación del pueblo saharaui mediante un referéndum libre supervisado por Naciones Unidas",
         "paginaPdf": 132
       }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "ambigua",
+      "polemica"
     ]
   },
   {
@@ -1017,6 +1489,10 @@
         "texto": "Implantación de un sistema de pagos por servicios ambientales en zonas rurales: Quien cuida la naturaleza merece cobrar por ello. A través de la PAC, es posible pagar a agricultores por desarrollar prácticas que protegen a todos",
         "paginaPdf": 70
       }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "ambigua"
     ]
   },
   {
@@ -1047,6 +1523,11 @@
         "texto": "Aprobaremos una ley específica de embargo integral de armas a Israel para mejorar el Real Decreto-ley 10/2025.",
         "paginaPdf": 131
       }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "ambigua",
+      "polemica"
     ]
   },
   {
@@ -1077,6 +1558,10 @@
         "texto": null,
         "paginaPdf": null
       }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "titular"
     ]
   },
   {
@@ -1107,6 +1592,10 @@
         "texto": "Reforzaremos las plantillas, subiremos los salarios y mejoraremos la formación, la estabilidad y los tiempos asistenciales, además de dar mayor protección social y apoyo al descanso de cuidadoras no profesionales.",
         "paginaPdf": 23
       }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "ambigua"
     ]
   },
   {
@@ -1137,6 +1626,11 @@
         "texto": "Aumentaremos la reducción por rendimientos del trabajo para que quien cobre el salario mínimo no pague IRPF y extenderemos esa rebaja, de forma decreciente, hasta los 27.000 euros.",
         "paginaPdf": 46
       }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "ambigua",
+      "titular"
     ]
   },
   {
@@ -1167,6 +1661,10 @@
         "texto": "Incluiremos la valoración de la fertilidad previa a los intentos de concepción en el SNS y aumentaremos los recursos finalistas para servicios de reproducción asistida en edades tempranas.",
         "paginaPdf": 29
       }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "ambigua"
     ]
   },
   {
@@ -1197,6 +1695,350 @@
         "texto": "Erradicaremos todas las formas de violencia machista y LGTBIfóbica con redes sólidas de prevención y acogida.",
         "paginaPdf": 37
       }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "ambigua"
+    ]
+  },
+  {
+    "id": "pp-21",
+    "partido": "PP",
+    "paginaPdf": 38,
+    "texto": "Recuperaremos el respeto y la promoción de las expresiones que mejor combinan tradición y futuro, empezando por la restitución del Premio Nacional de Tauromaquia",
+    "tema": "cultura",
+    "subtema": "restitución del Premio Nacional de Tauromaquia",
+    "tipo": "deducible",
+    "enOtrasPalabras": "Se volvería a conceder el Premio Nacional de Tauromaquia y se promoverían las tradiciones que, según la propuesta, mejor combinan pasado y futuro.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Vox",
+        "resumen": "Propone defender la tauromaquia y promover la difusión del arte taurino.",
+        "texto": "Defensa de la Tauromaquia y promoción de la difusión del arte taurino",
+        "paginaPdf": 43
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Quiere suprimir las subvenciones públicas a la tauromaquia.",
+        "texto": "Suprimiremos las subvenciones estatales a la tauromaquia, tanto directas como indirectas",
+        "paginaPdf": 76
+      }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "ambigua",
+      "polemica"
+    ]
+  },
+  {
+    "id": "pp-22",
+    "partido": "PP",
+    "paginaPdf": 49,
+    "texto": "Garantizaremos la protección de los ganaderos frente al lobo asegurando, al mismo tiempo, su conservación […]",
+    "tema": "mundo rural",
+    "subtema": "protección de los ganaderos frente al lobo",
+    "tipo": "deducible",
+    "enOtrasPalabras": "Los ganaderos estarían protegidos frente al lobo, y a la vez se mantendría la conservación de la especie con criterios técnicos.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Vox",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Quiere devolver al lobo la protección estricta y evitar cualquier gestión letal, con indemnizaciones ágiles a los ganaderos.",
+        "texto": "Devolveremos al lobo la protección estricta en todo el territorio y apostaremos por la coexistencia: prevención de daños, indemnizaciones ágiles a las ganaderías y ninguna gestión letal como método para reducir sus poblaciones.",
+        "paginaPdf": 77
+      }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "ambigua",
+      "polemica"
+    ]
+  },
+  {
+    "id": "pp-23",
+    "partido": "PP",
+    "paginaPdf": 25,
+    "texto": "Evitaremos que el suplicatorio pueda convertirse en un instrumento de impunidad ante la Justicia. Corregiremos la extensión excesiva de los aforamientos para devolverlos a una concepción limitada y justificada, conforme a la Constitución y a los estándares europeos.",
+    "tema": "justicia",
+    "subtema": "aforamientos y suplicatorio",
+    "tipo": "deducible",
+    "enOtrasPalabras": "Se revisaría el suplicatorio para que no sirva de impunidad, y los aforamientos volverían a ser limitados y justificados, conforme a la Constitución y a los estándares europeos.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Propone suprimir los aforamientos de los cargos públicos en los delitos ajenos al ejercicio de su cargo.",
+        "texto": "Suprimir los aforamientos de los cargos públicos para los delitos ajenos al ejercicio de su cargo.",
+        "paginaPdf": 90
+      },
+      {
+        "partido": "Vox",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "polemica"
+    ]
+  },
+  {
+    "id": "pp-24",
+    "partido": "PP",
+    "paginaPdf": 47,
+    "texto": "Mientras persista la actual crisis de inflación y de poder adquisitivo, aplicaremos un IVA del 0% a los alimentos básicos, incluidos la carne, el pescado y las conservas.",
+    "tema": "fiscalidad",
+    "subtema": "IVA del 0% a los alimentos básicos",
+    "tipo": "deducible",
+    "enOtrasPalabras": "Mientras dure la inflación, los alimentos básicos, como la carne, el pescado o las conservas, no pagarían IVA.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Quiere que cualquier rebaja del IVA de los alimentos básicos llegue al precio final, con seguimiento de los precios.",
+        "texto": "Asimismo, llevar a cabo un seguimiento permanente sobre la formación de precios en alimentos, carburantes y energía, con tal de garantizar que cualquier rebaja del IVA de los alimentos básicos llegue al precio final.",
+        "paginaPdf": 38
+      },
+      {
+        "partido": "Vox",
+        "resumen": "Propone rebajar el tipo reducido y el general del IVA, priorizando los productos esenciales.",
+        "texto": "Rebaja del tipo reducido y del tipo general del IVA atendiendo prioritariamente a productos esenciales y de primera necesidad.",
+        "paginaPdf": 9
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone un IVA reducido o exento para los alimentos ecológicos, agroecológicos o de proximidad.",
+        "texto": "IVA reducido o exenciones para los alimentos de tierra y mar de origen ecológico, agroecológico y de proximidad",
+        "paginaPdf": 89
+      }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "ambigua",
+      "titular"
+    ]
+  },
+  {
+    "id": "pp-25",
+    "partido": "PP",
+    "paginaPdf": 38,
+    "texto": "[…] ampliaremos los incentivos para que ciudadanos, empresas y fundaciones puedan contribuir y ver reconocido su apoyo a la cultura, la ciencia y el deporte a través de una nueva Ley de Mecenazgo.",
+    "tema": "cultura",
+    "subtema": "ley de mecenazgo",
+    "tipo": "deducible",
+    "enOtrasPalabras": "Se darían más incentivos a particulares, empresas y fundaciones que aporten dinero a la cultura, la ciencia y el deporte, mediante una nueva ley de mecenazgo.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Quiere reformar la ley de mecenazgo para atraer inversión privada a la cultura.",
+        "texto": "reformar la ley de mecenazgo para movilizar más inversión privada en cultura.",
+        "paginaPdf": 103
+      },
+      {
+        "partido": "Vox",
+        "resumen": "Propone una nueva ley de mecenazgo para elevar las deducciones del IRPF.",
+        "texto": "Nueva Ley de Mecenazgo para elevar las deducciones del IRPF.",
+        "paginaPdf": 43
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "ambigua"
+    ]
+  },
+  {
+    "id": "pp-26",
+    "partido": "PP",
+    "paginaPdf": 45,
+    "texto": "Ningún menor de 14 años podrá tener una cuenta en redes sociales, y hasta los 16 necesitará autorización de sus padres.",
+    "tema": "tecnología",
+    "subtema": "cuentas de menores en redes sociales",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "Los menores de 14 años no podrían tener cuenta en redes sociales, y los de 14 a 16 necesitarían la autorización de sus padres.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Propone fijar en 16 años la edad mínima para usar redes sociales.",
+        "texto": "399. Establecer a 16 años la edad mínima para usar redes sociales.",
+        "paginaPdf": 95
+      },
+      {
+        "partido": "Vox",
+        "resumen": "Propone proteger a los menores de los riesgos de los entornos digitales.",
+        "texto": "Preservar la inocencia de los menores y protegerlos frente a los riesgos presentes en los entornos digitales",
+        "paginaPdf": 52
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone una regulación severa de las plataformas y redes sociales dirigidas a menores de 16 años.",
+        "texto": "Regulación severa de plataformas y redes sociales dirigidas a menores de 16 años",
+        "paginaPdf": 41
+      }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "polemica",
+      "titular"
+    ]
+  },
+  {
+    "id": "pp-27",
+    "partido": "PP",
+    "paginaPdf": 45,
+    "texto": "Cada trabajador tendrá un cheque de formación, que conservará, aunque cambie de empresa, para formarse donde elija.",
+    "tema": "empleo",
+    "subtema": "cheque de formación ante la inteligencia artificial",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "Cada trabajador tendría un cheque para formarse, que conservaría aunque cambiara de empresa, para estudiar donde quisiera.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Propone una estrategia para el uso educativo de la inteligencia artificial, con formación permanente del profesorado.",
+        "texto": "Impulsar una estrategia integral para el uso educativo de la inteligencia artificial, mediante formación permanente del profesorado",
+        "paginaPdf": 52
+      },
+      {
+        "partido": "Vox",
+        "resumen": "Propone impulsar la inteligencia artificial para aumentar la productividad y crear empleos de calidad.",
+        "texto": "Impulsar la investigación, el desarrollo y la aplicación de la inteligencia artificial como motor de desarrollo de la economía nacional, que aumente la productividad, contribuya a crear empleos de calidad",
+        "paginaPdf": 27
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Quiere que el comité de empresa pueda aprobar o vetar los sistemas de inteligencia artificial que organizan, vigilan o evalúan el trabajo.",
+        "texto": "Reformaremos el artículo 64 del Estatuto de los Trabajadores para otorgar al comité de empresa la facultad de configurar, aprobar o vetar los sistemas de inteligencia artificial destinados a organizar, vigilar o evaluar el trabajo.",
+        "paginaPdf": 115
+      }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "titular"
+    ]
+  },
+  {
+    "id": "pp-28",
+    "partido": "PP",
+    "paginaPdf": 35,
+    "texto": "Haremos compatibles las pensiones de discapacidad con el empleo […] Ampliaremos el acceso a la jubilación anticipada de las personas con síndrome de Down",
+    "tema": "servicios sociales",
+    "subtema": "pensiones de discapacidad compatibles con el empleo",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "Quien cobre una pensión por discapacidad podría trabajar sin perderla, y se ampliaría la jubilación anticipada para las personas con síndrome de Down",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Vox",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      }
+    ],
+    "calidad": 2,
+    "etiquetas": []
+  },
+  {
+    "id": "pp-29",
+    "partido": "PP",
+    "paginaPdf": 52,
+    "texto": "Quien elija un ciclo de FP de alta demanda de empleo no pagará matrícula.",
+    "tema": "educación",
+    "subtema": "matrícula gratuita en ciclos de FP con salidas laborales",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "Quien estudie un ciclo de FP con mucha demanda laboral no pagaría matrícula.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Propone la gratuidad de la matrícula del primer curso de grado en las universidades públicas.",
+        "texto": "Impulsar la gratuidad de la matrícula del primer curso de grado en las universidades públicas de todo el país.",
+        "paginaPdf": 54
+      },
+      {
+        "partido": "Vox",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone una educación pública gratuita desde los 0 años hasta la universidad.",
+        "texto": "gratuidad desde los 0 años hasta la universidad",
+        "paginaPdf": 7
+      }
+    ],
+    "calidad": 2,
+    "etiquetas": []
+  },
+  {
+    "id": "pp-30",
+    "partido": "PP",
+    "paginaPdf": 38,
+    "texto": "No se excluirá arbitrariamente a creadores, artistas o proyectos de ayudas, premios, instituciones o espacios públicos por sus ideas.",
+    "tema": "cultura",
+    "subtema": "ayudas y premios públicos sin exclusión por ideas",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "Ni los creadores, artistas o proyectos que reciban ayudas, premios o espacios públicos podrían quedar fuera sin motivo por sus ideas.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Propone una Ley General de Cultura que garantice los derechos culturales y la libertad de creación.",
+        "texto": "[…] libertad de creación y una financiación estable",
+        "paginaPdf": 103
+      },
+      {
+        "partido": "Vox",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "polemica"
     ]
   },
   {
@@ -1227,6 +2069,11 @@
         "texto": "Crearemos un gravamen de solidaridad ambiental sobre el uso de aviones privados, yates, coches de lujo y otros bienes suntuarios.",
         "paginaPdf": 47
       }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "polemica",
+      "titular"
     ]
   },
   {
@@ -1257,6 +2104,10 @@
         "texto": "Obligatoriedad de publicar la brecha entre la remuneración directiva y el salario medio de la plantilla, fijando topes retributivos en empresas públicas y entidades receptoras de ayudas públicas extraordinarias.",
         "paginaPdf": 116
       }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "ambigua"
     ]
   },
   {
@@ -1287,6 +2138,10 @@
         "texto": "Fijaremos la obligación legal de actualizar anualmente el IPREM conforme al IPC acumulado, evitando que las ayudas y subsidios asistenciales pierdan poder de compra frente a la inflación.",
         "paginaPdf": 21
       }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "ambigua"
     ]
   },
   {
@@ -1317,6 +2172,10 @@
         "texto": "Reestructuraremos el Impuesto sobre Bienes Inmuebles (IBI) para convertirlo en un tributo altamente progresivo que penalice las fincas de elevado valor catastral, las propiedades pertenecientes a grandes tenedores corporativos y a entidades jurídicas, y las viviendas mantenidas vacías de forma injustificada.",
         "paginaPdf": 18
       }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "polemica"
     ]
   },
   {
@@ -1347,6 +2206,12 @@
         "texto": "Prohibiremos de forma permanente y con rango de ley la ejecución de lanzamientos o desahucios de personas y familias en situación de vulnerabilidad económica o social sin que las administraciones públicas hayan proporcionado con carácter previo una alternativa habitacional digna, adecuada y estable.",
         "paginaPdf": 15
       }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "ambigua",
+      "polemica",
+      "titular"
     ]
   },
   {
@@ -1377,6 +2242,10 @@
         "texto": "Salud bucodental: Continuaremos la ampliación de la cobertura bucodental realizada en esta legislatura (menores hasta 14 años, embarazadas, mayores de 65 años, pacientes oncológicos específicos) hasta alcanzar al menos el 50 % de la población residente al final de la legislatura.",
         "paginaPdf": 27
       }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "titular"
     ]
   },
   {
@@ -1407,6 +2276,10 @@
         "texto": "Actualizaremos la Ley 31/2003 de conservación de la fauna silvestre en los parques zoológicos, para iniciar la transformación de los zoos y acuarios en espacios de recuperación y protección, eliminando paulatinamente la exhibición.",
         "paginaPdf": 77
       }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "ambigua"
     ]
   },
   {
@@ -1437,6 +2310,11 @@
         "texto": "Eliminaremos toda normativa que penalice o punitivice a las personas que ejercen la prostitución garantizando el acceso a derechos fundamentales como seguridad social, salud, condiciones de trabajo dignas y la posibilidad de organizarse, rechazando siempre el estigma asociado a la misma.",
         "paginaPdf": 39
       }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "ambigua",
+      "polemica"
     ]
   },
   {
@@ -1467,6 +2345,10 @@
         "texto": "Ampliaremos por ley la definición de violencia vicaria y reforzaremos el sistema VioGén incorporando una evaluación del riesgo específica para hijas e hijos de las víctimas.",
         "paginaPdf": 38
       }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "polemica"
     ]
   },
   {
@@ -1497,6 +2379,11 @@
         "texto": "Derecho al voto a los 16 años: Reconoceremos por ley el derecho al voto a partir de los 16 años.",
         "paginaPdf": 42
       }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "ambigua",
+      "polemica"
     ]
   },
   {
@@ -1527,6 +2414,10 @@
         "texto": "Derogaremos por completo la Ley Mordaza. […] Reduciremos las multas excesivas",
         "paginaPdf": 142
       }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "polemica"
     ]
   },
   {
@@ -1557,7 +2448,9 @@
         "texto": "Implantación inmediata a 37,5 horas en 2026 y 35 horas en el sector público, prohibiendo la compensación mediante horas extraordinarias y exigiendo la subida proporcional del salario hora en contratos a tiempo parcial.",
         "paginaPdf": 55
       }
-    ]
+    ],
+    "calidad": 1,
+    "etiquetas": []
   },
   {
     "id": "psoe-13",
@@ -1587,7 +2480,9 @@
         "texto": null,
         "paginaPdf": null
       }
-    ]
+    ],
+    "calidad": 1,
+    "etiquetas": []
   },
   {
     "id": "psoe-14",
@@ -1617,6 +2512,10 @@
         "texto": "Habilitaremos al BCE para la financiación directa a los Estados miembros de la UE, evitando que los países tengan que acudir a colocar su deuda pública en los mercados financieros.",
         "paginaPdf": 137
       }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "ambigua"
     ]
   },
   {
@@ -1647,7 +2546,9 @@
         "texto": "Reforzaremos la ventanilla única administrativa y aceleraremos la digitalización para reducir trabas y trámites burocráticos, ofreciendo servicios públicos de acompañamiento para la modernización de pequeñas y medianas empresas.",
         "paginaPdf": 92
       }
-    ]
+    ],
+    "calidad": 1,
+    "etiquetas": []
   },
   {
     "id": "psoe-16",
@@ -1677,6 +2578,11 @@
         "texto": "Prohibición a los asistentes y chatbots de compañía de simular vínculos sentimentales o emplear dinámicas manipuladoras basadas en perfiles psicológicos para retener al usuario.",
         "paginaPdf": 121
       }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "ambigua",
+      "titular"
     ]
   },
   {
@@ -1707,6 +2613,10 @@
         "texto": "Bajo la aplicación del Acuerdo UE-Mercosur, se fiscalizarán los compromisos laborales, ambientales y de derechos humanos, activando cláusulas de salvaguarda cuando las importaciones agrarias generen competencia desleal.",
         "paginaPdf": 133
       }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "ambigua"
     ]
   },
   {
@@ -1737,6 +2647,11 @@
         "texto": "Reformaremos de forma integral la Ley de Extranjería para instaurar un procedimiento estable, permanente y reglado de regularización administrativa.",
         "paginaPdf": 126
       }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "ambigua",
+      "polemica"
     ]
   },
   {
@@ -1767,6 +2682,11 @@
         "texto": "Reformaremos la Ley Orgánica del Poder Judicial para que ningún partido pueda volver a bloquear la renovación del Consejo General del Poder Judicial. Los vocales del turno judicial se seguirán eligiendo por mayoría de tres quintos, pero si en dos meses no hay acuerdo, las Cámaras podrán elegirlos en segunda votación por mayoría absoluta.",
         "paginaPdf": 148
       }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "ambigua",
+      "polemica"
     ]
   },
   {
@@ -1797,6 +2717,352 @@
         "texto": "Reforzaremos la educación inclusiva mediante la puesta a disposición de las comunidades autónomas de más fondos para profesionales de apoyo.",
         "paginaPdf": 26
       }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "ambigua"
+    ]
+  },
+  {
+    "id": "psoe-21",
+    "partido": "PSOE",
+    "paginaPdf": 95,
+    "texto": "Establecer a 16 años la edad mínima para usar redes sociales. […] La edad mínima solo podrá rebajarse cuando las plataformas demuestren que son seguras por defecto.",
+    "tema": "tecnología",
+    "subtema": "edad mínima para redes sociales",
+    "tipo": "deducible",
+    "enOtrasPalabras": "La edad mínima para usar redes sociales sería de 16 años, y solo podría bajar si las plataformas demostraran antes que son seguras por defecto.",
+    "comparativa": [
+      {
+        "partido": "PP",
+        "resumen": "Fija en 14 años la edad mínima para tener cuenta en redes sociales, y exige autorización de los padres hasta los 16.",
+        "texto": "NINGÚN MENOR DE 14 AÑOS PODRÁ TENER UNA CUENTA EN REDES SOCIALES, Y HASTA LOS 16 NECESITARÁ AUTORIZACIÓN DE SUS PADRES.",
+        "paginaPdf": 45
+      },
+      {
+        "partido": "Vox",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone una regulación severa de las plataformas y redes sociales dirigidas a menores de 16 años.",
+        "texto": "Regulación severa de plataformas y redes sociales dirigidas a menores de 16 años",
+        "paginaPdf": 41
+      }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "ambigua",
+      "titular",
+      "polemica"
+    ]
+  },
+  {
+    "id": "psoe-22",
+    "partido": "PSOE",
+    "paginaPdf": 98,
+    "texto": "Ampliar la red de Lugares de Memoria Democrática, retirar simbología franquista y avanzar en la eliminación de entidades que hagan apología de la dictadura.",
+    "tema": "democracia y transparencia",
+    "subtema": "memoria democrática y simbología franquista",
+    "tipo": "deducible",
+    "enOtrasPalabras": "Habría más lugares dedicados a la memoria democrática, se quitarían los símbolos del franquismo y se seguiría avanzando para eliminar entidades que hagan apología de la dictadura.",
+    "comparativa": [
+      {
+        "partido": "PP",
+        "resumen": "Propone derogar la ley de memoria democrática y aprobar en su lugar una ley de concordia.",
+        "texto": "Derogaremos la mal llamada «ley de memoria democrática»",
+        "paginaPdf": 37
+      },
+      {
+        "partido": "Vox",
+        "resumen": "Pide superar las leyes ideológicas que dividen a los españoles, como la de Memoria Democrática.",
+        "texto": "Superación de las divisivas leyes ideológicas que enfrentan a los españoles, tales como la de Memoria Democrática",
+        "paginaPdf": 30
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Quiere seguir cumpliendo íntegramente la Ley de Memoria Democrática de 2022, junto a una ley de archivos.",
+        "texto": "seguir trabajando en el cumplimiento íntegro de la Ley de Memoria Democrática de 2022.",
+        "paginaPdf": 34
+      }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "polemica"
+    ]
+  },
+  {
+    "id": "psoe-23",
+    "partido": "PSOE",
+    "paginaPdf": 111,
+    "texto": "Seguir impulsando el reconocimiento del catalán, el euskera y el gallego como lenguas oficiales de la Unión Europea, y promover su enseñanza mediante cátedras, lectorados y acuerdos con universidades extranjeras.",
+    "tema": "Europa y exterior",
+    "subtema": "catalán, euskera y gallego como lenguas de la UE",
+    "tipo": "deducible",
+    "enOtrasPalabras": "El catalán, el euskera y el gallego deberían reconocerse como lenguas oficiales de la Unión Europea, y se impulsaría su enseñanza en universidades y centros extranjeros.",
+    "comparativa": [
+      {
+        "partido": "PP",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Vox",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "polemica"
+    ]
+  },
+  {
+    "id": "psoe-24",
+    "partido": "PSOE",
+    "paginaPdf": 54,
+    "texto": "Impulsar la gratuidad de la matrícula del primer curso de grado en las universidades públicas de todo el país.",
+    "tema": "educación",
+    "subtema": "matrícula gratuita en el primer curso universitario",
+    "tipo": "deducible",
+    "enOtrasPalabras": "La matrícula del primer curso de grado en las universidades públicas sería gratuita en todo el país.",
+    "comparativa": [
+      {
+        "partido": "PP",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Vox",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Plantea una educación pública gratuita desde los 0 años hasta la universidad.",
+        "texto": "gratuidad desde los 0 años hasta la universidad",
+        "paginaPdf": 7
+      }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "ambigua"
+    ]
+  },
+  {
+    "id": "psoe-25",
+    "partido": "PSOE",
+    "paginaPdf": 82,
+    "texto": "Aprobar una Ley Orgánica contra la Violencia Vicaria como manifestación de la violencia de género, para garantizar la protección, prevención y atención a las víctimas.",
+    "tema": "igualdad",
+    "subtema": "ley orgánica contra la violencia vicaria",
+    "tipo": "deducible",
+    "enOtrasPalabras": "Se aprobaría una ley orgánica contra la violencia vicaria, entendida como violencia de género, para proteger, prevenir y atender a sus víctimas.",
+    "comparativa": [
+      {
+        "partido": "PP",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Vox",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone ampliar por ley la definición de violencia vicaria y reforzar el sistema VioGén.",
+        "texto": "Ampliaremos por ley la definición de violencia vicaria y reforzaremos el sistema VioGén",
+        "paginaPdf": 38
+      }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "ambigua"
+    ]
+  },
+  {
+    "id": "psoe-26",
+    "partido": "PSOE",
+    "paginaPdf": 89,
+    "texto": "Incluir en el código civil la figura de la unión de amistad. […] personas unidas por un vínculo de amistad o compañerismo deciden asumir un compromiso mutuo de cuidados. […] porque también es familia la que elegimos.",
+    "tema": "familia y conciliación",
+    "subtema": "unión de amistad en el código civil",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "Se crearía en el Código Civil una figura para personas unidas por amistad o compañerismo que se comprometen a cuidarse mutuamente, con beneficios asociados.",
+    "comparativa": [
+      {
+        "partido": "PP",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Vox",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "titular",
+      "polemica"
+    ]
+  },
+  {
+    "id": "psoe-27",
+    "partido": "PSOE",
+    "paginaPdf": 73,
+    "texto": "Incorporaremos a los animales a la legislación de violencia vicaria con protocolos en violencia de género, impulsaremos una Estrategia Estatal de abandono cero con adopción responsable",
+    "tema": "medio ambiente",
+    "subtema": "animales de compañía en la violencia vicaria",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "Los animales de compañía entrarían en la legislación de violencia vicaria, con protocolos de violencia de género, y se impulsaría una estrategia para acabar con el abandono.",
+    "comparativa": [
+      {
+        "partido": "PP",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Vox",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone que el maltrato animal en el contexto de la violencia machista se considere violencia vicaria, con penas progresivas por reincidencia.",
+        "texto": "haremos que el maltrato animal en el contexto de la violencia machista sea considerado violencia vicaria.",
+        "paginaPdf": 75
+      }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "ambigua",
+      "titular"
+    ]
+  },
+  {
+    "id": "psoe-28",
+    "partido": "PSOE",
+    "paginaPdf": 68,
+    "texto": "Crear bancos públicos de agua en las confederaciones hidrográficas para mejorar la gestión, disponibilidad y reasignación de recursos hídricos, previniendo la sobreexplotación y contaminación de ríos, humedales y acuíferos.",
+    "tema": "medio ambiente",
+    "subtema": "bancos públicos de agua",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "Se crearían bancos públicos de agua en las confederaciones hidrográficas para gestionar y reasignar el agua y evitar la sobreexplotación y la contaminación de ríos y acuíferos.",
+    "comparativa": [
+      {
+        "partido": "PP",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Vox",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone que todo el ciclo del agua sea de gestión pública directa, con prohibición de cortes por motivos económicos.",
+        "texto": "Agua como bien público: Ciclo del agua 100 % de gestión pública directa, prohibición legal de cortes de suministro por motivos económicos",
+        "paginaPdf": 73
+      }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "titular"
+    ]
+  },
+  {
+    "id": "psoe-29",
+    "partido": "PSOE",
+    "paginaPdf": 90,
+    "texto": "Crear un escaño ciudadano en el Congreso y en el Senado, sin voto, para que la sociedad civil pueda preguntar al Gobierno y presentar iniciativas y enmiendas, y reducir las firmas necesarias para la iniciativa legislativa popular.",
+    "tema": "democracia y transparencia",
+    "subtema": "escaño ciudadano sin voto",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "Se crearía un escaño ciudadano en el Congreso y en el Senado, sin voto, desde el que la sociedad civil podría preguntar al Gobierno y presentar iniciativas, y se reducirían las firmas para las iniciativas legislativas populares.",
+    "comparativa": [
+      {
+        "partido": "PP",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Vox",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone rebajar a la mitad las firmas necesarias para la iniciativa legislativa popular.",
+        "texto": "Rebajaremos a la mitad las firmas necesarias para la iniciativa legislativa popular.",
+        "paginaPdf": 141
+      }
+    ],
+    "calidad": 2,
+    "etiquetas": []
+  },
+  {
+    "id": "psoe-30",
+    "partido": "PSOE",
+    "paginaPdf": 40,
+    "texto": "Mejorar la jubilación en trabajos penosos y en las jubilaciones anticipadas involuntarias. […] El coste de estas mejoras se podría compensar mediante aportaciones de empresas con beneficios que realicen ERE",
+    "tema": "pensiones y mayores",
+    "subtema": "jubilación por penosidad y coste con ERE",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "Mejoraría la jubilación en trabajos penosos y en las jubilaciones anticipadas que no se eligen, y el coste podría pagarse en parte con aportaciones de empresas con beneficios que hicieran despidos colectivos (ERE).",
+    "comparativa": [
+      {
+        "partido": "PP",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Vox",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone eliminar los coeficientes reductores de las jubilaciones anticipadas de quienes han cotizado más de 40 años.",
+        "texto": "Eliminaremos los coeficientes reductores en las jubilaciones anticipadas de quienes han cotizado más de 40 años",
+        "paginaPdf": 58
+      }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "polemica"
     ]
   },
   {
@@ -1827,6 +3093,10 @@
         "texto": "Cumpliremos el calendario de cierre de las centrales nucleares. Almaraz I y II cerrarán en los plazos previstos (2027-2028), sin beneficios fiscales",
         "paginaPdf": 64
       }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "ambigua"
     ]
   },
   {
@@ -1857,7 +3127,9 @@
         "texto": "Aseguramiento del derecho a la reagrupación familiar mediante la obligación de resolver las solicitudes en un plazo máximo de tres meses, aplicando el silencio administrativo positivo en caso de falta de resolución.",
         "paginaPdf": 128
       }
-    ]
+    ],
+    "calidad": 2,
+    "etiquetas": []
   },
   {
     "id": "vox-03",
@@ -1887,6 +3159,10 @@
         "texto": "Transformaremos de forma radical el Ingreso Mínimo Vital (IMV) para ser concedido de oficio a través de la interconexión automatizada de datos fiscales y de la Seguridad Social, suprimiendo el laberinto burocrático actual.",
         "paginaPdf": 22
       }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "polemica"
     ]
   },
   {
@@ -1917,6 +3193,10 @@
         "texto": "Aprobaremos una ley del plurilingüismo, para garantizar plenamente los derechos lingüísticos, para que la ciudadanía pueda relacionarse en las lenguas cooficiales y estatutarias con las instituciones del Estado.",
         "paginaPdf": 141
       }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "polemica"
     ]
   },
   {
@@ -1947,6 +3227,10 @@
         "texto": "Aprobaremos una ley que regule por primera vez el derecho a la objeción de conciencia. Fijará sus ámbitos y un procedimiento sencillo y con garantías, para que quien la ejerza no sufra represalias en el ámbito laboral. En ningún caso la objeción podrá impedir que la ciudadanía acceda al ejercicio de sus derechos.",
         "paginaPdf": 145
       }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "ambigua"
     ]
   },
   {
@@ -1977,6 +3261,10 @@
         "texto": "Promoveremos la justicia global en sus dimensiones climática y de derechos laborales a través del impulso de la descarbonización de la economía, la provisión de energías renovables, la justicia climática global y el cumplimiento de los compromisos del Acuerdo de París y del Pacto Verde Europeo.",
         "paginaPdf": 132
       }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "polemica"
     ]
   },
   {
@@ -2007,6 +3295,10 @@
         "texto": "Derogaremos los artículos del Código Penal que castigan los delitos contra los sentimientos religiosos o de escarnio público, los delitos contra la Corona, las ofensas o ultrajes de palabra, por escrito o de hecho a España, a sus comunidades autónomas",
         "paginaPdf": 142
       }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "polemica"
     ]
   },
   {
@@ -2037,6 +3329,10 @@
         "texto": null,
         "paginaPdf": null
       }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "ambigua"
     ]
   },
   {
@@ -2067,6 +3363,10 @@
         "texto": "Reformaremos de forma integral la Ley de Extranjería para instaurar un procedimiento estable, permanente y reglado de regularización administrativa.",
         "paginaPdf": 126
       }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "polemica"
     ]
   },
   {
@@ -2097,7 +3397,9 @@
         "texto": "Aprobaremos un impuesto a las actividades mineras extractivas para gravar las externalidades ambientales en unas 2.800 explotaciones, recaudando más de 470 M€ anuales.",
         "paginaPdf": 47
       }
-    ]
+    ],
+    "calidad": 1,
+    "etiquetas": []
   },
   {
     "id": "vox-11",
@@ -2127,6 +3429,11 @@
         "texto": "Apoyaremos a las personas trabajadoras autónomas en situación de bajos ingresos con un régimen específico de cotización. Cuando los ingresos reales percibidos por la persona trabajadora autónoma sean inferiores al SMI anual por causas objetivas, tales como las condiciones del mercado o el inicio de actividad, se podrá acoger a una cotización fija bonificada sin pérdida de derechos de protección.",
         "paginaPdf": 92
       }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "ambigua",
+      "titular"
     ]
   },
   {
@@ -2157,6 +3464,10 @@
         "texto": "Tramitaremos la extinción progresiva y definitiva de todas las licencias de Viviendas de Uso Turístico (VUT) y alquileres de temporada fraudulentos en edificios residenciales en un plazo máximo de 3 años dentro de las zonas tensionadas",
         "paginaPdf": 12
       }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "ambigua"
     ]
   },
   {
@@ -2187,7 +3498,9 @@
         "texto": "Ordenaremos el turismo según la capacidad ecológica y social de los territorios. Limitaremos plazas en zonas tensionadas, controlaremos viviendas turísticas y exigiremos registros y retirada de anuncios sin licencia.",
         "paginaPdf": 72
       }
-    ]
+    ],
+    "calidad": 1,
+    "etiquetas": []
   },
   {
     "id": "vox-14",
@@ -2217,6 +3530,10 @@
         "texto": "situamos la corresponsabilidad y el reconocimiento de los cuidados como un pilar central del Estado del bienestar",
         "paginaPdf": 37
       }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "ambigua"
     ]
   },
   {
@@ -2247,6 +3564,10 @@
         "texto": "Crearemos una empresa/industria farmacéutica con participación 100 % pública y expansión de iniciativas existentes (Certera, Terafront) para asegurar liderazgo investigador",
         "paginaPdf": 29
       }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "ambigua"
     ]
   },
   {
@@ -2277,6 +3598,10 @@
         "texto": "Reconoceremos de forma suficiente los periodos dedicados a cuidados y corregiremos la penalización de las carreras laborales interrumpidas o marcadas por la parcialidad involuntaria.",
         "paginaPdf": 58
       }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "ambigua"
     ]
   },
   {
@@ -2307,6 +3632,10 @@
         "texto": "Bajo la aplicación del Acuerdo UE-Mercosur, se fiscalizarán los compromisos laborales, ambientales y de derechos humanos, activando cláusulas de salvaguarda cuando las importaciones agrarias generen competencia desleal.",
         "paginaPdf": 133
       }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "ambigua"
     ]
   },
   {
@@ -2337,6 +3666,11 @@
         "texto": "Reduciremos las multas excesivas y aplicaremos «criterios de proporcionalidad» para ajustarlas a la «capacidad de ingresos de las personas sancionadas»",
         "paginaPdf": 142
       }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "ambigua",
+      "titular"
     ]
   },
   {
@@ -2367,6 +3701,10 @@
         "texto": "Incluiremos la atención a la menopausia como derecho con consultas extendidas, valoración individualizada multidisciplinar",
         "paginaPdf": 29
       }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "ambigua"
     ]
   },
   {
@@ -2397,6 +3735,356 @@
         "texto": "Haremos atractivos los puestos de los servicios estatales en las islas, reforzando medidas como el plus de residencia, para compensar el sobrecoste de la vida y de la vivienda y evitar que queden vacantes.",
         "paginaPdf": 98
       }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "ambigua"
     ]
+  },
+  {
+    "id": "vox-21",
+    "partido": "Vox",
+    "paginaPdf": 55,
+    "texto": "Recuperar el delito de sedición, […] agravar el tipo delictivo de la malversación de caudales públicos y prohibir los indultos para delitos relacionados con la corrupción política, la forma política del Estado o la integridad territorial.",
+    "tema": "justicia",
+    "subtema": "sedición e indultos",
+    "tipo": "deducible",
+    "enOtrasPalabras": "El delito de sedición volvería al Código Penal, las penas por malversación subirían y los indultos quedarían prohibidos en casos de corrupción, de ataques a la forma política del Estado o a la integridad territorial.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "PP",
+        "resumen": "Recuperará el delito de sedición en el Código Penal, adaptado a la legislación actual.",
+        "texto": "Recuperaremos en el Código Penal el delito de sedición, adaptado a la legislación contemporánea",
+        "paginaPdf": 15
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "ambigua",
+      "polemica"
+    ]
+  },
+  {
+    "id": "vox-22",
+    "partido": "Vox",
+    "paginaPdf": 30,
+    "texto": "Derogar las leyes que han criminalizado a los hombres y desprotegido a las mujeres.",
+    "tema": "igualdad",
+    "subtema": "derogación de las leyes de género",
+    "tipo": "deducible",
+    "enOtrasPalabras": "Se eliminarían las leyes de género, que según el programa han criminalizado a los hombres y dejado sin protección a las mujeres.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Defiende el Pacto de Estado contra la Violencia de Género y dice haberlo ampliado a 461 medidas.",
+        "texto": "Impulsamos la aplicación del Pacto de Estado contra la Violencia de Género en 2018 y lo renovamos en 2025, ampliándolo de 290 a 461 medidas.",
+        "paginaPdf": 77
+      },
+      {
+        "partido": "PP",
+        "resumen": "Revisará las normas de igualdad que hayan generado inseguridad jurídica, como la Ley Trans.",
+        "texto": "Revisaremos las normas que hayan generado inseguridad jurídica en nombre de la igualdad, como la Ley Trans",
+        "paginaPdf": 35
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone erradicar todas las formas de violencia machista con redes de prevención y acogida.",
+        "texto": "Erradicaremos todas las formas de violencia machista y LGTBIfóbica con redes sólidas de prevención y acogida.",
+        "paginaPdf": 37
+      }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "polemica",
+      "titular"
+    ]
+  },
+  {
+    "id": "vox-23",
+    "partido": "Vox",
+    "paginaPdf": 42,
+    "texto": "Prohibición del burka y el niqab en todos los espacios públicos y lugares donde se presten servicios públicos, con particular atención a centros educativos o entornos donde se vea comprometida la seguridad.",
+    "tema": "igualdad",
+    "subtema": "prohibición del burka y el niqab",
+    "tipo": "deducible",
+    "enOtrasPalabras": "Se prohibiría llevar burka o niqab en los espacios públicos y en los lugares donde se prestan servicios públicos, con especial atención a los colegios y a los sitios donde pueda estar en riesgo la seguridad.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "PP",
+        "resumen": "Prohibirá el uso del burka y el niqab en los espacios públicos.",
+        "texto": "Prohibiremos el uso del burka y el niqab en los espacios públicos.",
+        "paginaPdf": 19
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "ambigua",
+      "polemica",
+      "titular"
+    ]
+  },
+  {
+    "id": "vox-24",
+    "partido": "Vox",
+    "paginaPdf": 19,
+    "texto": "Garantizar la sostenibilidad del sistema sanitario dotándolo de los medios necesarios para atender las necesidades de los españoles, excluyendo a los extranjeros en situación ilegal salvo casos de urgencia grave.",
+    "tema": "sanidad",
+    "subtema": "acceso sanitario de extranjeros en situación irregular",
+    "tipo": "deducible",
+    "enOtrasPalabras": "La sanidad pública se dotaría para atender las necesidades de los españoles, y las personas extranjeras en situación ilegal solo recibirían atención en casos de urgencia grave.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Defiende una sanidad pública y universal, sin distinciones por renta ni por lugar de residencia.",
+        "texto": "La sanidad pública y universal constituye la gran conquista democrática de nuestro país y es la mayor garantía de igualdad que tenemos",
+        "paginaPdf": 49
+      },
+      {
+        "partido": "PP",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Blindará por ley la atención sanitaria universal para los residentes, sea cual sea su situación administrativa.",
+        "texto": "Blindaremos por ley la universalidad de la atención sanitaria para residentes en España, independientemente de su estatus administrativo.",
+        "paginaPdf": 26
+      }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "polemica"
+    ]
+  },
+  {
+    "id": "vox-25",
+    "partido": "Vox",
+    "paginaPdf": 45,
+    "texto": "Reducción de la edad de responsabilidad penal del menor y plantear la eliminación de inimputabilidad para ciertos delitos violentos como los homicidios o las agresiones sexuales.",
+    "tema": "seguridad",
+    "subtema": "responsabilidad penal de los menores",
+    "tipo": "deducible",
+    "enOtrasPalabras": "Se bajaría la edad a partir de la que los menores responden penalmente, y se estudiaría eliminar su inimputabilidad en delitos violentos como homicidios o agresiones sexuales.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "PP",
+        "resumen": "Reformará la Ley del Menor para aumentar el internamiento en centros cerrados en delitos graves.",
+        "texto": "Reformaremos la Ley del Menor para que en delitos graves […] se incremente el tiempo de internamiento en centros cerrados",
+        "paginaPdf": 16
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "ambigua",
+      "polemica"
+    ]
+  },
+  {
+    "id": "vox-26",
+    "partido": "Vox",
+    "paginaPdf": 19,
+    "texto": "Gravamen sobre las remesas al extranjero. El dinero generado aquí ha de mejorar la economía y los servicios de quienes viven en España.",
+    "tema": "fiscalidad",
+    "subtema": "gravamen a las remesas al extranjero",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "Se cobraría un impuesto a los envíos de dinero desde España al extranjero. El programa dice que el dinero generado aquí debe mejorar la economía y los servicios de quienes viven en España.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "PP",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "polemica",
+      "titular"
+    ]
+  },
+  {
+    "id": "vox-27",
+    "partido": "Vox",
+    "paginaPdf": 29,
+    "texto": "Reducir progresivamente hasta su eliminación total las subvenciones a partidos, sindicatos, patronales, ONGs, observatorios y otros organismos ideológicos.",
+    "tema": "democracia y transparencia",
+    "subtema": "subvenciones a partidos y sindicatos",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "Las ayudas públicas a partidos, sindicatos, organizaciones empresariales, ONG y otras entidades consideradas ideológicas se irían reduciendo hasta desaparecer.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Quiere reforzar el control de las subvenciones y de la financiación política, con trazabilidad del gasto.",
+        "texto": "Reforzar el control de la contratación, las subvenciones y la financiación política con análisis de datos y trazabilidad del gasto",
+        "paginaPdf": 102
+      },
+      {
+        "partido": "PP",
+        "resumen": "Ninguna subvención se prorrogará sin demostrar resultados.",
+        "texto": "NINGUNA SUBVENCIÓN SE PRORROGARÁ SIN DEMOSTRAR RESULTADOS.",
+        "paginaPdf": 14
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "polemica",
+      "titular"
+    ]
+  },
+  {
+    "id": "vox-28",
+    "partido": "Vox",
+    "paginaPdf": 27,
+    "texto": "Fin de la cita previa. Derecho a ser atendido presencialmente en cualquier oficina pública de forma inmediata sin necesidad de solicitar turno por internet.",
+    "tema": "administración",
+    "subtema": "fin de la cita previa",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "Se eliminaría la cita previa: cualquier persona podría acudir en persona a una oficina pública y ser atendida en el momento, sin tener que pedir turno por internet.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Garantiza que toda persona pueda ser atendida por un empleado público, en persona o por teléfono, sin cita previa obligatoria.",
+        "texto": "Garantizar que toda persona pueda ser atendida por un empleado público, en persona o por teléfono, sin cita previa obligatoria en las oficinas de la Administración del Estado",
+        "paginaPdf": 101
+      },
+      {
+        "partido": "PP",
+        "resumen": "La cita previa servirá para organizar la atención, no para impedirla.",
+        "texto": "La cita previa servirá para organizar la atención, no para impedirla.",
+        "paginaPdf": 14
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone mejorar el sistema de cita previa dentro de un plan de empleo público de calidad.",
+        "texto": "[…] mejoraremos el sistema de cita previa.",
+        "paginaPdf": 101
+      }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "titular",
+      "polemica"
+    ]
+  },
+  {
+    "id": "vox-29",
+    "partido": "Vox",
+    "paginaPdf": 34,
+    "texto": "Impedir la destrucción de la riqueza agrícola y el patrimonio natural para la instalación descontrolada de macro plantas de energías renovables, solar y eólica.",
+    "tema": "energía",
+    "subtema": "macroplantas de renovables",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "Se pondría freno a la instalación sin control de grandes plantas de energía solar y eólica, para proteger el campo y el patrimonio natural.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": "Presenta las renovables como una política económica e industrial que reduce la dependencia del exterior.",
+        "texto": "Las renovables han dejado de ser solo una política climática para convertirse en una auténtica política económica e industrial",
+        "paginaPdf": 12
+      },
+      {
+        "partido": "PP",
+        "resumen": "Quiere que la energía nuclear y las renovables se complementen, compitiendo todas las tecnologías en igualdad.",
+        "texto": "Nuclear, renovables, almacenamiento y respaldo suficiente se complementarán, y todas las tecnologías competirán en igualdad en subastas, ayudas y regulación.",
+        "paginaPdf": 54
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Fija metas de generación renovable del 81 % en 2030 y del 100 % en 2040.",
+        "texto": "Aumentaremos la generación renovable hasta el 81 % en 2030, el 90 % en 2035 y el 100 % en 2040",
+        "paginaPdf": 60
+      }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "polemica"
+    ]
+  },
+  {
+    "id": "vox-30",
+    "partido": "Vox",
+    "paginaPdf": 34,
+    "texto": "Ni un euro más para financiar el sector primario de fuera. Fin de cualquier transferencia de fondos públicos destinados a financiar proyectos en cualquier país extracomunitario que haga competencia desleal a nuestros productos y a nuestra industria agroalimentaria.",
+    "tema": "mundo rural",
+    "subtema": "fondos públicos para el campo de terceros países",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "No se destinaría dinero público a financiar proyectos agrarios en países fuera de la UE si compiten de forma desleal con los productos y la industria alimentaria españoles.",
+    "comparativa": [
+      {
+        "partido": "PSOE",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "PP",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      }
+    ],
+    "calidad": 2,
+    "etiquetas": []
   }
 ]
