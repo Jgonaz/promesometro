@@ -1,0 +1,557 @@
+---
+import Base from '../layouts/Base.astro';
+import frases from '../data/frases.json';
+import { PARTIDOS } from '../lib/partidos';
+
+// Solo lo que /resultados necesita de cada frase; los agregados llegan del cliente.
+const datos = {
+  frases: Object.fromEntries(frases.map((f) => [f.id, { texto: f.texto, partido: f.partido }])),
+  partidos: PARTIDOS.map(({ nombre, logo, raiz }) => ({ nombre, logo, raiz })),
+};
+---
+
+<Base
+  title="Resultados · Promesómetro"
+  description="Cómo se han confundido los jugadores de Promesómetro entre los partidos de las generales del 29N."
+>
+  <main class="app res">
+    <header class="cabecera">
+      <a class="volver" href="/">← Volver al juego</a>
+      <h1 class="marca">Resultados</h1>
+    </header>
+
+    <p id="mensaje" class="mensaje" role="status">Cargando resultados…</p>
+    <p id="partidas" class="partidas" hidden></p>
+
+    <div id="datos-publicos" hidden>
+      <p class="nota">
+        Son las respuestas de quienes han jugado a un juego: <strong>no son una muestra representativa ni un sondeo</strong>{' '}
+        y no dicen nada sobre cómo va a votar nadie.
+      </p>
+
+      <section class="bloque" aria-labelledby="t-matriz">
+        <h2 id="t-matriz" class="bloque-titulo">¿Con quién se confunde cada partido?</h2>
+        <p class="bloque-texto">
+          Cada fila es el partido que de verdad propone la frase; cada columna, el sobre en el que la
+          metieron los jugadores. Cada fila suma el 100&nbsp;%. En marino, los aciertos; en lacre, las
+          confusiones: cuanto más intenso, más habitual.
+        </p>
+        <div class="tabla-scroll">
+          <table class="matriz">
+            <caption class="sr">
+              Porcentaje de respuestas por partido real de la frase (filas) y partido elegido por los jugadores (columnas)
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col" class="esquina">
+                  <span aria-hidden="true">Real ↓<br />Elegido →</span>
+                  <span class="sr">Partido real de la frase y partido elegido</span>
+                </th>
+                {
+                  PARTIDOS.map((p) => (
+                    <th scope="col">
+                      <span class="chip-logo" style={`--raiz:${p.raiz}`}>
+                        <img src={p.logo} alt="" width="80" height="40" />
+                      </span>
+                      <span class="sr">Elegido: {p.nombre}</span>
+                    </th>
+                  ))
+                }
+              </tr>
+            </thead>
+            <tbody>
+              {
+                PARTIDOS.map((real) => (
+                  <tr data-real={real.nombre}>
+                    <th scope="row">
+                      <span class="chip-logo" style={`--raiz:${real.raiz}`}>
+                        <img src={real.logo} alt="" width="80" height="40" />
+                      </span>
+                      <span class="sr">Real: {real.nombre}</span>
+                    </th>
+                    {PARTIDOS.map((elegido) => (
+                      <td data-elegido={elegido.nombre} class={real.nombre === elegido.nombre ? 'acierto' : 'fallo'}>
+                        <span class="sr">{real.nombre === elegido.nombre ? 'Acierto: ' : 'Confundido con ' + elegido.nombre + ': '}</span>
+                        <span class="valor">—</span>
+                      </td>
+                    ))}
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="bloque" aria-labelledby="t-acertadas">
+        <h2 id="t-acertadas" class="bloque-titulo">Las 5 frases más acertadas</h2>
+        <ol id="mas-acertadas" class="frases"></ol>
+      </section>
+
+      <section class="bloque" aria-labelledby="t-falladas">
+        <h2 id="t-falladas" class="bloque-titulo">Las 5 frases más falladas</h2>
+        <ol id="mas-falladas" class="frases"></ol>
+      </section>
+
+      <section id="bloque-explicacion" class="bloque" aria-labelledby="t-explicacion" hidden>
+        <h2 id="t-explicacion" class="bloque-titulo">¿Ayuda «En otras palabras»?</h2>
+        <p class="bloque-texto">Porcentaje de aciertos según se abriera o no la explicación antes de votar.</p>
+        <dl class="barras">
+          <div class="barra">
+            <dt>Sin abrirla</dt>
+            <dd>
+              <span id="sin-valor" class="barra-valor"></span>
+              <span class="barra-pista" aria-hidden="true"><span id="sin-barra" class="barra-relleno"></span></span>
+              <span id="sin-n" class="barra-n"></span>
+            </dd>
+          </div>
+          <div class="barra">
+            <dt>Abriéndola</dt>
+            <dd>
+              <span id="con-valor" class="barra-valor"></span>
+              <span class="barra-pista" aria-hidden="true"><span id="con-barra" class="barra-relleno"></span></span>
+              <span id="con-n" class="barra-n"></span>
+            </dd>
+          </div>
+        </dl>
+      </section>
+    </div>
+
+    <a class="boton-principal" href="/">Volver al juego</a>
+
+    <footer class="pie">
+      <p>
+        Proyecto independiente, sin relación con ningún partido. Los logotipos pertenecen a sus
+        respectivos partidos y se usan solo para identificarlos.
+      </p>
+    </footer>
+  </main>
+
+  <script type="application/json" id="datos" set:html={JSON.stringify(datos)} />
+
+  <script>
+    import { MIN_PARTIDAS, numero, pedirEstadisticas, porcentaje, presentar, type Estadisticas } from '../lib/cliente';
+
+    type Datos = {
+      frases: Record<string, { texto: string; partido: string }>;
+      partidos: { nombre: string; logo: string; raiz: string }[];
+    };
+
+    const datos: Datos = JSON.parse(document.getElementById('datos')!.textContent!);
+    const partidoDe = new Map(datos.partidos.map((p) => [p.nombre, p]));
+    const $ = <T extends HTMLElement>(id: string) => document.getElementById(id) as T;
+
+    function contador(e: Estadisticas) {
+      if (e.partidas < MIN_PARTIDAS) return;
+      $('partidas').textContent = `${numero(e.partidas)} partidas jugadas`;
+      $('partidas').hidden = false;
+    }
+
+    function pintarMatriz(matriz: NonNullable<Estadisticas['matriz']>) {
+      for (const fila of document.querySelectorAll<HTMLElement>('tbody tr[data-real]')) {
+        const datosFila = matriz[fila.dataset.real!];
+        for (const celda of fila.querySelectorAll<HTMLElement>('td[data-elegido]')) {
+          const valor = datosFila?.[celda.dataset.elegido!];
+          // Sin respuestas de ese partido real no hay fila: se deja «—» sin color.
+          if (!datosFila) continue;
+          const v = valor ?? 0;
+          celda.querySelector('.valor')!.textContent = porcentaje(v);
+          celda.style.setProperty('--i', `${Math.min(100, v)}%`);
+          celda.classList.toggle('fuerte', v >= 60);
+        }
+      }
+    }
+
+    function pintarFrases(lista: HTMLElement, items: { id: string; n: number; pct: number }[]) {
+      lista.replaceChildren(
+        ...items.map((it) => {
+          const f = datos.frases[it.id];
+          const p = partidoDe.get(f.partido)!;
+          const li = document.createElement('li');
+          li.className = 'item';
+
+          const texto = document.createElement('blockquote');
+          texto.className = 'frase';
+          texto.textContent = presentar(f.texto);
+
+          const pie = document.createElement('div');
+          pie.className = 'item-pie';
+          const chip = document.createElement('span');
+          chip.className = 'chip-logo';
+          chip.style.setProperty('--raiz', p.raiz);
+          chip.append(Object.assign(document.createElement('img'), { src: p.logo, alt: '', width: 80, height: 40 }));
+          pie.append(
+            chip,
+            Object.assign(document.createElement('span'), { className: 'item-partido', textContent: f.partido }),
+            Object.assign(document.createElement('span'), {
+              className: 'item-dato',
+              textContent: `La acertó el ${porcentaje(it.pct)} · ${numero(it.n)} respuestas`,
+            }),
+          );
+          li.append(texto, pie);
+          return li;
+        }),
+      );
+    }
+
+    function pintarExplicacion(e: NonNullable<Estadisticas['explicacion']>) {
+      // Solo se compara si ambos grupos tienen respuestas suficientes.
+      if (e.con.pct === null || e.sin.pct === null) return;
+      for (const k of ['con', 'sin'] as const) {
+        $(`${k}-valor`).textContent = porcentaje(e[k].pct!);
+        $(`${k}-barra`).style.width = `${e[k].pct}%`;
+        $(`${k}-n`).textContent = `${numero(e[k].n)} respuestas`;
+      }
+      $('bloque-explicacion').hidden = false;
+    }
+
+    pedirEstadisticas().then((e) => {
+      const mensaje = $('mensaje');
+      if (!e) {
+        mensaje.textContent = 'Ahora mismo no podemos mostrar los resultados. Vuelve a intentarlo más tarde.';
+        return;
+      }
+      contador(e);
+
+      if (!e.frases) {
+        mensaje.textContent = 'Los resultados se publicarán tras las elecciones del 29 de noviembre.';
+        return;
+      }
+
+      // Solo frases con texto conocido (por si el JSON de la base va por delante del build).
+      const ordenadas = Object.entries(e.frases)
+        .filter(([id]) => datos.frases[id])
+        .map(([id, v]) => ({ id, ...v }))
+        .sort((a, b) => b.pct - a.pct || b.n - a.n);
+      const acertadas = ordenadas.slice(0, 5);
+      const vistas = new Set(acertadas.map((x) => x.id));
+      // Con pocas frases con datos no se repite ninguna en las dos listas.
+      const falladas = ordenadas
+        .filter((x) => !vistas.has(x.id))
+        .reverse()
+        .slice(0, 5);
+
+      if (e.matriz) pintarMatriz(e.matriz);
+      pintarFrases($('mas-acertadas'), acertadas);
+      pintarFrases($('mas-falladas'), falladas);
+      if (e.explicacion) pintarExplicacion(e.explicacion);
+
+      mensaje.hidden = true;
+      $('datos-publicos').hidden = false;
+    });
+  </script>
+</Base>
+
+<style>
+  .app {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 24px 16px 48px;
+  }
+
+  .cabecera {
+    margin-bottom: 24px;
+  }
+
+  .volver {
+    display: inline-block;
+    margin-bottom: 12px;
+    font-size: var(--t-sm);
+    font-weight: 700;
+  }
+
+  .marca {
+    margin: 0;
+    font-family: var(--fuente-titulo);
+    font-weight: 800;
+    font-size: var(--t-display);
+    letter-spacing: -0.03em;
+    line-height: 0.95;
+  }
+
+  .mensaje {
+    margin: 0 0 16px;
+    padding: 16px 18px;
+    background: var(--papeleta);
+    border: 1px solid var(--linea);
+    border-radius: var(--radio);
+    font-family: var(--fuente-titulo);
+    font-size: var(--t-lg);
+    line-height: 1.35;
+    text-wrap: pretty;
+  }
+
+  .partidas {
+    margin: 0 0 24px;
+    color: var(--tinta-suave);
+    font-size: var(--t-sm);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .nota {
+    margin: 0 0 24px;
+    padding: 10px 14px;
+    background: color-mix(in srgb, var(--mostaza) 22%, var(--papeleta));
+    border-radius: var(--radio);
+    font-size: var(--t-sm);
+    text-wrap: pretty;
+  }
+
+  .bloque {
+    margin-bottom: 32px;
+  }
+
+  .bloque-titulo {
+    margin: 0 0 8px;
+    font-family: var(--fuente-titulo);
+    font-size: var(--t-xl);
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .bloque-texto {
+    margin: 0 0 16px;
+    color: var(--tinta-suave);
+    font-size: var(--t-sm);
+    max-width: 62ch;
+    text-wrap: pretty;
+  }
+
+  /* Caja blanca de cada logo; el tamaño sale de su área (--raiz), como en el juego.
+     Estos chips también se crean desde JS, de ahí el :global. */
+  .res :global(.chip-logo) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--chip-logo);
+    border-radius: 4px;
+    box-shadow: inset 0 0 0 1px rgb(31 42 68 / 0.1);
+    --k: 18px;
+  }
+
+  .res :global(.chip-logo img) {
+    width: calc(var(--k) * var(--raiz));
+    height: calc(var(--k) / var(--raiz));
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  /* Matriz: la tabla puede tener scroll propio, nunca el de la página. */
+  .tabla-scroll {
+    overflow-x: auto;
+    border: 1px solid var(--linea);
+    border-radius: var(--radio);
+    background: var(--papeleta);
+  }
+
+  .matriz {
+    width: 100%;
+    min-width: 288px;
+    table-layout: fixed;
+    border-collapse: collapse;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .matriz th,
+  .matriz td {
+    padding: 0;
+    border: 1px solid var(--linea);
+  }
+
+  .matriz thead th,
+  .matriz tbody th {
+    padding: 6px;
+    background: var(--papel-2);
+    font-weight: 700;
+  }
+
+  .matriz thead th:first-child,
+  .matriz tbody th {
+    width: 76px;
+  }
+
+  .matriz .chip-logo {
+    height: 34px;
+    padding: 4px;
+  }
+
+  .esquina {
+    font-size: var(--t-xs);
+    line-height: 1.25;
+    color: var(--tinta-suave);
+    text-align: left;
+  }
+
+  .matriz td {
+    height: 56px;
+    text-align: center;
+    font-size: var(--t-sm);
+    color: var(--tinta);
+    /* --c y --i dan color e intensidad; sin --i (sin datos) la celda queda lisa. */
+    background: color-mix(in srgb, var(--c) var(--i, 0%), var(--papeleta));
+  }
+
+  /* Acierto en marino y confusión en lacre: nada de verdes ni colores de partido. */
+  .matriz td.acierto {
+    --c: var(--acierto);
+    font-weight: 700;
+    box-shadow: inset 0 0 0 2px var(--acierto);
+  }
+
+  .matriz td.fallo {
+    --c: var(--fallo);
+  }
+
+  /* Con fondo intenso, el texto cambia al color del papel para mantener el contraste. */
+  .matriz td.fuerte {
+    color: var(--papeleta);
+  }
+
+  /* Frases destacadas, con la misma presentación que en el juego. */
+  .frases {
+    display: grid;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .res :global(.item) {
+    padding: 14px 16px;
+    background: var(--papeleta);
+    border: 1px solid var(--linea);
+    border-radius: var(--radio);
+  }
+
+  .res :global(.frase) {
+    margin: 0;
+    font-family: var(--fuente-titulo);
+    font-weight: 500;
+    font-size: var(--t-md);
+    line-height: 1.42;
+    text-wrap: pretty;
+  }
+
+  .res :global(.frase::before),
+  .res :global(.frase::after) {
+    color: var(--lacre);
+  }
+
+  .res :global(.frase::before) {
+    content: '«';
+  }
+
+  .res :global(.frase::after) {
+    content: '»';
+  }
+
+  .res :global(.item-pie) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 10px;
+    margin-top: 10px;
+    font-size: var(--t-sm);
+  }
+
+  .res :global(.item-pie .chip-logo) {
+    flex: none;
+    width: 56px;
+    height: 32px;
+    padding: 4px;
+    --k: 18px;
+  }
+
+  .res :global(.item-partido) {
+    font-weight: 700;
+  }
+
+  .res :global(.item-dato) {
+    color: var(--tinta-suave);
+  }
+
+  /* Efecto de «En otras palabras»: barras en marino, sin colores de partido. */
+  .barras {
+    display: grid;
+    gap: 14px;
+    margin: 0;
+  }
+
+  .barra dt {
+    margin-bottom: 4px;
+    font-size: var(--t-sm);
+    font-weight: 700;
+  }
+
+  .barra dd {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 2px 12px;
+    margin: 0;
+  }
+
+  .barra-valor {
+    font-family: var(--fuente-titulo);
+    font-size: var(--t-xl);
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .barra-pista {
+    height: 12px;
+    background: var(--acierto-fondo);
+    border-radius: 999px;
+    overflow: hidden;
+  }
+
+  .barra-relleno {
+    display: block;
+    height: 100%;
+    background: var(--acierto);
+  }
+
+  .barra-n {
+    grid-column: 1 / -1;
+    color: var(--tinta-suave);
+    font-size: var(--t-xs);
+  }
+
+  /* Botón y foco: mismos que en el juego. */
+  .boton-principal {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    border-radius: 999px;
+    padding: 12px 26px;
+    border: 2px solid var(--tinta);
+    background: var(--tinta);
+    color: var(--papel);
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 6px 14px -8px rgb(31 42 68 / 0.6);
+  }
+
+  .boton-principal:focus-visible,
+  .volver:focus-visible {
+    outline: 3px solid var(--mostaza);
+    outline-offset: 3px;
+  }
+
+  .pie {
+    margin-top: 40px;
+    padding-top: 16px;
+    border-top: 1px dashed var(--linea);
+    color: var(--tinta-suave);
+    font-size: var(--t-xs);
+  }
+
+  .pie p {
+    margin: 0;
+    max-width: 68ch;
+  }
+</style>

@@ -1,19 +1,11 @@
 ---
 import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
+import { PARTIDOS } from '../lib/partidos';
 import cabecera from '../assets/cabecera.png';
 import frases from '../data/frases.json';
 import fuentes from '../../data/programas/fuentes.json';
 
-// Orden alfabético fijo: no favorece a ningún partido por posición.
-// `ar` es la proporción ancho/alto de cada logo; con ella se igualan por área
-// (no por altura), para que ninguno pese visualmente más que otro.
-const PARTIDOS = [
-  { nombre: 'Frente Amplio', logo: '/img/partidos/frente-amplio.svg', ar: 2.951 },
-  { nombre: 'PP', logo: '/img/partidos/pp.svg', ar: 1.483 },
-  { nombre: 'PSOE', logo: '/img/partidos/psoe.svg', ar: 5.128 },
-  { nombre: 'Vox', logo: '/img/partidos/vox.svg', ar: 2.075 },
-].map((p) => ({ ...p, raiz: Math.sqrt(p.ar).toFixed(3) }));
 const RONDA = 10;
 const urls = Object.fromEntries(fuentes.programas.map((p) => [p.partido, p.url]));
 const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) => ({ nombre, logo, raiz })) };
@@ -64,6 +56,7 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
         }
       </div>
       <button id="empezar" class="boton-principal">Coger papeleta</button>
+      <p id="partidas" class="partidas" hidden></p>
     </section>
 
     <section id="juego" class="juego" hidden>
@@ -108,6 +101,7 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
       <div id="revelacion" class="revelacion" aria-live="polite" hidden>
         <p id="veredicto" class="veredicto"></p>
         <p id="fuente" class="fuente"></p>
+        <p id="acierto-global" class="acierto-global" hidden></p>
         <section class="comparativa" aria-labelledby="titulo-comparativa">
           <h3 id="titulo-comparativa" class="comparativa-titulo">¿Y qué proponen los demás?</h3>
           <ul id="comparativa" class="comparativa-lista"></ul>
@@ -130,6 +124,7 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
       <div class="acciones">
         <button id="compartir" class="boton-principal">Compartir resultado</button>
         <button id="otra" class="boton-secundario">Otra ronda</button>
+        <a id="ver-resultados" class="boton-secundario" href="/resultados" hidden>Ver resultados</a>
       </div>
       <p id="aviso-compartir" class="aviso" aria-live="polite" hidden></p>
       <details class="repaso">
@@ -147,7 +142,8 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
       </p>
       <p>
         Proyecto independiente, sin relación con ningún partido. Los logotipos pertenecen a sus
-        respectivos partidos y se usan solo para identificarlos. No recogemos datos ni guardamos tus respuestas.
+        respectivos partidos y se usan solo para identificarlos. Guardamos tus respuestas de forma
+        anónima (sin cookies, IP ni datos personales) para elaborar estadísticas de conjunto.
       </p>
     </footer>
   </main>
@@ -155,6 +151,8 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
   <script type="application/json" id="datos" set:html={JSON.stringify(datos)} />
 
   <script>
+    import { MIN_PARTIDAS, numero, pedirEstadisticas, porcentaje, presentar, type Estadisticas } from '../lib/cliente';
+
     // Sin medida sobre el asunto, resumen, texto y paginaPdf llegan a null.
     type Comparacion = { partido: string; resumen: string | null; texto: string | null; paginaPdf: number | null };
     type Frase = {
@@ -199,6 +197,9 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
     let abrioExplicacion = false;
     // Frases ya vistas en la sesión, para no repetir hasta agotar todas.
     const vistas = new Set<string>();
+    // Agregados públicos: se piden una vez y nunca bloquean el juego. Hasta
+    // que lleguen (o si fallan) no se enseña nada de ellos.
+    let estadisticas: Estadisticas | null = null;
 
     function barajar<T>(lista: T[]): T[] {
       const a = [...lista];
@@ -239,14 +240,6 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
         }
       }
       return lista;
-    }
-
-    // Presentación: mayúscula inicial y puntos suspensivos si el recorte deja
-    // la frase abierta. El texto guardado sigue siendo literal.
-    function presentar(texto: string): string {
-      let t = texto.charAt(0).toUpperCase() + texto.slice(1);
-      if (!/[.!?…)»"]$/.test(t)) t += '…';
-      return t;
     }
 
     // Recorta en el último espacio para no partir palabras.
@@ -345,6 +338,11 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
         }),
         '.',
       );
+
+      // El porcentaje solo existe tras la activación y con respuestas suficientes.
+      const global = estadisticas?.frases?.[f.id];
+      $('acierto-global').hidden = !global;
+      if (global) $('acierto-global').textContent = `El ${porcentaje(global.pct)} de los jugadores acertó esta frase.`;
 
       pintarComparativa(f);
 
@@ -527,6 +525,17 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
       if ((e.target as HTMLDetailsElement).open && esperandoVoto) abrioExplicacion = true;
     });
     for (const b of sobres) b.addEventListener('click', () => responder(b.dataset.partido!));
+
+    pedirEstadisticas().then((e) => {
+      estadisticas = e;
+      if (!e) return;
+      if (e.partidas >= MIN_PARTIDAS) {
+        $('partidas').textContent = `${numero(e.partidas)} partidas jugadas`;
+        $('partidas').hidden = false;
+      }
+      // Solo hay frases tras la activación: antes de ella no se enlaza a resultados.
+      $('ver-resultados').hidden = !e.frases;
+    });
   </script>
 </Base>
 
@@ -662,6 +671,16 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
     color: var(--lacre);
   }
 
+  .partidas {
+    margin: 14px 0 0;
+    color: var(--tinta-suave);
+    font-size: var(--t-xs);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-variant-numeric: tabular-nums;
+  }
+
   .aviso {
     margin: 0 0 20px;
     color: var(--tinta-suave);
@@ -742,6 +761,15 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
   .boton-principal:active,
   .boton-secundario:active {
     transform: translateY(1px);
+  }
+
+  a.boton-secundario {
+    text-decoration: none;
+  }
+
+  /* El atributo hidden pierde frente a display:inline-flex del botón. */
+  a.boton-secundario[hidden] {
+    display: none;
   }
 
   .boton-principal:focus-visible,
@@ -1099,6 +1127,13 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
   .fuente :global(a) {
     color: var(--tinta);
     font-weight: 700;
+  }
+
+  .acierto-global {
+    margin: 0 0 8px;
+    font-size: var(--t-sm);
+    font-weight: 700;
+    color: var(--tinta-suave);
   }
 
   /* «En otras palabras»: nota al margen de la papeleta, cerrada por defecto. */

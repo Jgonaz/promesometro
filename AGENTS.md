@@ -35,13 +35,24 @@ tres partidos sobre lo mismo.
 
 - Astro con las páginas prerenderizadas y desplegado en Vercel
   (`@astrojs/vercel`). Las frases viven en un JSON del repositorio.
-- Único endpoint de servidor: `src/pages/api/respuesta.ts` guarda cada voto
-  de forma anónima en Neon (Postgres, vía Vercel Marketplace, variable
-  `DATABASE_URL`). Sin esa variable acepta y no guarda nada. Esquema en
-  `db/esquema.sql`; consultas de análisis en `db/consultas.sql`.
+- Únicos endpoints de servidor (el resto del sitio es estático):
+  `src/pages/api/respuesta.ts` guarda cada voto de forma anónima en Neon
+  (Postgres, vía Vercel Marketplace, variable `DATABASE_URL`; sin esa variable
+  acepta y no guarda nada) y `src/pages/api/estadisticas.ts` (GET) publica
+  agregados. Esquema en `db/esquema.sql`; consultas de análisis en
+  `db/consultas.sql`.
+- Estadísticas públicas: `/api/estadisticas` siempre devuelve el número de
+  partidas; los agregados de aciertos (por frase con al menos 30 respuestas,
+  matriz de confusión y efecto de «En otras palabras») solo se sirven desde
+  el 30 de noviembre de 2026 a las 00:00 (Europe/Madrid, constante
+  `ACTIVACION` del endpoint), comprobado en el servidor. Con esos datos se
+  muestran el porcentaje tras votar y `/resultados`. Respuesta cacheada 5
+  minutos en la CDN; sin base de datos o con error, 503 y el cliente lo oculta.
+  El contador de partidas se muestra desde 100.
 - Las respuestas son anónimas: no se guardan IP, agente de usuario, cookies
   ni identificadores persistentes; el id de partida vive en memoria y cambia
-  en cada ronda. Las analíticas son privadas y no se exponen en el sitio.
+  en cada ronda. Solo se publican agregados (nunca filas sueltas ni ids de
+  partida), y los datos en bruto solo se consultan en privado.
 - Gestor de paquetes: pnpm.
 - Los PDF originales van en `data/programas/` y no se suben a Git; sus URL
   oficiales están en `data/programas/fuentes.json`.
