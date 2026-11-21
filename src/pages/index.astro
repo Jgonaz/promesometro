@@ -59,9 +59,14 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
         <button id="empezar" class="boton-principal">Coger papeleta</button>
         <button id="reto" class="boton-secundario">Reto del día · 5 frases</button>
       </div>
-      <p class="enlace-coincidencias">
-        ¿Y tú qué harías? <a href="/coincidencias">Descubre con quién coincides →</a>
-      </p>
+      <a class="tarjeta-coincidencias" href="/coincidencias">
+        <span class="tarjeta-etiqueta">Otro modo de juego</span>
+        <span class="tarjeta-titulo">¿Con quién coincides?</span>
+        <span class="tarjeta-texto">
+          Al revés: 16 asuntos, cuatro posturas sin siglas. Elige qué harías tú y descubre con qué partido coincides más.
+        </span>
+        <span class="tarjeta-accion" aria-hidden="true">Hacer el test →</span>
+      </a>
       <p id="partidas" class="partidas" hidden></p>
     </section>
 
@@ -136,9 +141,14 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
         <a id="ver-resultados" class="boton-secundario" href="/resultados" hidden>Ver resultados</a>
       </div>
       <p id="aviso-compartir" class="aviso" aria-live="polite" hidden></p>
-      <p class="enlace-coincidencias">
-        ¿Y tú qué harías? <a href="/coincidencias">Descubre con quién coincides →</a>
-      </p>
+      <a class="tarjeta-coincidencias" href="/coincidencias">
+        <span class="tarjeta-etiqueta">Otro modo de juego</span>
+        <span class="tarjeta-titulo">¿Con quién coincides?</span>
+        <span class="tarjeta-texto">
+          Al revés: 16 asuntos, cuatro posturas sin siglas. Elige qué harías tú y descubre con qué partido coincides más.
+        </span>
+        <span class="tarjeta-accion" aria-hidden="true">Hacer el test →</span>
+      </a>
       <details class="repaso">
         <summary id="titulo-repaso">Repasa tus {RONDA} papeletas</summary>
         <ol id="resumen" class="resumen"></ol>
@@ -804,21 +814,69 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
     font-variant-numeric: tabular-nums;
   }
 
-  .enlace-coincidencias {
-    margin: 16px 0 0;
+  /* Segundo modo de juego: tarjeta propia para que no quede escondido, con la
+     mostaza como acento (no evoca a ningún partido). */
+  .tarjeta-coincidencias {
+    display: grid;
+    gap: 6px;
+    margin: 24px 0 0;
+    padding: 18px 20px;
+    border: 2px solid var(--tinta);
+    border-left-width: 8px;
+    border-left-color: var(--mostaza);
+    border-radius: var(--radio);
+    background: var(--papel);
+    color: var(--tinta);
+    text-decoration: none;
+    transition:
+      transform 0.15s cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 0.15s ease;
+  }
+
+  .tarjeta-coincidencias:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 20px -12px rgb(31 42 68 / 0.6);
+  }
+
+  .tarjeta-coincidencias:focus-visible {
+    outline: 3px solid var(--mostaza);
+    outline-offset: 3px;
+  }
+
+  .tarjeta-etiqueta {
+    color: var(--lacre);
+    font-size: var(--t-xs);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .tarjeta-titulo {
+    font-family: var(--fuente-titulo);
+    font-weight: 800;
+    font-size: var(--t-xl);
+    line-height: 1.15;
+  }
+
+  .tarjeta-texto {
     color: var(--tinta-suave);
     font-size: var(--t-sm);
   }
 
-  .enlace-coincidencias a {
-    color: var(--tinta);
+  .tarjeta-accion {
+    margin-top: 4px;
     font-weight: 700;
+    text-decoration: underline;
+    text-decoration-color: var(--lacre);
+    text-underline-offset: 3px;
   }
 
-  .enlace-coincidencias a:focus-visible {
-    outline: 3px solid var(--mostaza);
-    outline-offset: 3px;
-    border-radius: 2px;
+  @media (prefers-reduced-motion: reduce) {
+    .tarjeta-coincidencias,
+    .tarjeta-coincidencias:hover {
+      transition: none;
+      transform: none;
+    }
   }
 
   .aviso {
