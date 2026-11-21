@@ -1,0 +1,913 @@
+---
+import Base from '../layouts/Base.astro';
+import { PARTIDOS } from '../lib/partidos';
+import { cargarAsuntos } from '../lib/coincidencias';
+import { presentar } from '../lib/cliente';
+import fuentes from '../../data/programas/fuentes.json';
+
+// Si falta un partido o una cita en algún asunto, el build falla aquí.
+const asuntos = cargarAsuntos();
+const urls = Object.fromEntries(fuentes.programas.map((p) => [p.partido, p.url]));
+const LETRAS = ['A', 'B', 'C', 'D'];
+const partidoDe = Object.fromEntries(PARTIDOS.map((p) => [p.nombre, p]));
+// Al cliente solo llegan las preguntas y los textos propios: las citas y los
+// enlaces del repaso se pintan en el servidor.
+const datos = {
+  asuntos: asuntos.map((a) => ({
+    pregunta: a.pregunta,
+    posturas: a.posturas.map(({ partido, texto }) => ({ partido, texto })),
+  })),
+  partidos: PARTIDOS.map(({ nombre }) => nombre),
+};
+---
+
+<Base
+  title="¿Con quién coincides? · Promesómetro"
+  description="Elige entre las posturas de los programas del 29N, sin saber de quién es cada una, y descubre con qué partidos coincides."
+>
+  <main class="app">
+    <header class="cabecera">
+      <a class="volver" href="/">← Volver al juego</a>
+      <h1 class="marca">¿Con quién coincides?</h1>
+      <p class="lema">Promesómetro · {asuntos.length} asuntos de los programas del 29N, sin siglas.</p>
+    </header>
+
+    <section id="portada" class="papeleta portada" aria-labelledby="titulo-portada">
+      <h2 class="papeleta-titulo" id="titulo-portada">Instrucciones</h2>
+      <ol class="instrucciones">
+        <li>Te enseñamos <strong>{asuntos.length} asuntos</strong>. En cada uno hay cuatro posturas, una de cada partido (Frente Amplio, PP, PSOE y Vox), <strong>sin saber de quién es cada una</strong>.</li>
+        <li>Elige la que más te convence. Si ninguna, dilo.</li>
+        <li>Al final verás con quién coincides y, de cada postura, su cita literal y su página del programa.</li>
+      </ol>
+      <p class="nota-clave">
+        <strong>No es una recomendación de voto.</strong> Unas pocas respuestas no resumen un
+        programa. No guardamos ni enviamos ninguna respuesta: el cálculo se hace en tu navegador.
+      </p>
+      <div class="acciones">
+        <button id="empezar" class="boton-principal">Empezar</button>
+      </div>
+    </section>
+
+    <section id="asunto" class="asunto" hidden aria-labelledby="pregunta">
+      <div class="estado">
+        <p id="contador" class="contador"></p>
+        <div class="barra" aria-hidden="true"><span id="barra-relleno"></span></div>
+      </div>
+
+      <article class="papeleta">
+        <p class="papeleta-cabecera">Asunto</p>
+        <h2 id="pregunta" class="pregunta" tabindex="-1"></h2>
+      </article>
+
+      <div class="fila-opciones">
+        <p class="indicacion">Elige la postura que más te convence.</p>
+        <p class="atajos" aria-hidden="true">Teclas <kbd>1</kbd>–<kbd>4</kbd>, <kbd>0</kbd> ninguna</p>
+      </div>
+      <div id="opciones" class="opciones" role="group" aria-labelledby="pregunta">
+        {
+          LETRAS.map((letra, i) => (
+            <button type="button" class="opcion" aria-keyshortcuts={String(i + 1)}>
+              <span class="opcion-letra" aria-hidden="true">{letra}</span>
+              <span class="opcion-texto"></span>
+            </button>
+          ))
+        }
+        <button type="button" id="ninguna" class="ninguna" aria-keyshortcuts="0 5">Ninguna me convence</button>
+      </div>
+
+      <div class="acciones acciones-asunto">
+        <button type="button" id="atras" class="boton-secundario boton-atras">← Atrás</button>
+      </div>
+    </section>
+
+    <section id="resultado" class="papeleta final" hidden aria-labelledby="titulo-resultado">
+      <h2 class="papeleta-titulo" id="titulo-resultado" tabindex="-1">Tu resultado</h2>
+      <p id="veredicto" class="veredicto"></p>
+      <p id="detalle" class="detalle"></p>
+
+      <ul id="barras" class="barras">
+        {
+          PARTIDOS.map((p) => (
+            <li class="barra-fila" data-partido={p.nombre}>
+              <span class="chip-logo barra-logo" style={`--raiz:${p.raiz}`}>
+                <img src={p.logo} alt="" width="80" height="40" />
+              </span>
+              <span class="barra-nombre">{p.nombre}</span>
+              <span class="barra-pista" aria-hidden="true"><span class="barra-valor"></span></span>
+              <span class="barra-pct"></span>
+            </li>
+          ))
+        }
+      </ul>
+
+      <p class="nota-clave">
+        <strong>No es una recomendación de voto.</strong> Es un cálculo sencillo sobre {`${asuntos.length} asuntos`};
+        contrasta con las citas y los programas.
+      </p>
+
+      <div class="acciones">
+        <button type="button" id="reiniciar" class="boton-secundario">Volver a empezar</button>
+        <button type="button" id="compartir" class="boton-secundario">Compartir</button>
+        <a class="boton-secundario" href="/">Jugar a «¿De quién es esta promesa?»</a>
+      </div>
+      <p id="aviso-compartir" class="aviso" aria-live="polite" hidden></p>
+
+      <details class="repaso">
+        <summary>Repasa los {asuntos.length} asuntos</summary>
+        <ol class="resumen">
+          {
+            asuntos.map((a) => (
+              <li class="resumen-asunto" data-asunto={a.id}>
+                <p class="resumen-pregunta">{a.pregunta}</p>
+                <p class="resumen-ninguna" hidden>Contestaste «Ninguna me convence».</p>
+                <ul class="posturas">
+                  {a.posturas.map((po) => (
+                    <li class="postura" data-partido={po.partido}>
+                      <div class="postura-cabecera">
+                        <span class="chip-logo postura-logo" style={`--raiz:${partidoDe[po.partido].raiz}`}>
+                          <img src={partidoDe[po.partido].logo} alt="" width="80" height="40" />
+                        </span>
+                        <strong>{po.partido}</strong>
+                        <span class="eleccion" hidden>Tu elección</span>
+                      </div>
+                      <p class="postura-texto">{po.texto}</p>
+                      <blockquote class="postura-cita">«{presentar(po.cita)}»</blockquote>
+                      <a href={`${urls[po.partido]}#page=${po.paginaPdf}`} target="_blank" rel="noopener">
+                        Ver en el programa (p. {po.paginaPdf})
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            ))
+          }
+        </ol>
+      </details>
+    </section>
+
+    <footer class="pie">
+      <p>
+        Las posturas están redactadas por nosotros a partir de citas literales de los programas
+        oficiales; ante la duda, manda la cita. No guardamos nada de esta sección: tus respuestas no
+        salen de tu navegador. <a href="/metodologia">Cómo hacemos Promesómetro</a>.
+      </p>
+    </footer>
+  </main>
+
+  <script type="application/json" id="datos" set:html={JSON.stringify(datos)} />
+
+  <script>
+    import { porcentaje } from '../lib/cliente';
+
+    type Postura = { partido: string; texto: string };
+    type Datos = { asuntos: { pregunta: string; posturas: Postura[] }[]; partidos: string[] };
+
+    const datos: Datos = JSON.parse(document.getElementById('datos')!.textContent!);
+    const total = datos.asuntos.length;
+
+    const $ = <T extends HTMLElement>(id: string) => document.getElementById(id) as T;
+    const portada = $('portada');
+    const asunto = $('asunto');
+    const resultado = $('resultado');
+    const botones = [...document.querySelectorAll<HTMLButtonElement>('#opciones .opcion')];
+    const ninguna = $<HTMLButtonElement>('ninguna');
+
+    // Solo en memoria: nada de red ni de almacenamiento del navegador.
+    // `elecciones[i]` es el partido elegido, `null` si «Ninguna» y undefined si no se ha contestado.
+    let elecciones: (string | null | undefined)[] = [];
+    // Orden barajado de cada asunto, para que «Atrás» lo enseñe igual.
+    let ordenes: Postura[][] = [];
+    let indice = 0;
+
+    function barajar<T>(lista: T[]): T[] {
+      const a = [...lista];
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a;
+    }
+
+    function mostrar(seccion: HTMLElement) {
+      for (const s of [portada, asunto, resultado]) s.hidden = s !== seccion;
+    }
+
+    function empezar() {
+      elecciones = [];
+      ordenes = datos.asuntos.map((a) => barajar(a.posturas));
+      indice = 0;
+      mostrar(asunto);
+      pintarAsunto();
+      asunto.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function pintarAsunto() {
+      const a = datos.asuntos[indice];
+      $('contador').textContent = `${indice + 1} / ${total}`;
+      $('barra-relleno').style.width = `${(indice / total) * 100}%`;
+      $('pregunta').textContent = a.pregunta;
+      ordenes[indice].forEach((p, i) => {
+        botones[i].dataset.partido = p.partido;
+        botones[i].querySelector('.opcion-texto')!.textContent = p.texto;
+        botones[i].classList.toggle('elegida', elecciones[indice] === p.partido);
+      });
+      ninguna.classList.toggle('elegida', elecciones[indice] === null);
+      $('atras').hidden = indice === 0;
+      // El foco va a la pregunta para que teclado y lector de pantalla no se pierdan.
+      $('pregunta').focus({ preventScroll: true });
+    }
+
+    function responder(partido: string | null) {
+      elecciones[indice] = partido;
+      indice++;
+      if (indice < total) {
+        pintarAsunto();
+        $('pregunta').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      } else terminar();
+    }
+
+    function atras() {
+      if (indice === 0) return;
+      indice--;
+      pintarAsunto();
+    }
+
+    // «A», «A y B», «A, B y C»: en orden alfabético, sin destacar a ninguno.
+    const lista = (n: string[]) => (n.length > 1 ? `${n.slice(0, -1).join(', ')} y ${n[n.length - 1]}` : n[0]);
+
+    function terminar() {
+      const validas = elecciones.filter((e): e is string => typeof e === 'string');
+      const sinElegir = total - validas.length;
+      const cuenta = new Map(datos.partidos.map((p) => [p, validas.filter((v) => v === p).length]));
+      const hay = validas.length > 0;
+      const max = Math.max(...cuenta.values());
+      const empatados = datos.partidos.filter((p) => cuenta.get(p) === max);
+
+      $('barras').hidden = !hay;
+      if (hay) {
+        $('veredicto').textContent =
+          empatados.length === 1 ? `Coincides más con ${empatados[0]}` : `Coincides por igual con ${lista(empatados)}`;
+        for (const fila of document.querySelectorAll<HTMLElement>('.barra-fila')) {
+          const n = cuenta.get(fila.dataset.partido!)!;
+          const pct = (n / validas.length) * 100;
+          fila.querySelector<HTMLElement>('.barra-valor')!.style.width = `${pct}%`;
+          fila.querySelector('.barra-pct')!.textContent = porcentaje(pct);
+        }
+        $('detalle').textContent =
+          `Porcentaje sobre los ${validas.length} asuntos en los que elegiste una postura.` +
+          (sinElegir ? ` En ${sinElegir === 1 ? '1 asunto' : `${sinElegir} asuntos`} contestaste «Ninguna me convence», que no suma a nadie.` : '');
+      } else {
+        $('veredicto').textContent = 'No has elegido ninguna postura';
+        $('detalle').textContent =
+          'Contestaste «Ninguna me convence» en todos los asuntos, así que no podemos calcular coincidencias. Puedes repasar abajo las posturas de cada partido o volver a empezar.';
+      }
+
+      // Repaso: marca la elegida de cada asunto (los asuntos van en el mismo orden que los datos).
+      document.querySelectorAll<HTMLElement>('.resumen-asunto').forEach((li, i) => {
+        li.querySelector<HTMLElement>('.resumen-ninguna')!.hidden = elecciones[i] !== null;
+        for (const po of li.querySelectorAll<HTMLElement>('.postura')) {
+          const elegida = po.dataset.partido === elecciones[i];
+          po.classList.toggle('es-elegida', elegida);
+          po.querySelector<HTMLElement>('.eleccion')!.hidden = !elegida;
+        }
+      });
+
+      $('aviso-compartir').hidden = true;
+      $('compartir').textContent = 'Compartir';
+      mostrar(resultado);
+      resultado.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      $('titulo-resultado').focus({ preventScroll: true });
+    }
+
+    // Solo invita a hacer el test: nunca incluye porcentajes ni partidos.
+    async function compartir() {
+      const texto = `¿Con quién coincides? ${total} asuntos de los programas del 29N, sin siglas.`;
+      const url = `${location.origin}/coincidencias`;
+      const boton = $('compartir');
+      const aviso = $('aviso-compartir');
+      try {
+        if (navigator.share) {
+          await navigator.share({ text: texto, url });
+          return;
+        }
+      } catch (e) {
+        if ((e as DOMException).name === 'AbortError') return;
+      }
+      try {
+        await navigator.clipboard.writeText(`${texto}\n${url}`);
+        boton.textContent = '¡Copiado!';
+        setTimeout(() => (boton.textContent = 'Compartir'), 2000);
+      } catch {
+        aviso.textContent = `No hemos podido copiarlo. Comparte este enlace: ${url}`;
+        aviso.hidden = false;
+      }
+    }
+
+    // Atajos: 1-4 eligen la postura de esa letra; 0 o 5, «Ninguna».
+    document.addEventListener('keydown', (e) => {
+      if (asunto.hidden || e.altKey || e.ctrlKey || e.metaKey) return;
+      if (e.key >= '1' && e.key <= '4') {
+        e.preventDefault();
+        responder(botones[Number(e.key) - 1].dataset.partido!);
+      } else if (e.key === '0' || e.key === '5') {
+        e.preventDefault();
+        responder(null);
+      }
+    });
+
+    $('empezar').addEventListener('click', empezar);
+    $('reiniciar').addEventListener('click', empezar);
+    $('atras').addEventListener('click', atras);
+    $('compartir').addEventListener('click', compartir);
+    ninguna.addEventListener('click', () => responder(null));
+    for (const b of botones) b.addEventListener('click', () => responder(b.dataset.partido!));
+  </script>
+</Base>
+
+<style>
+  .app {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 24px 16px 48px;
+  }
+
+  #asunto,
+  #resultado {
+    scroll-margin-top: 16px;
+  }
+
+  /* Cabecera */
+  .cabecera {
+    margin-bottom: 28px;
+  }
+
+  .volver {
+    display: inline-block;
+    margin-bottom: 12px;
+    font-size: var(--t-sm);
+    font-weight: 700;
+  }
+
+  .marca {
+    margin: 0;
+    font-family: var(--fuente-titulo);
+    font-weight: 800;
+    font-size: var(--t-display);
+    letter-spacing: -0.03em;
+    line-height: 0.98;
+    text-wrap: balance;
+  }
+
+  .lema {
+    margin: 12px 0 0;
+    color: var(--tinta-suave);
+    font-size: var(--t-md);
+    max-width: 40ch;
+    text-wrap: pretty;
+  }
+
+  /* Papeleta: hoja con troquel arriba */
+  .papeleta {
+    position: relative;
+    background: var(--papeleta);
+    border: 1px solid var(--linea);
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+    padding: 28px 24px 24px;
+  }
+
+  .papeleta::before {
+    content: '';
+    position: absolute;
+    left: 14px;
+    right: 14px;
+    top: 10px;
+    border-top: 2px dashed var(--linea);
+  }
+
+  .papeleta-titulo {
+    margin: 4px 0 16px;
+    font-family: var(--fuente-titulo);
+    font-weight: 700;
+    font-size: var(--t-xl);
+    line-height: 1.2;
+  }
+
+  .instrucciones {
+    margin: 0 0 16px;
+    padding-left: 24px;
+    display: grid;
+    gap: 8px;
+  }
+
+  .instrucciones li::marker {
+    font-family: var(--fuente-titulo);
+    font-weight: 800;
+    color: var(--lacre);
+  }
+
+  .nota-clave {
+    margin: 0 0 20px;
+    padding: 10px 14px;
+    background: color-mix(in srgb, var(--mostaza) 22%, var(--papeleta));
+    border-radius: var(--radio);
+    font-size: var(--t-sm);
+    line-height: 1.5;
+    text-wrap: pretty;
+  }
+
+  .aviso {
+    margin: 12px 0 0;
+    color: var(--tinta-suave);
+    font-size: var(--t-sm);
+  }
+
+  /* Caja blanca de cada logo; el tamaño del logo sale de su área (--raiz). */
+  .chip-logo {
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--chip-logo);
+    border-radius: 4px;
+    box-shadow: inset 0 0 0 1px rgb(31 42 68 / 0.1);
+    --k: 22px;
+  }
+
+  .chip-logo img {
+    width: calc(var(--k) * var(--raiz));
+    height: calc(var(--k) / var(--raiz));
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  /* Botones */
+  .boton-principal,
+  .boton-secundario {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    border-radius: 999px;
+    padding: 12px 26px;
+    font-weight: 700;
+    cursor: pointer;
+    border: 2px solid var(--tinta);
+    text-align: center;
+    transition:
+      transform 0.15s cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 0.15s ease,
+      background-color 0.15s ease;
+  }
+
+  .boton-principal {
+    background: var(--tinta);
+    color: var(--papel);
+    box-shadow: 0 6px 14px -8px rgb(31 42 68 / 0.6);
+  }
+
+  .boton-secundario {
+    background: transparent;
+  }
+
+  .boton-principal:hover,
+  .boton-secundario:hover {
+    transform: translateY(-1px);
+  }
+
+  .boton-secundario:hover {
+    background: color-mix(in srgb, var(--tinta) 6%, transparent);
+  }
+
+  .boton-principal:active,
+  .boton-secundario:active {
+    transform: translateY(1px);
+  }
+
+  a.boton-secundario {
+    text-decoration: none;
+  }
+
+  .boton-secundario[hidden] {
+    display: none;
+  }
+
+  .boton-principal:focus-visible,
+  .boton-secundario:focus-visible,
+  .opcion:focus-visible,
+  .ninguna:focus-visible,
+  .repaso summary:focus-visible,
+  .postura a:focus-visible,
+  .volver:focus-visible {
+    outline: 3px solid var(--mostaza);
+    outline-offset: 3px;
+  }
+
+  .pregunta:focus,
+  #titulo-resultado:focus {
+    outline: none;
+  }
+
+  .acciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  /* Asunto */
+  .estado {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 12px;
+  }
+
+  .contador {
+    margin: 0;
+    font-size: var(--t-sm);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  .barra {
+    flex: 1;
+    height: 8px;
+    border: 1.5px solid var(--tinta);
+    border-radius: 999px;
+    overflow: hidden;
+    background: transparent;
+  }
+
+  .barra span {
+    display: block;
+    height: 100%;
+    background: var(--tinta);
+    transition: width 0.25s ease;
+  }
+
+  .papeleta-cabecera {
+    margin: 0 0 12px;
+    font-size: var(--t-xs);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--lacre);
+  }
+
+  .pregunta {
+    margin: 0;
+    font-family: var(--fuente-titulo);
+    font-weight: 600;
+    font-size: clamp(var(--t-lg), 4.6vw, var(--t-xl));
+    line-height: 1.3;
+    text-wrap: balance;
+  }
+
+  .fila-opciones {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 24px 0 12px;
+  }
+
+  .indicacion {
+    margin: 0;
+    font-weight: 700;
+  }
+
+  .atajos {
+    display: none;
+    margin: 0;
+    font-size: var(--t-xs);
+    color: var(--tinta-suave);
+  }
+
+  kbd {
+    font-family: var(--fuente);
+    font-weight: 700;
+    padding: 0 5px;
+    border: 1px solid var(--linea);
+    border-bottom-width: 2px;
+    border-radius: 4px;
+    background: var(--papeleta);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .atajos {
+      display: block;
+    }
+  }
+
+  .opciones {
+    display: grid;
+    gap: 10px;
+  }
+
+  /* Las cuatro posturas son idénticas: solo cambia la letra. */
+  .opcion {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    width: 100%;
+    padding: 14px 16px;
+    border: 1.5px solid var(--linea);
+    border-radius: var(--radio);
+    background: var(--papel-2);
+    text-align: left;
+    line-height: 1.45;
+    cursor: pointer;
+    transition:
+      transform 0.15s cubic-bezier(0.16, 1, 0.3, 1),
+      border-color 0.15s ease;
+  }
+
+  .opcion:hover {
+    transform: translateY(-2px);
+    border-color: var(--tinta);
+  }
+
+  .opcion:active {
+    transform: translateY(1px);
+  }
+
+  .opcion.elegida,
+  .ninguna.elegida {
+    border-color: var(--tinta);
+    box-shadow: 0 0 0 1.5px var(--tinta);
+  }
+
+  .opcion-letra {
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    border: 2px solid var(--tinta);
+    border-radius: 50%;
+    font-family: var(--fuente-titulo);
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  .opcion-texto {
+    padding-top: 3px;
+    text-wrap: pretty;
+  }
+
+  /* Menos destacada: sin relleno ni letra. */
+  .ninguna {
+    justify-self: center;
+    min-height: 44px;
+    padding: 8px 18px;
+    border: 1.5px dashed var(--linea);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--tinta-suave);
+    font-weight: 700;
+    font-size: var(--t-sm);
+    cursor: pointer;
+  }
+
+  .ninguna:hover {
+    border-color: var(--tinta);
+    color: var(--tinta);
+  }
+
+  .acciones-asunto {
+    margin-top: 20px;
+  }
+
+  .boton-atras {
+    min-height: 44px;
+    padding: 8px 18px;
+    font-size: var(--t-sm);
+  }
+
+  /* Resultado */
+  .veredicto {
+    margin: 0 0 8px;
+    font-family: var(--fuente-titulo);
+    font-size: var(--t-2xl);
+    font-weight: 800;
+    line-height: 1.15;
+    text-wrap: balance;
+  }
+
+  .detalle {
+    margin: 0 0 20px;
+    color: var(--tinta-suave);
+    line-height: 1.45;
+    text-wrap: pretty;
+  }
+
+  /* Todas las barras, del mismo color: ningún partido destaca. */
+  .barras {
+    display: grid;
+    gap: 12px;
+    margin: 0 0 20px;
+    padding: 0;
+    list-style: none;
+  }
+
+  .barras[hidden] {
+    display: none;
+  }
+
+  .barra-fila {
+    display: grid;
+    grid-template-columns: 68px 1fr 56px;
+    grid-template-areas:
+      'logo nombre pct'
+      'logo pista pct';
+    align-items: center;
+    gap: 2px 12px;
+  }
+
+  .barra-logo {
+    grid-area: logo;
+    width: 68px;
+    height: 38px;
+    padding: 4px;
+  }
+
+  .barra-nombre {
+    grid-area: nombre;
+    font-size: var(--t-sm);
+    font-weight: 700;
+  }
+
+  .barra-pista {
+    grid-area: pista;
+    display: block;
+    height: 14px;
+    border: 1.5px solid var(--tinta);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .barra-valor {
+    display: block;
+    height: 100%;
+    width: 0;
+    background: var(--tinta);
+    transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .barra-pct {
+    grid-area: pct;
+    text-align: right;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Repaso */
+  .repaso {
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 2px dashed var(--linea);
+  }
+
+  .repaso summary {
+    cursor: pointer;
+    font-weight: 700;
+    border-radius: 4px;
+  }
+
+  .resumen {
+    margin: 16px 0 0;
+    padding-left: 24px;
+    display: grid;
+    gap: 28px;
+  }
+
+  .resumen li::marker {
+    font-family: var(--fuente-titulo);
+    font-weight: 700;
+    color: var(--tinta-suave);
+  }
+
+  .resumen-pregunta {
+    margin: 0 0 10px;
+    font-family: var(--fuente-titulo);
+    font-weight: 700;
+    font-size: var(--t-lg);
+    line-height: 1.3;
+    text-wrap: balance;
+  }
+
+  .resumen-ninguna {
+    margin: 0 0 10px;
+    color: var(--tinta-suave);
+    font-size: var(--t-sm);
+    font-style: italic;
+  }
+
+  .resumen-ninguna[hidden],
+  .eleccion[hidden] {
+    display: none;
+  }
+
+  .posturas {
+    display: grid;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .postura {
+    padding: 12px 14px;
+    border: 1px solid var(--linea);
+    border-radius: var(--radio);
+    background: var(--papeleta);
+    font-size: var(--t-sm);
+  }
+
+  .postura.es-elegida {
+    border: 2px solid var(--tinta);
+    padding: 11px 13px;
+  }
+
+  .postura-cabecera {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .postura-logo {
+    width: 68px;
+    height: 38px;
+    padding: 4px;
+  }
+
+  .eleccion {
+    margin-left: auto;
+    padding: 1px 10px;
+    border: 2px solid var(--tinta);
+    border-radius: 999px;
+    background: var(--tinta);
+    color: var(--papel);
+    font-size: var(--t-xs);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .postura-texto {
+    margin: 8px 0 0;
+    line-height: 1.45;
+    text-wrap: pretty;
+  }
+
+  .postura-cita {
+    margin: 8px 0 6px;
+    padding-left: 12px;
+    border-left: 3px solid var(--linea);
+    font-family: var(--fuente-titulo);
+    line-height: 1.45;
+    color: var(--tinta-suave);
+  }
+
+  .postura a {
+    color: var(--tinta);
+    font-weight: 700;
+  }
+
+  .pie {
+    margin-top: 40px;
+    padding-top: 16px;
+    border-top: 1px dashed var(--linea);
+    color: var(--tinta-suave);
+    font-size: var(--t-xs);
+  }
+
+  .pie p {
+    margin: 0 0 8px;
+    max-width: 68ch;
+  }
+
+  @media (max-width: 420px) {
+    .papeleta {
+      padding: 28px 16px 20px;
+    }
+    .barra-fila {
+      grid-template-columns: 56px 1fr 50px;
+    }
+    .barra-logo {
+      width: 56px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .opcion,
+    .boton-principal,
+    .boton-secundario,
+    .barra span,
+    .barra-valor {
+      transition: none;
+    }
+  }
+</style>

@@ -59,6 +59,9 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
         <button id="empezar" class="boton-principal">Coger papeleta</button>
         <button id="reto" class="boton-secundario">Reto del día · 5 frases</button>
       </div>
+      <p class="enlace-coincidencias">
+        ¿Y tú qué harías? <a href="/coincidencias">Descubre con quién coincides →</a>
+      </p>
       <p id="partidas" class="partidas" hidden></p>
     </section>
 
@@ -133,6 +136,9 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
         <a id="ver-resultados" class="boton-secundario" href="/resultados" hidden>Ver resultados</a>
       </div>
       <p id="aviso-compartir" class="aviso" aria-live="polite" hidden></p>
+      <p class="enlace-coincidencias">
+        ¿Y tú qué harías? <a href="/coincidencias">Descubre con quién coincides →</a>
+      </p>
       <details class="repaso">
         <summary id="titulo-repaso">Repasa tus {RONDA} papeletas</summary>
         <ol id="resumen" class="resumen"></ol>
@@ -150,6 +156,7 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
         Proyecto independiente, sin relación con ningún partido. Los logotipos pertenecen a sus
         respectivos partidos y se usan solo para identificarlos. Guardamos tus respuestas de forma
         anónima (sin cookies, IP ni datos personales) para elaborar estadísticas de conjunto.
+        <a href="/coincidencias">¿Con quién coincides?</a> ·
         <a href="/metodologia">Cómo hacemos Promesómetro</a>.
       </p>
     </footer>
@@ -791,6 +798,23 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
     letter-spacing: 0.06em;
     text-transform: uppercase;
     font-variant-numeric: tabular-nums;
+  }
+
+  .enlace-coincidencias {
+    margin: 16px 0 0;
+    color: var(--tinta-suave);
+    font-size: var(--t-sm);
+  }
+
+  .enlace-coincidencias a {
+    color: var(--tinta);
+    font-weight: 700;
+  }
+
+  .enlace-coincidencias a:focus-visible {
+    outline: 3px solid var(--mostaza);
+    outline-offset: 3px;
+    border-radius: 2px;
   }
 
   .aviso {

@@ -1,0 +1,178 @@
+[
+  {
+    "id": "alquiler",
+    "frase": "pp-01",
+    "pregunta": "¿Qué harías con la regulación del alquiler?",
+    "posturas": {
+      "Frente Amplio": "Limitar por ley el precio del alquiler en todas las zonas tensionadas, con la fórmula que deje la renta más baja para el inquilino.",
+      "PP": "Eliminar las zonas tensionadas y el índice oficial de precios del alquiler, para dar seguridad a propietarios e inquilinos.",
+      "PSOE": "Publicar desde el Estado el mapa de zonas tensionadas que las comunidades autónomas no están elaborando.",
+      "Vox": "Derogar la ley de vivienda para recuperar una oferta de alquiler estable, abundante y asequible."
+    }
+  },
+  {
+    "id": "defensa",
+    "frase": "fa-05",
+    "pregunta": "¿Cuánto debería gastar España en defensa?",
+    "posturas": {
+      "Frente Amplio": "Rechazar el objetivo de la OTAN del 5 % del PIB, reducir el gasto militar y llevar ese dinero a emergencias, protección civil, sanidad y educación.",
+      "PP": "Fijar una inversión en defensa para varios años que permita conocer y cumplir los compromisos internacionales.",
+      "PSOE": "Rechazar que el gasto militar suba al 5 % del PIB, porque pondría en riesgo el Estado del bienestar.",
+      "Vox": "Aumentar la inversión en defensa y mejorar los sueldos de los militares y sus ayudas para cambiar de destino y para vivienda."
+    }
+  },
+  {
+    "id": "final-de-la-vida",
+    "frase": "pp-02",
+    "pregunta": "¿Qué harías con la atención al final de la vida?",
+    "posturas": {
+      "Frente Amplio": "Crear permisos retribuidos para acompañar a un familiar en cuidados paliativos o el día en que reciba la ayuda para morir.",
+      "PP": "Aprobar una ley nacional de cuidados paliativos para que nadie se vea empujado a adelantar su muerte por falta de alternativas.",
+      "PSOE": "Garantizar que se pueda ejercer de verdad el derecho a la eutanasia que reconoce la ley vigente.",
+      "Vox": "Defender la vida hasta la muerte natural, garantizar la objeción de conciencia de sanitarios y farmacéuticos y potenciar los cuidados paliativos."
+    }
+  },
+  {
+    "id": "riqueza",
+    "frase": "fa-01",
+    "pregunta": "¿Qué harías con los impuestos sobre la riqueza?",
+    "posturas": {
+      "Frente Amplio": "Limitar las herencias a 10 millones de euros por heredero: lo que pase de esa cifra se lo quedaría Hacienda.",
+      "PP": "Dejar que las comunidades autónomas decidan sobre sus impuestos y puedan bajarlos tanto como quieran.",
+      "PSOE": "Gravar más los grandes patrimonios y las rentas del capital para financiar una ayuda por crianza y la lucha contra la pobreza infantil.",
+      "Vox": "Revisar y rebajar de forma sistemática todos los impuestos y tasas."
+    }
+  },
+  {
+    "id": "nucleares",
+    "frase": "fa-06",
+    "pregunta": "¿Qué harías con las centrales nucleares?",
+    "posturas": {
+      "Frente Amplio": "Cerrarlas en las fechas previstas, empezando por Almaraz en 2027-2028, sin ventajas fiscales y con los residuos a cargo de las empresas.",
+      "PP": "Anular el calendario de cierre y tramitar en los primeros cien días que sigan funcionando más años, con el visto bueno del Consejo de Seguridad Nuclear.",
+      "PSOE": "Mantener el calendario de cierre hasta 2035, con proyectos de transición para las comarcas afectadas.",
+      "Vox": "Anular el calendario de cierre y estudiar con urgencia construir nuevas centrales junto a las actuales."
+    }
+  },
+  {
+    "id": "regularizacion",
+    "frase": "vox-09",
+    "pregunta": "¿Qué harías con la regularización de inmigrantes?",
+    "posturas": {
+      "Frente Amplio": "Crear un procedimiento estable, permanente y reglado para regularizar a los inmigrantes.",
+      "PP": "Prohibir las regularizaciones masivas y dejar el arraigo como un reconocimiento individual y excepcional.",
+      "PSOE": "Apostar por una migración ordenada, legal y segura, ajustada a las necesidades de población y economía, con vías legales para residir y trabajar.",
+      "Vox": "Suprimir el arraigo, la vía para obtener papeles tras vivir un tiempo en España, y eliminar los atajos para conseguir la nacionalidad."
+    }
+  },
+  {
+    "id": "colegios",
+    "frase": "pp-03",
+    "pregunta": "¿Qué harías con la financiación de los colegios?",
+    "posturas": {
+      "Frente Amplio": "Prohibir las cuotas obligatorias en los colegios concertados y destinar todo el dinero público a la escuela pública.",
+      "PP": "Firmar conciertos de al menos seis años que cubran el coste real de la plaza y dejar elegir colegio en todo el municipio.",
+      "PSOE": "Garantizar una educación pública y gratuita de los 0 a los 18 años.",
+      "Vox": "Garantizar la libre elección de colegio en todas las etapas, sin que la situación económica o social de la familia lo impida."
+    }
+  },
+  {
+    "id": "jubilacion",
+    "frase": "fa-04",
+    "pregunta": "¿Qué harías con la jubilación?",
+    "posturas": {
+      "Frente Amplio": "Volver a jubilarse a los 65 años y adelantar la edad en los oficios más penosos.",
+      "PP": "Dar deducciones en el IRPF a quien siga trabajando mientras cobra la pensión.",
+      "PSOE": "Estudiar adelantar la jubilación en trabajos penosos y penalizar menos a quien se jubila antes sin quererlo, sobre todo tras una carrera larga.",
+      "Vox": "Garantizar las pensiones reactivando la economía, el empleo y los salarios."
+    }
+  },
+  {
+    "id": "clima",
+    "frase": "vox-06",
+    "pregunta": "¿Qué harías con las políticas contra el cambio climático?",
+    "posturas": {
+      "Frente Amplio": "Cumplir los compromisos del Acuerdo de París y del Pacto Verde Europeo e impulsar la descarbonización y las renovables.",
+      "PP": "Reformular con realismo el plan nacional de energía y clima.",
+      "PSOE": "Impulsar las zonas de bajas emisiones y la movilidad sostenible en las ciudades para reducir emisiones y mejorar el aire.",
+      "Vox": "Acabar con el Pacto Verde Europeo y las zonas de bajas emisiones, por perjudicar a la industria, al campo y la libertad de circulación."
+    }
+  },
+  {
+    "id": "precariedad",
+    "frase": "psoe-12",
+    "pregunta": "¿Qué harías contra la precariedad laboral?",
+    "posturas": {
+      "Frente Amplio": "Bajar ya la jornada a 37,5 horas (35 en el sector público) y subir en proporción el salario por hora de los contratos a tiempo parcial.",
+      "PP": "Rebajar la cotización por desempleo a las empresas con plantillas más estables que la media de su sector.",
+      "PSOE": "Obligar a justificar los contratos a tiempo parcial y tratar como jornada completa los que superen el 80 % de las horas.",
+      "Vox": "Derogar la legislación laboral actual, por haber agravado la precariedad y frenado la contratación."
+    }
+  },
+  {
+    "id": "lenguas",
+    "frase": "vox-04",
+    "pregunta": "¿Qué papel deberían tener las lenguas cooficiales en la Administración?",
+    "posturas": {
+      "Frente Amplio": "Aprobar una ley del plurilingüismo para poder relacionarse con las instituciones del Estado en cualquier lengua cooficial.",
+      "PP": "Que los requisitos de idioma respeten los derechos de todos y que cada ciudadano elija si la Administración le atiende en la lengua oficial o en la cooficial.",
+      "PSOE": "Consolidar las lenguas cooficiales en las Cortes y usarlas en la atención de la Administración del Estado donde son oficiales.",
+      "Vox": "Garantizar que no saber la lengua cooficial nunca impida conseguir por oposición una plaza en la sanidad pública."
+    }
+  },
+  {
+    "id": "deuda",
+    "frase": "psoe-14",
+    "pregunta": "¿Qué harías con la deuda pública?",
+    "posturas": {
+      "Frente Amplio": "Permitir que el Banco Central Europeo financie directamente a los Estados para que no tengan que colocar su deuda en los mercados.",
+      "PP": "Reducir el déficit estructural y la deuda para no cargarlos a las próximas generaciones.",
+      "PSOE": "Reducir poco a poco la deuda y el déficit para que la sanidad, la educación y las pensiones resistan una crisis.",
+      "Vox": "Reducir la deuda controlando el déficit y eliminando gasto superfluo, de forma compatible con bajar impuestos."
+    }
+  },
+  {
+    "id": "personas-trans",
+    "frase": "pp-10",
+    "pregunta": "¿Qué harías con las personas trans en el registro civil y el deporte?",
+    "posturas": {
+      "Frente Amplio": "Aplicar plenamente la ley de protección de las personas trans, contra la discriminación en el empleo, la salud, el deporte y otros ámbitos.",
+      "PP": "Acabar con el cambio de sexo en el registro solo con pedirlo y que el sexo biológico decida en las categorías deportivas femeninas.",
+      "PSOE": "Impulsar la inclusión social y laboral de las personas trans y garantizar sus tratamientos hormonales.",
+      "Vox": "Regir el deporte femenino por criterios biológicos y deportivos objetivos, para que la competición sea igualada."
+    }
+  },
+  {
+    "id": "ayudas-sociales",
+    "frase": "vox-03",
+    "pregunta": "¿Qué harías con el ingreso mínimo vital y las ayudas sociales?",
+    "posturas": {
+      "Frente Amplio": "Conceder el ingreso mínimo vital de oficio, cruzando datos fiscales y de la Seguridad Social, sin papeleo.",
+      "PP": "Dar prioridad en ciertas ayudas a quien tenga un arraigo real, duradero y comprobable con España, sin basarse solo en la nacionalidad.",
+      "PSOE": "Reforzar el ingreso mínimo vital y automatizar su concesión con datos recientes de renta y patrimonio.",
+      "Vox": "Reservar el ingreso mínimo vital a los españoles con menos recursos y fomentar que los inmigrantes que lo cobran vuelvan a su país."
+    }
+  },
+  {
+    "id": "empresas",
+    "frase": "psoe-02",
+    "pregunta": "¿Qué harías con los impuestos de las empresas?",
+    "posturas": {
+      "Frente Amplio": "Obligar a publicar la diferencia entre el sueldo de los directivos y el de la plantilla, con topes en empresas públicas o con ayudas extraordinarias.",
+      "PP": "Permitir que las empresas descuenten entero el mismo año lo que inviertan en maquinaria, tecnología o patentes, y paguen así menos impuestos.",
+      "PSOE": "Subir los impuestos a las cotizadas cuyo primer ejecutivo cobre más de 100 veces lo que un empleado típico de la plantilla, y más aún si pasa de 200.",
+      "Vox": "Bajar el impuesto de sociedades para dinamizar la economía, que las empresas crezcan y se cree empleo."
+    }
+  },
+  {
+    "id": "familias",
+    "frase": "pp-11",
+    "pregunta": "¿Cómo ayudarías a las familias con hijos?",
+    "posturas": {
+      "Frente Amplio": "Pagar 200 euros al mes por cada menor de 18 años, de forma automática desde el nacimiento.",
+      "PP": "Juntar las deducciones familiares del IRPF en una sola ayuda mensual que cobren también las familias que pagan poco o nada de IRPF.",
+      "PSOE": "Convertir la rebaja del IRPF por cada hijo en una ayuda que cobren también los hogares que no hacen la declaración o no pagan lo bastante.",
+      "Vox": "Extender a todas las familias, desde el primer hijo, las ventajas de las familias numerosas, con más ayudas cuantos más hijos."
+    }
+  }
+]
