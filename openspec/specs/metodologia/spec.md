@@ -7,7 +7,7 @@ TBD - created by archiving change mejoras-lanzamiento. Update Purpose after arch
 
 El sitio SHALL tener una página `/metodologia`, enlazada desde el pie, que
 explique: que las frases son citas literales recortables y nunca reescritas,
-el reparto de 20 frases por partido (10 deducibles y 10 sorpresa), que se
+el reparto de 30 frases por partido (15 deducibles y 15 sorpresa), que se
 evitan las frases que delatan al partido por su vocabulario, que «En otras
 palabras» y los resúmenes son textos propios, enlaces a los cuatro programas
 oficiales, qué datos se guardan y cuáles no, y que no se publican aciertos por

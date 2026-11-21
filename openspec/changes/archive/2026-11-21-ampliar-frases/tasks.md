@@ -8,7 +8,7 @@
 - [x] 2.1 Proponer candidatas por partido con cita literal y página
 - [x] 2.2 Seleccionar 10 por partido (5+5) y redactar «En otras palabras», comparativa y valoración
 - [x] 2.3 Unir en `src/data/frases.json` y pasar `verificar-frases.mjs --final`
-- [ ] 2.4 Revisión editorial de la persona
+- [x] 2.4 Revisión editorial de la persona
 
 ## 3. Documentación y validación
 
