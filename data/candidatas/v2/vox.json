@@ -1001,21 +1001,21 @@
     "comparativa": [
       {
         "partido": "PSOE",
-        "resumen": null,
-        "texto": null,
-        "paginaPdf": null
+        "resumen": "Propone, en la UE, una competencia justa para el campo: más controles a las importaciones y reciprocidad en estándares ambientales, sanitarios y laborales.",
+        "texto": "Asimismo, defenderemos en la UE una competencia justa, reforzando controles a las importaciones y exigiendo reciprocidad en los estándares ambientales, sanitarios y laborales.",
+        "paginaPdf": 69
       },
       {
         "partido": "PP",
-        "resumen": null,
-        "texto": null,
-        "paginaPdf": null
+        "resumen": "Propone exigir a los alimentos importados seguridad y producción equivalentes a las españolas, con más controles en frontera y cláusulas de salvaguardia en los acuerdos comerciales.",
+        "texto": "Los alimentos importados cumplirán exigencias de seguridad alimentaria y producción equivalentes a las nuestras. […] promoveremos cláusulas de salvaguardia inmediatas en todos los acuerdos comerciales cuando proceda.",
+        "paginaPdf": 50
       },
       {
         "partido": "Frente Amplio",
-        "resumen": null,
-        "texto": null,
-        "paginaPdf": null
+        "resumen": "Propone, en la aplicación del Acuerdo UE-Mercosur, activar cláusulas de salvaguarda cuando las importaciones agrarias generen competencia desleal.",
+        "texto": "Bajo la aplicación del Acuerdo UE-Mercosur, se fiscalizarán los compromisos laborales, ambientales y de derechos humanos, activando cláusulas de salvaguarda cuando las importaciones agrarias generen competencia desleal.",
+        "paginaPdf": 133
       }
     ],
     "calidad": 2,

@@ -797,15 +797,15 @@
     "comparativa": [
       {
         "partido": "PP",
-        "resumen": null,
-        "texto": null,
-        "paginaPdf": null
+        "resumen": "Propone becas por ley para quien las necesite y apruebe, y matrícula gratuita para quien elija un ciclo de FP de alta demanda de empleo.",
+        "texto": "La beca será un derecho por ley para quien la necesite y apruebe, con los mismos umbrales en la universidad que en la FP. Quien elija un ciclo de FP de alta demanda de empleo no pagará matrícula.",
+        "paginaPdf": 52
       },
       {
         "partido": "Vox",
-        "resumen": null,
-        "texto": null,
-        "paginaPdf": null
+        "resumen": "Propone mejorar las becas universitarias y preuniversitarias para que la falta de recursos no impida estudiar.",
+        "texto": "Ningún español debe quedarse sin poder estudiar por falta de recursos económicos. Mejorar el sistema de becas en las etapas universitaria y preuniversitaria […]",
+        "paginaPdf": 41
       },
       {
         "partido": "Frente Amplio",
@@ -877,9 +877,9 @@
       },
       {
         "partido": "Frente Amplio",
-        "resumen": null,
-        "texto": null,
-        "paginaPdf": null
+        "resumen": "Propone que las personas de referencia elegidas, sin parentesco ni convivencia, sean referentes a efectos de permisos retribuidos.",
+        "texto": "Incorporaremos a la Ley de Familias el principio de libre designación de personas de referencia […] Las personas designadas, sin necesidad de parentesco ni convivencia, serán referentes a efectos de permisos retribuidos",
+        "paginaPdf": 24
       }
     ],
     "calidad": 3,
@@ -935,15 +935,15 @@
     "comparativa": [
       {
         "partido": "PP",
-        "resumen": null,
-        "texto": null,
-        "paginaPdf": null
+        "resumen": "Propone modernizar embalses, conducciones y regadíos para reducir el consumo de agua, ampliar el uso de agua depurada y reforzar la desalación.",
+        "texto": "modernizaremos embalses y conducciones, renovaremos los regadíos para reducir su consumo de agua y energía, definiremos nuevos regadíos, ampliaremos el uso de agua depurada y reforzaremos la desalación donde sea necesaria.",
+        "paginaPdf": 50
       },
       {
         "partido": "Vox",
-        "resumen": null,
-        "texto": null,
-        "paginaPdf": null
+        "resumen": "Propone interconectar todas las cuencas hidrográficas para gestionar el agua de forma más eficiente.",
+        "texto": "Plan Nacional del Agua. Interconexión de todas las cuencas que permita una gestión más eficiente del agua […]",
+        "paginaPdf": 61
       },
       {
         "partido": "Frente Amplio",

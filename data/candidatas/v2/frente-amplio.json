@@ -865,9 +865,9 @@
     "comparativa": [
       {
         "partido": "PSOE",
-        "resumen": null,
-        "texto": null,
-        "paginaPdf": null
+        "resumen": "Defiende que la reforma del mercado eléctrico europeo traslade a hogares y empresas los beneficios de las renovables.",
+        "texto": "Defender la reforma del mercado eléctrico europeo para garantizar que los beneficios de las energías renovables se trasladen de forma efectiva a consumidores, hogares y empresas.",
+        "paginaPdf": 66
       },
       {
         "partido": "PP",
@@ -877,9 +877,9 @@
       },
       {
         "partido": "Vox",
-        "resumen": null,
-        "texto": null,
-        "paginaPdf": null
+        "resumen": "Propone una bajada masiva de los impuestos sobre la electricidad para familias, empresas e industrias.",
+        "texto": "Bajada masiva de los impuestos de la energía eléctrica a familias, empresas e industrias españolas.",
+        "paginaPdf": 11
       }
     ],
     "calidad": 3,
@@ -899,9 +899,9 @@
     "comparativa": [
       {
         "partido": "PSOE",
-        "resumen": null,
-        "texto": null,
-        "paginaPdf": null
+        "resumen": "Propone reforzar la detección y sanción de prácticas que oculten costes, condicionen las decisiones de compra o usen de forma abusiva la inteligencia artificial.",
+        "texto": "Reforzar la detección, control y sanción de prácticas que oculten costes, […] condicionen las decisiones de compra o utilicen de forma abusiva sistemas de inteligencia artificial, que acaban perjudicando al consumidor.",
+        "paginaPdf": 38
       },
       {
         "partido": "PP",
@@ -939,9 +939,9 @@
       },
       {
         "partido": "PP",
-        "resumen": null,
-        "texto": null,
-        "paginaPdf": null
+        "resumen": "Para menores en redes y plataformas, propone prohibir el acceso a apuestas y a contenidos para adultos, con sanciones proporcionales a la facturación de las plataformas.",
+        "texto": "El acceso a contenidos para adultos y a apuestas estará prohibido en todo caso. […] Las plataformas que incumplan estas obligaciones responderán con sanciones proporcionales a su facturación.",
+        "paginaPdf": 45
       },
       {
         "partido": "Vox",
