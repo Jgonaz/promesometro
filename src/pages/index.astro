@@ -24,8 +24,8 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
       <div class="cabecera-texto">
         <h1 class="marca">Promesómetro</h1>
         <p class="lema">
-          ¿De quién es esta promesa? Medidas reales de los programas de las generales del
-          29&nbsp;de&nbsp;noviembre, sin siglas.
+          Medidas reales de los programas de las generales del 29&nbsp;de&nbsp;noviembre, sin
+          siglas. ¿Seguro que sabes de quién es cada una?
         </p>
       </div>
       <div class="cabecera-lamina">
@@ -49,7 +49,7 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
         <li>Mete cada una en el sobre del partido que creas que la propone.</li>
         <li>Al votar verás la respuesta, la página exacta del programa y qué proponen los demás sobre lo mismo.</li>
       </ol>
-      <p class="aviso">Unas se deducen pensando un poco. Otras te van a sorprender.</p>
+      <p class="aviso">Unas se deducen pensando un poco. Otras te van a descolocar.</p>
       <div class="sobres-muestra" aria-hidden="true">
         {
           PARTIDOS.map((p) => (
@@ -558,8 +558,8 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
           : p >= 0.7
             ? 'Muy bien. Pocos distinguen tan bien la letra pequeña.'
             : p >= 0.4
-              ? 'Ni tan mal: los programas se parecen más de lo que crees.'
-              : 'Tranquilidad: a casi todo el mundo le pasa. Se parecen mucho.';
+              ? 'Ni tan mal, pero varias promesas te las habrías creído de otro.'
+              : 'Tranquilidad: a casi todo el mundo le pasa. Pero ¿y si echas un ojo a los programas?';
 
       const sello = $('sello-final');
       sello.textContent = titulo(n);
@@ -625,7 +625,7 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
       const { confusion } = retrato();
       const lineas = [cabecera, casillas];
       if (confusion) lineas.push(`Le di ${al(confusion.elegido)} ${medidas(confusion.n)} ${del(confusion.real)}.`);
-      lineas.push('¿Sabrías de quién es cada promesa del 29N?');
+      lineas.push('¿Sabes qué estás votando? Compruébalo.');
       const texto = lineas.join('\n');
       // El enlace del reto lo abre directamente (ver el arranque al final).
       const url = location.origin + location.pathname + (modo === 'reto' ? '#reto' : '');
