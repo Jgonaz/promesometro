@@ -194,6 +194,9 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
     let indice = 0;
     let respuestas: { frase: Frase; elegido: string }[] = [];
     let esperandoVoto = false;
+    // Analítica anónima: id aleatorio solo en memoria, nuevo en cada ronda.
+    let partida = '';
+    let abrioExplicacion = false;
     // Frases ya vistas en la sesión, para no repetir hasta agotar todas.
     const vistas = new Set<string>();
 
@@ -270,6 +273,7 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
 
     function empezar() {
       ronda = nuevaRonda();
+      partida = crypto.randomUUID();
       indice = 0;
       respuestas = [];
       puntos.forEach((p, i) => marcarPunto(p, i + 1, ''));
@@ -286,6 +290,7 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
       $('frase').textContent = presentar(f.texto);
       $('explicacion-texto').textContent = f.enOtrasPalabras;
       ($('explicacion') as HTMLDetailsElement).open = false;
+      abrioExplicacion = false;
       marcarPunto(puntos[indice], indice + 1, 'actual');
       const sello = $('sello');
       sello.className = 'sello';
@@ -311,6 +316,7 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
       const f = ronda[indice];
       respuestas.push({ frase: f, elegido });
       vistas.add(f.id);
+      registrar(f, elegido);
       const ok = elegido === f.partido;
 
       for (const b of sobres) {
@@ -347,6 +353,20 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
       $('revelacion').hidden = false;
       $('siguiente').focus({ preventScroll: true });
       $('veredicto').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    // Envío en segundo plano: sin await para no retrasar la revelación, y con
+    // keepalive para que llegue aunque se cierre la página. Los fallos se
+    // ignoran: el juego nunca depende del registro.
+    function registrar(f: Frase, elegido: string) {
+      try {
+        fetch('/api/respuesta', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ partida, frase: f.id, elegido, posicion: indice + 1, explicacion: abrioExplicacion }),
+          keepalive: true,
+        }).catch(() => {});
+      } catch {}
     }
 
     // Los otros tres partidos, en el orden alfabético fijo de los sobres.
@@ -503,6 +523,9 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
     $('otra').addEventListener('click', empezar);
     $('siguiente').addEventListener('click', siguiente);
     $('compartir').addEventListener('click', compartir);
+    $('explicacion').addEventListener('toggle', (e) => {
+      if ((e.target as HTMLDetailsElement).open && esperandoVoto) abrioExplicacion = true;
+    });
     for (const b of sobres) b.addEventListener('click', () => responder(b.dataset.partido!));
   </script>
 </Base>

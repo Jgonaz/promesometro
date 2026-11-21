@@ -1,0 +1,3 @@
+# Vínculo con el proyecto de Vercel y variables de entorno locales.
+.vercel
+.env.local

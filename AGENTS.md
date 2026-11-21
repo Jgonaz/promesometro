@@ -33,7 +33,15 @@ tres partidos sobre lo mismo.
 
 ## Stack
 
-- Astro estático, sin backend. Las frases viven en un JSON del repositorio.
+- Astro con las páginas prerenderizadas y desplegado en Vercel
+  (`@astrojs/vercel`). Las frases viven en un JSON del repositorio.
+- Único endpoint de servidor: `src/pages/api/respuesta.ts` guarda cada voto
+  de forma anónima en Neon (Postgres, vía Vercel Marketplace, variable
+  `DATABASE_URL`). Sin esa variable acepta y no guarda nada. Esquema en
+  `db/esquema.sql`; consultas de análisis en `db/consultas.sql`.
+- Las respuestas son anónimas: no se guardan IP, agente de usuario, cookies
+  ni identificadores persistentes; el id de partida vive en memoria y cambia
+  en cada ronda. Las analíticas son privadas y no se exponen en el sitio.
 - Gestor de paquetes: pnpm.
 - Los PDF originales van en `data/programas/` y no se suben a Git; sus URL
   oficiales están en `data/programas/fuentes.json`.
