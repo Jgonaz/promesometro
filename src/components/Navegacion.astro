@@ -1,0 +1,131 @@
+---
+// Barra de navegación del diseño de escritorio (desde 1024 px; por debajo no
+// se muestra y las páginas siguen como siempre).
+// `actual` marca la página en curso con aria-current. En la portada (`portada`)
+// la izquierda lleva el antetítulo de las elecciones, y en cuanto la pantalla
+// pasa a juego o resultado (html[data-pantalla]) cambia a la marca compacta.
+interface Props {
+  actual?: 'jugar' | 'coincidencias' | 'metodologia';
+  portada?: boolean;
+}
+const { actual, portada = false } = Astro.props;
+const enlaces = [
+  { id: 'jugar', href: '/', texto: 'Jugar' },
+  // Abre el reto directamente (ver el arranque de index.astro).
+  { id: 'reto', href: '/#reto', texto: 'Reto del día' },
+  { id: 'coincidencias', href: '/coincidencias', texto: '¿Con quién coincides?' },
+  { id: 'metodologia', href: '/metodologia', texto: 'Cómo lo hacemos' },
+];
+---
+
+<header class="nav" data-portada={portada ? '' : undefined}>
+  {portada && <span class="nav-antetitulo">Generales · 29 de noviembre de 2026</span>}
+  <a class="nav-marca" href="/">Promesómetro</a>
+  <nav aria-label="Secciones" class="nav-enlaces">
+    {
+      enlaces.map((e) => (
+        <a
+          href={e.href}
+          aria-current={e.id === actual ? 'page' : undefined}
+          data-reto={e.id === 'reto' ? '' : undefined}
+        >
+          {e.texto}
+        </a>
+      ))
+    }
+  </nav>
+</header>
+
+<style>
+  .nav {
+    display: none;
+  }
+
+  @media (min-width: 1024px) {
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding: 18px 0;
+      border-bottom: 1px dashed var(--linea);
+    }
+
+    .nav-marca {
+      font-family: var(--fuente-titulo);
+      font-weight: 800;
+      font-size: 1.625rem;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      text-decoration: none;
+    }
+
+    .nav-antetitulo {
+      font-size: var(--t-xs);
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--lacre-texto);
+    }
+
+    .nav-enlaces {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 28px;
+      font-size: 0.9375rem;
+      font-weight: 700;
+    }
+
+    .nav-enlaces a {
+      text-decoration: none;
+    }
+
+    .nav-enlaces a:hover,
+    .nav-marca:hover {
+      color: var(--lacre);
+    }
+
+    .nav-enlaces a[aria-current='page'] {
+      text-decoration: underline;
+      text-decoration-color: var(--lacre);
+      text-decoration-thickness: 2px;
+      text-underline-offset: 6px;
+    }
+
+    .nav a:focus-visible {
+      outline: 3px solid var(--mostaza);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+
+    /* Portada: antetítulo a la izquierda y sin página marcada; la marca
+       compacta solo aparece en las pantallas de juego. */
+    .nav[data-portada] {
+      padding: 22px 0;
+    }
+
+    .nav[data-portada] .nav-marca {
+      display: none;
+    }
+
+    :global(:root[data-pantalla='juego']) .nav[data-portada],
+    :global(:root[data-pantalla='final']) .nav[data-portada] {
+      padding: 18px 0;
+    }
+
+    :global(:root[data-pantalla='juego']) .nav[data-portada] .nav-marca,
+    :global(:root[data-pantalla='final']) .nav[data-portada] .nav-marca {
+      display: inline;
+    }
+
+    :global(:root[data-pantalla='juego']) .nav[data-portada] .nav-antetitulo,
+    :global(:root[data-pantalla='final']) .nav[data-portada] .nav-antetitulo {
+      display: none;
+    }
+
+    :global(:root:not([data-pantalla='juego'], [data-pantalla='final'])) .nav[data-portada] a[aria-current='page'] {
+      text-decoration: none;
+    }
+  }
+</style>

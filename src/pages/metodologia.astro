@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import Navegacion from '../components/Navegacion.astro';
 import fuentes from '../../data/programas/fuentes.json';
 import frases from '../data/frases.json';
 import asuntos from '../data/coincidencias.json';
@@ -18,6 +19,8 @@ const nAsuntos = asuntos.length;
   title="Metodología · Promesómetro"
   description="Cómo se eligen las frases de Promesómetro, de dónde salen y qué datos se guardan."
 >
+  <div class="contenedor">
+  <Navegacion actual="metodologia" />
   <main class="app met">
     <header class="cabecera">
       <a class="volver" href="/">← Volver al juego</a>
@@ -27,6 +30,19 @@ const nAsuntos = asuntos.length;
       </p>
     </header>
 
+    <div class="cuerpo">
+    <!-- Índice lateral: solo en escritorio. -->
+    <nav class="indice" aria-label="En esta página">
+      <span class="indice-titulo">En esta página</span>
+      <a href="#t-frases" aria-current="true">Las frases</a>
+      <a href="#t-textos">Los textos que no son citas</a>
+      <a href="#t-coincidencias">¿Con quién coincides?</a>
+      <a href="#t-fuentes">Las fuentes</a>
+      <a href="#t-neutralidad">Neutralidad</a>
+      <a href="#t-datos">Tus datos</a>
+    </nav>
+
+    <div class="texto">
     <section class="bloque" aria-labelledby="t-frases">
       <h2 id="t-frases" class="bloque-titulo">Las frases</h2>
       <ul class="lista">
@@ -158,7 +174,42 @@ const nAsuntos = asuntos.length;
     </section>
 
     <a class="boton-volver" href="/">Volver al juego</a>
+    </div>
+    </div>
   </main>
+  </div>
+
+  <script>
+    // Marca en el índice el apartado que se está leyendo (aria-current).
+    const enlaces = [...document.querySelectorAll<HTMLAnchorElement>('.indice a')];
+    const secciones = enlaces.map((a) => document.getElementById(a.hash.slice(1))!.closest('section')!);
+    const visibles = new Set<Element>();
+
+    function marcar(actual: number) {
+      enlaces.forEach((a, i) => (i === actual ? a.setAttribute('aria-current', 'true') : a.removeAttribute('aria-current')));
+    }
+
+    function actualizar() {
+      // Al final de la página, el último apartado puede no llegar nunca a la franja.
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) {
+        marcar(secciones.length - 1);
+        return;
+      }
+      const i = secciones.findIndex((s) => visibles.has(s));
+      if (i >= 0) marcar(i);
+    }
+
+    // Franja de lectura entre el 15 % y el 40 % de la altura de la ventana.
+    const observador = new IntersectionObserver(
+      (entradas) => {
+        for (const e of entradas) e.isIntersecting ? visibles.add(e.target) : visibles.delete(e.target);
+        actualizar();
+      },
+      { rootMargin: '-15% 0px -60% 0px' },
+    );
+    secciones.forEach((s) => observador.observe(s));
+    window.addEventListener('scroll', actualizar, { passive: true });
+  </script>
 </Base>
 
 <style>
@@ -236,5 +287,123 @@ const nAsuntos = asuntos.length;
     color: var(--papel);
     font-weight: 700;
     text-decoration: none;
+  }
+
+  /* ─── Escritorio (desde 1024 px) ─────────────────────────────────────────
+     Todo lo de abajo queda dentro de la media query: por debajo de 1024 px la
+     página sigue exactamente como antes. */
+  .indice {
+    display: none;
+  }
+
+  @media (min-width: 1024px) {
+    .app {
+      max-width: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .volver {
+      display: none;
+    }
+
+    .cabecera {
+      margin: 0;
+      padding: 56px 0 40px;
+      border-bottom: 1px dashed var(--linea);
+    }
+
+    .marca {
+      font-size: var(--t-titular);
+      letter-spacing: -0.025em;
+      line-height: 1;
+    }
+
+    .entradilla {
+      margin-top: 16px;
+      max-width: 40ch;
+      font-size: 1.375rem;
+      line-height: 1.5;
+    }
+
+    .cuerpo {
+      display: flex;
+      align-items: flex-start;
+      gap: 72px;
+      padding: 48px 0 64px;
+    }
+
+    /* Índice lateral: se queda a la vista mientras se lee. */
+    .indice {
+      position: sticky;
+      top: 24px;
+      flex: 0 1 240px;
+      min-width: 200px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      font-size: 0.9375rem;
+    }
+
+    .indice-titulo {
+      margin-bottom: 10px;
+      color: var(--tinta-suave);
+      font-size: var(--t-xs);
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .indice a {
+      display: block;
+      padding: 8px 0 8px 16px;
+      border-left: 2px solid var(--linea);
+      color: var(--tinta-suave);
+      text-decoration: none;
+    }
+
+    .indice a:hover {
+      color: var(--lacre);
+    }
+
+    .indice a[aria-current] {
+      border-left-color: var(--lacre);
+      color: var(--tinta);
+      font-weight: 700;
+    }
+
+    .indice a:focus-visible {
+      outline: 3px solid var(--mostaza);
+      outline-offset: 3px;
+    }
+
+    .texto {
+      flex: 1 1 auto;
+      min-width: 0;
+      max-width: 70ch;
+      font-size: 1.125rem;
+      line-height: 1.6;
+    }
+
+    .bloque {
+      margin-bottom: 44px;
+      scroll-margin-top: 24px;
+    }
+
+    .bloque-titulo {
+      margin-bottom: 14px;
+      font-size: var(--t-2xl);
+      line-height: 1.15;
+    }
+
+    .lista {
+      gap: 12px;
+      padding-left: 22px;
+      line-height: 1.6;
+    }
+
+    .boton-volver {
+      margin-top: 4px;
+    }
   }
 </style>
