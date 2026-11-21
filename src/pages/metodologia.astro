@@ -1,0 +1,208 @@
+---
+import Base from '../layouts/Base.astro';
+import fuentes from '../../data/programas/fuentes.json';
+import frases from '../data/frases.json';
+import { PARTIDOS } from '../lib/partidos';
+
+// Orden alfabético fijo, como en el juego; los enlaces salen de las fuentes oficiales.
+const programas = PARTIDOS.map((p) => {
+  const f = fuentes.programas.find((x) => x.partido === p.nombre)!;
+  return { nombre: p.nombre, url: f.url, titulo: 'titulo' in f ? f.titulo : undefined };
+});
+const porPartido = frases.length / PARTIDOS.length;
+---
+
+<Base
+  title="Metodología · Promesómetro"
+  description="Cómo se eligen las frases de Promesómetro, de dónde salen y qué datos se guardan."
+>
+  <main class="app met">
+    <header class="cabecera">
+      <a class="volver" href="/">← Volver al juego</a>
+      <h1 class="marca">Metodología</h1>
+      <p class="entradilla">
+        Cómo se eligen las frases, de dónde salen y qué hacemos con tus respuestas.
+      </p>
+    </header>
+
+    <section class="bloque" aria-labelledby="t-frases">
+      <h2 id="t-frases" class="bloque-titulo">Las frases</h2>
+      <ul class="lista">
+        <li>
+          <strong>Son citas literales</strong> de los programas oficiales de las elecciones generales del
+          29 de noviembre de 2026. Se pueden recortar, y los recortes se marcan con «[…]», pero nunca se
+          reescribe una palabra.
+        </li>
+        <li>
+          Cada frase enlaza, tras responder, a <strong>la página del programa</strong> de donde sale. Un
+          script comprueba antes de publicar que cada cita aparece tal cual en esa página del PDF.
+        </li>
+        <li>
+          Hay <strong>{porPartido} frases por partido</strong>: la mitad «deducibles» (alguien informado
+          puede razonar de quién son) y la mitad «sorpresa» (inesperadas para ese partido, pero claramente
+          suyas). Se descarta lo que podría haber escrito cualquiera.
+        </li>
+        <li>
+          Se evitan las frases que <strong>delatan al partido por su vocabulario</strong>: siglas,
+          líderes, eslóganes, nombres propios de sus planes o autorreferencias. La gracia es adivinar por
+          el contenido.
+        </li>
+      </ul>
+    </section>
+
+    <section class="bloque" aria-labelledby="t-textos">
+      <h2 id="t-textos" class="bloque-titulo">Los textos que no son citas</h2>
+      <ul class="lista">
+        <li>
+          «En otras palabras» y los resúmenes de «¿Y qué proponen los demás?» son <strong>textos
+          nuestros</strong>. Intentan ser fieles a la cita y neutrales, y la explicación que ves antes de
+          votar no da pistas del partido.
+        </li>
+        <li>
+          Cada resumen de la comparativa va acompañado de <strong>su cita literal y su página</strong>.
+          Ante la duda, manda la cita.
+        </li>
+        <li>
+          Si un partido no dice nada sobre el asunto, lo indicamos así, <strong>sin deducir su
+          postura</strong>.
+        </li>
+      </ul>
+    </section>
+
+    <section class="bloque" aria-labelledby="t-fuentes">
+      <h2 id="t-fuentes" class="bloque-titulo">Las fuentes</h2>
+      <p class="bloque-texto">Los cuatro programas oficiales, en orden alfabético:</p>
+      <ul class="lista fuentes">
+        {
+          programas.map((p) => (
+            <li>
+              <a href={p.url} target="_blank" rel="noopener">
+                Programa de {p.nombre}
+              </a>
+              {p.titulo && <span class="titulo-programa"> · «{p.titulo}»</span>}
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <section class="bloque" aria-labelledby="t-neutralidad">
+      <h2 id="t-neutralidad" class="bloque-titulo">Neutralidad</h2>
+      <ul class="lista">
+        <li>Es un proyecto independiente, sin relación con ningún partido.</li>
+        <li>
+          Los cuatro partidos aparecen siempre en orden alfabético y con logos oficiales del mismo tamaño
+          visual. Ninguno destaca.
+        </li>
+        <li>
+          Acierto y fallo se marcan en azul marino y rojo lacre; evitamos los colores que recuerdan a un
+          partido. Las rondas tienen frases de los cuatro, repartidas para que no se acierte por descarte.
+        </li>
+      </ul>
+    </section>
+
+    <section class="bloque" aria-labelledby="t-datos">
+      <h2 id="t-datos" class="bloque-titulo">Tus datos</h2>
+      <ul class="lista">
+        <li>
+          Guardamos cada respuesta de forma anónima: qué frase era, qué partido elegiste, si acertaste, en
+          qué papeleta ibas, si abriste «En otras palabras» y si jugabas una ronda o el reto del día.
+        </li>
+        <li>
+          <strong>No guardamos</strong> tu IP, tu navegador ni ningún dato personal, no usamos cookies y
+          no escribimos nada en tu dispositivo. Cada partida lleva un identificador aleatorio que cambia en
+          la siguiente, así que no podemos seguir a nadie entre partidas.
+        </li>
+        <li>
+          Con esos datos publicamos solo cifras de conjunto, nunca respuestas sueltas. Son las respuestas
+          de quienes juegan, <strong>no una muestra representativa ni un sondeo</strong>.
+        </li>
+        <li>
+          Para que no se confundan con un sondeo, <strong>no publicamos aciertos por partido durante los
+          cinco días previos a la votación</strong>. Los <a href="/resultados">resultados</a> se publican
+          tras las elecciones.
+        </li>
+      </ul>
+    </section>
+
+    <a class="boton-volver" href="/">Volver al juego</a>
+  </main>
+</Base>
+
+<style>
+  .app {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 24px 16px 48px;
+  }
+
+  .cabecera {
+    margin-bottom: 32px;
+  }
+
+  .volver {
+    display: inline-block;
+    margin-bottom: 12px;
+    font-size: var(--t-sm);
+    font-weight: 700;
+  }
+
+  .marca {
+    margin: 0;
+    font-family: var(--fuente-titulo);
+    font-weight: 800;
+    font-size: var(--t-display);
+    letter-spacing: -0.03em;
+    line-height: 0.95;
+  }
+
+  .entradilla {
+    margin: 12px 0 0;
+    color: var(--tinta-suave);
+    font-size: var(--t-lg);
+    line-height: 1.4;
+    text-wrap: pretty;
+  }
+
+  .bloque {
+    margin-bottom: 32px;
+  }
+
+  .bloque-titulo {
+    margin: 0 0 12px;
+    font-family: var(--fuente-titulo);
+    font-size: var(--t-xl);
+    line-height: 1.2;
+  }
+
+  .bloque-texto {
+    margin: 0 0 8px;
+  }
+
+  .lista {
+    margin: 0;
+    padding-left: 1.2em;
+    display: grid;
+    gap: 10px;
+    line-height: 1.55;
+    text-wrap: pretty;
+  }
+
+  .lista li::marker {
+    color: var(--lacre);
+  }
+
+  .titulo-programa {
+    color: var(--tinta-suave);
+  }
+
+  .boton-volver {
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: 999px;
+    background: var(--tinta);
+    color: var(--papel);
+    font-weight: 700;
+    text-decoration: none;
+  }
+</style>

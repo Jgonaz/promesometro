@@ -10,8 +10,14 @@ CREATE TABLE IF NOT EXISTS respuestas (
   elegido     text        NOT NULL,          -- partido que votó el jugador
   acierto     boolean     NOT NULL,          -- calculado en el servidor
   posicion    smallint    NOT NULL CHECK (posicion BETWEEN 1 AND 10),
-  explicacion boolean     NOT NULL           -- abrió «En otras palabras» antes de votar
+  explicacion boolean     NOT NULL,          -- abrió «En otras palabras» antes de votar
+  modo        text        NOT NULL DEFAULT 'ronda' CHECK (modo IN ('ronda','reto'))  -- ronda normal o reto del día
 );
 
 CREATE INDEX IF NOT EXISTS respuestas_frase_idx ON respuestas (frase);
 CREATE INDEX IF NOT EXISTS respuestas_creada_idx ON respuestas (creada);
+
+-- Migración (mejoras de lanzamiento): añade el modo de juego a una tabla ya existente.
+-- Aditiva e idempotente; las filas anteriores quedan como 'ronda'. Aplicar antes de
+-- desplegar el código que envía `modo`.
+ALTER TABLE respuestas ADD COLUMN IF NOT EXISTS modo text NOT NULL DEFAULT 'ronda' CHECK (modo IN ('ronda','reto'));

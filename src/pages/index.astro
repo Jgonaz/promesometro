@@ -55,21 +55,22 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
           ))
         }
       </div>
-      <button id="empezar" class="boton-principal">Coger papeleta</button>
+      <div class="acciones">
+        <button id="empezar" class="boton-principal">Coger papeleta</button>
+        <button id="reto" class="boton-secundario">Reto del día · 5 frases</button>
+      </div>
       <p id="partidas" class="partidas" hidden></p>
     </section>
 
     <section id="juego" class="juego" hidden>
       <div class="estado">
-        <ol id="progreso" class="progreso" aria-label="Progreso de la ronda">
-          {Array.from({ length: RONDA }, () => <li />)}
-        </ol>
+        <ol id="progreso" class="progreso" aria-label="Progreso de la ronda"></ol>
         <span id="marcador" class="marcador">Aciertos: 0</span>
       </div>
 
       <article id="papeleta" class="papeleta">
         <div class="papeleta-cabecera">
-          <span id="contador" class="papeleta-numero">Papeleta 1/{RONDA}</span>
+          <span id="contador" class="papeleta-numero"></span>
           <span id="tema" class="papeleta-tema"></span>
         </div>
         <blockquote id="frase" class="frase" tabindex="-1"></blockquote>
@@ -114,21 +115,26 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
       <h2 class="papeleta-titulo" id="titulo-final">Escrutinio</h2>
       <div class="resultado">
         <p class="puntuacion" id="puntuacion" tabindex="-1">
-          <span id="aciertos">0</span><span class="de">/{RONDA}</span>
+          <span id="aciertos">0</span><span class="de">/<span id="total">{RONDA}</span></span>
           <span class="sr">aciertos</span>
         </p>
         <span id="sello-final" class="sello sello-final" aria-hidden="true"></span>
       </div>
       <ol id="progreso-final" class="progreso progreso-final" aria-label="Tus respuestas"></ol>
       <p id="comentario" class="comentario"></p>
+      <section class="retrato" aria-labelledby="titulo-retrato">
+        <h3 id="titulo-retrato" class="retrato-titulo">Tu retrato</h3>
+        <ul id="retrato" class="retrato-lista"></ul>
+      </section>
       <div class="acciones">
         <button id="compartir" class="boton-principal">Compartir resultado</button>
         <button id="otra" class="boton-secundario">Otra ronda</button>
+        <button id="reto-final" class="boton-secundario">Reto del día · 5 frases</button>
         <a id="ver-resultados" class="boton-secundario" href="/resultados" hidden>Ver resultados</a>
       </div>
       <p id="aviso-compartir" class="aviso" aria-live="polite" hidden></p>
       <details class="repaso">
-        <summary>Repasa tus {RONDA} papeletas</summary>
+        <summary id="titulo-repaso">Repasa tus {RONDA} papeletas</summary>
         <ol id="resumen" class="resumen"></ol>
       </details>
     </section>
@@ -144,6 +150,7 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
         Proyecto independiente, sin relación con ningún partido. Los logotipos pertenecen a sus
         respectivos partidos y se usan solo para identificarlos. Guardamos tus respuestas de forma
         anónima (sin cookies, IP ni datos personales) para elaborar estadísticas de conjunto.
+        <a href="/metodologia">Cómo hacemos Promesómetro</a>.
       </p>
     </footer>
   </main>
@@ -170,7 +177,9 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
       partidos: { nombre: string; logo: string; raiz: string }[];
     };
 
-    const RONDA = 10;
+    // Longitud de cada modo; la partida en curso la conoce por `ronda.length`.
+    const LONGITUD = { ronda: 10, reto: 5 } as const;
+    type Modo = keyof typeof LONGITUD;
     const datos: Datos = JSON.parse(document.getElementById('datos')!.textContent!);
     const nombres = datos.partidos.map((p) => p.nombre);
     const partidoDe = new Map(datos.partidos.map((p) => [p.nombre, p]));
@@ -186,25 +195,30 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
     const juego = $('juego');
     const final = $('final');
     const sobres = [...document.querySelectorAll<HTMLButtonElement>('.sobre')];
-    const puntos = [...$('progreso').children] as HTMLElement[];
+    let puntos: HTMLElement[] = [];
 
     let ronda: Frase[] = [];
+    let modo: Modo = 'ronda';
+    // Fecha (YYYY-MM-DD, Madrid) del reto en curso; se fija al empezar.
+    let fechaReto = '';
     let indice = 0;
     let respuestas: { frase: Frase; elegido: string }[] = [];
     let esperandoVoto = false;
     // Analítica anónima: id aleatorio solo en memoria, nuevo en cada ronda.
     let partida = '';
     let abrioExplicacion = false;
-    // Frases ya vistas en la sesión, para no repetir hasta agotar todas.
+    // Frases ya vistas en la sesión, para no repetir hasta agotar todas. Solo
+    // cuenta la ronda normal: el reto no las marca, porque su selección debe ser
+    // la misma para todos y no puede depender de lo que cada uno haya visto.
     const vistas = new Set<string>();
     // Agregados públicos: se piden una vez y nunca bloquean el juego. Hasta
     // que lleguen (o si fallan) no se enseña nada de ellos.
     let estadisticas: Estadisticas | null = null;
 
-    function barajar<T>(lista: T[]): T[] {
+    function barajar<T>(lista: T[], azar: () => number = Math.random): T[] {
       const a = [...lista];
       for (let i = a.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
+        const j = Math.floor(azar() * (i + 1));
         [a[i], a[j]] = [a[j], a[i]];
       }
       return a;
@@ -222,6 +236,40 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
         elegidas.push(...delPartido.slice(0, cupos[i]));
       });
       return separarTemas(barajar(elegidas));
+    }
+
+    // Hash FNV-1a de 32 bits y PRNG mulberry32: pequeños y deterministas, para que
+    // el reto de un día dé lo mismo en cualquier dispositivo (sin Math.random).
+    function hash(texto: string): number {
+      let h = 0x811c9dc5;
+      for (let i = 0; i < texto.length; i++) h = Math.imul(h ^ texto.charCodeAt(i), 0x01000193);
+      return h >>> 0;
+    }
+
+    function mulberry32(semilla: number): () => number {
+      let a = semilla;
+      return () => {
+        a = (a + 0x6d2b79f5) | 0;
+        let t = Math.imul(a ^ (a >>> 15), 1 | a);
+        t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+        return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+      };
+    }
+
+    // Día natural de Madrid (el reto cambia a las 00:00 peninsulares).
+    const hoyEnMadrid = () => new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Madrid' }).format(new Date());
+
+    // Reto: 2+1+1+1 frases (el partido doble lo elige la semilla), siempre al
+    // menos una por partido, sin tener en cuenta las ya vistas.
+    function retoDelDia(fecha: string): Frase[] {
+      const azar = mulberry32(hash(fecha));
+      const doble = Math.floor(azar() * nombres.length);
+      const elegidas: Frase[] = [];
+      nombres.forEach((partido, i) => {
+        const delPartido = barajar(datos.frases.filter((f) => f.partido === partido), azar);
+        elegidas.push(...delPartido.slice(0, i === doble ? 2 : 1));
+      });
+      return separarTemas(barajar(elegidas, azar));
     }
 
     // Dos papeletas seguidas del mismo tema repiten casi la misma comparativa:
@@ -251,6 +299,8 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
 
     // «del PP», «del PSOE», «del Frente Amplio», pero «de Vox».
     const del = (p: string) => (p === 'Vox' ? 'de Vox' : `del ${p}`);
+    // «al PP», «al PSOE», «al Frente Amplio», pero «a Vox».
+    const al = (p: string) => (p === 'Vox' ? 'a Vox' : `al ${p}`);
     const esAcierto = (r: { frase: Frase; elegido: string }) => r.elegido === r.frase.partido;
     const aciertos = () => respuestas.filter(esAcierto).length;
 
@@ -264,11 +314,18 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
       li.innerHTML = `<span class="sr">Papeleta ${n}: ${texto}</span>`;
     }
 
-    function empezar() {
-      ronda = nuevaRonda();
+    function empezar(nuevoModo: Modo) {
+      modo = nuevoModo;
+      if (modo === 'reto') {
+        fechaReto = hoyEnMadrid();
+        ronda = retoDelDia(fechaReto);
+      } else ronda = nuevaRonda();
       partida = crypto.randomUUID();
       indice = 0;
       respuestas = [];
+      $('progreso').setAttribute('aria-label', modo === 'reto' ? 'Progreso del reto' : 'Progreso de la ronda');
+      $('progreso').replaceChildren(...ronda.map(() => document.createElement('li')));
+      puntos = [...$('progreso').children] as HTMLElement[];
       puntos.forEach((p, i) => marcarPunto(p, i + 1, ''));
       mostrar(juego);
       pintarFrase();
@@ -277,7 +334,7 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
 
     function pintarFrase() {
       const f = ronda[indice];
-      $('contador').textContent = `Papeleta ${indice + 1}/${RONDA}`;
+      $('contador').textContent = `Papeleta ${indice + 1}/${ronda.length}`;
       $('marcador').textContent = `Aciertos: ${aciertos()}`;
       $('tema').textContent = f.tema;
       $('frase').textContent = presentar(f.texto);
@@ -308,7 +365,7 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
       esperandoVoto = false;
       const f = ronda[indice];
       respuestas.push({ frase: f, elegido });
-      vistas.add(f.id);
+      if (modo === 'ronda') vistas.add(f.id);
       registrar(f, elegido);
       const ok = elegido === f.partido;
 
@@ -347,7 +404,7 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
       pintarComparativa(f);
 
       $('marcador').textContent = `Aciertos: ${aciertos()}`;
-      $('siguiente').textContent = indice === RONDA - 1 ? 'Ver escrutinio' : 'Siguiente papeleta';
+      $('siguiente').textContent = indice === ronda.length - 1 ? 'Ver escrutinio' : 'Siguiente papeleta';
       $('revelacion').hidden = false;
       $('siguiente').focus({ preventScroll: true });
       $('veredicto').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -361,7 +418,7 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
         fetch('/api/respuesta', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ partida, frase: f.id, elegido, posicion: indice + 1, explicacion: abrioExplicacion }),
+          body: JSON.stringify({ partida, frase: f.id, elegido, posicion: indice + 1, explicacion: abrioExplicacion, modo }),
           keepalive: true,
         }).catch(() => {});
       } catch {}
@@ -416,35 +473,74 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
 
     function siguiente() {
       indice++;
-      if (indice < RONDA) {
+      if (indice < ronda.length) {
         pintarFrase();
         $('papeleta').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       } else terminar();
     }
 
     // Título del sello final según la nota, en el lenguaje de la jornada electoral.
+    // Los umbrales son proporcionales a la longitud de la partida (9, 7 y 4 de 10).
     function titulo(n: number) {
-      if (n >= 9) return 'Lector de programas';
-      if (n >= 7) return 'Buen ojo';
-      if (n >= 4) return 'Indeciso';
+      const p = n / ronda.length;
+      if (p >= 0.9) return 'Lector de programas';
+      if (p >= 0.7) return 'Buen ojo';
+      if (p >= 0.4) return 'Indeciso';
       return 'Voto en blanco';
     }
 
+    // Retrato de la partida con sus propias respuestas. Los empates se resuelven
+    // por orden alfabético de partido: se recorre `nombres` (ya ordenado) y solo
+    // desplaza al candidato actual un recuento estrictamente mayor.
+    function retrato() {
+      const fallos = respuestas.filter((r) => !esAcierto(r));
+      let confusion: { elegido: string; real: string; n: number } | null = null;
+      let resistido: { partido: string; n: number } | null = null;
+      for (const real of nombres) {
+        const n = fallos.filter((r) => r.frase.partido === real).length;
+        if (n > (resistido?.n ?? 0)) resistido = { partido: real, n };
+        for (const elegido of nombres) {
+          const c = fallos.filter((r) => r.frase.partido === real && r.elegido === elegido).length;
+          if (c > (confusion?.n ?? 0)) confusion = { elegido, real, n: c };
+        }
+      }
+      return { confusion, resistido };
+    }
+
+    const medidas = (n: number) => `${n} ${n === 1 ? 'medida' : 'medidas'}`;
+
     function terminar() {
       const n = aciertos();
+      const total = ronda.length;
+      const p = n / total;
       $('aciertos').textContent = String(n);
+      $('total').textContent = String(total);
+      $('titulo-repaso').textContent = `Repasa tus ${total} papeletas`;
       $('comentario').textContent =
-        n >= 9
+        p >= 0.9
           ? 'Te has leído los cuatro programas. Confiesa.'
-          : n >= 7
+          : p >= 0.7
             ? 'Muy bien. Pocos distinguen tan bien la letra pequeña.'
-            : n >= 4
+            : p >= 0.4
               ? 'Ni tan mal: los programas se parecen más de lo que crees.'
               : 'Tranquilidad: a casi todo el mundo le pasa. Se parecen mucho.';
 
       const sello = $('sello-final');
       sello.textContent = titulo(n);
-      sello.className = `sello sello-final visible ${n >= 5 ? 'ok' : 'ko'}`;
+      sello.className = `sello sello-final visible ${p >= 0.5 ? 'ok' : 'ko'}`;
+
+      const { confusion, resistido } = retrato();
+      const lineas = confusion
+        ? [
+            `Le diste ${al(confusion.elegido)} ${medidas(confusion.n)} ${del(confusion.real)}.`,
+            `El partido que más se te resistió: ${resistido!.partido}.`,
+          ]
+        : ['No confundiste a ningún partido.'];
+      $('retrato').replaceChildren(...lineas.map((t) => Object.assign(document.createElement('li'), { textContent: t })));
+
+      // Desde un reto se ofrece una ronda; desde una ronda, el reto.
+      $('otra').textContent = modo === 'reto' ? 'Jugar una ronda' : 'Otra ronda';
+      $('reto-final').hidden = modo === 'reto';
 
       $('progreso-final').replaceChildren(
         ...respuestas.map((r, i) => {
@@ -483,9 +579,20 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
 
     async function compartir() {
       const n = aciertos();
-      const casillas = respuestas.map((r) => (esAcierto(r) ? '🟦' : '🟥')).join('');
-      const texto = `🗳️ Promesómetro: ${n}/${RONDA} · ${titulo(n)}\n${casillas}\n¿Sabrías de quién es cada promesa del 29N?`;
-      const url = location.origin + location.pathname;
+      const total = ronda.length;
+      // Símbolos monocromos: los cuadrados de colores evocarían a partidos.
+      const casillas = respuestas.map((r) => (esAcierto(r) ? '●' : '○')).join('');
+      const cabecera =
+        modo === 'reto'
+          ? `🗳️ Promesómetro · Reto del ${fechaReto.slice(8)}/${fechaReto.slice(5, 7)}: ${n}/${total}`
+          : `🗳️ Promesómetro: ${n}/${total} · ${titulo(n)}`;
+      const { confusion } = retrato();
+      const lineas = [cabecera, casillas];
+      if (confusion) lineas.push(`Le di ${al(confusion.elegido)} ${medidas(confusion.n)} ${del(confusion.real)}.`);
+      lineas.push('¿Sabrías de quién es cada promesa del 29N?');
+      const texto = lineas.join('\n');
+      // El enlace del reto lo abre directamente (ver el arranque al final).
+      const url = location.origin + location.pathname + (modo === 'reto' ? '#reto' : '');
       const boton = $('compartir');
       const aviso = $('aviso-compartir');
       try {
@@ -517,14 +624,19 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
       }
     });
 
-    $('empezar').addEventListener('click', empezar);
-    $('otra').addEventListener('click', empezar);
+    $('empezar').addEventListener('click', () => empezar('ronda'));
+    $('otra').addEventListener('click', () => empezar('ronda'));
+    $('reto').addEventListener('click', () => empezar('reto'));
+    $('reto-final').addEventListener('click', () => empezar('reto'));
     $('siguiente').addEventListener('click', siguiente);
     $('compartir').addEventListener('click', compartir);
     $('explicacion').addEventListener('toggle', (e) => {
       if ((e.target as HTMLDetailsElement).open && esperandoVoto) abrioExplicacion = true;
     });
     for (const b of sobres) b.addEventListener('click', () => responder(b.dataset.partido!));
+
+    // El enlace compartido del reto abre el reto directamente.
+    if (location.hash === '#reto') empezar('reto');
 
     pedirEstadisticas().then((e) => {
       estadisticas = e;
@@ -768,7 +880,7 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
   }
 
   /* El atributo hidden pierde frente a display:inline-flex del botón. */
-  a.boton-secundario[hidden] {
+  .boton-secundario[hidden] {
     display: none;
   }
 
@@ -1307,6 +1419,33 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
 
   .final .aviso {
     margin: 12px 0 0;
+  }
+
+  .retrato {
+    margin: 0 0 20px;
+    padding: 12px 16px;
+    border: 2px dashed var(--linea);
+    border-radius: 8px;
+  }
+
+  .retrato-titulo {
+    margin: 0 0 6px;
+    color: var(--tinta-suave);
+    font-family: inherit;
+    font-size: var(--t-xs);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .retrato-lista {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 4px;
+    font-weight: 700;
+    line-height: 1.4;
   }
 
   .repaso {
