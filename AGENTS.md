@@ -41,6 +41,12 @@ tres partidos sobre lo mismo.
   acepta y no guarda nada) y `src/pages/api/estadisticas.ts` (GET) publica
   agregados. Esquema en `db/esquema.sql`; consultas de análisis en
   `db/consultas.sql`.
+- `/coincidencias` («¿Con quién coincides?»): 16 asuntos con una postura
+  propia por partido (`src/data/coincidencias.json`, enlazado por id a
+  `frases.json`, de donde salen la cita y la página; `src/lib/coincidencias.ts`
+  hace fallar el build si falta alguna). El cálculo es solo en el navegador:
+  no se guarda ni se envía nada, y compartir invita sin porcentajes ni
+  partidos. Si cambia la selección o el cálculo, actualiza `/metodologia`.
 - Estadísticas públicas: `/api/estadisticas` siempre devuelve el número de
   partidas; los agregados de aciertos (por frase con al menos 30 respuestas,
   matriz de confusión y efecto de «En otras palabras») solo se sirven desde

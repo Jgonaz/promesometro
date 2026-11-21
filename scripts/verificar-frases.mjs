@@ -2,7 +2,8 @@
 // en la página indicada, igual que cada cita de la comparativa, y que cada
 // pregunta tiene la estructura que espera el juego. Uso:
 //   node scripts/verificar-frases.mjs src/data/frases.json [...]
-// Con --final, además, exige 20 preguntas por partido, 10 de cada tipo.
+// Con --final, además, exige 20 preguntas por partido, 10 de cada tipo, y
+// comprueba los asuntos de src/data/coincidencias.json.
 // Requiere los textos extraídos en data/texto/<partido>.paginas.txt
 // (pdftotext -layout + marcas «=== PÁGINA PDF N ===»).
 import { readFileSync } from 'node:fs';
@@ -109,6 +110,26 @@ if (final) {
       if (n !== 10) errores.push(`✗ ${p}: ${n} preguntas de tipo ${t} (deben ser 10)`);
     }
   }
+
+  // «¿Con quién coincides?» reutiliza estas citas: cada asunto necesita las
+  // cuatro, y ninguna cita puede repetirse entre asuntos.
+  const asuntos = JSON.parse(readFileSync('src/data/coincidencias.json', 'utf8'));
+  const usadas = new Map();
+  for (const a of asuntos) {
+    const f = todas.find((x) => x.id === a.frase);
+    if (!f) {
+      errores.push(`✗ coincidencias ${a.id}: frase inexistente «${a.frase}»`);
+      continue;
+    }
+    for (const p of PARTIDOS) {
+      const cita = f.partido === p ? f.texto : f.comparativa.find((c) => c.partido === p)?.texto;
+      if (!cita) errores.push(`✗ coincidencias ${a.id}: ${p} no tiene cita`);
+      if (typeof a.posturas?.[p] !== 'string' || a.posturas[p].length < 20) errores.push(`✗ coincidencias ${a.id}: falta la postura de ${p}`);
+      if (cita && usadas.has(cita)) errores.push(`✗ coincidencias ${a.id}: cita de ${p} repetida en ${usadas.get(cita)}`);
+      if (cita) usadas.set(cita, a.id);
+    }
+  }
+  console.log(`${asuntos.length} asuntos de «¿Con quién coincides?» revisados.`);
 }
 
 for (const e of errores) console.log(e);

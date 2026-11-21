@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import fuentes from '../../data/programas/fuentes.json';
 import frases from '../data/frases.json';
+import asuntos from '../data/coincidencias.json';
 import { PARTIDOS } from '../lib/partidos';
 
 // Orden alfabético fijo, como en el juego; los enlaces salen de las fuentes oficiales.
@@ -10,6 +11,7 @@ const programas = PARTIDOS.map((p) => {
   return { nombre: p.nombre, url: f.url, titulo: 'titulo' in f ? f.titulo : undefined };
 });
 const porPartido = frases.length / PARTIDOS.length;
+const nAsuntos = asuntos.length;
 ---
 
 <Base
@@ -65,6 +67,36 @@ const porPartido = frases.length / PARTIDOS.length;
         <li>
           Si un partido no dice nada sobre el asunto, lo indicamos así, <strong>sin deducir su
           postura</strong>.
+        </li>
+      </ul>
+    </section>
+
+    <section class="bloque" aria-labelledby="t-coincidencias">
+      <h2 id="t-coincidencias" class="bloque-titulo">¿Con quién coincides?</h2>
+      <ul class="lista">
+        <li>
+          Se eligen <strong>{nAsuntos} asuntos</strong> en los que los cuatro partidos tienen una postura
+          concreta y comparable, con su cita literal y su página del programa. Se descartan los asuntos
+          en los que algún partido no dice nada o en los que su cita trata de otra cosa.
+        </li>
+        <li>
+          Las posturas que ves son <strong>textos nuestros</strong> en lenguaje llano, fieles a la cita y
+          sin pistas del partido. Se muestran en orden aleatorio, con una letra en vez del logo. Al
+          terminar, cada una va con su partido, su cita literal y su página: ante la duda, manda la cita.
+        </li>
+        <li>
+          Cada postura que eliges suma uno al partido al que pertenece; «Ninguna me convence» no suma a
+          nadie. El porcentaje de cada partido se calcula <strong>sobre los asuntos en los que elegiste
+          una postura</strong>. Si hay empate, se nombran todos los empatados.
+        </li>
+        <li>
+          <strong>No es una recomendación de voto</strong>: son pocos asuntos, sin ponderar por
+          importancia, y un programa es mucho más que ellos.
+        </li>
+        <li>
+          <strong>No se guarda ni se envía ninguna respuesta</strong> de esta sección: el cálculo se hace
+          en tu navegador y se pierde al cerrar o recargar la página. Compartir solo invita a hacer el
+          test, sin resultados.
         </li>
       </ul>
     </section>
