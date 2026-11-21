@@ -1,5 +1,6 @@
 import type { APIRoute } from 'astro';
 import { neon } from '@neondatabase/serverless';
+import { DATABASE_URL } from 'astro:env/server';
 import frases from '../../data/frases.json';
 
 // Única ruta con servidor: el resto del sitio sigue prerenderizado.
@@ -35,11 +36,10 @@ export const POST: APIRoute = async ({ request }) => {
   }
 
   // Sin base de datos (desarrollo local, previews) se acepta sin guardar.
-  const url = process.env.DATABASE_URL;
-  if (!url) return vacia(204);
+  if (!DATABASE_URL) return vacia(204);
 
   // Solo los campos validados: ni IP ni agente de usuario ni cabeceras.
-  const sql = neon(url);
+  const sql = neon(DATABASE_URL);
   const partido = autor.get(frase)!;
   try {
     await sql`

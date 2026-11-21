@@ -1,7 +1,7 @@
 ## 1. Infraestructura
 
-- [ ] 1.1 Provisionar Neon en el proyecto de Vercel y comprobar que existe `DATABASE_URL`
-- [ ] 1.2 Crear `db/esquema.sql` y `db/consultas.sql`, y aplicar el esquema
+- [x] 1.1 Provisionar Neon en el proyecto de Vercel y comprobar que existe `DATABASE_URL`
+- [x] 1.2 Crear `db/esquema.sql` y `db/consultas.sql`, y aplicar el esquema
 
 ## 2. Servidor
 
@@ -16,5 +16,5 @@
 ## 4. Validación y documentación
 
 - [x] 4.1 `pnpm build` sin errores y prueba local del endpoint (válida, inválida, sin base de datos)
-- [ ] 4.2 Probar contra Neon que se guardan filas correctas
+- [x] 4.2 Probar contra Neon que se guardan filas correctas
 - [x] 4.3 Actualizar `AGENTS.md` del proyecto (stack y analíticas)

@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig, envField } from 'astro/config';
 import vercel from '@astrojs/vercel';
 
 // https://astro.build/config
@@ -10,4 +10,11 @@ export default defineConfig({
   // Las páginas siguen prerenderizadas; el adaptador solo hace falta para el
   // endpoint de registro de respuestas (src/pages/api/respuesta.ts).
   adapter: vercel(),
+  // Secreto de servidor leído en ejecución (no se incrusta en el build).
+  // Opcional: sin él, el endpoint acepta los votos sin guardarlos.
+  env: {
+    schema: {
+      DATABASE_URL: envField.string({ context: 'server', access: 'secret', optional: true }),
+    },
+  },
 });
