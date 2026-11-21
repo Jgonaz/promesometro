@@ -49,6 +49,17 @@ tres partidos sobre lo mismo.
   muestran el porcentaje tras votar y `/resultados`. Respuesta cacheada 5
   minutos en la CDN; sin base de datos o con error, 503 y el cliente lo oculta.
   El contador de partidas se muestra desde 100.
+- Modos de juego: ronda de 10 frases y reto del día de 5, igual para todos
+  cada día de Europe/Madrid (selección determinista por la fecha, sin
+  `Math.random` ni almacenamiento en el navegador; `/#reto` lo abre). Cada
+  respuesta guarda su `modo` (`ronda` | `reto`).
+- El resultado compartible usa `●` (acierto) y `○` (fallo), nunca emojis de
+  colores que evoquen partidos.
+- `/metodologia` explica criterios, fuentes y política de datos: si cambian
+  los criterios editoriales o los datos que se guardan, actualízala.
+- Calibrado editorial privado: `node --env-file=.env.local
+  scripts/revisar-frases.mjs` lista las frases con más del 90 % o menos del
+  10 % de aciertos en rondas (mín. 50 respuestas). No se publica.
 - Las respuestas son anónimas: no se guardan IP, agente de usuario, cookies
   ni identificadores persistentes; el id de partida vive en memoria y cambia
   en cada ronda. Solo se publican agregados (nunca filas sueltas ni ids de

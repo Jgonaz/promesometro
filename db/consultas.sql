@@ -24,3 +24,17 @@ FROM respuestas GROUP BY explicacion;
 SELECT ultima, count(*) AS partidas
 FROM (SELECT partida, max(posicion) AS ultima FROM respuestas GROUP BY partida) p
 GROUP BY ultima ORDER BY ultima;
+
+-- 6. Calibrado editorial: frases demasiado fáciles (>90 %) o difíciles (<10 %)
+--    en rondas normales, con al menos 50 respuestas. Con texto y partido:
+--    node --env-file=.env.local scripts/revisar-frases.mjs
+SELECT frase, count(*) AS n, round(100.0 * avg(acierto::int)) AS pct_acierto
+FROM respuestas WHERE modo = 'ronda'
+GROUP BY frase HAVING count(*) >= 50
+   AND (avg(acierto::int) > 0.9 OR avg(acierto::int) < 0.1)
+ORDER BY pct_acierto DESC;
+
+-- 7. Reto del día: participación y acierto medio por día.
+SELECT date_trunc('day', creada AT TIME ZONE 'Europe/Madrid') AS dia,
+       count(DISTINCT partida) AS partidas, round(100.0 * avg(acierto::int), 1) AS pct_acierto
+FROM respuestas WHERE modo = 'reto' GROUP BY 1 ORDER BY 1;
