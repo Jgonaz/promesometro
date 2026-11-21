@@ -683,6 +683,12 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
       transicion(() => empezar('reto'));
     });
 
+    // «Jugar» a mitad de partida no debe recargar la página y perderla: ya se
+    // está jugando, así que el clic no hace nada.
+    document.querySelector<HTMLAnchorElement>('a[data-jugar]')?.addEventListener('click', (e) => {
+      if (document.documentElement.dataset.pantalla === 'juego') e.preventDefault();
+    });
+
     // El enlace compartido del reto abre el reto directamente.
     if (location.hash === '#reto') empezar('reto');
 
