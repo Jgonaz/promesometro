@@ -158,6 +158,7 @@ const datos = {
 
   <script>
     import { porcentaje } from '../lib/cliente';
+    import { transicion } from '../lib/transicion';
 
     type Postura = { partido: string; texto: string };
     type Datos = { asuntos: { pregunta: string; posturas: Postura[] }[]; partidos: string[] };
@@ -308,19 +309,24 @@ const datos = {
       if (asunto.hidden || e.altKey || e.ctrlKey || e.metaKey) return;
       if (e.key >= '1' && e.key <= '4') {
         e.preventDefault();
-        responder(botones[Number(e.key) - 1].dataset.partido!);
+        elegir(botones[Number(e.key) - 1].dataset.partido!);
       } else if (e.key === '0' || e.key === '5') {
         e.preventDefault();
-        responder(null);
+        elegir(null);
       }
     });
 
-    $('empezar').addEventListener('click', empezar);
-    $('reiniciar').addEventListener('click', empezar);
-    $('atras').addEventListener('click', atras);
+    // El último asunto lleva al resultado (cambio de pantalla); los demás, al siguiente.
+    function elegir(partido: string | null) {
+      transicion(() => responder(partido), indice === total - 1 ? 'pantalla' : 'paso');
+    }
+
+    $('empezar').addEventListener('click', () => transicion(empezar));
+    $('reiniciar').addEventListener('click', () => transicion(empezar));
+    $('atras').addEventListener('click', () => transicion(atras, 'paso'));
     $('compartir').addEventListener('click', compartir);
-    ninguna.addEventListener('click', () => responder(null));
-    for (const b of botones) b.addEventListener('click', () => responder(b.dataset.partido!));
+    ninguna.addEventListener('click', () => elegir(null));
+    for (const b of botones) b.addEventListener('click', () => elegir(b.dataset.partido!));
   </script>
 </Base>
 

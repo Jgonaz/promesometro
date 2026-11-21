@@ -166,6 +166,7 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
 
   <script>
     import { MIN_PARTIDAS, numero, pedirEstadisticas, porcentaje, presentar, type Estadisticas } from '../lib/cliente';
+    import { transicion } from '../lib/transicion';
 
     // Sin medida sobre el asunto, resumen, texto y paginaPdf llegan a null.
     type Comparacion = { partido: string; resumen: string | null; texto: string | null; paginaPdf: number | null };
@@ -631,11 +632,14 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
       }
     });
 
-    $('empezar').addEventListener('click', () => empezar('ronda'));
-    $('otra').addEventListener('click', () => empezar('ronda'));
-    $('reto').addEventListener('click', () => empezar('reto'));
-    $('reto-final').addEventListener('click', () => empezar('reto'));
-    $('siguiente').addEventListener('click', siguiente);
+    $('empezar').addEventListener('click', () => transicion(() => empezar('ronda')));
+    $('otra').addEventListener('click', () => transicion(() => empezar('ronda')));
+    $('reto').addEventListener('click', () => transicion(() => empezar('reto')));
+    $('reto-final').addEventListener('click', () => transicion(() => empezar('reto')));
+    // La última papeleta lleva al escrutinio (cambio de pantalla); las demás, a la siguiente.
+    $('siguiente').addEventListener('click', () =>
+      transicion(siguiente, indice === ronda.length - 1 ? 'pantalla' : 'paso'),
+    );
     $('compartir').addEventListener('click', compartir);
     $('explicacion').addEventListener('toggle', (e) => {
       if ((e.target as HTMLDetailsElement).open && esperandoVoto) abrioExplicacion = true;
@@ -1230,6 +1234,15 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
     position: relative;
     margin-top: 20px;
     padding-top: 20px;
+    /* Se reproduce cada vez que deja de estar oculta. */
+    animation: revela 0.42s cubic-bezier(0.16, 1, 0.3, 1) 0.12s both;
+  }
+
+  @keyframes revela {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
   }
 
   .revelacion::before {
@@ -1535,7 +1548,8 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
 
   @media (prefers-reduced-motion: reduce) {
     .papeleta.entra,
-    .sello.visible {
+    .sello.visible,
+    .revelacion {
       animation: none;
     }
     .sello.visible {

@@ -140,4 +140,66 @@ const og = new URL('/img/og.jpg', Astro.site ?? Astro.url).href;
     max-width: 100%;
     display: block;
   }
+
+  /* Transiciones: entre páginas con la navegación del navegador (sin JS) y
+     entre pantallas con src/lib/transicion.ts. Donde no hay soporte, el
+     cambio es instantáneo como antes. */
+  @view-transition {
+    navigation: auto;
+  }
+
+  ::view-transition-old(root) {
+    animation: vt-sale 0.18s ease-in both;
+  }
+
+  ::view-transition-new(root) {
+    animation: vt-entra 0.34s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  /* Dentro de una misma pantalla, solo fundido: sin desplazar lo que no cambia. */
+  html:active-view-transition-type(paso)::view-transition-old(root) {
+    animation: vt-funde-sale 0.16s ease-in both;
+  }
+
+  html:active-view-transition-type(paso)::view-transition-new(root) {
+    animation: vt-funde-entra 0.24s ease-out both;
+  }
+
+  @keyframes vt-sale {
+    to {
+      opacity: 0;
+      transform: translateY(-6px);
+    }
+  }
+
+  @keyframes vt-entra {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+  }
+
+  @keyframes vt-funde-sale {
+    to {
+      opacity: 0;
+    }
+  }
+
+  @keyframes vt-funde-entra {
+    from {
+      opacity: 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    @view-transition {
+      navigation: none;
+    }
+
+    ::view-transition-group(*),
+    ::view-transition-old(*),
+    ::view-transition-new(*) {
+      animation: none !important;
+    }
+  }
 </style>
