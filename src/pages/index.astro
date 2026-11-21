@@ -1,6 +1,8 @@
 ---
 import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
+import Navegacion from '../components/Navegacion.astro';
+import TarjetaCoincidencias from '../components/TarjetaCoincidencias.astro';
 import { PARTIDOS } from '../lib/partidos';
 import cabecera from '../assets/cabecera.png';
 import frases from '../data/frases.json';
@@ -15,6 +17,8 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
   title="Promesómetro · ¿De quién es esta promesa?"
   description="Medidas reales de los programas electorales del 29N, sin siglas. ¿Sabrías decir de qué partido es cada una?"
 >
+  <div class="contenedor">
+  <Navegacion actual="jugar" portada />
   <main class="app">
     <header class="cabecera">
       <div class="cabecera-texto">
@@ -30,7 +34,7 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
           src={cabecera}
           alt=""
           widths={[320, 560, 840]}
-          sizes="280px"
+          sizes="(min-width: 1024px) 520px, 280px"
           loading="eager"
           fetchpriority="high"
         />
@@ -59,19 +63,15 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
         <button id="empezar" class="boton-principal">Coger papeleta</button>
         <button id="reto" class="boton-secundario">Reto del día · 5 frases</button>
       </div>
-      <a class="tarjeta-coincidencias" href="/coincidencias">
-        <span class="tarjeta-etiqueta">Otro modo de juego</span>
-        <span class="tarjeta-titulo">¿Con quién coincides?</span>
-        <span class="tarjeta-texto">
-          Al revés: 16 asuntos, cuatro posturas sin siglas. Elige qué harías tú y descubre con qué partido coincides más.
-        </span>
-        <span class="tarjeta-accion" aria-hidden="true">Hacer el test →</span>
-      </a>
+      <TarjetaCoincidencias solo="movil" />
       <p id="partidas" class="partidas" hidden></p>
     </section>
 
+    <TarjetaCoincidencias solo="escritorio" />
+
     <section id="juego" class="juego" hidden>
       <div class="estado">
+        <span id="modo-etiqueta" class="estado-etiqueta"></span>
         <ol id="progreso" class="progreso" aria-label="Progreso de la ronda"></ol>
         <span id="marcador" class="marcador">Aciertos: 0</span>
       </div>
@@ -89,28 +89,36 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
         <div id="sello" class="sello" aria-hidden="true"></div>
       </article>
 
-      <div class="pregunta-fila">
-        <p class="pregunta" id="pregunta">¿En qué sobre la metes?</p>
-        <p class="atajos" aria-hidden="true">Teclas <kbd>1</kbd>–<kbd>4</kbd></p>
-      </div>
-      <div id="opciones" class="opciones" role="group" aria-labelledby="pregunta">
-        {
-          PARTIDOS.map((p, i) => (
-            <button class="sobre" data-partido={p.nombre} aria-label={p.nombre} aria-keyshortcuts={String(i + 1)}>
-              <span class="sobre-tecla" aria-hidden="true">{i + 1}</span>
-              <span class="chip-logo sobre-logo" style={`--raiz:${p.raiz}`}>
-                <img src={p.logo} alt="" width="160" height="80" />
-              </span>
-              <span class="sobre-nombre">{p.nombre}</span>
-            </button>
-          ))
-        }
+      <div class="sobres-zona">
+        <div class="pregunta-fila">
+          <p class="pregunta" id="pregunta">¿En qué sobre la metes?</p>
+          <p class="atajos" aria-hidden="true">Teclas <kbd>1</kbd>–<kbd>4</kbd></p>
+        </div>
+        <div id="opciones" class="opciones" role="group" aria-labelledby="pregunta">
+          {
+            PARTIDOS.map((p, i) => (
+              <button class="sobre" data-partido={p.nombre} aria-label={p.nombre} aria-keyshortcuts={String(i + 1)}>
+                <span class="sobre-tecla" aria-hidden="true">{i + 1}</span>
+                <span class="chip-logo sobre-logo" style={`--raiz:${p.raiz}`}>
+                  <img src={p.logo} alt="" width="160" height="80" />
+                </span>
+                <span class="sobre-nombre">{p.nombre}</span>
+              </button>
+            ))
+          }
+        </div>
       </div>
 
       <div id="revelacion" class="revelacion" aria-live="polite" hidden>
-        <p id="veredicto" class="veredicto"></p>
-        <p id="fuente" class="fuente"></p>
-        <p id="acierto-global" class="acierto-global" hidden></p>
+        <div class="veredicto-fila">
+          <!-- El logo del partido solo se muestra en escritorio. -->
+          <span id="veredicto-logo" class="chip-logo veredicto-logo" aria-hidden="true"></span>
+          <div class="veredicto-texto">
+            <p id="veredicto" class="veredicto"></p>
+            <p id="fuente" class="fuente"></p>
+            <p id="acierto-global" class="acierto-global" hidden></p>
+          </div>
+        </div>
         <section class="comparativa" aria-labelledby="titulo-comparativa">
           <h3 id="titulo-comparativa" class="comparativa-titulo">¿Y qué proponen los demás?</h3>
           <ul id="comparativa" class="comparativa-lista"></ul>
@@ -141,14 +149,7 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
         <a id="ver-resultados" class="boton-secundario" href="/resultados" hidden>Ver resultados</a>
       </div>
       <p id="aviso-compartir" class="aviso" aria-live="polite" hidden></p>
-      <a class="tarjeta-coincidencias" href="/coincidencias">
-        <span class="tarjeta-etiqueta">Otro modo de juego</span>
-        <span class="tarjeta-titulo">¿Con quién coincides?</span>
-        <span class="tarjeta-texto">
-          Al revés: 16 asuntos, cuatro posturas sin siglas. Elige qué harías tú y descubre con qué partido coincides más.
-        </span>
-        <span class="tarjeta-accion" aria-hidden="true">Hacer el test →</span>
-      </a>
+      <TarjetaCoincidencias />
       <details class="repaso">
         <summary id="titulo-repaso">Repasa tus {RONDA} papeletas</summary>
         <ol id="resumen" class="resumen"></ol>
@@ -171,6 +172,7 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
       </p>
     </footer>
   </main>
+  </div>
 
   <script type="application/json" id="datos" set:html={JSON.stringify(datos)} />
 
@@ -324,6 +326,9 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
 
     function mostrar(seccion: HTMLElement) {
       for (const s of [portada, juego, final]) s.hidden = s !== seccion;
+      // Gancho de presentación: en escritorio, la cabecera y la barra de
+      // navegación cambian según la pantalla (portada, juego o final).
+      document.documentElement.dataset.pantalla = seccion.id;
     }
 
     function marcarPunto(li: HTMLElement, n: number, estado: 'ok' | 'ko' | 'actual' | '') {
@@ -342,6 +347,8 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
       indice = 0;
       respuestas = [];
       $('progreso').setAttribute('aria-label', modo === 'reto' ? 'Progreso del reto' : 'Progreso de la ronda');
+      // Etiqueta de la barra de estado (solo se muestra en escritorio).
+      $('modo-etiqueta').textContent = `${modo === 'reto' ? 'Reto del día' : 'Ronda'} · ${ronda.length} papeletas`;
       $('progreso').replaceChildren(...ronda.map(() => document.createElement('li')));
       puntos = [...$('progreso').children] as HTMLElement[];
       puntos.forEach((p, i) => marcarPunto(p, i + 1, ''));
@@ -356,6 +363,8 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
       $('marcador').textContent = `Aciertos: ${aciertos()}`;
       $('tema').textContent = f.tema;
       $('frase').textContent = presentar(f.texto);
+      // Gancho de presentación: en escritorio, las citas largas se componen más pequeñas.
+      $('frase').dataset.largo = f.texto.length > 290 ? 'xl' : f.texto.length > 230 ? 'l' : '';
       $('explicacion-texto').textContent = f.enOtrasPalabras;
       ($('explicacion') as HTMLDetailsElement).open = false;
       abrioExplicacion = false;
@@ -368,6 +377,7 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
         b.className = 'sobre';
       }
       $('revelacion').hidden = true;
+      juego.classList.remove('votada');
       esperandoVoto = true;
       // Reinicia la animación de entrada de la papeleta.
       const papeleta = $('papeleta');
@@ -398,6 +408,14 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
       const sello = $('sello');
       sello.textContent = ok ? 'Acierto' : 'Fallo';
       sello.className = `sello visible ${ok ? 'ok' : 'ko'}`;
+
+      juego.classList.add('votada');
+      // Logo del partido en el veredicto (solo se muestra en escritorio).
+      const logo = $('veredicto-logo');
+      logo.style.setProperty('--raiz', partidoDe.get(f.partido)!.raiz);
+      logo.replaceChildren(
+        Object.assign(document.createElement('img'), { src: partidoDe.get(f.partido)!.logo, alt: '', width: 80, height: 40 }),
+      );
 
       const veredicto = $('veredicto');
       veredicto.className = `veredicto ${ok ? 'ok' : 'ko'}`;
@@ -656,6 +674,21 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
     });
     for (const b of sobres) b.addEventListener('click', () => responder(b.dataset.partido!));
 
+    // «Reto del día» de la barra de navegación: ya estamos en esta página, así
+    // que el enlace (/#reto) no la recarga; se arranca el reto desde aquí. Con
+    // Ctrl, Cmd o clic central se deja que el navegador lo abra aparte.
+    document.querySelector<HTMLAnchorElement>('a[data-reto]')?.addEventListener('click', (e) => {
+      if (e.button !== 0 || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
+      e.preventDefault();
+      transicion(() => empezar('reto'));
+    });
+
+    // «Jugar» a mitad de partida no debe recargar la página y perderla: ya se
+    // está jugando, así que el clic no hace nada.
+    document.querySelector<HTMLAnchorElement>('a[data-jugar]')?.addEventListener('click', (e) => {
+      if (document.documentElement.dataset.pantalla === 'juego') e.preventDefault();
+    });
+
     // El enlace compartido del reto abre el reto directamente.
     if (location.hash === '#reto') empezar('reto');
 
@@ -814,71 +847,6 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
     font-variant-numeric: tabular-nums;
   }
 
-  /* Segundo modo de juego: tarjeta propia para que no quede escondido, con la
-     mostaza como acento (no evoca a ningún partido). */
-  .tarjeta-coincidencias {
-    display: grid;
-    gap: 6px;
-    margin: 24px 0 0;
-    padding: 18px 20px;
-    border: 2px solid var(--tinta);
-    border-left-width: 8px;
-    border-left-color: var(--mostaza);
-    border-radius: var(--radio);
-    background: var(--papel);
-    color: var(--tinta);
-    text-decoration: none;
-    transition:
-      transform 0.15s cubic-bezier(0.16, 1, 0.3, 1),
-      box-shadow 0.15s ease;
-  }
-
-  .tarjeta-coincidencias:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 10px 20px -12px rgb(31 42 68 / 0.6);
-  }
-
-  .tarjeta-coincidencias:focus-visible {
-    outline: 3px solid var(--mostaza);
-    outline-offset: 3px;
-  }
-
-  .tarjeta-etiqueta {
-    color: var(--lacre);
-    font-size: var(--t-xs);
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
-
-  .tarjeta-titulo {
-    font-family: var(--fuente-titulo);
-    font-weight: 800;
-    font-size: var(--t-xl);
-    line-height: 1.15;
-  }
-
-  .tarjeta-texto {
-    color: var(--tinta-suave);
-    font-size: var(--t-sm);
-  }
-
-  .tarjeta-accion {
-    margin-top: 4px;
-    font-weight: 700;
-    text-decoration: underline;
-    text-decoration-color: var(--lacre);
-    text-underline-offset: 3px;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .tarjeta-coincidencias,
-    .tarjeta-coincidencias:hover {
-      transition: none;
-      transform: none;
-    }
-  }
-
   .aviso {
     margin: 0 0 20px;
     color: var(--tinta-suave);
@@ -901,6 +869,12 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
     height: calc(var(--k) / var(--raiz));
     max-width: 100%;
     object-fit: contain;
+  }
+
+  /* Elementos que solo existen en el diseño de escritorio. */
+  .veredicto-logo,
+  .estado-etiqueta {
+    display: none;
   }
 
   .sobres-muestra {
@@ -1607,7 +1581,8 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
   @media (prefers-reduced-motion: reduce) {
     .papeleta.entra,
     .sello.visible,
-    .revelacion {
+    .revelacion,
+    .revelacion > * {
       animation: none;
     }
     .sello.visible {
@@ -1618,6 +1593,602 @@ const datos = { frases, urls, partidos: PARTIDOS.map(({ nombre, logo, raiz }) =>
     .boton-principal,
     .boton-secundario {
       transition: none;
+    }
+  }
+  /* ─── Escritorio (desde 1024 px) ─────────────────────────────────────────
+     Todo lo de abajo queda dentro de la media query: por debajo de 1024 px la
+     página sigue exactamente como antes. */
+  @media (min-width: 1024px) {
+    .app {
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr);
+      column-gap: 64px;
+      max-width: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* El atributo hidden pierde frente a los display de abajo. */
+    #portada[hidden],
+    #juego[hidden],
+    #final[hidden],
+    #revelacion[hidden] {
+      display: none;
+    }
+
+    /* Fuera de la portada, la cabecera grande deja paso a la barra de navegación. */
+    :global(:root[data-pantalla='juego']) .cabecera,
+    :global(:root[data-pantalla='final']) .cabecera {
+      display: none;
+    }
+
+    :global(:root[data-pantalla='juego']) .pie {
+      display: none;
+    }
+
+    #juego,
+    #final {
+      grid-column: 1 / -1;
+      grid-row: 1;
+    }
+
+    .app > :global([data-solo='escritorio']) {
+      grid-column: 1 / -1;
+      grid-row: 2;
+    }
+
+    .pie {
+      grid-column: 1 / -1;
+      grid-row: 3;
+    }
+
+    /* Portada: hero en dos columnas. */
+    .cabecera {
+      grid-column: 1;
+      grid-row: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 20px;
+      margin: 56px 0 48px;
+    }
+
+    .cabecera-texto {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* 96 px como máximo, pero sin salirse de su columna entre 1024 y 1240 px. */
+    .marca {
+      font-size: min(var(--t-hero), calc((min(100vw, var(--ancho-escritorio)) - 2 * var(--margen-escritorio)) * 0.078));
+      letter-spacing: -0.025em;
+    }
+
+    .lema {
+      margin: 0;
+      max-width: 30ch;
+      font-size: 1.375rem;
+      line-height: 1.45;
+    }
+
+    .cabecera-lamina {
+      flex: 1 1 auto;
+      min-height: 300px;
+      margin-top: 8px;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .cabecera-ilustracion {
+      max-width: 520px;
+    }
+
+    .sello-29n {
+      top: 18px;
+      right: 24px;
+      padding: 2px 12px;
+      border-width: 2.5px;
+      border-radius: 6px;
+      background: var(--papeleta);
+      font-size: 1.625rem;
+    }
+
+    #portada {
+      grid-column: 2;
+      grid-row: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin: 56px 0 48px;
+      padding: 44px 40px 40px;
+    }
+
+    #portada::before {
+      top: 12px;
+      left: 16px;
+      right: 16px;
+    }
+
+    #portada .papeleta-titulo {
+      margin: 0;
+      font-size: 2.125rem;
+      line-height: 1.15;
+    }
+
+    #portada .instrucciones {
+      margin: 0;
+      padding-left: 28px;
+      gap: 14px;
+      font-size: 1.125rem;
+    }
+
+    #portada .instrucciones li::marker {
+      font-size: 1.25rem;
+    }
+
+    #portada .aviso {
+      margin: 0;
+      font-size: 0.9375rem;
+    }
+
+    #portada .sobres-muestra {
+      margin: 0;
+      gap: 12px;
+    }
+
+    #portada .sobres-muestra .chip-logo {
+      height: 76px;
+      --k: 44px;
+    }
+
+    #portada .acciones {
+      gap: 14px;
+      margin-top: 4px;
+    }
+
+    #portada .boton-principal,
+    #portada .boton-secundario {
+      min-height: 58px;
+      padding: 0 26px;
+      font-size: 1.0625rem;
+    }
+
+    #portada .boton-secundario {
+      padding: 0 22px;
+    }
+
+    .partidas {
+      margin: 0;
+    }
+
+    /* Pie en dos columnas. */
+    .pie {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px 64px;
+      margin-top: 48px;
+      padding: 28px 0 40px;
+      font-size: var(--t-sm);
+    }
+
+    .pie p {
+      flex: 1 1 420px;
+      max-width: none;
+      margin: 0;
+    }
+
+    /* Juego: barra de estado a lo ancho y dos columnas (papeleta | sobres o comparativa). */
+    #juego {
+      display: grid;
+      grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+      column-gap: 40px;
+      align-items: start;
+      padding-bottom: 48px;
+    }
+
+    .estado {
+      grid-column: 1 / -1;
+      grid-row: 1;
+      justify-content: flex-start;
+      gap: 16px;
+      margin: 28px 0 20px;
+    }
+
+    .estado-etiqueta {
+      display: block;
+      color: var(--tinta-suave);
+      font-size: var(--t-xs);
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .progreso {
+      gap: 6px;
+    }
+
+    .progreso :global(li) {
+      width: 22px;
+      height: 16px;
+    }
+
+    .marcador {
+      margin-left: auto;
+      font-size: var(--t-md);
+    }
+
+    #papeleta {
+      grid-column: 1;
+      grid-row: 2;
+      align-self: stretch;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      min-height: 600px;
+      padding: 48px 52px 40px;
+    }
+
+    #papeleta::before {
+      top: 12px;
+      left: 16px;
+      right: 16px;
+    }
+
+    .papeleta-cabecera {
+      margin: 0;
+      font-size: var(--t-sm);
+      letter-spacing: 0.16em;
+    }
+
+    .papeleta-tema {
+      color: var(--lacre-texto);
+    }
+
+    .frase {
+      /* Escala con la anchura de la ventana: 42 px a 1440 px y 30 px a 1024 px. */
+      --base: clamp(1.75rem, 2.9vw, 2.625rem);
+      --fs: var(--base);
+      margin: auto 0;
+      font-weight: 600;
+      font-size: var(--fs);
+      line-height: 1.22;
+      letter-spacing: -0.01em;
+    }
+
+    .frase[data-largo='l'] {
+      --fs: calc(var(--base) * 0.86);
+    }
+
+    .frase[data-largo='xl'] {
+      --fs: calc(var(--base) * 0.78);
+    }
+
+    .explicacion {
+      margin: 0;
+      padding-top: 20px;
+      border-top: 1px dashed var(--linea);
+      font-size: var(--t-md);
+    }
+
+    .explicacion summary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 44px;
+      padding: 0 18px;
+      border: 1.5px solid var(--tinta);
+      border-radius: 999px;
+      list-style: none;
+    }
+
+    .explicacion summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .explicacion summary::before {
+      content: '';
+      width: 10px;
+      height: 10px;
+      background: currentColor;
+      clip-path: polygon(25% 12%, 75% 50%, 25% 88%);
+      transition: transform 0.15s ease;
+    }
+
+    .explicacion[open] summary::before {
+      transform: rotate(90deg);
+    }
+
+    .sello {
+      right: 36px;
+      bottom: -22px;
+      padding: 4px 18px;
+      border-width: 3px;
+      font-size: 1.625rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+    }
+
+    /* Sobres: 2×2 a la derecha, a la altura de la papeleta. */
+    .sobres-zona {
+      grid-column: 2;
+      grid-row: 2 / span 3;
+      align-self: stretch;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .pregunta-fila {
+      margin: 0;
+    }
+
+    .pregunta {
+      font-size: var(--t-lg);
+    }
+
+    .atajos {
+      font-size: var(--t-sm);
+    }
+
+    .opciones {
+      flex: 1 1 auto;
+      grid-auto-rows: 1fr;
+      gap: 16px;
+    }
+
+    .sobre {
+      justify-content: flex-end;
+      gap: 14px;
+      min-height: 250px;
+      padding: 18px;
+    }
+
+    .sobre::before {
+      height: 64px;
+    }
+
+    .sobre-tecla {
+      top: 12px;
+      left: 14px;
+      font-size: 0.9375rem;
+    }
+
+    .sobre-logo {
+      height: 96px;
+      margin-top: 0;
+      --k: 56px;
+    }
+
+    .sobre-nombre {
+      font-size: var(--t-sm);
+      letter-spacing: 0.14em;
+    }
+
+    /* Tras votar: los sobres y la explicación dejan sitio al veredicto y a la comparativa. */
+    #juego.votada .sobres-zona,
+    #juego.votada .explicacion {
+      display: none;
+    }
+
+    #juego.votada #papeleta {
+      min-height: 0;
+      padding-bottom: 44px;
+    }
+
+    #juego.votada .frase {
+      margin: 0;
+      font-size: calc(var(--fs) * 0.9);
+      line-height: 1.24;
+    }
+
+    /* La revelación reparte sus tres piezas por la rejilla del juego. */
+    #revelacion {
+      display: contents;
+    }
+
+    .revelacion::before {
+      display: none;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .revelacion > * {
+        animation: revela 0.42s cubic-bezier(0.16, 1, 0.3, 1) 0.12s both;
+      }
+    }
+
+    .veredicto-fila {
+      grid-column: 1;
+      grid-row: 3;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-top: 28px;
+      padding: 8px 4px 0;
+    }
+
+    .veredicto-logo {
+      flex: none;
+      display: flex;
+      width: 128px;
+      height: 84px;
+      padding: 8px;
+      border: 1.5px solid var(--tinta);
+      border-radius: var(--radio);
+      box-shadow: none;
+      --k: 54px;
+    }
+
+    /* La imagen se crea desde JS: sin el ámbito de .chip-logo, de ahí el :global. */
+    .veredicto-logo :global(img) {
+      width: calc(var(--k) * var(--raiz));
+      height: calc(var(--k) / var(--raiz));
+      max-width: 100%;
+      object-fit: contain;
+    }
+
+    .veredicto-texto {
+      flex: 1 1 300px;
+      min-width: 0;
+    }
+
+    .veredicto {
+      margin: 0;
+      font-size: 2.25rem;
+      line-height: 1.15;
+    }
+
+    .fuente {
+      margin: 4px 0 0;
+      font-size: 1.125rem;
+    }
+
+    .acierto-global {
+      margin: 8px 0 0;
+      font-size: var(--t-md);
+    }
+
+    .revelacion .boton-principal {
+      grid-column: 1;
+      grid-row: 4;
+      width: 100%;
+      min-height: 60px;
+      margin-top: 28px;
+      font-size: 1.125rem;
+      box-shadow:
+        0 0 0 3px var(--papel),
+        0 0 0 5px var(--mostaza);
+    }
+
+    .comparativa {
+      grid-column: 2;
+      grid-row: 2 / span 3;
+      margin: 0;
+    }
+
+    .comparativa-titulo {
+      margin: 0 0 16px;
+      font-size: 1.625rem;
+    }
+
+    .comparativa-lista {
+      gap: 16px;
+    }
+
+    .comparativa-lista :global(.comp) {
+      padding: 20px 22px;
+    }
+
+    .comparativa-lista :global(.comp-cabecera) {
+      gap: 14px;
+      font-size: 1.0625rem;
+    }
+
+    .comparativa-lista :global(.comp-logo) {
+      width: 76px;
+      height: 42px;
+      --k: 30px;
+    }
+
+    .comparativa-lista :global(.comp-resumen) {
+      margin-top: 12px;
+      font-size: 1.0625rem;
+    }
+
+    .comparativa-lista :global(.comp-cita) {
+      margin-top: 8px;
+      font-size: 0.9375rem;
+    }
+
+    /* Escrutinio: el resultado y el retrato en dos columnas; el resto, a lo ancho. */
+    #final {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      column-gap: 64px;
+      align-content: start;
+      margin: 40px 0 0;
+      padding: 44px 52px 40px;
+    }
+
+    #final::before {
+      top: 12px;
+      left: 16px;
+      right: 16px;
+    }
+
+    #final .papeleta-titulo {
+      grid-column: 1 / -1;
+      margin: 0 0 24px;
+      font-size: 2.125rem;
+    }
+
+    #final .resultado {
+      grid-column: 1;
+      grid-row: 2;
+    }
+
+    #final .progreso-final {
+      grid-column: 1;
+      grid-row: 3;
+    }
+
+    #final .comentario {
+      grid-column: 1;
+      grid-row: 4;
+      margin: 0;
+      font-size: var(--t-xl);
+    }
+
+    #final .retrato {
+      grid-column: 2;
+      grid-row: 2 / span 3;
+      align-self: center;
+      margin: 0;
+      padding: 20px 24px;
+    }
+
+    #final .acciones {
+      grid-column: 1 / -1;
+      margin-top: 28px;
+    }
+
+    #final .aviso {
+      grid-column: 1 / -1;
+    }
+
+    #final > :global(.tarjeta-coincidencias) {
+      grid-column: 1 / -1;
+      margin-top: 32px;
+    }
+
+    #final .repaso {
+      grid-column: 1 / -1;
+    }
+
+    .puntuacion {
+      font-size: 7rem;
+    }
+
+    .de {
+      font-size: 2.5rem;
+    }
+
+    .progreso-final :global(li) {
+      width: 30px;
+      height: 20px;
+    }
+
+    .resumen {
+      display: block;
+      columns: 2;
+      column-gap: 64px;
+    }
+
+    .resumen :global(li) {
+      break-inside: avoid;
+      margin-bottom: 14px;
     }
   }
 </style>

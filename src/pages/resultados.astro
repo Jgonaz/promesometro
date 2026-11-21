@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import Navegacion from '../components/Navegacion.astro';
 import frases from '../data/frases.json';
 import { PARTIDOS } from '../lib/partidos';
 
@@ -14,6 +15,8 @@ const datos = {
   title="Resultados · Promesómetro"
   description="Cómo se han confundido los jugadores de Promesómetro entre los partidos de las generales del 29N."
 >
+  <div class="contenedor">
+  <Navegacion />
   <main class="app res">
     <header class="cabecera">
       <a class="volver" href="/">← Volver al juego</a>
@@ -29,7 +32,7 @@ const datos = {
         y no dicen nada sobre cómo va a votar nadie.
       </p>
 
-      <section class="bloque" aria-labelledby="t-matriz">
+      <section class="bloque bloque-matriz" aria-labelledby="t-matriz">
         <h2 id="t-matriz" class="bloque-titulo">¿Con quién se confunde cada partido?</h2>
         <p class="bloque-texto">
           Cada fila es el partido que de verdad propone la frase; cada columna, el sobre en el que la
@@ -83,12 +86,12 @@ const datos = {
         </div>
       </section>
 
-      <section class="bloque" aria-labelledby="t-acertadas">
+      <section class="bloque bloque-acertadas" aria-labelledby="t-acertadas">
         <h2 id="t-acertadas" class="bloque-titulo">Las 5 frases más acertadas</h2>
         <ol id="mas-acertadas" class="frases"></ol>
       </section>
 
-      <section class="bloque" aria-labelledby="t-falladas">
+      <section class="bloque bloque-falladas" aria-labelledby="t-falladas">
         <h2 id="t-falladas" class="bloque-titulo">Las 5 frases más falladas</h2>
         <ol id="mas-falladas" class="frases"></ol>
       </section>
@@ -126,6 +129,7 @@ const datos = {
       </p>
     </footer>
   </main>
+  </div>
 
   <script type="application/json" id="datos" set:html={JSON.stringify(datos)} />
 
@@ -553,5 +557,108 @@ const datos = {
   .pie p {
     margin: 0;
     max-width: 68ch;
+  }
+
+  /* ─── Escritorio (desde 1024 px) ─────────────────────────────────────────
+     Todo lo de abajo queda dentro de la media query: por debajo de 1024 px la
+     página sigue exactamente como antes. */
+  @media (min-width: 1024px) {
+    .app {
+      max-width: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .volver {
+      display: none;
+    }
+
+    .cabecera {
+      margin: 0 0 40px;
+      padding: 56px 0 40px;
+      border-bottom: 1px dashed var(--linea);
+    }
+
+    .marca {
+      font-size: var(--t-titular);
+      letter-spacing: -0.025em;
+      line-height: 1;
+    }
+
+    .mensaje {
+      max-width: 62ch;
+      padding: 20px 24px;
+    }
+
+    .partidas {
+      margin-bottom: 32px;
+    }
+
+    /* Datos: la nota a lo ancho y los bloques en dos columnas. */
+    #datos-publicos {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 40px 48px;
+      align-items: start;
+    }
+
+    #datos-publicos[hidden] {
+      display: none;
+    }
+
+    .nota {
+      grid-column: 1 / -1;
+      margin: 0;
+      font-size: var(--t-md);
+    }
+
+    /* Fila 1: matriz y efecto de «En otras palabras»; fila 2: las dos listas. */
+    .bloque {
+      margin: 0;
+    }
+
+    .bloque-matriz {
+      grid-column: 1 / span 7;
+      grid-row: 2;
+    }
+
+    #bloque-explicacion {
+      grid-column: 8 / span 5;
+      grid-row: 2;
+    }
+
+    .bloque-acertadas {
+      grid-column: 1 / span 6;
+      grid-row: 3;
+    }
+
+    .bloque-falladas {
+      grid-column: 7 / span 6;
+      grid-row: 3;
+    }
+
+    /* Sin el bloque de «En otras palabras», la matriz ocupa todo el ancho. */
+    #datos-publicos:has(#bloque-explicacion[hidden]) .bloque-matriz {
+      grid-column: 1 / -1;
+    }
+
+    .bloque-titulo {
+      margin-bottom: 12px;
+      font-size: var(--t-2xl);
+    }
+
+    .bloque-texto {
+      font-size: var(--t-md);
+    }
+
+    .boton-principal {
+      margin-top: 48px;
+    }
+
+    .pie {
+      margin-top: 48px;
+      padding: 28px 0 40px;
+      font-size: var(--t-sm);
+    }
   }
 </style>

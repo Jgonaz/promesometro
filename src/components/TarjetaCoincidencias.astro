@@ -1,0 +1,156 @@
+---
+// Tarjeta del segundo modo de juego. En móvil y tableta va dentro de la
+// papeleta (portada y escrutinio). En escritorio es una franja a lo ancho:
+// `solo` = 'movil' la oculta desde 1024 px y 'escritorio' la muestra solo
+// desde ahí (y solo en la portada), para no repetir la tarjeta en pantalla.
+interface Props {
+  solo?: 'movil' | 'escritorio';
+}
+const { solo } = Astro.props;
+---
+
+<a class="tarjeta-coincidencias" data-solo={solo} href="/coincidencias">
+  <span class="tarjeta-etiqueta">Otro modo de juego</span>
+  <span class="tarjeta-titulo">¿Con quién coincides?</span>
+  <span class="tarjeta-texto">
+    Al revés: 16 asuntos, cuatro posturas sin siglas. Elige qué harías tú y descubre con qué partido coincides más.
+  </span>
+  <span class="tarjeta-accion" aria-hidden="true">Hacer el test →</span>
+</a>
+
+<style>
+  /* Segundo modo de juego: tarjeta propia para que no quede escondido, con la
+     mostaza como acento (no evoca a ningún partido). */
+  .tarjeta-coincidencias {
+    display: grid;
+    gap: 6px;
+    margin: 24px 0 0;
+    padding: 18px 20px;
+    border: 2px solid var(--tinta);
+    border-left-width: 8px;
+    border-left-color: var(--mostaza);
+    border-radius: var(--radio);
+    background: var(--papel);
+    color: var(--tinta);
+    text-decoration: none;
+    transition:
+      transform 0.15s cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 0.15s ease;
+  }
+
+  .tarjeta-coincidencias:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 20px -12px rgb(31 42 68 / 0.6);
+  }
+
+  .tarjeta-coincidencias:focus-visible {
+    outline: 3px solid var(--mostaza);
+    outline-offset: 3px;
+  }
+
+  .tarjeta-etiqueta {
+    color: var(--lacre);
+    font-size: var(--t-xs);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .tarjeta-titulo {
+    font-family: var(--fuente-titulo);
+    font-weight: 800;
+    font-size: var(--t-xl);
+    line-height: 1.15;
+  }
+
+  .tarjeta-texto {
+    color: var(--tinta-suave);
+    font-size: var(--t-sm);
+  }
+
+  .tarjeta-accion {
+    margin-top: 4px;
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-color: var(--lacre);
+    text-underline-offset: 3px;
+  }
+
+  @media (max-width: 1023.98px) {
+    [data-solo='escritorio'] {
+      display: none;
+    }
+  }
+
+  /* Escritorio: franja a lo ancho (antetítulo y título | texto | botón). */
+  @media (min-width: 1024px) {
+    .tarjeta-coincidencias {
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      grid-template-areas:
+        'etiqueta texto accion'
+        'titulo texto accion';
+      align-items: center;
+      gap: 4px 48px;
+      margin: 0;
+      padding: 28px 40px;
+      border: 1px solid var(--tinta);
+      background: var(--papel-2);
+    }
+
+    .tarjeta-etiqueta {
+      grid-area: etiqueta;
+      align-self: end;
+      font-size: var(--t-xs);
+      letter-spacing: 0.14em;
+      color: var(--lacre-texto);
+    }
+
+    .tarjeta-titulo {
+      grid-area: titulo;
+      align-self: start;
+      font-size: 2.125rem;
+      line-height: 1.1;
+    }
+
+    .tarjeta-texto {
+      grid-area: texto;
+      font-size: 1.0625rem;
+      color: var(--tinta-suave);
+    }
+
+    .tarjeta-accion {
+      grid-area: accion;
+      display: inline-flex;
+      align-items: center;
+      min-height: 52px;
+      margin: 0;
+      padding: 0 28px;
+      border-radius: 999px;
+      background: var(--mostaza);
+      /* La mostaza es clara también en modo oscuro: el texto va siempre en marino. */
+      color: #1f2a44;
+      font-size: 1.0625rem;
+      text-decoration: none;
+    }
+  }
+
+  /* Al final, para ganar a los display de arriba con la misma especificidad. */
+  @media (min-width: 1024px) {
+    [data-solo='movil'] {
+      display: none;
+    }
+
+    :global(:root[data-pantalla='juego']) [data-solo='escritorio'],
+    :global(:root[data-pantalla='final']) [data-solo='escritorio'] {
+      display: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .tarjeta-coincidencias,
+    .tarjeta-coincidencias:hover {
+      transition: none;
+      transform: none;
+    }
+  }
+</style>
