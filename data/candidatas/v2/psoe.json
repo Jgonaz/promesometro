@@ -27,6 +27,11 @@
         "texto": "Crearemos un gravamen de solidaridad ambiental sobre el uso de aviones privados, yates, coches de lujo y otros bienes suntuarios.",
         "paginaPdf": 47
       }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "polemica",
+      "titular"
     ]
   },
   {
@@ -57,6 +62,10 @@
         "texto": "Obligatoriedad de publicar la brecha entre la remuneración directiva y el salario medio de la plantilla, fijando topes retributivos en empresas públicas y entidades receptoras de ayudas públicas extraordinarias.",
         "paginaPdf": 116
       }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "ambigua"
     ]
   },
   {
@@ -87,6 +96,10 @@
         "texto": "Fijaremos la obligación legal de actualizar anualmente el IPREM conforme al IPC acumulado, evitando que las ayudas y subsidios asistenciales pierdan poder de compra frente a la inflación.",
         "paginaPdf": 21
       }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "ambigua"
     ]
   },
   {
@@ -117,6 +130,10 @@
         "texto": "Reestructuraremos el Impuesto sobre Bienes Inmuebles (IBI) para convertirlo en un tributo altamente progresivo que penalice las fincas de elevado valor catastral, las propiedades pertenecientes a grandes tenedores corporativos y a entidades jurídicas, y las viviendas mantenidas vacías de forma injustificada.",
         "paginaPdf": 18
       }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "polemica"
     ]
   },
   {
@@ -147,6 +164,12 @@
         "texto": "Prohibiremos de forma permanente y con rango de ley la ejecución de lanzamientos o desahucios de personas y familias en situación de vulnerabilidad económica o social sin que las administraciones públicas hayan proporcionado con carácter previo una alternativa habitacional digna, adecuada y estable.",
         "paginaPdf": 15
       }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "ambigua",
+      "polemica",
+      "titular"
     ]
   },
   {
@@ -177,6 +200,10 @@
         "texto": "Salud bucodental: Continuaremos la ampliación de la cobertura bucodental realizada en esta legislatura (menores hasta 14 años, embarazadas, mayores de 65 años, pacientes oncológicos específicos) hasta alcanzar al menos el 50 % de la población residente al final de la legislatura.",
         "paginaPdf": 27
       }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "titular"
     ]
   },
   {
@@ -207,6 +234,10 @@
         "texto": "Actualizaremos la Ley 31/2003 de conservación de la fauna silvestre en los parques zoológicos, para iniciar la transformación de los zoos y acuarios en espacios de recuperación y protección, eliminando paulatinamente la exhibición.",
         "paginaPdf": 77
       }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "ambigua"
     ]
   },
   {
@@ -237,6 +268,11 @@
         "texto": "Eliminaremos toda normativa que penalice o punitivice a las personas que ejercen la prostitución garantizando el acceso a derechos fundamentales como seguridad social, salud, condiciones de trabajo dignas y la posibilidad de organizarse, rechazando siempre el estigma asociado a la misma.",
         "paginaPdf": 39
       }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "ambigua",
+      "polemica"
     ]
   },
   {
@@ -267,6 +303,10 @@
         "texto": "Ampliaremos por ley la definición de violencia vicaria y reforzaremos el sistema VioGén incorporando una evaluación del riesgo específica para hijas e hijos de las víctimas.",
         "paginaPdf": 38
       }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "polemica"
     ]
   },
   {
@@ -297,6 +337,11 @@
         "texto": "Derecho al voto a los 16 años: Reconoceremos por ley el derecho al voto a partir de los 16 años.",
         "paginaPdf": 42
       }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "ambigua",
+      "polemica"
     ]
   },
   {
@@ -327,6 +372,10 @@
         "texto": "Derogaremos por completo la Ley Mordaza. […] Reduciremos las multas excesivas",
         "paginaPdf": 142
       }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "polemica"
     ]
   },
   {
@@ -357,7 +406,9 @@
         "texto": "Implantación inmediata a 37,5 horas en 2026 y 35 horas en el sector público, prohibiendo la compensación mediante horas extraordinarias y exigiendo la subida proporcional del salario hora en contratos a tiempo parcial.",
         "paginaPdf": 55
       }
-    ]
+    ],
+    "calidad": 1,
+    "etiquetas": []
   },
   {
     "id": "psoe-13",
@@ -387,7 +438,9 @@
         "texto": null,
         "paginaPdf": null
       }
-    ]
+    ],
+    "calidad": 1,
+    "etiquetas": []
   },
   {
     "id": "psoe-14",
@@ -417,6 +470,10 @@
         "texto": "Habilitaremos al BCE para la financiación directa a los Estados miembros de la UE, evitando que los países tengan que acudir a colocar su deuda pública en los mercados financieros.",
         "paginaPdf": 137
       }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "ambigua"
     ]
   },
   {
@@ -447,7 +504,9 @@
         "texto": "Reforzaremos la ventanilla única administrativa y aceleraremos la digitalización para reducir trabas y trámites burocráticos, ofreciendo servicios públicos de acompañamiento para la modernización de pequeñas y medianas empresas.",
         "paginaPdf": 92
       }
-    ]
+    ],
+    "calidad": 1,
+    "etiquetas": []
   },
   {
     "id": "psoe-16",
@@ -477,6 +536,11 @@
         "texto": "Prohibición a los asistentes y chatbots de compañía de simular vínculos sentimentales o emplear dinámicas manipuladoras basadas en perfiles psicológicos para retener al usuario.",
         "paginaPdf": 121
       }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "ambigua",
+      "titular"
     ]
   },
   {
@@ -507,6 +571,10 @@
         "texto": "Bajo la aplicación del Acuerdo UE-Mercosur, se fiscalizarán los compromisos laborales, ambientales y de derechos humanos, activando cláusulas de salvaguarda cuando las importaciones agrarias generen competencia desleal.",
         "paginaPdf": 133
       }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "ambigua"
     ]
   },
   {
@@ -537,6 +605,11 @@
         "texto": "Reformaremos de forma integral la Ley de Extranjería para instaurar un procedimiento estable, permanente y reglado de regularización administrativa.",
         "paginaPdf": 126
       }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "ambigua",
+      "polemica"
     ]
   },
   {
@@ -567,6 +640,11 @@
         "texto": "Reformaremos la Ley Orgánica del Poder Judicial para que ningún partido pueda volver a bloquear la renovación del Consejo General del Poder Judicial. Los vocales del turno judicial se seguirán eligiendo por mayoría de tres quintos, pero si en dos meses no hay acuerdo, las Cámaras podrán elegirlos en segunda votación por mayoría absoluta.",
         "paginaPdf": 148
       }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "ambigua",
+      "polemica"
     ]
   },
   {
@@ -597,6 +675,352 @@
         "texto": "Reforzaremos la educación inclusiva mediante la puesta a disposición de las comunidades autónomas de más fondos para profesionales de apoyo.",
         "paginaPdf": 26
       }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "ambigua"
+    ]
+  },
+  {
+    "id": "psoe-21",
+    "partido": "PSOE",
+    "paginaPdf": 95,
+    "texto": "Establecer a 16 años la edad mínima para usar redes sociales. […] La edad mínima solo podrá rebajarse cuando las plataformas demuestren que son seguras por defecto.",
+    "tema": "tecnología",
+    "subtema": "edad mínima para redes sociales",
+    "tipo": "deducible",
+    "enOtrasPalabras": "La edad mínima para usar redes sociales sería de 16 años, y solo podría bajar si las plataformas demostraran antes que son seguras por defecto.",
+    "comparativa": [
+      {
+        "partido": "PP",
+        "resumen": "Fija en 14 años la edad mínima para tener cuenta en redes sociales, y exige autorización de los padres hasta los 16.",
+        "texto": "NINGÚN MENOR DE 14 AÑOS PODRÁ TENER UNA CUENTA EN REDES SOCIALES, Y HASTA LOS 16 NECESITARÁ AUTORIZACIÓN DE SUS PADRES.",
+        "paginaPdf": 45
+      },
+      {
+        "partido": "Vox",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone una regulación severa de las plataformas y redes sociales dirigidas a menores de 16 años.",
+        "texto": "Regulación severa de plataformas y redes sociales dirigidas a menores de 16 años",
+        "paginaPdf": 41
+      }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "ambigua",
+      "titular",
+      "polemica"
+    ]
+  },
+  {
+    "id": "psoe-22",
+    "partido": "PSOE",
+    "paginaPdf": 98,
+    "texto": "Ampliar la red de Lugares de Memoria Democrática, retirar simbología franquista y avanzar en la eliminación de entidades que hagan apología de la dictadura.",
+    "tema": "democracia y transparencia",
+    "subtema": "memoria democrática y simbología franquista",
+    "tipo": "deducible",
+    "enOtrasPalabras": "Habría más lugares dedicados a la memoria democrática, se quitarían los símbolos del franquismo y se seguiría avanzando para eliminar entidades que hagan apología de la dictadura.",
+    "comparativa": [
+      {
+        "partido": "PP",
+        "resumen": "Propone derogar la ley de memoria democrática y aprobar en su lugar una ley de concordia.",
+        "texto": "Derogaremos la mal llamada «ley de memoria democrática»",
+        "paginaPdf": 37
+      },
+      {
+        "partido": "Vox",
+        "resumen": "Pide superar las leyes ideológicas que dividen a los españoles, como la de Memoria Democrática.",
+        "texto": "Superación de las divisivas leyes ideológicas que enfrentan a los españoles, tales como la de Memoria Democrática",
+        "paginaPdf": 30
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Quiere seguir cumpliendo íntegramente la Ley de Memoria Democrática de 2022, junto a una ley de archivos.",
+        "texto": "seguir trabajando en el cumplimiento íntegro de la Ley de Memoria Democrática de 2022.",
+        "paginaPdf": 34
+      }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "polemica"
+    ]
+  },
+  {
+    "id": "psoe-23",
+    "partido": "PSOE",
+    "paginaPdf": 111,
+    "texto": "Seguir impulsando el reconocimiento del catalán, el euskera y el gallego como lenguas oficiales de la Unión Europea, y promover su enseñanza mediante cátedras, lectorados y acuerdos con universidades extranjeras.",
+    "tema": "Europa y exterior",
+    "subtema": "catalán, euskera y gallego como lenguas de la UE",
+    "tipo": "deducible",
+    "enOtrasPalabras": "El catalán, el euskera y el gallego deberían reconocerse como lenguas oficiales de la Unión Europea, y se impulsaría su enseñanza en universidades y centros extranjeros.",
+    "comparativa": [
+      {
+        "partido": "PP",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Vox",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "polemica"
+    ]
+  },
+  {
+    "id": "psoe-24",
+    "partido": "PSOE",
+    "paginaPdf": 54,
+    "texto": "Impulsar la gratuidad de la matrícula del primer curso de grado en las universidades públicas de todo el país.",
+    "tema": "educación",
+    "subtema": "matrícula gratuita en el primer curso universitario",
+    "tipo": "deducible",
+    "enOtrasPalabras": "La matrícula del primer curso de grado en las universidades públicas sería gratuita en todo el país.",
+    "comparativa": [
+      {
+        "partido": "PP",
+        "resumen": "Propone becas por ley para quien las necesite y apruebe, y matrícula gratuita para quien elija un ciclo de FP de alta demanda de empleo.",
+        "texto": "La beca será un derecho por ley para quien la necesite y apruebe, con los mismos umbrales en la universidad que en la FP. Quien elija un ciclo de FP de alta demanda de empleo no pagará matrícula.",
+        "paginaPdf": 52
+      },
+      {
+        "partido": "Vox",
+        "resumen": "Propone mejorar las becas universitarias y preuniversitarias para que la falta de recursos no impida estudiar.",
+        "texto": "Ningún español debe quedarse sin poder estudiar por falta de recursos económicos. Mejorar el sistema de becas en las etapas universitaria y preuniversitaria […]",
+        "paginaPdf": 41
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Plantea una educación pública gratuita desde los 0 años hasta la universidad.",
+        "texto": "gratuidad desde los 0 años hasta la universidad",
+        "paginaPdf": 7
+      }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "ambigua"
+    ]
+  },
+  {
+    "id": "psoe-25",
+    "partido": "PSOE",
+    "paginaPdf": 82,
+    "texto": "Aprobar una Ley Orgánica contra la Violencia Vicaria como manifestación de la violencia de género, para garantizar la protección, prevención y atención a las víctimas.",
+    "tema": "igualdad",
+    "subtema": "ley orgánica contra la violencia vicaria",
+    "tipo": "deducible",
+    "enOtrasPalabras": "Se aprobaría una ley orgánica contra la violencia vicaria, entendida como violencia de género, para proteger, prevenir y atender a sus víctimas.",
+    "comparativa": [
+      {
+        "partido": "PP",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Vox",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone ampliar por ley la definición de violencia vicaria y reforzar el sistema VioGén.",
+        "texto": "Ampliaremos por ley la definición de violencia vicaria y reforzaremos el sistema VioGén",
+        "paginaPdf": 38
+      }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "ambigua"
+    ]
+  },
+  {
+    "id": "psoe-26",
+    "partido": "PSOE",
+    "paginaPdf": 89,
+    "texto": "Incluir en el código civil la figura de la unión de amistad. […] personas unidas por un vínculo de amistad o compañerismo deciden asumir un compromiso mutuo de cuidados. […] porque también es familia la que elegimos.",
+    "tema": "familia y conciliación",
+    "subtema": "unión de amistad en el código civil",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "Se crearía en el Código Civil una figura para personas unidas por amistad o compañerismo que se comprometen a cuidarse mutuamente, con beneficios asociados.",
+    "comparativa": [
+      {
+        "partido": "PP",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Vox",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone que las personas de referencia elegidas, sin parentesco ni convivencia, sean referentes a efectos de permisos retribuidos.",
+        "texto": "Incorporaremos a la Ley de Familias el principio de libre designación de personas de referencia […] Las personas designadas, sin necesidad de parentesco ni convivencia, serán referentes a efectos de permisos retribuidos",
+        "paginaPdf": 24
+      }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "titular",
+      "polemica"
+    ]
+  },
+  {
+    "id": "psoe-27",
+    "partido": "PSOE",
+    "paginaPdf": 73,
+    "texto": "Incorporaremos a los animales a la legislación de violencia vicaria con protocolos en violencia de género, impulsaremos una Estrategia Estatal de abandono cero con adopción responsable",
+    "tema": "medio ambiente",
+    "subtema": "animales de compañía en la violencia vicaria",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "Los animales de compañía entrarían en la legislación de violencia vicaria, con protocolos de violencia de género, y se impulsaría una estrategia para acabar con el abandono.",
+    "comparativa": [
+      {
+        "partido": "PP",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Vox",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone que el maltrato animal en el contexto de la violencia machista se considere violencia vicaria, con penas progresivas por reincidencia.",
+        "texto": "haremos que el maltrato animal en el contexto de la violencia machista sea considerado violencia vicaria.",
+        "paginaPdf": 75
+      }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "ambigua",
+      "titular"
+    ]
+  },
+  {
+    "id": "psoe-28",
+    "partido": "PSOE",
+    "paginaPdf": 68,
+    "texto": "Crear bancos públicos de agua en las confederaciones hidrográficas para mejorar la gestión, disponibilidad y reasignación de recursos hídricos, previniendo la sobreexplotación y contaminación de ríos, humedales y acuíferos.",
+    "tema": "medio ambiente",
+    "subtema": "bancos públicos de agua",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "Se crearían bancos públicos de agua en las confederaciones hidrográficas para gestionar y reasignar el agua y evitar la sobreexplotación y la contaminación de ríos y acuíferos.",
+    "comparativa": [
+      {
+        "partido": "PP",
+        "resumen": "Propone modernizar embalses, conducciones y regadíos para reducir el consumo de agua, ampliar el uso de agua depurada y reforzar la desalación.",
+        "texto": "modernizaremos embalses y conducciones, renovaremos los regadíos para reducir su consumo de agua y energía, definiremos nuevos regadíos, ampliaremos el uso de agua depurada y reforzaremos la desalación donde sea necesaria.",
+        "paginaPdf": 50
+      },
+      {
+        "partido": "Vox",
+        "resumen": "Propone interconectar todas las cuencas hidrográficas para gestionar el agua de forma más eficiente.",
+        "texto": "Plan Nacional del Agua. Interconexión de todas las cuencas que permita una gestión más eficiente del agua […]",
+        "paginaPdf": 61
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone que todo el ciclo del agua sea de gestión pública directa, con prohibición de cortes por motivos económicos.",
+        "texto": "Agua como bien público: Ciclo del agua 100 % de gestión pública directa, prohibición legal de cortes de suministro por motivos económicos",
+        "paginaPdf": 73
+      }
+    ],
+    "calidad": 2,
+    "etiquetas": [
+      "titular"
+    ]
+  },
+  {
+    "id": "psoe-29",
+    "partido": "PSOE",
+    "paginaPdf": 90,
+    "texto": "Crear un escaño ciudadano en el Congreso y en el Senado, sin voto, para que la sociedad civil pueda preguntar al Gobierno y presentar iniciativas y enmiendas, y reducir las firmas necesarias para la iniciativa legislativa popular.",
+    "tema": "democracia y transparencia",
+    "subtema": "escaño ciudadano sin voto",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "Se crearía un escaño ciudadano en el Congreso y en el Senado, sin voto, desde el que la sociedad civil podría preguntar al Gobierno y presentar iniciativas, y se reducirían las firmas para las iniciativas legislativas populares.",
+    "comparativa": [
+      {
+        "partido": "PP",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Vox",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone rebajar a la mitad las firmas necesarias para la iniciativa legislativa popular.",
+        "texto": "Rebajaremos a la mitad las firmas necesarias para la iniciativa legislativa popular.",
+        "paginaPdf": 141
+      }
+    ],
+    "calidad": 2,
+    "etiquetas": []
+  },
+  {
+    "id": "psoe-30",
+    "partido": "PSOE",
+    "paginaPdf": 40,
+    "texto": "Mejorar la jubilación en trabajos penosos y en las jubilaciones anticipadas involuntarias. […] El coste de estas mejoras se podría compensar mediante aportaciones de empresas con beneficios que realicen ERE",
+    "tema": "pensiones y mayores",
+    "subtema": "jubilación por penosidad y coste con ERE",
+    "tipo": "sorpresa",
+    "enOtrasPalabras": "Mejoraría la jubilación en trabajos penosos y en las jubilaciones anticipadas que no se eligen, y el coste podría pagarse en parte con aportaciones de empresas con beneficios que hicieran despidos colectivos (ERE).",
+    "comparativa": [
+      {
+        "partido": "PP",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Vox",
+        "resumen": null,
+        "texto": null,
+        "paginaPdf": null
+      },
+      {
+        "partido": "Frente Amplio",
+        "resumen": "Propone eliminar los coeficientes reductores de las jubilaciones anticipadas de quienes han cotizado más de 40 años.",
+        "texto": "Eliminaremos los coeficientes reductores en las jubilaciones anticipadas de quienes han cotizado más de 40 años",
+        "paginaPdf": 58
+      }
+    ],
+    "calidad": 3,
+    "etiquetas": [
+      "polemica"
     ]
   }
 ]

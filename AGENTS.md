@@ -12,9 +12,15 @@ tres partidos sobre lo mismo.
 ## Criterios editoriales (no negociables)
 
 - Cada frase sale literal del programa oficial; se puede recortar, nunca reescribir.
-- 20 preguntas por partido: 10 «deducibles» (un votante informado puede
-  razonar de quién son) y 10 «sorpresa» (inesperadas para ese partido, pero
+- 30 preguntas por partido: 15 «deducibles» (un votante informado puede
+  razonar de quién son) y 15 «sorpresa» (inesperadas para ese partido, pero
   claramente suyas). Nada que podría haber escrito cualquiera.
+- Cada frase lleva una valoración editorial interna, que el juego no usa ni
+  envía al navegador: `calidad` 3 (gran pregunta: hace dudar entre partidos,
+  sorprende o da que hablar), 2 (buena, se resuelve razonando) o 1 (floja,
+  candidata a sustituirse; no se añaden nuevas con 1), y `etiquetas` entre
+  `ambigua` (verosímil en al menos dos partidos), `polemica` (asunto que
+  divide) y `titular` (llamativa y compartible).
 - Se evitan las frases que delatan al partido por su vocabulario: siglas,
   líderes, eslóganes, nombres propios de sus planes o autorreferencias.
 - «En otras palabras» y los resúmenes de la comparativa son textos propios:
@@ -22,7 +28,7 @@ tres partidos sobre lo mismo.
   resumen va con su cita literal y su página. Si un partido no dice nada sobre
   el asunto, se indica así, sin deducir su postura.
 - `node scripts/verificar-frases.mjs --final src/data/frases.json` comprueba
-  las citas, las páginas y el reparto.
+  las citas, las páginas, el reparto y la valoración.
 - Logos oficiales de los cuatro partidos, todos con el mismo tamaño y en orden
   alfabético; ningún partido destaca visualmente. Nunca se generan ni se
   modifican con IA.
