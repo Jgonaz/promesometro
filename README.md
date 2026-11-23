@@ -1,4 +1,4 @@
-# Promesómetro
+# Promesómetro.es
 
 ¿Sabrías decir de qué partido es cada promesa? Un juego con medidas reales de
 los programas electorales de las generales del 29 de noviembre de 2026.
